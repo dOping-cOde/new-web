@@ -144,17 +144,83 @@ Deferred to future release. Tracked but not in current roadmap.
 
 ## Traceability
 
-Which phases cover which requirements. Updated during roadmap creation.
-
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (To be populated during roadmap creation) | | |
+| FOUND-01 | Phase 1 | Pending |
+| FOUND-02 | Phase 1 | Pending |
+| FOUND-03 | Phase 1 | Pending |
+| FOUND-04 | Phase 1 | Pending |
+| FOUND-05 | Phase 1 | Pending |
+| FOUND-06 | Phase 1 | Pending |
+| FOUND-07 | Phase 1 | Pending |
+| FOUND-08 | Phase 1 | Pending |
+| PAGE-01 | Phase 2 | Pending |
+| PAGE-02 | Phase 2 | Pending |
+| PAGE-03 | Phase 2 | Pending |
+| PAGE-04 | Phase 2 | Pending |
+| PAGE-05 | Phase 2 | Pending |
+| PAGE-06 | Phase 2 | Pending |
+| CASE-01 | Phase 2 | Pending |
+| CASE-02 | Phase 2 | Pending |
+| CASE-03 | Phase 2 | Pending |
+| CASE-04 | Phase 2 | Pending |
+| CASE-05 | Phase 2 | Pending |
+| CASE-06 | Phase 2 | Pending |
+| CASE-07 | Phase 2 | Pending |
+| CASE-08 | Phase 2 | Pending |
+| ANIM-01 | Phase 3 | Pending |
+| ANIM-02 | Phase 3 | Pending |
+| ANIM-03 | Phase 3 | Pending |
+| ANIM-04 | Phase 3 | Pending |
+| ANIM-05 | Phase 3 | Pending |
+| ANIM-06 | Phase 3 | Pending |
+| ANIM-07 | Phase 3 | Pending |
+| ANIM-08 | Phase 3 | Pending |
+| ANIM-09 | Phase 3 | Pending |
+| ANIM-10 | Phase 3 | Pending |
+| GL-01 | Phase 3 | Pending |
+| GL-02 | Phase 3 | Pending |
+| GL-03 | Phase 3 | Pending |
+| GL-04 | Phase 3 | Pending |
+| GL-05 | Phase 3 | Pending |
+| SEO-01 | Phase 4 | Pending |
+| SEO-02 | Phase 4 | Pending |
+| SEO-03 | Phase 4 | Pending |
+| SEO-04 | Phase 4 | Pending |
+| SEO-05 | Phase 4 | Pending |
+| SEO-06 | Phase 4 | Pending |
+| SEO-07 | Phase 4 | Pending |
+| SEO-08 | Phase 4 | Pending |
+| SEO-09 | Phase 4 | Pending |
+| SEO-10 | Phase 4 | Pending |
+| SEO-11 | Phase 4 | Pending |
+| SEO-12 | Phase 4 | Pending |
+| A11Y-01 | Phase 4 | Pending |
+| A11Y-02 | Phase 4 | Pending |
+| A11Y-03 | Phase 4 | Pending |
+| A11Y-04 | Phase 4 | Pending |
+| A11Y-05 | Phase 4 | Pending |
+| A11Y-06 | Phase 4 | Pending |
+| A11Y-07 | Phase 4 | Pending |
+| A11Y-08 | Phase 4 | Pending |
+| A11Y-09 | Phase 4 | Pending |
+| PERF-01 | Phase 4 | Pending |
+| PERF-02 | Phase 4 | Pending |
+| PERF-03 | Phase 4 | Pending |
+| PERF-04 | Phase 4 | Pending |
+| PERF-05 | Phase 4 | Pending |
+| PERF-06 | Phase 4 | Pending |
+| PERF-07 | Phase 4 | Pending |
+| PERF-08 | Phase 4 | Pending |
+| DOC-01 | Phase 4 | Pending |
+| DOC-02 | Phase 4 | Pending |
+| DOC-03 | Phase 4 | Pending |
 
 **Coverage:**
-- v1 requirements: 56 total
-- Mapped to phases: 0
-- Unmapped: 56
+- v1 requirements: 69 total (note: file previously stated 56 — count updated to reflect actual requirements)
+- Mapped to phases: 69
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-04-26*
-*Last updated: 2026-04-26 after initial definition*
+*Last updated: 2026-04-26 after roadmap creation*
