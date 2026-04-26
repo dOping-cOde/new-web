@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 03-02-PLAN.md
-last_updated: "2026-04-26T12:41:36.464Z"
+stopped_at: Completed 03-03-PLAN.md
+last_updated: "2026-04-26T12:42:27.972Z"
 last_activity: 2026-04-26
 progress:
   total_phases: 4
   completed_phases: 2
   total_plans: 18
-  completed_plans: 15
+  completed_plans: 16
   percent: 0
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-04-26)
 ## Current Position
 
 Phase: 03 (animation-webgl) — EXECUTING
-Plan: 3 of 5
+Plan: 4 of 5
 Status: Ready to execute
 Last activity: 2026-04-26
 
@@ -68,6 +68,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 02-content-pages P09 | 2.5min | 2 tasks | 4 files |
 | Phase 03-animation-webgl P01 | 1min | 2 tasks | 5 files |
 | Phase 03-animation-webgl P02 | 4min | 2 tasks | 6 files |
+| Phase 03-animation-webgl P03 | 10min | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -119,6 +120,8 @@ Recent decisions affecting current work:
 - [Phase 03-animation-webgl]: HeroLight and HeroDark converted from Server to Client Components for useGSAP integration — minimal change, all props and JSX preserved
 - [Phase 03-animation-webgl]: mdx-components.tsx stays module-level (no use client); GSAP isolated inside ScrollPinnedArchitecture via dynamic import with ssr:true
 - [Phase 03-animation-webgl]: SplitText highlightWord prop wraps matching word in text-accent class — GSAP .split-word selector still targets all words including highlighted one
+- [Phase 03-animation-webgl]: PortfolioCard wraps Link in motion.div (not motion(Link)) for hover-lift — simpler, avoids ref forwarding complexity with Next.js Link
+- [Phase 03-animation-webgl]: StatBlock parseStatValue regex splits numeric/prefix/suffix from mixed strings (5 min, 24/7, 0.92) — non-numeric values render as plain text
 
 ### Pending Todos
 
@@ -130,6 +133,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-26T12:41:36.461Z
-Stopped at: Completed 03-02-PLAN.md
+Last session: 2026-04-26T12:42:27.969Z
+Stopped at: Completed 03-03-PLAN.md
 Resume file: None

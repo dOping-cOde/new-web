@@ -44,8 +44,8 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **ANIM-02**: GSAP ScrollTrigger: scroll-pinned architecture sections on Tier A case study pages (pin for 100vh, bullet reveals on scroll)
 - [x] **ANIM-03**: GSAP: image parallax on hero media (0.85x scroll speed)
 - [x] **ANIM-04**: Framer Motion: animated metric counters on stat blocks (useMotionValue, trigger on scroll-enter)
-- [ ] **ANIM-05**: Framer Motion: hover-lift on portfolio cards (translateY -4px, shadow transition, 320ms)
-- [ ] **ANIM-06**: Framer Motion: portfolio filter with FLIP technique (layout prop)
+- [x] **ANIM-05**: Framer Motion: hover-lift on portfolio cards (translateY -4px, shadow transition, 320ms)
+- [x] **ANIM-06**: Framer Motion: portfolio filter with FLIP technique (layout prop)
 - [ ] **ANIM-07**: Navbar theme transition: backdrop-filter blur + CSS variable color swap on light/dark section crossing (320ms)
 - [ ] **ANIM-08**: Mobile nav: hamburger to full-screen overlay with stagger reveal
 - [x] **ANIM-09**: Scroll reveal: fade-up on scroll into view for section content
@@ -172,8 +172,8 @@ Deferred to future release. Tracked but not in current roadmap.
 | ANIM-02 | Phase 3 | Complete |
 | ANIM-03 | Phase 3 | Complete |
 | ANIM-04 | Phase 3 | Complete |
-| ANIM-05 | Phase 3 | Pending |
-| ANIM-06 | Phase 3 | Pending |
+| ANIM-05 | Phase 3 | Complete |
+| ANIM-06 | Phase 3 | Complete |
 | ANIM-07 | Phase 3 | Pending |
 | ANIM-08 | Phase 3 | Pending |
 | ANIM-09 | Phase 3 | Complete |
