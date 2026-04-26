@@ -50,7 +50,7 @@ Plans:
 **Plans**: 9 plans
 Plans:
 - [ ] 02-01-PLAN.md — MDX content pipeline: Zod schema, data loaders, service metadata, remark-gfm, custom MDX components
-- [ ] 02-02-PLAN.md — Card components: PortfolioCard, ServiceTile, CapabilityCard, Pullquote
+- [x] 02-02-PLAN.md — Card components: PortfolioCard, ServiceTile, CapabilityCard, Pullquote
 - [ ] 02-03-PLAN.md — Section components: HeroLight, HeroDark, CTABand, ManifestoBand
 - [ ] 02-04-PLAN.md — Home page with all 7 sections
 - [ ] 02-05-PLAN.md — Services page with sticky anchor nav and 6 service sections
