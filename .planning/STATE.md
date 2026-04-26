@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Phase 3 context gathered
-last_updated: "2026-04-26T12:14:40.783Z"
+stopped_at: Completed 03-01-PLAN.md
+last_updated: "2026-04-26T12:33:33.644Z"
 last_activity: 2026-04-26
 progress:
   total_phases: 4
   completed_phases: 2
-  total_plans: 13
-  completed_plans: 13
+  total_plans: 18
+  completed_plans: 14
   percent: 0
 ---
 
@@ -21,12 +21,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-26)
 
 **Core value:** Convey engineered seriousness and convert technical buyers into conversations.
-**Current focus:** Phase 02 — content-pages
+**Current focus:** Phase 03 — animation-webgl
 
 ## Current Position
 
-Phase: 3
-Plan: Not started
+Phase: 03 (animation-webgl) — EXECUTING
+Plan: 2 of 5
 Status: Ready to execute
 Last activity: 2026-04-26
 
@@ -66,6 +66,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 02-content-pages P07 | 25min | 2 tasks | 6 files |
 | Phase 02-content-pages P08 | 35min | 2 tasks | 6 files |
 | Phase 02-content-pages P09 | 2.5min | 2 tasks | 4 files |
+| Phase 03-animation-webgl P01 | 1min | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -111,6 +112,9 @@ Recent decisions affecting current work:
 - [Phase 02-content-pages]: ContactForm is 'use client' wrapped by server component contact/page.tsx — enables metadata export from page while form manages state
 - [Phase 02-content-pages]: Turbopack removed from pnpm dev script — MDX dynamic imports from content/ are unsupported under Turbopack; pnpm build unaffected
 - [Phase 02-content-pages]: Phase 2 content-pages complete — all 17 routes verified by human visual inspection 2026-04-26
+- [Phase 03-animation-webgl]: Custom useReducedMotion hook (not Framer built-in) — framework-agnostic so GSAP, Framer Motion, and Three.js domains all use the same hook identically (D-08)
+- [Phase 03-animation-webgl]: All GSAP consumers import from @/lib/gsap not directly from 'gsap' — centralized plugin registration prevents duplicate registerPlugin calls across routes (D-03)
+- [Phase 03-animation-webgl]: useGSAP with scope option used exclusively for GSAP animations — automatic gsap.context() cleanup eliminates ScrollTrigger leaks on route navigation (D-02/ANIM-10)
 
 ### Pending Todos
 
@@ -122,6 +126,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-26T12:14:40.780Z
-Stopped at: Phase 3 context gathered
-Resume file: .planning/phases/03-animation-webgl/03-CONTEXT.md
+Last session: 2026-04-26T12:33:33.641Z
+Stopped at: Completed 03-01-PLAN.md
+Resume file: None

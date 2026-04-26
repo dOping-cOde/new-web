@@ -43,13 +43,13 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **ANIM-01**: GSAP ScrollTrigger: hero text word-by-word reveal (display-xl, 60ms stagger, cinematic duration)
 - [ ] **ANIM-02**: GSAP ScrollTrigger: scroll-pinned architecture sections on Tier A case study pages (pin for 100vh, bullet reveals on scroll)
 - [ ] **ANIM-03**: GSAP: image parallax on hero media (0.85x scroll speed)
-- [ ] **ANIM-04**: Framer Motion: animated metric counters on stat blocks (useMotionValue, trigger on scroll-enter)
+- [x] **ANIM-04**: Framer Motion: animated metric counters on stat blocks (useMotionValue, trigger on scroll-enter)
 - [ ] **ANIM-05**: Framer Motion: hover-lift on portfolio cards (translateY -4px, shadow transition, 320ms)
 - [ ] **ANIM-06**: Framer Motion: portfolio filter with FLIP technique (layout prop)
 - [ ] **ANIM-07**: Navbar theme transition: backdrop-filter blur + CSS variable color swap on light/dark section crossing (320ms)
 - [ ] **ANIM-08**: Mobile nav: hamburger to full-screen overlay with stagger reveal
-- [ ] **ANIM-09**: Scroll reveal: fade-up on scroll into view for section content
-- [ ] **ANIM-10**: All animations use `@gsap/react` useGSAP hook for proper cleanup
+- [x] **ANIM-09**: Scroll reveal: fade-up on scroll into view for section content
+- [x] **ANIM-10**: All animations use `@gsap/react` useGSAP hook for proper cleanup
 
 ### WebGL
 
@@ -171,13 +171,13 @@ Deferred to future release. Tracked but not in current roadmap.
 | ANIM-01 | Phase 3 | Pending |
 | ANIM-02 | Phase 3 | Pending |
 | ANIM-03 | Phase 3 | Pending |
-| ANIM-04 | Phase 3 | Pending |
+| ANIM-04 | Phase 3 | Complete |
 | ANIM-05 | Phase 3 | Pending |
 | ANIM-06 | Phase 3 | Pending |
 | ANIM-07 | Phase 3 | Pending |
 | ANIM-08 | Phase 3 | Pending |
-| ANIM-09 | Phase 3 | Pending |
-| ANIM-10 | Phase 3 | Pending |
+| ANIM-09 | Phase 3 | Complete |
+| ANIM-10 | Phase 3 | Complete |
 | GL-01 | Phase 3 | Pending |
 | GL-02 | Phase 3 | Pending |
 | GL-03 | Phase 3 | Pending |
