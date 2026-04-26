@@ -61,18 +61,18 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### SEO
 
-- [ ] **SEO-01**: Unique title (<60 chars) and meta description (<160 chars) on every route via Next.js Metadata API
-- [ ] **SEO-02**: Open Graph and Twitter Card meta tags on every page
-- [ ] **SEO-03**: Dynamic OG images per case study via generateMetadata + ImageResponse
+- [x] **SEO-01**: Unique title (<60 chars) and meta description (<160 chars) on every route via Next.js Metadata API
+- [x] **SEO-02**: Open Graph and Twitter Card meta tags on every page
+- [x] **SEO-03**: Dynamic OG images per case study via generateMetadata + ImageResponse
 - [ ] **SEO-04**: JSON-LD: Organization schema on every page (root layout)
 - [ ] **SEO-05**: JSON-LD: WebSite schema with sitelinks search box on home
 - [ ] **SEO-06**: JSON-LD: Service schema per service section (6 instances on /services)
 - [ ] **SEO-07**: JSON-LD: Article schema with BreadcrumbList on each case study detail page
-- [ ] **SEO-08**: Auto-generated sitemap.xml via app/sitemap.ts (all 17+ routes)
-- [ ] **SEO-09**: robots.txt allowing all crawlers, pointing to sitemap
-- [ ] **SEO-10**: Canonical URL on every page
+- [x] **SEO-08**: Auto-generated sitemap.xml via app/sitemap.ts (all 17+ routes)
+- [x] **SEO-09**: robots.txt allowing all crawlers, pointing to sitemap
+- [x] **SEO-10**: Canonical URL on every page
 - [ ] **SEO-11**: Semantic HTML: one h1 per page, descending hierarchy, main/article/section/nav/footer
-- [ ] **SEO-12**: Every image has descriptive alt text, width/height set, priority on hero images only
+- [x] **SEO-12**: Every image has descriptive alt text, width/height set, priority on hero images only
 
 ### Accessibility
 
@@ -183,18 +183,18 @@ Deferred to future release. Tracked but not in current roadmap.
 | GL-03 | Phase 3 | Complete |
 | GL-04 | Phase 3 | Complete |
 | GL-05 | Phase 3 | Complete |
-| SEO-01 | Phase 4 | Pending |
-| SEO-02 | Phase 4 | Pending |
-| SEO-03 | Phase 4 | Pending |
+| SEO-01 | Phase 4 | Complete |
+| SEO-02 | Phase 4 | Complete |
+| SEO-03 | Phase 4 | Complete |
 | SEO-04 | Phase 4 | Pending |
 | SEO-05 | Phase 4 | Pending |
 | SEO-06 | Phase 4 | Pending |
 | SEO-07 | Phase 4 | Pending |
-| SEO-08 | Phase 4 | Pending |
-| SEO-09 | Phase 4 | Pending |
-| SEO-10 | Phase 4 | Pending |
+| SEO-08 | Phase 4 | Complete |
+| SEO-09 | Phase 4 | Complete |
+| SEO-10 | Phase 4 | Complete |
 | SEO-11 | Phase 4 | Pending |
-| SEO-12 | Phase 4 | Pending |
+| SEO-12 | Phase 4 | Complete |
 | A11Y-01 | Phase 4 | Pending |
 | A11Y-02 | Phase 4 | Pending |
 | A11Y-03 | Phase 4 | Pending |
