@@ -49,9 +49,9 @@ Plans:
   5. iDTRM copy states 8 DTRs (not 8,000); Esperer Bioresearch is named; all other client references use placeholder copy with TODO comments
 **Plans**: 9 plans
 Plans:
-- [ ] 02-01-PLAN.md — MDX content pipeline: Zod schema, data loaders, service metadata, remark-gfm, custom MDX components
+- [x] 02-01-PLAN.md — MDX content pipeline: Zod schema, data loaders, service metadata, remark-gfm, custom MDX components
 - [x] 02-02-PLAN.md — Card components: PortfolioCard, ServiceTile, CapabilityCard, Pullquote
-- [ ] 02-03-PLAN.md — Section components: HeroLight, HeroDark, CTABand, ManifestoBand
+- [x] 02-03-PLAN.md — Section components: HeroLight, HeroDark, CTABand, ManifestoBand
 - [ ] 02-04-PLAN.md — Home page with all 7 sections
 - [ ] 02-05-PLAN.md — Services page with sticky anchor nav and 6 service sections
 - [ ] 02-06-PLAN.md — Portfolio index with filter bar and 11 stub MDX files
