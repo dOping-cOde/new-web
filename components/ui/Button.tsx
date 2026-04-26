@@ -3,11 +3,22 @@ import { type ComponentProps } from "react";
 
 type ButtonVariant = "primary" | "secondary";
 
-interface ButtonProps extends ComponentProps<"button"> {
+type ButtonBaseProps = {
   variant?: ButtonVariant;
-  href?: string;
   arrow?: boolean;
-}
+  className?: string;
+  children?: React.ReactNode;
+};
+
+type ButtonAsAnchor = ButtonBaseProps & {
+  href: string;
+} & Omit<ComponentProps<"a">, "href">;
+
+type ButtonAsButton = ButtonBaseProps & {
+  href?: never;
+} & ComponentProps<"button">;
+
+type ButtonProps = ButtonAsAnchor | ButtonAsButton;
 
 export function Button({
   variant = "primary",
@@ -40,9 +51,9 @@ export function Button({
   const classes = cn(baseStyles, variantStyles[variant], className);
 
   if (href) {
-    // Render as anchor when href provided
+    // Render as anchor when href provided — spread all remaining props (including onClick)
     return (
-      <a href={href} className={classes}>
+      <a href={href} className={classes} {...(props as ComponentProps<"a">)}>
         {children}
         {arrow && <span aria-hidden="true">&rarr;</span>}
       </a>
@@ -50,7 +61,7 @@ export function Button({
   }
 
   return (
-    <button className={classes} {...props}>
+    <button className={classes} {...(props as ComponentProps<"button">)}>
       {children}
       {arrow && <span aria-hidden="true">&rarr;</span>}
     </button>
