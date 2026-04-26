@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/Button";
 import { Caption } from "@/components/ui/Caption";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { CAPABILITIES } from "@/content/services";
+import { HeroParticleFieldLoader } from "@/components/three/HeroParticleFieldLoader";
 
 // Override template title for home page — full brand name as title
 export const metadata: Metadata = {
@@ -83,8 +84,7 @@ export default function Home() {
         secondaryCTA={{ label: "Talk to engineering", href: "/contact" }}
         showScrollCue={true}
       >
-        {/* TODO: Phase 3 — Three.js particle field (HeroParticleField.tsx), falls back to SVG noise under reduced-motion */}
-        <div className="absolute inset-0 -z-10" />
+        <HeroParticleFieldLoader className="absolute inset-0 -z-10" />
       </HeroLight>
 
       {/* ===== Section 2: Capability strip (light bg) ===== */}
