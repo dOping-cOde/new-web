@@ -17,6 +17,8 @@ interface SplitTextProps {
   durationMs?: number;
   triggerOnMount?: boolean;
   triggerRef?: RefObject<HTMLElement>;
+  /** Word within text to wrap in accent color (text-accent class). Must match exactly one word. */
+  highlightWord?: string;
 }
 
 export function SplitText({
@@ -27,6 +29,7 @@ export function SplitText({
   durationMs = 1200,
   triggerOnMount = true,
   triggerRef,
+  highlightWord,
 }: SplitTextProps) {
   const containerRef = useRef<HTMLElement>(null);
   const prefersReducedMotion = useReducedMotion();
@@ -74,24 +77,27 @@ export function SplitText({
   return (
     // @ts-expect-error — polymorphic ref assignment; Tag is constrained to valid HTML elements
     <Tag ref={containerRef} className={className}>
-      {words.map((word, index) => (
-        <span
-          key={index}
-          style={{ display: "inline-block", overflow: "hidden" }}
-        >
+      {words.map((word, index) => {
+        const isHighlighted = highlightWord && word === highlightWord;
+        return (
           <span
-            className="split-word"
-            style={{
-              display: "inline-block",
-              opacity: prefersReducedMotion ? 1 : 0,
-              transform: prefersReducedMotion ? "none" : "translateY(100%)",
-            }}
+            key={index}
+            style={{ display: "inline-block", overflow: "hidden" }}
           >
-            {word}
-            {index < words.length - 1 ? "\u00a0" : ""}
+            <span
+              className={isHighlighted ? "split-word text-accent" : "split-word"}
+              style={{
+                display: "inline-block",
+                opacity: prefersReducedMotion ? 1 : 0,
+                transform: prefersReducedMotion ? "none" : "translateY(100%)",
+              }}
+            >
+              {word}
+              {index < words.length - 1 ? "\u00a0" : ""}
+            </span>
           </span>
-        </span>
-      ))}
+        );
+      })}
     </Tag>
   );
 }

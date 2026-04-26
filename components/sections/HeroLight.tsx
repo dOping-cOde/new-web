@@ -1,7 +1,16 @@
+"use client";
+
+// GSAP domain — hero text reveal + scroll cue (D-01, ANIM-01)
+
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "@/lib/gsap";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import { Caption } from "@/components/ui/Caption";
 import { Container } from "@/components/layout/Container";
+import { SplitText } from "@/components/motion/SplitText";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 
 interface HeroLightProps {
   kicker?: string;
@@ -19,27 +28,9 @@ interface HeroLightProps {
   children?: React.ReactNode;
 }
 
-function renderHeadlineWithHighlight(
-  headline: string,
-  highlightWord: string | undefined
-): React.ReactNode {
-  if (!highlightWord) return headline;
-
-  const index = headline.indexOf(highlightWord);
-  if (index === -1) return headline;
-
-  return (
-    <>
-      {headline.slice(0, index)}
-      <span className="text-accent">{highlightWord}</span>
-      {headline.slice(index + highlightWord.length)}
-    </>
-  );
-}
-
 /**
  * HeroLight — shared light-background hero for Home, Services, About, Contact, Portfolio.
- * Server Component.
+ * Client Component (required for GSAP useGSAP scroll cue animation).
  */
 export function HeroLight({
   kicker,
@@ -54,6 +45,34 @@ export function HeroLight({
   children,
 }: HeroLightProps) {
   const isFullViewport = headlineSize === "text-display-xl";
+  const scrollCueRef = useRef<HTMLDivElement>(null);
+  const lineRef = useRef<HTMLDivElement>(null);
+  const prefersReducedMotion = useReducedMotion();
+
+  // Animate the scroll cue line: repeating opacity loop (2s) — skip under reduced motion
+  useGSAP(
+    () => {
+      if (!showScrollCue || prefersReducedMotion || !lineRef.current) return;
+
+      gsap.fromTo(
+        lineRef.current,
+        { opacity: 0, scaleY: 0, transformOrigin: "top center" },
+        {
+          opacity: 1,
+          scaleY: 1,
+          duration: 1,
+          ease: "power2.out",
+          repeat: -1,
+          yoyo: true,
+          repeatDelay: 0.5,
+        }
+      );
+    },
+    {
+      scope: scrollCueRef,
+      dependencies: [showScrollCue, prefersReducedMotion],
+    }
+  );
 
   return (
     <section
@@ -71,9 +90,15 @@ export function HeroLight({
           </Caption>
         )}
 
-        <h1 className={cn(headlineSize, "text-text max-w-[900px]")}>
-          {renderHeadlineWithHighlight(headline, highlightWord)}
-        </h1>
+        <SplitText
+          as="h1"
+          text={headline}
+          className={cn(headlineSize, "text-text max-w-[900px]")}
+          staggerMs={60}
+          durationMs={1200}
+          triggerOnMount={true}
+          {...(highlightWord !== undefined && { highlightWord })}
+        />
 
         {intro && (
           <p className="text-body-lg text-text-muted mt-lg max-w-[640px]">
@@ -101,12 +126,16 @@ export function HeroLight({
 
       {showScrollCue && (
         <div
+          ref={scrollCueRef}
           className="absolute bottom-xl left-1/2 -translate-x-1/2 flex flex-col items-center"
           aria-hidden="true"
         >
           <span className="text-mono-sm text-text-muted">scroll</span>
-          {/* Line animation added in Phase 3 (GSAP ScrollTrigger) */}
-          <div className="w-px h-[32px] bg-border-light mx-auto mt-sm" />
+          <div
+            ref={lineRef}
+            className="w-px h-[32px] bg-border-light mx-auto mt-sm"
+            style={prefersReducedMotion ? { opacity: 1 } : { opacity: 0 }}
+          />
         </div>
       )}
     </section>
