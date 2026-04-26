@@ -70,7 +70,13 @@ Plans:
   3. The Three.js particle field renders on the homepage hero and the point-cloud bridge renders on BridgeSense — both loaded via `next/dynamic` with `ssr: false`, no SSR errors
   4. With `prefers-reduced-motion` enabled, all GSAP timelines jump to their end state instantly, Three.js scenes show a static SVG fallback, and no motion occurs
   5. Browser memory profile shows no growing heap after navigating between pages (no GSAP/Three.js resource leaks)
-**Plans**: TBD
+**Plans**: 5 plans
+Plans:
+- [ ] 03-01-PLAN.md — Animation foundation: GSAP plugin registration, reduced-motion hook, SplitText/CountUp/ScrollReveal components
+- [ ] 03-02-PLAN.md — GSAP integrations: hero text reveal, scroll-pinned Architecture sections, image parallax
+- [ ] 03-03-PLAN.md — Framer Motion integrations: hover-lift, stat counters, FLIP filter, scroll reveal
+- [ ] 03-04-PLAN.md — Three.js scenes: homepage particle field, BridgeSense point-cloud bridge
+- [ ] 03-05-PLAN.md — Verification: automated checks (domain boundary, reduced motion, GPU disposal) + human visual inspection
 **UI hint**: yes
 
 ### Phase 4: Quality
@@ -94,5 +100,5 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 |-------|----------------|--------|-----------|
 | 1. Foundation | 4/4 | Complete   | 2026-04-26 |
 | 2. Content & Pages | 9/9 | Complete    | 2026-04-26 |
-| 3. Animation & WebGL | 0/TBD | Not started | - |
+| 3. Animation & WebGL | 0/5 | Not started | - |
 | 4. Quality | 0/TBD | Not started | - |
