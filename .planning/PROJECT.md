@@ -26,11 +26,13 @@ The site must convey engineered seriousness — the calm authority of a firm tha
 - ✓ GSAP ScrollTrigger for scroll-pinned architecture sections, hero text reveal, parallax — Validated in Phase 3: Animation & WebGL
 - ✓ Framer Motion for component micro-interactions (hover-lift, number counters, filter FLIP) — Validated in Phase 3: Animation & WebGL
 
+- ✓ Full SEO: metadata per route, JSON-LD schemas, sitemap, robots, dynamic OG images — Validated in Phase 4: Quality
+- ✓ WCAG 2.1 AA accessibility, full keyboard nav, prefers-reduced-motion support — Validated in Phase 4: Quality
+- ✓ Lighthouse mobile: 90+ Performance, 100 Accessibility, 100 Best Practices, 100 SEO — Validated in Phase 4: Quality
+
 ### Active
 
-- [ ] Full SEO: metadata per route, JSON-LD schemas, sitemap, robots, dynamic OG images
-- [ ] WCAG 2.1 AA accessibility, full keyboard nav, prefers-reduced-motion support
-- [ ] Lighthouse mobile: 90+ Performance, 100 Accessibility, 100 Best Practices, 100 SEO
+(None — all v1 requirements validated)
 - [ ] No backend, no CMS, no database, no analytics/cookie banner for v1
 
 ### Out of Scope
@@ -96,4 +98,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-26 after Phase 3: Animation & WebGL complete*
+*Last updated: 2026-04-26 after Phase 4: Quality complete — all v1 requirements validated, project production-ready*
