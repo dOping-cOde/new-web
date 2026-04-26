@@ -8,6 +8,7 @@ import { CTABand } from "@/components/sections/CTABand";
 import { PortfolioCard } from "@/components/cards/PortfolioCard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Container } from "@/components/layout/Container";
+import { articleJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
 
 // ============================================================
 // Static generation — all 11 case study routes pre-built
@@ -71,8 +72,31 @@ function TierALayout({
     .filter(Boolean)
     .join(" · ");
 
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://softwires.in";
+
   return (
-    <main>
+    <article>
+      {/* Article JSON-LD (SEO-07) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleJsonLd(caseStudy)).replace(/</g, "\\u003c"),
+        }}
+      />
+      {/* BreadcrumbList JSON-LD (SEO-07) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Home", url: baseUrl },
+              { name: "Portfolio", url: `${baseUrl}/portfolio` },
+              { name: caseStudy.title, url: `${baseUrl}/portfolio/${caseStudy.slug}` },
+            ])
+          ).replace(/</g, "\\u003c"),
+        }}
+      />
       <HeroDark
         kicker={kicker}
         headline={caseStudy.title}
@@ -120,7 +144,7 @@ function TierALayout({
           </Container>
         </section>
       )}
-    </main>
+    </article>
   );
 }
 
@@ -138,8 +162,31 @@ function TierBLayout({
   related: CaseStudyFrontmatter[];
   children: React.ReactNode;
 }) {
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://softwires.in";
+
   return (
-    <main>
+    <article>
+      {/* Article JSON-LD (SEO-07) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleJsonLd(caseStudy)).replace(/</g, "\\u003c"),
+        }}
+      />
+      {/* BreadcrumbList JSON-LD (SEO-07) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Home", url: baseUrl },
+              { name: "Portfolio", url: `${baseUrl}/portfolio` },
+              { name: caseStudy.title, url: `${baseUrl}/portfolio/${caseStudy.slug}` },
+            ])
+          ).replace(/</g, "\\u003c"),
+        }}
+      />
       <HeroDark
         kicker="CAPABILITY · DATA & ANALYTICS"
         headline={caseStudy.title}
@@ -193,7 +240,7 @@ function TierBLayout({
           </Container>
         </section>
       )}
-    </main>
+    </article>
   );
 }
 

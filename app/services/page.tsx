@@ -8,11 +8,17 @@ import { Pill } from "@/components/ui/Pill";
 import { Container } from "@/components/layout/Container";
 import { ServicesAnchorNav } from "./AnchorNav";
 import { cn } from "@/lib/utils";
+import { serviceJsonLd } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Six AI engineering capabilities — from autonomous agents to grid intelligence. Full-stack AI systems for energy, healthcare, infrastructure, and enterprise data.",
+    "Six AI engineering capabilities: autonomous agents to grid intelligence. Full-stack AI for energy, healthcare, infrastructure, and enterprise.",
+  openGraph: {
+    title: "Services — Softwires",
+    description:
+      "Six AI engineering capabilities: autonomous agents to grid intelligence. Full-stack AI for energy, healthcare, infrastructure, and enterprise.",
+  },
 };
 
 // ─── Diagram Placeholders ─────────────────────────────────────────────────────
@@ -106,6 +112,17 @@ const SERVICE_COPY: Record<string, string[]> = {
 export default function ServicesPage() {
   return (
     <>
+      {/* 6 Service JSON-LD schemas — one per service (SEO-06) */}
+      {SERVICES.map((service) => (
+        <script
+          key={`ld-${service.id}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(serviceJsonLd(service)).replace(/</g, "\\u003c"),
+          }}
+        />
+      ))}
+
       {/* Section 1: Page Hero */}
       <HeroLight
         kicker="SERVICES"

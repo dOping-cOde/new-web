@@ -13,12 +13,18 @@ import { Caption } from "@/components/ui/Caption";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { CAPABILITIES } from "@/content/services";
 import { HeroParticleFieldLoader } from "@/components/three/HeroParticleFieldLoader";
+import { websiteJsonLd } from "@/lib/jsonld";
 
 // Override template title for home page — full brand name as title
 export const metadata: Metadata = {
-  title: "Softwires Technologies — AI Engineering for the Physical World",
+  title: "Softwires Technologies — AI for the Physical World",
   description:
     "Softwires builds AI systems that monitor transformers, inspect bridges, screen for cancer, and detect fraud. Deployed in production across India and beyond.",
+  openGraph: {
+    title: "Softwires Technologies — AI for the Physical World",
+    description:
+      "Softwires builds AI systems that monitor transformers, inspect bridges, screen for cancer, and detect fraud. Deployed in production across India and beyond.",
+  },
 };
 
 // Featured portfolio cards — hardcoded per spec (4 of the Tier A case studies)
@@ -73,7 +79,14 @@ const FEATURED_CARDS = [
  */
 export default function Home() {
   return (
-    <main>
+    <>
+      {/* WebSite JSON-LD — home page only (SEO-05) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteJsonLd()).replace(/</g, "\\u003c"),
+        }}
+      />
       {/* ===== Section 1: Hero (full viewport, light bg) ===== */}
       <HeroLight
         headline="AI engineered for the physical world."
@@ -223,6 +236,6 @@ export default function Home() {
 
       {/* ===== Section 6: CTA Band ===== */}
       <CTABand />
-    </main>
+    </>
   );
 }
