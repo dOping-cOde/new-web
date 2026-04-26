@@ -47,7 +47,17 @@ Plans:
   3. The Portfolio filter bar correctly shows/hides cards by industry category (All/Energy/Healthcare/Infrastructure/Insurance/Data & Analytics)
   4. The contact form validates all required fields and submits via mailto; optional fields behave correctly
   5. iDTRM copy states 8 DTRs (not 8,000); Esperer Bioresearch is named; all other client references use placeholder copy with TODO comments
-**Plans**: TBD
+**Plans**: 9 plans
+Plans:
+- [ ] 02-01-PLAN.md — MDX content pipeline: Zod schema, data loaders, service metadata, remark-gfm, custom MDX components
+- [ ] 02-02-PLAN.md — Card components: PortfolioCard, ServiceTile, CapabilityCard, Pullquote
+- [ ] 02-03-PLAN.md — Section components: HeroLight, HeroDark, CTABand, ManifestoBand
+- [ ] 02-04-PLAN.md — Home page with all 7 sections
+- [ ] 02-05-PLAN.md — Services page with sticky anchor nav and 6 service sections
+- [ ] 02-06-PLAN.md — Portfolio index with filter bar and 11 stub MDX files
+- [ ] 02-07-PLAN.md — Case study [slug] template + 5 Tier A MDX files with production copy
+- [ ] 02-08-PLAN.md — 6 Tier B capability showcase MDX files with production copy
+- [ ] 02-09-PLAN.md — About page, Contact page with form, branded 404, visual verification
 **UI hint**: yes
 
 ### Phase 3: Animation & WebGL
@@ -78,11 +88,11 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 4/4 | Complete   | 2026-04-26 |
-| 2. Content & Pages | 0/TBD | Not started | - |
+| 2. Content & Pages | 0/9 | Planning complete | - |
 | 3. Animation & WebGL | 0/TBD | Not started | - |
 | 4. Quality | 0/TBD | Not started | - |
