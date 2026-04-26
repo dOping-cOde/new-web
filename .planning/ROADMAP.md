@@ -89,7 +89,14 @@ Plans:
   3. A tester can complete the entire site using only a keyboard — focus rings are always visible, skip-to-content works, form errors are announced via aria-live, and no interactive element lacks an accessible name
   4. LCP is under 2.0s on mobile, CLS is under 0.05, and total initial JS is under 250KB on the home route
   5. README.md exists with setup and content-edit instructions; all placeholder assets carry TODO comments; the contact form has a TODO comment for Resend/Formspree wiring
-**Plans**: TBD
+**Plans**: 5 plans
+Plans:
+- [ ] 04-01-PLAN.md — SEO infrastructure: sitemap, robots, OG images, canonical URLs, metadata completion
+- [ ] 04-02-PLAN.md — JSON-LD structured data (Organization, WebSite, Service, Article+BreadcrumbList) and heading hierarchy audit
+- [ ] 04-03-PLAN.md — Accessibility audit and fixes: keyboard nav, focus rings, ARIA labels, contrast, heading order
+- [ ] 04-04-PLAN.md — Performance optimization (fonts, images, bundle) and documentation (README, TODO audit)
+- [ ] 04-05-PLAN.md — Final verification: automated requirement checks + human visual sign-off
+**UI hint**: yes
 
 ## Progress
 
@@ -101,4 +108,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | 1. Foundation | 4/4 | Complete   | 2026-04-26 |
 | 2. Content & Pages | 9/9 | Complete    | 2026-04-26 |
 | 3. Animation & WebGL | 5/5 | Complete   | 2026-04-26 |
-| 4. Quality | 0/TBD | Not started | - |
+| 4. Quality | 0/5 | Not started | - |
