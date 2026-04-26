@@ -74,7 +74,7 @@ export function HeroDark({
       ref={sectionRef}
       data-theme="dark"
       className={cn(
-        "bg-bg-dark text-text-inverted",
+        "bg-bg-dark text-text-inverted overflow-hidden",
         "py-3xl md:py-5xl",
         className
       )}
@@ -93,19 +93,21 @@ export function HeroDark({
         </p>
 
         {heroImage && (
-          <div
-            ref={imageContainerRef}
-            className="relative mt-2xl w-full aspect-[16/9] rounded-xl overflow-hidden"
-          >
-            {/* TODO: Replace with real project photography when assets are available */}
-            <Image
-              src={heroImage}
-              alt={heroImageAlt ?? ""}
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover"
-            />
+          <div className="relative mt-2xl w-full aspect-[16/10] rounded-xl overflow-hidden">
+            <div
+              ref={imageContainerRef}
+              className="absolute inset-0"
+            >
+              {/* TODO: Replace with real project photography when assets are available */}
+              <Image
+                src={heroImage}
+                alt={heroImageAlt ?? ""}
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover"
+              />
+            </div>
           </div>
         )}
 
