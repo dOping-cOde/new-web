@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 02-content-pages 02-06-PLAN.md
-last_updated: "2026-04-26T11:29:56.190Z"
+stopped_at: Completed 02-content-pages 02-05-PLAN.md
+last_updated: "2026-04-26T11:30:03.594Z"
 last_activity: 2026-04-26
 progress:
   total_phases: 4
@@ -99,6 +99,7 @@ Recent decisions affecting current work:
 - [Phase 02-content-pages]: Portfolio page split: Server Component (page.tsx) loads data, Client Component (PortfolioGrid.tsx) owns filter state — clean server/client boundary
 - [Phase 02-content-pages]: 11 MDX stubs created with Zod-conforming frontmatter in content/portfolio/ — enables getAllCaseStudies() to return data for both the Portfolio index and case study detail pages
 - [Phase 02-content-pages]: Services page splits into Server Component (page.tsx) + Client Component (AnchorNav.tsx) — server component enables metadata export; client component handles IntersectionObserver for active nav state
+- [Phase 02-content-pages]: Alternating text/image layout uses lg:order-1/lg:order-2 grid ordering — avoids CSS direction RTL hack which caused text-alignment side effects in nested elements
 
 ### Pending Todos
 
@@ -110,6 +111,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-26T11:29:24.593Z
-Stopped at: Completed 02-content-pages 02-06-PLAN.md
+Last session: 2026-04-26T11:30:03.591Z
+Stopped at: Completed 02-content-pages 02-05-PLAN.md
 Resume file: None
