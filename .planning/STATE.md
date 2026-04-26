@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 02-content-pages 02-08-PLAN.md
-last_updated: "2026-04-26T11:44:53.321Z"
+stopped_at: "Checkpoint: Task 3 visual verification of 02-09-PLAN.md"
+last_updated: "2026-04-26T11:50:36.698Z"
 last_activity: 2026-04-26
 progress:
   total_phases: 4
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 13
-  completed_plans: 12
+  completed_plans: 13
   percent: 0
 ---
 
@@ -65,6 +65,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 02-content-pages P05 | 5min | 1 tasks | 2 files |
 | Phase 02-content-pages P07 | 25min | 2 tasks | 6 files |
 | Phase 02-content-pages P08 | 35min | 2 tasks | 6 files |
+| Phase 02-content-pages P09 | 2.5min | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -106,6 +107,8 @@ Recent decisions affecting current work:
 - [Phase 02-content-pages]: MDX body not wrapped in prose container — each section component (ProblemSection/SystemSection/etc.) handles its own background and padding independently
 - [Phase 02-content-pages]: Tier B MDX pages use plain Markdown h2/prose structure, not custom JSX section components — matches how the Tier B template renders MDX body without layout wrappers
 - [Phase 02-content-pages]: Angle brackets in YAML frontmatter values cause MDX JSX parse errors — use Unicode ≤ or text alternatives like 'Under 15 min' instead of '<15 min'
+- [Phase 02-content-pages]: HTML5 native validation chosen over React Hook Form for ContactForm — keeps bundle light and code readable for technical buyers who inspect source (D-13)
+- [Phase 02-content-pages]: ContactForm is 'use client' wrapped by server component contact/page.tsx — enables metadata export from page while form manages state
 
 ### Pending Todos
 
@@ -117,6 +120,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-26T11:44:53.319Z
-Stopped at: Completed 02-content-pages 02-08-PLAN.md
+Last session: 2026-04-26T11:50:25.336Z
+Stopped at: Checkpoint: Task 3 visual verification of 02-09-PLAN.md
 Resume file: None

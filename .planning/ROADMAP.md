@@ -57,7 +57,7 @@ Plans:
 - [x] 02-06-PLAN.md — Portfolio index with filter bar and 11 stub MDX files
 - [x] 02-07-PLAN.md — Case study [slug] template + 5 Tier A MDX files with production copy
 - [x] 02-08-PLAN.md — 6 Tier B capability showcase MDX files with production copy
-- [ ] 02-09-PLAN.md — About page, Contact page with form, branded 404, visual verification
+- [x] 02-09-PLAN.md — About page, Contact page with form, branded 404, visual verification
 **UI hint**: yes
 
 ### Phase 3: Animation & WebGL
