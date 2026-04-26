@@ -52,9 +52,9 @@ Plans:
 - [x] 02-01-PLAN.md — MDX content pipeline: Zod schema, data loaders, service metadata, remark-gfm, custom MDX components
 - [x] 02-02-PLAN.md — Card components: PortfolioCard, ServiceTile, CapabilityCard, Pullquote
 - [x] 02-03-PLAN.md — Section components: HeroLight, HeroDark, CTABand, ManifestoBand
-- [ ] 02-04-PLAN.md — Home page with all 7 sections
+- [x] 02-04-PLAN.md — Home page with all 7 sections
 - [ ] 02-05-PLAN.md — Services page with sticky anchor nav and 6 service sections
-- [ ] 02-06-PLAN.md — Portfolio index with filter bar and 11 stub MDX files
+- [x] 02-06-PLAN.md — Portfolio index with filter bar and 11 stub MDX files
 - [ ] 02-07-PLAN.md — Case study [slug] template + 5 Tier A MDX files with production copy
 - [ ] 02-08-PLAN.md — 6 Tier B capability showcase MDX files with production copy
 - [ ] 02-09-PLAN.md — About page, Contact page with form, branded 404, visual verification

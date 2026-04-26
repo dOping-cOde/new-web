@@ -20,9 +20,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Pages
 
-- [ ] **PAGE-01**: Home page with hero (display-xl headline, dual CTAs), capability strip (6 tiles), featured case study (dark section), portfolio teaser (4 cards), manifesto band, CTA band
+- [x] **PAGE-01**: Home page with hero (display-xl headline, dual CTAs), capability strip (6 tiles), featured case study (dark section), portfolio teaser (4 cards), manifesto band, CTA band
 - [ ] **PAGE-02**: Services page with page hero, sticky anchor nav (6 links), 6 service sections (alternating layout), engagement model band, CTA band
-- [ ] **PAGE-03**: Portfolio index with hero, filter bar (All/Energy/Healthcare/Infrastructure/Insurance/Data & Analytics), 3-column grid of 11 portfolio cards
+- [x] **PAGE-03**: Portfolio index with hero, filter bar (All/Energy/Healthcare/Infrastructure/Insurance/Data & Analytics), 3-column grid of 11 portfolio cards
 - [ ] **PAGE-04**: About page with hero, origin section, 3 numbered principles, sectors grid (5 tiles), partnerships placeholder band
 - [ ] **PAGE-05**: Contact page with hero, validated form (name/email/company/role/sector/description + optional fields), mailto submission, office strip
 - [ ] **PAGE-06**: Custom 404 page with navigation back to live pages
@@ -154,9 +154,9 @@ Deferred to future release. Tracked but not in current roadmap.
 | FOUND-06 | Phase 1 | Complete |
 | FOUND-07 | Phase 1 | Complete |
 | FOUND-08 | Phase 1 | Complete |
-| PAGE-01 | Phase 2 | Pending |
+| PAGE-01 | Phase 2 | Complete |
 | PAGE-02 | Phase 2 | Pending |
-| PAGE-03 | Phase 2 | Pending |
+| PAGE-03 | Phase 2 | Complete |
 | PAGE-04 | Phase 2 | Pending |
 | PAGE-05 | Phase 2 | Pending |
 | PAGE-06 | Phase 2 | Pending |
