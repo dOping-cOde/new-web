@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 01-foundation/01-02-PLAN.md
-last_updated: "2026-04-26T10:16:13.664Z"
+stopped_at: Completed 01-foundation/01-03-PLAN.md
+last_updated: "2026-04-26T10:21:35.344Z"
 last_activity: 2026-04-26
 progress:
   total_phases: 4
   completed_phases: 0
   total_plans: 4
-  completed_plans: 2
+  completed_plans: 3
   percent: 0
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-04-26)
 ## Current Position
 
 Phase: 01 (foundation) — EXECUTING
-Plan: 3 of 4
+Plan: 4 of 4
 Status: Ready to execute
 Last activity: 2026-04-26
 
@@ -54,6 +54,7 @@ Progress: [░░░░░░░░░░] 0%
 *Updated after each plan completion*
 | Phase 01-foundation P01 | 8 | 2 tasks | 19 files |
 | Phase 01-foundation P02 | 2 | 2 tasks | 7 files |
+| Phase 01-foundation P03 | 2 | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -74,6 +75,9 @@ Recent decisions affecting current work:
 - [Phase 01-foundation]: Custom spacing overrides Tailwind defaults — p-lg = 24px per DESIGN.md; all future components must use DESIGN.md spacing not Tailwind defaults
 - [Phase 01-foundation]: Caption polymorphic typing uses explicit props interface instead of ComponentProps<'span'> — avoids ref type conflict in strict TypeScript when as='div'
 - [Phase 01-foundation]: Use rounded-[9999px] instead of rounded-pill — @theme defines --radius-pill but Tailwind v4 does not auto-generate a rounded-pill utility class from a CSS var
+- [Phase 01-foundation]: IntersectionObserver uses boundingClientRect.top < 64 check (not rootMargin CSS calc workaround) for precise navbar overlap detection with dark sections
+- [Phase 01-foundation]: data-theme='dark' attribute on all dark sections consumed by navbar observer — Footer and all future cinematic sections must carry this attribute
+- [Phase 01-foundation]: Button.tsx uses ButtonAsAnchor | ButtonAsButton discriminated union type — allows onClick and all props to reach <a> element when href provided
 
 ### Pending Todos
 
@@ -85,6 +89,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-26T10:16:13.662Z
-Stopped at: Completed 01-foundation/01-02-PLAN.md
+Last session: 2026-04-26T10:21:35.342Z
+Stopped at: Completed 01-foundation/01-03-PLAN.md
 Resume file: None

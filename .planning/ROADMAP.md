@@ -33,7 +33,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 Plans:
 - [x] 01-01-PLAN.md — Scaffold Next.js 15 project, install dependencies, create DESIGN.md, configure fonts, implement complete design token system
 - [x] 01-02-PLAN.md — Build six core UI components (Button, Pill, StatBlock, Caption, SectionHeader, Container)
-- [ ] 01-03-PLAN.md — Build sticky theme-aware Navbar with mobile overlay and dark Footer, wire into layout
+- [x] 01-03-PLAN.md — Build sticky theme-aware Navbar with mobile overlay and dark Footer, wire into layout
 - [ ] 01-04-PLAN.md — Automated verification of all requirements + human visual verification checkpoint
 **UI hint**: yes
 

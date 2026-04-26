@@ -13,8 +13,8 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **FOUND-02**: Design system tokens (colors, typography, spacing, borders, shadows, motion) implemented as CSS variables via Tailwind v4 `@theme`
 - [x] **FOUND-03**: Fonts self-hosted via next/font: Fraunces (display), Inter (body), JetBrains Mono (technical)
 - [x] **FOUND-04**: DESIGN.md placed at project root with complete design system spec
-- [ ] **FOUND-05**: Sticky navbar with backdrop-filter blur, theme-aware (light/dark auto-detection via IntersectionObserver)
-- [ ] **FOUND-06**: Footer with 4-column grid, dark background, consistent across all pages
+- [x] **FOUND-05**: Sticky navbar with backdrop-filter blur, theme-aware (light/dark auto-detection via IntersectionObserver)
+- [x] **FOUND-06**: Footer with 4-column grid, dark background, consistent across all pages
 - [x] **FOUND-07**: Core UI components: Button (primary/secondary), Pill, StatBlock, Caption, SectionHeader, Container
 - [x] **FOUND-08**: Mobile responsive layout at all breakpoints (mobile, tablet, desktop)
 
@@ -150,8 +150,8 @@ Deferred to future release. Tracked but not in current roadmap.
 | FOUND-02 | Phase 1 | Complete |
 | FOUND-03 | Phase 1 | Complete |
 | FOUND-04 | Phase 1 | Complete |
-| FOUND-05 | Phase 1 | Pending |
-| FOUND-06 | Phase 1 | Pending |
+| FOUND-05 | Phase 1 | Complete |
+| FOUND-06 | Phase 1 | Complete |
 | FOUND-07 | Phase 1 | Complete |
 | FOUND-08 | Phase 1 | Complete |
 | PAGE-01 | Phase 2 | Pending |
