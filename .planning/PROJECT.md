@@ -12,15 +12,16 @@ The site must convey engineered seriousness — the calm authority of a firm tha
 
 ### Validated
 
-(None yet — ship to validate)
+- ✓ Next.js 15 App Router + TypeScript strict mode + Tailwind CSS v4 — Validated in Phase 1: Foundation
+- ✓ Editorial Light aesthetic: off-white canvas, generous whitespace, large display type, single Deep Indigo (#3D2BFF) accent — Validated in Phase 1: Foundation
+- ✓ Self-hosted fonts: Fraunces (display), Inter (body), JetBrains Mono (technical) — Validated in Phase 1: Foundation
+- ✓ Responsive design: mobile, tablet, desktop breakpoints — Validated in Phase 1: Foundation
 
 ### Active
 
 - [ ] 5 top-level pages: Home, Services, Portfolio, About, Contact
 - [ ] 11 case-study detail pages under Portfolio (5 Tier A real-client, 6 Tier B capability showcases)
-- [ ] Editorial Light aesthetic: off-white canvas, generous whitespace, large display type, single Deep Indigo (#3D2BFF) accent
 - [ ] Dark cinematic sections for case-study heroes and architecture diagrams
-- [ ] Next.js 15 App Router + TypeScript strict mode + Tailwind CSS v4
 - [ ] WebGL hero (Three.js particle field) on homepage, point-cloud bridge on BridgeSense
 - [ ] GSAP ScrollTrigger for scroll-pinned architecture sections, hero text reveal, parallax
 - [ ] Framer Motion for component micro-interactions (hover-lift, number counters, filter FLIP)
@@ -96,4 +97,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-26 after initialization*
+*Last updated: 2026-04-26 after Phase 1: Foundation complete*
