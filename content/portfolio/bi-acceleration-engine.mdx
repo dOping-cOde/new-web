@@ -7,19 +7,65 @@ subcategory: Performance
 client: ""
 year: 2024
 heroImage: /images/portfolio/bi-acceleration-engine-hero.jpg
-heroImageAlt: BI dashboard showing query performance before and after acceleration
-excerpt: Sub-second analytics on enterprise datasets at scale — pre-aggregated OLAP cubes served from an intelligent semantic cache.
+heroImageAlt: BI dashboard showing query performance before and after acceleration with sub-second response times
+excerpt: Sub-second analytics on enterprise datasets at scale — without changing your data infrastructure.
 stats:
   - value: "1000x"
     label: Faster analytics
   - value: "Sub-second"
     label: Query response
-  - value: "50%+"
-    label: Cloud cost reduction
-  - value: "Any scale"
-    label: Dataset size
-techStack: [OLAP, Kyvos, Apache Spark, Snowflake, Databricks, BigQuery, Python]
+  - value: "Billions"
+    label: Rows processed
+  - value: "Zero"
+    label: Infrastructure change
+techStack: [In-Memory OLAP, Columnar Storage, Pre-aggregation, Materialized Views, Query Optimization, Caching]
 relatedSlugs: [unified-semantic-fabric, multidimensional-olap-modernization]
 ---
 
-{/* Stub — full content to be added in Plan 08 */}
+## What it does
+
+When an enterprise runs billion-row datasets through a standard SQL query, a dashboard waits seconds or minutes. Analysts learn to avoid the queries that are too slow. Executives work from stale reports rather than live data. The infrastructure cost of running ad-hoc analytics at scale becomes prohibitive.
+
+The BI Acceleration Engine delivers sub-second query response on enterprise-scale datasets by shifting work from query time to pre-computation time. Aggregations that would take minutes to compute on demand are pre-built at ingestion and served from an intelligent in-memory layer. The change is invisible to BI tools — they send the same queries; they receive responses orders of magnitude faster.
+
+The acceleration is additive. It layers over your existing data warehouse and BI tools without migration, schema changes, or infrastructure replacement.
+
+## How it works
+
+**Problem it solves**
+
+Large datasets are slow to query because ad-hoc SQL computes aggregations from raw data at query time. A dashboard with five filters and three time dimensions generates a query that touches billions of rows every time a user applies a filter. Query engines were not designed for interactive response times at this scale.
+
+**Approach**
+
+The engine intercepts BI queries and evaluates whether a pre-computed aggregate can satisfy the request. When it can — and for most analytical queries, it can — the aggregate is served from an in-memory columnar store with sub-second latency. When the query requires raw data, the engine routes it to the warehouse with query optimization applied.
+
+Pre-aggregation strategies are defined per dataset: which dimensions to pre-compute, which time grains to maintain, which filter combinations are high-frequency. The engine learns query patterns over time and adjusts its pre-computation priorities accordingly. Materialized views handle mid-frequency queries that benefit from partial pre-computation.
+
+**Outcome**
+
+Analytics that ran in minutes run in milliseconds. Analysts explore data interactively rather than waiting for scheduled report refreshes. Dashboards become tools for live decision-making rather than retrospective review. Cloud warehouse costs drop because expensive ad-hoc queries are absorbed by the acceleration layer before they reach the warehouse.
+
+## Tech stack
+
+The BI Acceleration Engine uses in-memory columnar storage optimized for multi-dimensional analytical queries. Columnar storage ensures that aggregation operations touch only the columns required — not full row scans. In-memory access eliminates disk I/O from the hot path.
+
+Pre-aggregation runs on an ingestion pipeline that connects to your warehouse. Materialized views are maintained incrementally as new data arrives, not rebuilt from scratch. The caching layer uses a tiered strategy: frequently-accessed aggregates stay in memory; less-frequent aggregates spill to fast storage.
+
+Query optimization applies to warehouse-routed queries: predicate pushdown, partition pruning, join reordering, and cardinality estimation improve warehouse query plans without manual tuning.
+
+Deployment requires no changes to BI tools or warehouse schemas. The acceleration layer presents the same interface as the warehouse to connected BI tools.
+
+## Where it fits
+
+**When interactive analytics on billion-row datasets require sub-second response**
+
+Standard data warehouse query engines are not optimized for interactive latency. When an enterprise needs analysts to explore data in real time — slicing, filtering, and pivoting without waiting — the acceleration layer makes that possible without warehouse replacement.
+
+**When cloud warehouse costs are driven by ad-hoc analytical queries**
+
+A single poorly-optimized dashboard generating hundreds of expensive queries per day consumes disproportionate warehouse compute budget. Pre-aggregation reduces the volume of expensive queries reaching the warehouse, cutting compute spend without degrading analyst experience.
+
+**When BI tool consolidation is not feasible but performance must improve**
+
+Enterprises often run five or more BI tools across different business units. Replacing them with a unified tool is a multi-year programme. The acceleration layer improves performance across all existing tools immediately, without requiring consolidation.

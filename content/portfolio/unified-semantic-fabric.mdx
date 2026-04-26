@@ -7,19 +7,61 @@ subcategory: Semantic Layer
 client: ""
 year: 2024
 heroImage: /images/portfolio/unified-semantic-fabric-hero.jpg
-heroImageAlt: Semantic layer architecture diagram connecting BI tools and data sources
-excerpt: One source of truth across BI and AI — a unified semantic layer that eliminates metric inconsistency across business units.
+heroImageAlt: Semantic layer architecture diagram connecting BI tools and AI models to a single metric definition layer
+excerpt: One source of truth across BI and AI — eliminating metric drift between dashboards and models.
 stats:
-  - value: "1000x"
-    label: Query acceleration
-  - value: "Single"
+  - value: "1"
     label: Source of truth
-  - value: "Sub-second"
-    label: Query response
-  - value: "Any BI"
-    label: Tool compatibility
-techStack: [Semantic Layer, dbt, Apache Arrow, Kyvos, SQL, Python, REST API]
+  - value: "100%"
+    label: BI-AI alignment
+  - value: "Zero"
+    label: Metric drift
+  - value: "Days"
+    label: Not months to deploy
+techStack: [Semantic Layer, dbt, GraphQL, LookML, Cube.js, Apache Arrow]
 relatedSlugs: [bi-acceleration-engine, conversational-data-agent]
 ---
 
-{/* Stub — full content to be added in Plan 08 */}
+## What it does
+
+When an enterprise maintains separate metric definitions across BI dashboards and ML models, "revenue" means three different things across three different tools. Decisions diverge. Finance reports one number. The data science team produces another. Executives lose confidence in both.
+
+The Unified Semantic Fabric is a centralized metric definition layer that sits between your data warehouse and every consumer of that data. Metrics are defined once — business logic, calculation rules, dimension relationships, filters. They surface everywhere: Tableau, Looker, Power BI, dbt models, Python notebooks, and NLP query engines all read from the same definitions via GraphQL.
+
+The outcome is elimination of metric drift. Every dashboard, every model, every ad-hoc query references the same revenue definition, the same churn logic, the same conversion calculation. When the business rule changes, it changes once. All consumers update automatically.
+
+## How it works
+
+**Problem it solves**
+
+Enterprises accumulate metric debt. A metric defined in a Tableau workbook gets redefined in a dbt model, gets overridden in an Excel export, gets interpreted differently in the ML feature store. When three tools produce three revenue numbers, the enterprise loses the ability to make decisions from data. Reconciliation consumes analyst hours that should go toward insight.
+
+**Approach**
+
+A semantic layer intercepts queries between BI tools and the warehouse. It exposes a GraphQL API that any consumer — dashboard, model, or natural language query engine — calls to retrieve pre-validated, pre-computed metric values. dbt handles transformation lineage upstream; the semantic layer handles metric definition and access governance downstream. LookML or Cube.js provides the metric definition syntax.
+
+**Outcome**
+
+Metrics are defined once, version-controlled, and consumed everywhere. Adding a new metric takes hours, not weeks of cross-team alignment. Metric governance becomes auditable. When regulators or executives ask how a number was calculated, the answer lives in the semantic layer definition, not buried in a workbook.
+
+## Tech stack
+
+The Unified Semantic Fabric deploys on your existing cloud data platform. Apache Arrow handles high-throughput data transfer between the semantic layer and consumers. dbt provides the transformation foundation that the semantic layer reads upstream. GraphQL exposes a query interface that works across BI tools, notebooks, and APIs.
+
+LookML or Cube.js provides the metric definition language — both are mature, version-controllable, and supported by major BI ecosystems. The choice between them depends on existing tooling: Looker-centric organizations typically use LookML; platform-agnostic deployments typically use Cube.js.
+
+Deployment takes days on cloud-native environments. The semantic layer connects to your warehouse without data movement.
+
+## Where it fits
+
+**When an enterprise needs consistent KPI definitions across 15+ BI tools**
+
+Multiple tools serving multiple teams produce diverging numbers from the same underlying data. The semantic layer provides a single definition that all tools consume without migration or tool consolidation.
+
+**When data science and business analytics produce conflicting reports**
+
+ML models and BI dashboards compute the same metrics differently because they read from different transformation pipelines. The semantic layer unifies both consumption paths against a single metric definition, so a churn rate in a dashboard and a churn feature in a model are computed identically.
+
+**When regulatory reporting requires auditable metric lineage**
+
+Regulators require proof of how reported figures were calculated. The semantic layer provides version-controlled metric definitions with full lineage from warehouse table to reported number — defensible documentation without manual reconstruction.

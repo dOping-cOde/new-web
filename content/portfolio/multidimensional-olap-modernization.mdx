@@ -7,19 +7,67 @@ subcategory: OLAP
 client: ""
 year: 2024
 heroImage: /images/portfolio/multidimensional-olap-modernization-hero.jpg
-heroImageAlt: Migration diagram from legacy cube engines to modern cloud OLAP
-excerpt: Replace legacy cube engines — SSAS, Essbase, TM1 — with cloud-native OLAP that scales without licensing constraints.
+heroImageAlt: Migration diagram from legacy cube engines to modern cloud OLAP with MDX compatibility layer
+excerpt: Replace legacy cube engines — SSAS, Essbase, TM1 — with cloud-native OLAP that speaks the same language.
 stats:
-  - value: "SSAS"
-    label: Replaced
-  - value: "Essbase"
-    label: Replaced
-  - value: "TM1"
-    label: Replaced
+  - value: "3"
+    label: Legacy engines replaced
+  - value: "80%"
+    label: Query time reduction
   - value: "Cloud"
-    label: Native target
-techStack: [SSAS, Essbase, TM1, Kyvos, Azure Synapse, AWS Redshift, dbt, Python]
+    label: Native deployment
+  - value: "MDX"
+    label: Compatible
+techStack: [SSAS Migration, Essbase Migration, TM1 Migration, Cloud OLAP, MDX Compatibility, DAX Translation]
 relatedSlugs: [bi-acceleration-engine, cloud-analytics-cost-optimization]
 ---
 
-{/* Stub — full content to be added in Plan 08 */}
+## What it does
+
+When an enterprise runs financial planning, management reporting, or regulatory analytics on legacy cube engines — SSAS, Essbase, or TM1 — it inherits the operational cost of on-premise cube infrastructure: server maintenance, license renewal, specialist headcount, and upgrade cycles tied to vendor roadmaps that have not moved in a decade.
+
+OLAP Modernization replaces legacy cube engines with cloud-native OLAP platforms that maintain MDX compatibility. Existing MDX queries and reports continue to work against the new platform. The migration is invisible to business users: the same dashboards, the same report outputs, the same query syntax. The change happens in infrastructure, not in how analysts work.
+
+The result is cloud-scale OLAP with 80% query time reduction, elastic capacity without hardware provisioning, and operating costs that scale with actual usage rather than peak capacity.
+
+## How it works
+
+**Problem it solves**
+
+SSAS, Essbase, and TM1 were built for on-premise infrastructure and peak-provisioned capacity. They require dedicated hardware, dedicated DBA time, and vendor licensing that does not reflect cloud-era usage patterns. As data volumes grow, these platforms require expensive horizontal scaling — more servers, not more efficient code. Migration to cloud-native alternatives has been deferred because of the perceived risk of breaking existing MDX queries and report workflows.
+
+**Approach**
+
+The modernization process begins with a cube audit: enumerating all MDX queries, report subscriptions, and calculation scripts in the existing environment. This inventory drives the compatibility mapping — which constructs translate directly to the cloud OLAP platform, which require adaptation, and which can be deprecated because they are no longer in active use.
+
+The migration executes in layers. Data model translation moves hierarchies, dimensions, and measure definitions to the cloud platform. Calculation migration translates cube calculation scripts using MDX-to-DAX translation tooling where applicable and manual rewrite where not. Report compatibility validation runs the existing MDX query inventory against the new platform, comparing output against baseline results.
+
+Parallel operation runs the legacy and new platforms simultaneously during a validation window. Business users run reports against both environments and confirm output equivalence before cutover.
+
+**Outcome**
+
+Legacy cube infrastructure is decommissioned. Cloud-native OLAP provides elastic capacity, sub-second query response, and operating costs that scale with usage. Existing reports continue to work. The MDX compatibility layer means the migration is invisible to business users until they notice that their reports are faster.
+
+## Tech stack
+
+Cloud OLAP platforms with MDX compatibility provide the target environment. The choice of platform — Azure Analysis Services, Kyvos, Synapse Analytics, or others — depends on the source engine and existing cloud vendor relationships.
+
+SSAS migrations target Azure Analysis Services or cloud-native tabular models with DAX translation tooling. Essbase migrations target cloud OLAP platforms with multidimensional hierarchy support. TM1 migrations target Planning Analytics Cloud or equivalent platforms with TM1 Rules translation.
+
+MDX compatibility is maintained through a translation layer that intercepts existing MDX queries and maps them to the cloud platform's query language. DAX translation handles the subset of MDX constructs that map cleanly; remaining constructs are handled by the compatibility layer without requiring report rewrites.
+
+Migration tooling automates the cube audit, schema extraction, and compatibility scoring steps. The validation framework compares query results between source and target environments at scale.
+
+## Where it fits
+
+**When legacy cube infrastructure requires hardware refresh or license renewal**
+
+Infrastructure refresh cycles are a migration forcing function. Rather than reinvesting in on-premise hardware, the modernization programme replaces the cube engine with cloud-native infrastructure that eliminates the hardware dependency.
+
+**When SSAS, Essbase, or TM1 capacity constraints limit data volume growth**
+
+Legacy cube engines scale by adding hardware, which requires procurement, provisioning, and configuration cycles. When data volume growth outpaces hardware scaling capacity, cloud-native OLAP provides elastic scale without infrastructure overhead.
+
+**When existing MDX queries must continue working through and after migration**
+
+The primary migration risk for organizations running SSAS or Essbase is breaking the MDX query base — thousands of reports, dashboards, and scheduled exports that analysts and finance teams depend on. The MDX compatibility layer and pre-migration query inventory eliminate this risk by validating compatibility before cutover.
