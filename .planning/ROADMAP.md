@@ -29,7 +29,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Fraunces, Inter, and JetBrains Mono load from self-hosted files — no Google Fonts network requests appear in the network tab
   4. Sticky navbar switches color correctly as it crosses light/dark sections on a long test page, and the mobile nav opens as a full-screen overlay
   5. All core UI components (Button, Pill, StatBlock, Caption, SectionHeader, Container) render correctly at all three breakpoints
-**Plans**: TBD
+**Plans**: 4 plans
+Plans:
+- [ ] 01-01-PLAN.md — Scaffold Next.js 15 project, install dependencies, create DESIGN.md, configure fonts, implement complete design token system
+- [ ] 01-02-PLAN.md — Build six core UI components (Button, Pill, StatBlock, Caption, SectionHeader, Container)
+- [ ] 01-03-PLAN.md — Build sticky theme-aware Navbar with mobile overlay and dark Footer, wire into layout
+- [ ] 01-04-PLAN.md — Automated verification of all requirements + human visual verification checkpoint
 **UI hint**: yes
 
 ### Phase 2: Content & Pages
@@ -77,7 +82,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/TBD | Not started | - |
+| 1. Foundation | 0/4 | Not started | - |
 | 2. Content & Pages | 0/TBD | Not started | - |
 | 3. Animation & WebGL | 0/TBD | Not started | - |
 | 4. Quality | 0/TBD | Not started | - |
