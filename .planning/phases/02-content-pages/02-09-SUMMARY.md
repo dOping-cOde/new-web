@@ -85,9 +85,18 @@ None — plan executed exactly as written.
 
 These stubs are intentional per the plan spec and do not prevent the pages from achieving their stated goals.
 
-## Task 3: Checkpoint — Human Verification Pending
+## Task 3: Human Visual Verification — APPROVED
 
-Task 3 is a `checkpoint:human-verify` gate. Visual verification of all 17 routes is required before this plan can be marked complete.
+All 17 routes verified by human visual inspection on 2026-04-26:
+- Home page: hero with "engineered" accent, 6 capability tiles, dark iDTRM section, 4 portfolio cards, manifesto, CTA
+- /services: sticky anchor nav, 6 service areas, Data and Analytics 6 sub-cards, engagement model band
+- /portfolio: 11 cards, filter pills (Energy/Healthcare/etc.) work correctly
+- /portfolio/idtrm and all Tier A case studies: dark hero with stats, problem/system/architecture sections
+- /portfolio/unified-semantic-fabric and all Tier B pages: dark hero, what-it-does, tech stack, use cases
+- /about: origin story, 3 principles, sector grid, partnership placeholders
+- /contact: form validation (empty required fields show errors), submit opens mailto
+- /nonexistent-page: branded 404 with navigation links
+- Navbar transitions on dark heroes confirmed
 
 ## Self-Check: PASSED
 
@@ -97,4 +106,6 @@ Task 3 is a `checkpoint:human-verify` gate. Visual verification of all 17 routes
 - app/not-found.tsx — FOUND (modified)
 - Commit acb9fb1 — Task 1 (About, Contact, ContactForm)
 - Commit 0bd5268 — Task 2 (404 page)
+- Commit a20a170 — Turbopack fix
 - pnpm build exits 0 across all 17 routes
+- Human visual approval received 2026-04-26

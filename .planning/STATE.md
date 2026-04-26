@@ -2,8 +2,8 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: executing
-stopped_at: "Checkpoint: Task 3 visual verification of 02-09-PLAN.md"
+status: phase-complete
+stopped_at: "Completed 02-09-PLAN.md — Phase 2 content-pages complete"
 last_updated: "2026-04-26T11:50:36.698Z"
 last_activity: 2026-04-26
 progress:
@@ -11,6 +11,7 @@ progress:
   completed_phases: 2
   total_plans: 13
   completed_plans: 13
+  current_phase_complete: true
   percent: 0
 ---
 
@@ -109,6 +110,8 @@ Recent decisions affecting current work:
 - [Phase 02-content-pages]: Angle brackets in YAML frontmatter values cause MDX JSX parse errors — use Unicode ≤ or text alternatives like 'Under 15 min' instead of '<15 min'
 - [Phase 02-content-pages]: HTML5 native validation chosen over React Hook Form for ContactForm — keeps bundle light and code readable for technical buyers who inspect source (D-13)
 - [Phase 02-content-pages]: ContactForm is 'use client' wrapped by server component contact/page.tsx — enables metadata export from page while form manages state
+- [Phase 02-content-pages]: Turbopack removed from pnpm dev script — MDX dynamic imports from content/ are unsupported under Turbopack; pnpm build unaffected
+- [Phase 02-content-pages]: Phase 2 content-pages complete — all 17 routes verified by human visual inspection 2026-04-26
 
 ### Pending Todos
 
@@ -120,6 +123,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-26T11:50:25.336Z
-Stopped at: Checkpoint: Task 3 visual verification of 02-09-PLAN.md
+Last session: 2026-04-26
+Stopped at: Completed 02-09-PLAN.md — Phase 2 content-pages fully complete (human-approved)
 Resume file: None

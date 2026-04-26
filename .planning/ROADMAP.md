@@ -13,7 +13,7 @@ Four phases deliver a production-ready marketing site for technical buyers. Foun
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Design system, scaffold, fonts, nav, footer, core components (completed 2026-04-26)
-- [ ] **Phase 2: Content & Pages** - All 17 routes (5 top-level + 11 case studies) with professional copy
+- [x] **Phase 2: Content & Pages** - All 17 routes (5 top-level + 11 case studies) with professional copy (completed 2026-04-26)
 - [ ] **Phase 3: Animation & WebGL** - GSAP scroll animations, Framer Motion interactions, Three.js scenes
 - [ ] **Phase 4: Quality** - SEO metadata, accessibility audit, performance validation, documentation
 
@@ -57,7 +57,7 @@ Plans:
 - [x] 02-06-PLAN.md — Portfolio index with filter bar and 11 stub MDX files
 - [x] 02-07-PLAN.md — Case study [slug] template + 5 Tier A MDX files with production copy
 - [x] 02-08-PLAN.md — 6 Tier B capability showcase MDX files with production copy
-- [x] 02-09-PLAN.md — About page, Contact page with form, branded 404, visual verification
+- [x] 02-09-PLAN.md — About page, Contact page with form, branded 404, visual verification (all 17 routes approved)
 **UI hint**: yes
 
 ### Phase 3: Animation & WebGL
@@ -93,6 +93,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 4/4 | Complete   | 2026-04-26 |
-| 2. Content & Pages | 8/9 | In Progress|  |
+| 2. Content & Pages | 9/9 | Complete    | 2026-04-26 |
 | 3. Animation & WebGL | 0/TBD | Not started | - |
 | 4. Quality | 0/TBD | Not started | - |
