@@ -40,9 +40,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Animation
 
-- [ ] **ANIM-01**: GSAP ScrollTrigger: hero text word-by-word reveal (display-xl, 60ms stagger, cinematic duration)
-- [ ] **ANIM-02**: GSAP ScrollTrigger: scroll-pinned architecture sections on Tier A case study pages (pin for 100vh, bullet reveals on scroll)
-- [ ] **ANIM-03**: GSAP: image parallax on hero media (0.85x scroll speed)
+- [x] **ANIM-01**: GSAP ScrollTrigger: hero text word-by-word reveal (display-xl, 60ms stagger, cinematic duration)
+- [x] **ANIM-02**: GSAP ScrollTrigger: scroll-pinned architecture sections on Tier A case study pages (pin for 100vh, bullet reveals on scroll)
+- [x] **ANIM-03**: GSAP: image parallax on hero media (0.85x scroll speed)
 - [x] **ANIM-04**: Framer Motion: animated metric counters on stat blocks (useMotionValue, trigger on scroll-enter)
 - [ ] **ANIM-05**: Framer Motion: hover-lift on portfolio cards (translateY -4px, shadow transition, 320ms)
 - [ ] **ANIM-06**: Framer Motion: portfolio filter with FLIP technique (layout prop)
@@ -168,9 +168,9 @@ Deferred to future release. Tracked but not in current roadmap.
 | CASE-06 | Phase 2 | Complete |
 | CASE-07 | Phase 2 | Complete |
 | CASE-08 | Phase 2 | Complete |
-| ANIM-01 | Phase 3 | Pending |
-| ANIM-02 | Phase 3 | Pending |
-| ANIM-03 | Phase 3 | Pending |
+| ANIM-01 | Phase 3 | Complete |
+| ANIM-02 | Phase 3 | Complete |
+| ANIM-03 | Phase 3 | Complete |
 | ANIM-04 | Phase 3 | Complete |
 | ANIM-05 | Phase 3 | Pending |
 | ANIM-06 | Phase 3 | Pending |

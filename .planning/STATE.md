@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 03-01-PLAN.md
-last_updated: "2026-04-26T12:33:33.644Z"
+stopped_at: Completed 03-02-PLAN.md
+last_updated: "2026-04-26T12:41:36.464Z"
 last_activity: 2026-04-26
 progress:
   total_phases: 4
   completed_phases: 2
   total_plans: 18
-  completed_plans: 14
+  completed_plans: 15
   percent: 0
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-04-26)
 ## Current Position
 
 Phase: 03 (animation-webgl) — EXECUTING
-Plan: 2 of 5
+Plan: 3 of 5
 Status: Ready to execute
 Last activity: 2026-04-26
 
@@ -67,6 +67,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 02-content-pages P08 | 35min | 2 tasks | 6 files |
 | Phase 02-content-pages P09 | 2.5min | 2 tasks | 4 files |
 | Phase 03-animation-webgl P01 | 1min | 2 tasks | 5 files |
+| Phase 03-animation-webgl P02 | 4min | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -115,6 +116,9 @@ Recent decisions affecting current work:
 - [Phase 03-animation-webgl]: Custom useReducedMotion hook (not Framer built-in) — framework-agnostic so GSAP, Framer Motion, and Three.js domains all use the same hook identically (D-08)
 - [Phase 03-animation-webgl]: All GSAP consumers import from @/lib/gsap not directly from 'gsap' — centralized plugin registration prevents duplicate registerPlugin calls across routes (D-03)
 - [Phase 03-animation-webgl]: useGSAP with scope option used exclusively for GSAP animations — automatic gsap.context() cleanup eliminates ScrollTrigger leaks on route navigation (D-02/ANIM-10)
+- [Phase 03-animation-webgl]: HeroLight and HeroDark converted from Server to Client Components for useGSAP integration — minimal change, all props and JSX preserved
+- [Phase 03-animation-webgl]: mdx-components.tsx stays module-level (no use client); GSAP isolated inside ScrollPinnedArchitecture via dynamic import with ssr:true
+- [Phase 03-animation-webgl]: SplitText highlightWord prop wraps matching word in text-accent class — GSAP .split-word selector still targets all words including highlighted one
 
 ### Pending Todos
 
@@ -126,6 +130,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-26T12:33:33.641Z
-Stopped at: Completed 03-01-PLAN.md
+Last session: 2026-04-26T12:41:36.461Z
+Stopped at: Completed 03-02-PLAN.md
 Resume file: None
