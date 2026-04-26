@@ -31,7 +31,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   5. All core UI components (Button, Pill, StatBlock, Caption, SectionHeader, Container) render correctly at all three breakpoints
 **Plans**: 4 plans
 Plans:
-- [ ] 01-01-PLAN.md — Scaffold Next.js 15 project, install dependencies, create DESIGN.md, configure fonts, implement complete design token system
+- [x] 01-01-PLAN.md — Scaffold Next.js 15 project, install dependencies, create DESIGN.md, configure fonts, implement complete design token system
 - [ ] 01-02-PLAN.md — Build six core UI components (Button, Pill, StatBlock, Caption, SectionHeader, Container)
 - [ ] 01-03-PLAN.md — Build sticky theme-aware Navbar with mobile overlay and dark Footer, wire into layout
 - [ ] 01-04-PLAN.md — Automated verification of all requirements + human visual verification checkpoint
@@ -82,7 +82,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/4 | Not started | - |
+| 1. Foundation | 1/4 | In Progress|  |
 | 2. Content & Pages | 0/TBD | Not started | - |
 | 3. Animation & WebGL | 0/TBD | Not started | - |
 | 4. Quality | 0/TBD | Not started | - |
