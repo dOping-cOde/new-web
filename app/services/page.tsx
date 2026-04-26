@@ -219,7 +219,7 @@ export default function ServicesPage() {
                       ))}
                     </div>
                   ) : (
-                    /* All other services: diagram placeholder */
+                    /* TODO: replace with real service diagram or illustration for each service */
                     <div
                       className={cn(
                         "bg-surface rounded-xl aspect-video",

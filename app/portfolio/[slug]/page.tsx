@@ -264,7 +264,6 @@ export default async function CaseStudyPage({
   }
 
   // Dynamic MDX import — compiled by @next/mdx at build time
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let MDXContent: React.ComponentType<Record<string, never>>;
   try {
     const mod = await import(`@/content/portfolio/${slug}.mdx`);
