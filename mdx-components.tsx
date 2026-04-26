@@ -1,6 +1,7 @@
 import type { MDXComponents } from "mdx/types";
 import type { ComponentPropsWithoutRef } from "react";
 import dynamic from "next/dynamic";
+import { PointCloudBridgeLoader } from "@/components/three/PointCloudBridgeLoader";
 
 // Dynamically import ScrollPinnedArchitecture to isolate GSAP client-side behavior
 // SSR is intentional — the section renders server-side, GSAP attaches on hydration
@@ -145,6 +146,22 @@ function TechPill({
   );
 }
 
+// BridgeVisualization — lazy-loaded R3F point-cloud bridge scene (GL-02, D-05, D-06)
+// Delegates to PointCloudBridgeLoader (client component that owns the dynamic import
+// with ssr:false — mdx-components.tsx is module-level and cannot use ssr:false directly).
+function BridgeVisualization({
+  className = "",
+}: {
+  children?: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={`my-3xl ${className}`} style={{ height: "400px" }}>
+      <PointCloudBridgeLoader className="w-full h-full" />
+    </div>
+  );
+}
+
 // ============================================================
 // MDX component registry
 // ============================================================
@@ -159,6 +176,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Outcomes,
     Quote,
     TechPill,
+    BridgeVisualization,
 
     // --- Styled standard HTML elements ---
     h1: ({ children, ...props }: ComponentPropsWithoutRef<"h1">) => (

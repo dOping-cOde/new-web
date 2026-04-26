@@ -46,11 +46,13 @@ function ParticleScene() {
   });
 
   // GPU disposal on unmount (GL-05, D-07)
+  // Capture ref value at effect time — ref may change before cleanup runs
   useEffect(() => {
+    const points = pointsRef.current;
     return () => {
-      if (pointsRef.current) {
-        pointsRef.current.geometry?.dispose();
-        (pointsRef.current.material as THREE.Material)?.dispose();
+      if (points) {
+        points.geometry?.dispose();
+        (points.material as THREE.Material)?.dispose();
       }
     };
   }, []);
