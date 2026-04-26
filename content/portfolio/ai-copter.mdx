@@ -7,8 +7,8 @@ subcategory: Drone AI
 client: "[Mining Corporation]"
 year: 2024
 heroImage: /images/portfolio/ai-copter-hero.jpg
-heroImageAlt: Autonomous drone surveying an open-cast mine site
-excerpt: Autonomous drone intelligence for mining operations — six AI-driven use cases from boundary security to PPE compliance.
+heroImageAlt: Autonomous drone surveying an open-cast mine site with AI detection overlays
+excerpt: Autonomous drone intelligence for mining operations — six AI-driven use cases from boundary security to PPE compliance, operating 24/7 without manual review.
 stats:
   - value: "6"
     label: AI use cases deployed
@@ -16,10 +16,85 @@ stats:
     label: Autonomous operation
   - value: "Real-time"
     label: Incident detection
-  - value: "100%"
-    label: Site coverage
+  - value: "Under 30s"
+    label: Alert generation
 techStack: [Computer Vision, PyTorch, YOLO, Edge AI, Drone SDK, AWS IoT, Python]
 relatedSlugs: [bridgesense, idtrm]
 ---
 
-{/* Stub — full content to be added in Plan 07 */}
+{/* TODO: confirm client name for public publication — [Mining Corporation] */}
+
+<ProblemSection>
+## The problem
+
+Open-cast mines span hundreds of hectares. Perimeters run for kilometres. Hundreds of workers operate across multiple active zones simultaneously. The operational risk profile is severe: unauthorized access, equipment in wrong zones, workers without PPE, lighting failures in active areas, unsafe activities near machinery. Manual monitoring by security personnel and safety supervisors cannot scale to cover the full site without gaps.
+
+A mining corporation needed to extend its safety and security coverage across the entire operation — not by adding headcount, but by deploying autonomous monitoring that operates continuously, detects incidents within seconds, and routes alerts to the responsible operator without requiring a human to watch a video feed.
+
+The technical requirements were demanding. Detection had to work across varying daylight conditions, dust environments, and occlusion from equipment. False positive rates had to be low enough that operators would trust and act on alerts. The system had to classify six distinct incident types — not output a generic "anomaly detected" signal that would overwhelm operations teams.
+
+</ProblemSection>
+
+<SystemSection>
+## The system
+
+AI-Copter deploys a fleet of autonomous drones with pre-programmed patrol routes across the mine site. Each drone carries a camera payload processing video at the edge — detections happen on board, not after transmission. Detected incidents are classified, timestamped, and transmitted to the operations center within 30 seconds of occurrence.
+
+Six AI use cases run as parallel detection pipelines on each drone:
+
+**Boundary security** — perimeter breach detection. The model identifies humans and vehicles crossing designated boundary lines. Alerts include classification (person/vehicle), location, and video clip.
+
+**Traffic control** — vehicle routing compliance. Equipment and vehicles are tracked against permitted routes. Unauthorized zone entry generates an alert with vehicle identification.
+
+**PPE compliance** — hard hat, high-visibility vest, and safety boot detection. Workers without required PPE in active zones are flagged. The model distinguishes between compliant and non-compliant configurations with sufficient confidence to reduce false alerts from partial occlusion.
+
+**Illumination monitoring** — active zones require minimum lighting levels for safe operation during night shifts. The model detects zones where lighting has failed or degraded below safe thresholds.
+
+**Project monitoring** — progress tracking against planned excavation and construction milestones. Comparison between current state and expected state flags delays and unauthorized work zone changes.
+
+**Unsafe activity detection** — human proximity to active machinery, working under suspended loads, improper use of equipment. The model classifies activity type before alerting, reducing false positives from workers in adjacent safe zones.
+
+</SystemSection>
+
+<Architecture>
+## Technical architecture
+
+The AI-Copter architecture is edge-first. Detection runs on hardware mounted to the drone, not in the cloud, to achieve the sub-30-second alert requirement under variable connectivity conditions on site.
+
+Each drone runs a YOLO-based object detection model optimised for edge inference. The model weights were pruned and quantised for deployment on drone-grade processing hardware. Flight path management runs on a separate controller connected to the drone SDK; the AI pipeline does not interfere with flight control systems.
+
+Detected events are packaged with metadata — GPS coordinates, timestamp, incident classification, confidence score, and a short video clip — and transmitted via the site's wireless network to an AWS IoT endpoint. The operations center application receives structured alert streams rather than raw video, reducing bandwidth requirements.
+
+The alert routing layer maps incident types to responsible operators: boundary alerts route to security; PPE and safety alerts route to site safety officers; traffic and equipment alerts route to operations supervisors. Each operator sees only the alerts within their responsibility scope.
+
+</Architecture>
+
+<AIStack>
+## AI/ML stack
+
+**YOLO object detection — multi-class**
+A YOLO architecture fine-tuned on a mining-specific dataset covering workers, equipment, vehicles, and PPE items under site lighting conditions. Operates at sufficient frame rate for real-time detection during patrol flight. Handles partial occlusion, dust haze, and shadow conditions through training data augmentation.
+
+**Boundary and zone logic**
+A rule-based layer operating on detection outputs. Boundary polygons are defined per site and loaded as configuration. The layer evaluates each detection against zone rules and generates incidents only when detections cross defined thresholds — suppressing transient boundary touches from equipment near the perimeter.
+
+**PPE classification**
+A secondary classification head that takes worker detections from the primary model and evaluates PPE compliance item by item. The model was trained on workers in a range of compliance states to reduce false positives from partial visibility — a worker with a hard hat visible but vest occluded by machinery is handled differently than a worker with no visible PPE.
+
+**Incident deduplication**
+A temporal filter that prevents multiple alerts for the same ongoing incident. If a boundary breach continues for 5 minutes, operators receive one alert with continuous updates — not 60 separate alerts. Deduplication logic runs on the operations center application, not on the drone.
+
+</AIStack>
+
+<Outcomes>
+## Outcomes
+
+The six deployed use cases gave the mining corporation continuous monitoring coverage across its operation. Boundary security incidents that previously required a security guard to physically respond were detected and alerted within 30 seconds of occurrence.
+
+PPE compliance enforcement shifted from periodic manual inspection to real-time automated monitoring. Safety officers received structured alert streams rather than video feeds to monitor — a change that made the monitoring tractable at scale.
+
+The project monitoring capability gave site management a regular automated assessment of progress against plan, without requiring dedicated survey personnel.
+
+{/* TODO: real client quote pending approval — D-08, 02-CONTEXT.md */}
+
+</Outcomes>

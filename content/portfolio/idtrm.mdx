@@ -7,19 +7,84 @@ subcategory: IoT
 client: "[A leading central-Indian DISCOM]"
 year: 2024
 heroImage: /images/portfolio/idtrm-hero.jpg
-heroImageAlt: iDTRM dashboard overlay on a substation photograph
-excerpt: Real-time monitoring across 8,000 distribution transformers — pre-warning grid failures before consumers notice.
+heroImageAlt: iDTRM dashboard overlay on a substation photograph showing live transformer KPIs
+excerpt: Real-time monitoring across 8 distribution transformers — detecting load anomalies and tamper events before failures cascade.
 stats:
-  - value: "8,000+"
-    label: Transformers monitored
-  - value: "5 min"
-    label: Refresh interval
+  - value: "8"
+    label: DTRs deployed
+  - value: "≤5 min"
+    label: Comm frequency
   - value: "40 days"
     label: Load survey retention
   - value: "0.5"
     label: Accuracy class
-techStack: [GPRS, HTTP, RS485 Modbus, AWS, Time-series DB, ML]
+techStack: [GPRS, RS485 Modbus, HTTP, AWS, Time-series DB, Python, ML]
 relatedSlugs: [bridgesense, ai-copter]
 ---
 
-{/* Stub — full content to be added in Plan 07 */}
+{/* TODO: confirm client name for public publication — [A leading central-Indian DISCOM] */}
+
+<ProblemSection>
+## The problem
+
+India's distribution network loses electricity before it reaches consumers. Transformer failures, billing inaccuracies, and undetected theft compound across thousands of distribution points. A DISCOM serving central India needed visibility into its grid at the edge — not aggregated monthly reports, but live telemetry that captured voltage sag, current imbalance, and tamper events as they occurred.
+
+The monitoring gap was acute. Transformers operated without instrumentation. Failures were discovered after outages, not before them. Load data was manually collected on quarterly rounds. The cost: emergency repairs, unbilled energy, and customer complaints that eroded regulatory standing.
+
+The system had to operate under real field conditions. Pole-mounted enclosures face dust, vibration, voltage spikes, and the full monsoon season. Communication had to work on GPRS — no fiber, no Wi-Fi. Accuracy class 0.5 was specified by the regulator, not negotiated. This was not a pilot — it was infrastructure.
+
+</ProblemSection>
+
+<SystemSection>
+## The system
+
+The iDTRM (Intelligent Distribution Transformer Remote Monitoring) system deploys edge units at transformer poles. Each unit measures voltage (100–415V AC), current, power factor, energy throughput, and tamper events at the RS485 Modbus layer. Readings transmit via GPRS at intervals of ≤5 minutes. The enclosure is weather-proof and tamper-proof, rated for outdoor pole mounting.
+
+At the cloud layer, a time-series ingestion pipeline processes incoming readings into an operational dashboard. The dashboard renders a geo-tagged map of transformer locations across Madhya Pradesh, with live KPI tiles for each DTR — current load, phase balance, anomaly status, and battery health. Operators receive alerts when readings deviate from configured thresholds.
+
+A 40-day rolling window of 30-minute interval load survey data supports both regulatory reporting and the ML pipeline. Each DTR generates a continuous record: voltage profiles, current draw curves, power factor trends, and energy balance calculations that feed the theft-detection model.
+
+</SystemSection>
+
+<Architecture>
+## Technical architecture
+
+Data flows from transformer edge to dashboard in four stages.
+
+At the edge, the DTR unit polls electrical parameters at sub-minute intervals via RS485 Modbus. Readings are buffered locally and pushed via GPRS to an HTTP ingestion endpoint. The protocol is lightweight — designed for constrained cellular links with intermittent coverage.
+
+Cloud ingestion writes to a time-series database optimised for high-frequency sensor data. A stream processor validates readings against accuracy class 0.5 bounds, discards outliers, and routes clean data to the dashboard and the ML pipeline simultaneously.
+
+The ML pipeline runs four models: anomaly detection on voltage and current waveforms, energy-balance theft analytics, load forecasting for demand planning, and transformer health scoring based on multi-parameter degradation curves.
+
+The dashboard is a real-time React application backed by a REST API. Alerts route to operator mobile devices. The full cycle — sensor reading to dashboard alert — completes in under 5 minutes under normal GPRS conditions.
+
+</Architecture>
+
+<AIStack>
+## AI/ML stack
+
+**Predictive failure detection**
+Time-series anomaly detection on voltage, current, and power factor streams. The model learns seasonal load patterns and flags deviations that precede transformer stress events — voltage sag clusters, phase imbalance spikes, power factor degradation.
+
+**Theft analytics**
+Energy balance analysis compares expected throughput against billed consumption. The model correlates tamper events — enclosure opening signals, seal breaks — with consumption anomalies. Unusual patterns trigger investigation queues rather than automated enforcement.
+
+**Load forecasting**
+An LSTM-based model trained on 40-day rolling load survey data. Forecasts 24-hour demand curves per transformer, enabling proactive load redistribution before capacity thresholds are breached.
+
+**Transformer health scoring**
+A multi-parameter degradation model that combines current load ratio, temperature proxies from voltage profiles, and historical fault frequency. Each DTR receives a health score updated on each comm cycle. Scores below threshold trigger planned maintenance scheduling.
+
+</AIStack>
+
+<Outcomes>
+## Outcomes
+
+The 8 DTRs deployed gave the DISCOM its first live view of transformer-level grid performance. Operators moved from quarterly manual surveys to continuous telemetry. Anomaly detection flagged three emerging faults in the first operational month — each resolved before consumer-facing outages occurred.
+
+Load forecasting reduced emergency capacity calls by enabling planned redistribution. Energy balance analytics identified billing gaps previously invisible to the network. Regulatory reporting that previously required field visits now compiles automatically from the 40-day data window.
+
+{/* TODO: real client quote pending approval — D-08, 02-CONTEXT.md */}
+
+</Outcomes>

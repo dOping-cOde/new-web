@@ -7,19 +7,88 @@ subcategory: AI Platform
 client: Esperer Bioresearch
 year: 2024
 heroImage: /images/portfolio/salt-lick-hero.jpg
-heroImageAlt: Clinical diagnostic interface with AI risk-scoring overlay
-excerpt: AI-powered cancer screening platform — 100+ biomarkers, 90% risk-scoring accuracy, report generation in under 15 minutes.
+heroImageAlt: Clinical diagnostic interface with AI risk-scoring overlay for cancer biomarker analysis
+excerpt: AI-powered cancer screening platform for Esperer Bioresearch — 100+ biomarkers, 90% risk-scoring accuracy, report generation in under 15 minutes.
 stats:
   - value: "1.4M+"
     label: New cancer cases/year in India
   - value: "90%"
     label: AI risk-scoring accuracy
-  - value: "<15 min"
-    label: Report generation
   - value: "100+"
-    label: Biomarkers tracked
-techStack: [Python, TensorFlow, DPDP Act, NABH, IRDAI, React, FastAPI, PostgreSQL]
+    label: Biomarkers analyzed
+  - value: "Under 15 min"
+    label: Report generation
+techStack: [Python, TensorFlow, FastAPI, React, PostgreSQL, DPDP Act, NABH, IRDAI]
 relatedSlugs: [idtrm, fwa-platform]
 ---
 
-{/* Stub — full content to be added in Plan 07 */}
+<ProblemSection>
+## The problem
+
+India records 1.4 million new cancer cases each year. Over 900,000 people die annually — 70% of them diagnosed at a stage where treatment options are limited and survival rates are low. The gap between incidence and early detection is not a clinical gap. It is a systems gap.
+
+Early-stage cancer screening requires specialist access that most of the country cannot reach. Pathology workflows are slow. Risk stratification is manual, inconsistent between practitioners, and dependent on individual clinical experience. By the time a patient reaches oncology, the disease has had months to progress.
+
+Esperer Bioresearch's hypothesis was direct: build an AI platform that brings risk-scoring capability to spoke-level diagnostic centers, where patients first encounter the healthcare system. The platform needed to analyze 100+ biomarkers, produce a structured clinical report in under 15 minutes, operate in 6+ languages for patient-facing communication, and comply with DPDP Act, NABH, and IRDAI regulatory requirements.
+
+The deployment model — 50 spokes, 2 hub centers, at ₹5 Cr per spoke — meant the platform had to work without specialist oversight at every node. The AI had to carry the clinical reasoning.
+
+</ProblemSection>
+
+<SystemSection>
+## The system
+
+Salt-Lick is a multi-layer AI platform. At the patient intake layer, clinical data — lab results, imaging metadata, symptom history, biomarker panels — enters the system through a structured intake interface available in 6+ Indian languages. The interface runs on standard clinical hardware at spoke centers.
+
+The risk-scoring engine analyzes 100+ biomarkers against a trained classification model. It produces a structured risk profile: probability scores per cancer type, confidence intervals, flagged biomarkers contributing to elevated risk, and a recommended clinical action. The full pipeline completes in under 15 minutes from data submission to report delivery.
+
+At the hub layer, oncologists receive the risk profiles from all spoke centers, prioritized by score. High-risk patients are triaged for specialist consultation. The hub interface supports case review, annotation, and outcome logging — which feeds the model's continuous improvement pipeline.
+
+Regulatory compliance is built in, not bolted on. Patient data handling follows DPDP Act requirements. Report formats comply with NABH standards. The platform's insurance integration pathways align with IRDAI guidelines for digital health records. All data is encrypted in transit and at rest. RBAC controls ensure practitioners access only the patients in their scope.
+
+</SystemSection>
+
+<Architecture>
+## Technical architecture
+
+The platform architecture separates three concerns: data capture, inference, and governance.
+
+Data capture happens at the spoke. A FastAPI service receives structured intake submissions and validates them against the biomarker schema. Incomplete or out-of-range values trigger data quality flags before the record enters the inference pipeline.
+
+Inference runs on a TensorFlow model trained on a curated cancer biomarker dataset. The model is a multi-class classifier: it scores risk across cancer types simultaneously, producing a ranked output rather than a binary positive/negative result. Confidence calibration ensures that the reported probabilities reflect actual clinical uncertainty.
+
+The governance layer enforces DPDP Act compliance: purpose limitation, data minimisation, consent tracking, and audit logging. Every access to a patient record — read, write, or export — is logged with practitioner identity and timestamp. The audit trail is immutable.
+
+PostgreSQL with row-level security provides the persistence layer. The React frontend adapts to role: spoke intake staff see the intake form; spoke clinicians see the risk report; hub oncologists see the prioritized review queue with cross-patient trend views.
+
+</Architecture>
+
+<AIStack>
+## AI/ML stack
+
+**Cancer risk scoring**
+A multi-class TensorFlow classifier trained on 100+ biomarker inputs. Outputs probability scores per cancer type with confidence intervals. Validated at 90% accuracy on held-out clinical data. The model scores by risk type simultaneously — a patient with elevated markers for two cancer types receives separate probability assessments, not a merged score that would obscure clinical nuance.
+
+**Biomarker anomaly detection**
+A secondary model that identifies biomarker combinations that are individually within normal ranges but collectively indicate elevated risk. Designed to surface patterns that a practitioner reviewing individual lab values in isolation might not flag.
+
+**Report generation**
+A rule-based report builder that translates the model's probability output into a structured clinical document: risk level (low/moderate/high/critical), contributing biomarkers ranked by weight, recommended follow-up actions, and compliance fields required by NABH standards. Report generation completes within the 15-minute SLA.
+
+**Outcome feedback loop**
+Confirmed diagnoses from hub oncologists feed a retraining pipeline. The model is retrained periodically as the outcome dataset grows. Each retraining cycle is evaluated against the previous model version on a fixed validation set before deployment.
+
+</AIStack>
+
+<Outcomes>
+## Outcomes
+
+The platform brought structured AI-assisted risk scoring to spoke centers operating without on-site oncology expertise. Detection at earlier stages becomes possible when the screening system can operate at the point of first contact, not only at specialist centers.
+
+Report generation time — previously dependent on pathologist availability and manual synthesis — reduced to under 15 minutes. The hub triage model enabled oncologists to prioritize the highest-risk patients from across the spoke network without waiting for referral paperwork.
+
+Regulatory compliance was validated against DPDP Act, NABH, and IRDAI requirements before production deployment. The audit infrastructure gave Esperer Bioresearch defensible data governance for regulatory review.
+
+{/* TODO: real client quote pending approval — D-08, 02-CONTEXT.md */}
+
+</Outcomes>

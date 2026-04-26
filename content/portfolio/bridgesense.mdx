@@ -7,19 +7,86 @@ subcategory: Computer Vision
 client: "[State Highway Authority]"
 year: 2024
 heroImage: /images/portfolio/bridgesense-hero.jpg
-heroImageAlt: Aerial LiDAR point cloud of a highway bridge span
-excerpt: Autonomous structural-health monitoring for bridges — LiDAR point clouds processed by 3D-CNN detect sub-millimetre change.
+heroImageAlt: Aerial LiDAR point cloud of a highway bridge span with structural anomaly highlighted
+excerpt: Autonomous structural-health monitoring for highway bridges — LiDAR point clouds processed by 3D-CNN detect sub-millimetre change across 500+ spans.
 stats:
   - value: "500+"
     label: Bridges in training set
-  - value: "±2–5mm"
-    label: Vertical accuracy @ 100m
   - value: "0.92"
     label: F1-score
-  - value: "0.96"
-    label: AUC-ROC
-techStack: [DJI Matrice 300, Zenmuse L2, PyTorch, 3D-CNN, LSTM, AWS EC2 p3.2xlarge, PostgreSQL, PostGIS]
+  - value: "0.8mm"
+    label: Change detection RMSE
+  - value: "6 days"
+    label: Assessment workflow
+techStack: [DJI Matrice 300, Zenmuse L2, PyTorch, 3D-CNN, LSTM, Isolation Forest, AWS EC2 p3.2xlarge, PostgreSQL, PostGIS]
 relatedSlugs: [idtrm, ai-copter]
 ---
 
-{/* Stub — full content to be added in Plan 07 */}
+{/* TODO: confirm client name for public publication — [State Highway Authority] */}
+
+<ProblemSection>
+## The problem
+
+Highway bridges degrade invisibly. Cracks start at 0.2mm. Spalling begins under deck surfaces. Settlement accumulates over months before it becomes measurable by eye. Manual inspection — a trained engineer with a clipboard and a camera — captures a point-in-time snapshot that is months old by the time it informs maintenance planning.
+
+A state highway authority managing thousands of bridge spans needed a systematic monitoring programme that could detect structural change earlier, cover more structures with fewer engineering hours, and produce audit-ready records. The existing programme produced paper reports. The mandate was to move to quantified, defensible structural-health data.
+
+The technical requirement was demanding: detect changes at the 1.5–3mm threshold across complex three-dimensional geometry, process data in the field without cloud dependency, and generate output reports consistent with existing engineering review workflows. The system had to operate from a drone platform — no lane closures, no scaffolding, no traffic management required.
+
+</ProblemSection>
+
+<SystemSection>
+## The system
+
+BridgeSense deploys a DJI Matrice 300 drone carrying a Zenmuse L2 LiDAR unit. The L2 captures point clouds at 240kHz pulse rate, 905nm wavelength, with ±2–5mm vertical accuracy at 100m altitude. Point density ranges from 100–500 pts/m², sufficient to resolve deck surface geometry, pier faces, bearing assemblies, and expansion joint positions.
+
+A 6-day workflow covers site mobilisation, flight operations, data processing, and report delivery. Flight paths are pre-programmed per structure; the drone operates autonomously with the pilot monitoring for airspace conflicts. Raw point clouds are processed on-site using the BridgeSense edge pipeline, reducing noise by 60–70% before upload.
+
+At the cloud layer, the 3D-CNN model compares current point clouds against baseline scans. Change detection operates at 1.5–3mm floor with 0.3–0.5mm leveling precision. The model flags anomalies — deformation vectors, surface discontinuities, bearing displacement — and generates a structured inspection report with severity classifications and GPS-tagged evidence frames.
+
+The PostgreSQL+PostGIS database maintains the full inspection history per structure. Engineers access a web interface to review flagged anomalies, compare change maps across inspection cycles, and export records for regulatory submission.
+
+</SystemSection>
+
+<Architecture>
+## Technical architecture
+
+The processing pipeline has three stages: edge, cloud training, and production inference.
+
+At the edge, the Zenmuse L2 captures raw point cloud data. The edge pipeline applies noise filtering (60–70% reduction), ground plane extraction, and coordinate registration. Processed clouds are transferred to AWS EC2 p3.2xlarge instances with NVIDIA V100 GPUs.
+
+The training dataset comprised 500+ bridges and 10,000+ labelled structural changes — a combination of synthetic deformation models and confirmed field observations. The 3D-CNN was trained in PyTorch to classify change vectors by type (settlement, cracking, spalling, displacement) and severity (monitor, investigate, repair). Isolation Forest handles outlier suppression in the change detection pipeline. An LSTM model tracks change velocity across inspection cycles, flagging structures whose degradation rate is accelerating.
+
+In production, inference runs per structure on upload. The PostGIS layer provides spatial indexing for the bridge inventory and inspection history. Report generation is automated — no manual annotation step between processing and delivery.
+
+</Architecture>
+
+<AIStack>
+## AI/ML stack
+
+**3D-CNN structural change detection**
+A convolutional network operating on volumetric point cloud representations. Trained on 10,000+ labelled changes across 500+ bridge structures. F1-score: 0.92. AUC-ROC: 0.96. The model classifies change type and severity, not just change presence.
+
+**Isolation Forest outlier suppression**
+Applied to the raw point cloud before change detection. Removes LiDAR noise artefacts — multi-path returns, vegetation interference, motion blur — that would otherwise produce false positives in the change model.
+
+**LSTM degradation velocity**
+A sequence model that tracks the rate of structural change across inspection cycles. Structures with stable anomalies are monitored; structures with accelerating anomalies are escalated. The model accounts for seasonal load variation when computing expected baseline shift.
+
+**Levelling and registration**
+Sub-centimetre co-registration between inspection epochs. 0.3–0.5mm levelling precision achieved via ground control point networks. Ensures that measured change reflects structural movement, not survey error.
+
+Change detection floor: 1.5–3mm. RMSE: 0.8mm across the validation set. These figures were validated against manually surveyed benchmarks at three test structures before production deployment.
+
+</AIStack>
+
+<Outcomes>
+## Outcomes
+
+BridgeSense reduced structural inspection time per bridge from weeks to a 6-day workflow. The model's 0.92 F1-score exceeded the benchmark set by manual photogrammetric methods on the same structures. Engineers reported that the change maps surfaced anomalies that would not have been visible or measurable in standard visual inspections.
+
+Inspection coverage expanded without adding engineering headcount. The GPS-tagged evidence trail and automated report generation satisfied regulatory audit requirements without the manual compilation step that previously consumed post-inspection engineering time.
+
+{/* TODO: real client quote pending approval — D-08, 02-CONTEXT.md */}
+
+</Outcomes>

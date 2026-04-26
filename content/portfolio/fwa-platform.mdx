@@ -7,8 +7,8 @@ subcategory: Fraud Detection
 client: "[A Tier-1 public-sector general insurer]"
 year: 2024
 heroImage: /images/portfolio/fwa-platform-hero.jpg
-heroImageAlt: Fraud detection dashboard with claim risk heatmap
-excerpt: End-to-end fraud, waste, and abuse detection platform — AES-256 encryption, IRDAI-compliant, on-prem DR/DC deployment.
+heroImageAlt: Fraud detection dashboard with claim risk heatmap and investigation queue
+excerpt: End-to-end fraud, waste, and abuse detection platform — AES-256 encryption, IRDAI-compliant, on-prem DR/DC deployment for a Tier-1 public-sector general insurer.
 stats:
   - value: "AES-256"
     label: Data encryption
@@ -18,9 +18,83 @@ stats:
     label: Access control
   - value: "On-prem"
     label: DR/DC deployment
-techStack: [Python, ML, AES-256, TLS 1.3, RBAC, MFA, IRDAI templates, HIPAA, GDPR]
+techStack: [Python, ML, AES-256, TLS 1.3, RBAC, MFA, IRDAI templates, HIPAA-aligned, GDPR-aligned]
 relatedSlugs: [salt-lick, unified-semantic-fabric]
 ---
 
-{/* Stub — full content to be added in Plan 07 */}
-{/* TODO: confirm whether to name NIACL publicly */}
+{/* TODO: confirm whether to name NIACL publicly — currently using descriptive placeholder per D-07 */}
+
+<ProblemSection>
+## The problem
+
+Insurance fraud is systematic, not opportunistic. Fraudulent claims are coordinated across providers, time periods, and policy holders. Detection systems that evaluate claims in isolation — scoring each claim on its own characteristics — miss the network-level patterns that define organized fraud rings.
+
+A Tier-1 public-sector general insurer needed a detection platform that could identify fraud, waste, and abuse across its claims portfolio: motor, health, and property lines. The requirements went beyond model accuracy. The platform had to operate on-premises — no customer data in shared cloud environments. It had to comply with IRDAI templates for fraud reporting. It had to integrate with existing claims management systems without replacing them. And it had to provide investigators with explainable outputs, not black-box risk scores.
+
+The security requirements were non-negotiable. AES-256 encryption at rest. TLS 1.3 in transit. RBAC with MFA for all users. Full audit logging. HIPAA-aligned data handling for health claims. GDPR-aligned data subject rights. On-premises DR/DC deployment for business continuity.
+
+</ProblemSection>
+
+<SystemSection>
+## The system
+
+The FWA Platform is a layered detection and investigation system. Claims enter through an integration layer connected to the existing claims management system — no manual data entry, no parallel submission workflows for investigators.
+
+The detection layer runs three parallel ML pipelines:
+
+**Claim-level scoring** — each claim is scored against learned fraud patterns: billing anomalies, procedure combinations that appear legitimate individually but are improbable together, timing patterns, and provider characteristics.
+
+**Network analysis** — the platform builds a graph of relationships between claimants, providers, intermediaries, and previous claims. Network-level analytics identify clusters of connected entities with elevated collective risk scores — the signature of organized fraud rather than individual opportunism.
+
+**Anomaly detection** — an unsupervised model that flags claims deviating from the insurer's historical norms on dimensions not captured by the supervised models. Handles novel fraud patterns not present in the training set.
+
+Investigators access a structured queue: claims ranked by composite risk score, network relationships visualized as a graph, evidence bundles linking claim data to the specific features driving the score. The investigation interface generates IRDAI-format reports on export, removing the manual compilation step from the investigation workflow.
+
+</SystemSection>
+
+<Architecture>
+## Technical architecture
+
+The platform runs entirely on the insurer's on-premises infrastructure with a separate DR/DC deployment for business continuity. No data leaves the insurer's network perimeter.
+
+The integration layer connects to the claims management system via an encrypted API gateway (TLS 1.3). Incoming claims are validated, enriched with provider and claimant history, and queued for the detection pipeline.
+
+The detection pipeline runs on a Python-based ML stack. The claim-level scoring model and the anomaly detection model execute in parallel. The network analysis layer runs on a graph database optimised for relationship traversal at scale.
+
+Security controls are enforced at every layer. Data at rest uses AES-256 encryption. All internal service communication uses TLS 1.3. User access is governed by RBAC: investigators access only the claims in their assigned portfolios. MFA is enforced for all user authentication. Privileged access (model management, system configuration) requires additional authentication factors.
+
+The audit log records every access event — claim viewed, score generated, investigation opened, report exported — with user identity, timestamp, and action. The log is append-only and stored separately from operational data to prevent tampering.
+
+</Architecture>
+
+<AIStack>
+## AI/ML stack
+
+**Claim-level fraud scoring**
+A gradient-boosted classifier trained on the insurer's historical claims and confirmed fraud cases. Features include billing patterns, procedure combinations, provider history, claimant behavior, and claim timing. The model outputs a calibrated probability score with contributing feature explanations (SHAP values) for each claim.
+
+**Network graph analytics**
+A graph-based model that builds entity relationship networks across claims data. Identifies clusters of claimants, providers, and intermediaries with abnormal interconnection patterns. Clusters above a network-risk threshold are escalated for investigation as potential fraud rings.
+
+**Unsupervised anomaly detection**
+An isolation forest model trained on the full claims distribution. Flags statistical outliers — claims that differ from the norm on multiple dimensions simultaneously. Designed to surface novel fraud patterns and legitimate claims with unusual characteristics that warrant human review, without imposing a binary fraud/not-fraud label.
+
+**IRDAI report generation**
+A template-based report builder that maps investigation outputs to the Insurance Regulatory and Development Authority of India's required reporting format for fraud cases. Investigators export completed reports directly from the investigation interface without manual reformatting.
+
+</AIStack>
+
+<Outcomes>
+## Outcomes
+
+The platform gave the insurer's fraud investigation team a structured, prioritized workflow. Investigators moved from reviewing a flat queue of flagged claims to working a risk-ranked queue with network context and evidence bundles pre-assembled.
+
+Network-level detection surfaced coordinated fraud patterns that claim-level scoring alone would have missed. Provider networks with elevated collective risk profiles were identified and escalated for cross-portfolio review.
+
+IRDAI-compliant report generation removed the manual compilation step from the investigation close-out process, reducing administrative time per investigation.
+
+The on-premises deployment model, AES-256 encryption, and full audit trail satisfied the insurer's data security requirements and provided the documentation needed for regulatory review of the platform's design.
+
+{/* TODO: real client quote pending approval — D-08, 02-CONTEXT.md */}
+
+</Outcomes>
