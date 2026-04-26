@@ -1,0 +1,310 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0B0D"/>
+      <stop offset="100%" stop-color="#0E0F14"/>
+    </linearGradient>
+    <linearGradient id="bar-report" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#3D2BFF" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#3D2BFF" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+
+  <!-- Grid -->
+  <g stroke="#1A1B1E" stroke-width="0.5" fill="none">
+    <line x1="0" y1="300" x2="1600" y2="300"/>
+    <line x1="0" y1="600" x2="1600" y2="600"/>
+    <line x1="0" y1="750" x2="1600" y2="750"/>
+    <line x1="400" y1="0" x2="400" y2="1000"/>
+    <line x1="800" y1="0" x2="800" y2="1000"/>
+    <line x1="1200" y1="0" x2="1200" y2="1000"/>
+  </g>
+
+  <!-- Consistent header/footer pattern suggesting standardisation -->
+  <!-- Global header band -->
+  <rect x="60" y="80" width="1480" height="36" rx="4" fill="#1A1B1E" stroke="#2A2B30" stroke-width="1"/>
+  <rect x="60" y="80" width="8" height="36" fill="#3D2BFF" rx="2"/>
+  <text x="82" y="102" font-family="monospace" font-size="10" fill="#8A8C92" letter-spacing="1">SOFTWIRE ENTERPRISE REPORTING SUITE</text>
+  <text x="1520" y="98" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">v4.2.1</text>
+  <text x="1520" y="110" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="end">LIVE</text>
+
+  <!-- === REPORT 1: KPI Dashboard Card === -->
+  <rect x="60" y="136" width="460" height="300" rx="4" fill="#0F1018" stroke="#1F2024" stroke-width="1"/>
+  <!-- Card header -->
+  <rect x="60" y="136" width="460" height="28" rx="4" fill="#1A1B1E"/>
+  <rect x="60" y="136" width="4" height="28" fill="#3D2BFF"/>
+  <text x="76" y="155" font-family="monospace" font-size="9" fill="#8A8C92" letter-spacing="1">EXECUTIVE KPI DASHBOARD</text>
+  <text x="508" y="155" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">Q4 2024</text>
+
+  <!-- KPI cards inside -->
+  <rect x="76" y="176" width="100" height="60" rx="2" fill="#1A1B1E" stroke="#1F2024" stroke-width="1"/>
+  <text x="126" y="198" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">REVENUE</text>
+  <text x="126" y="214" font-family="monospace" font-size="14" fill="#E8E9EB" text-anchor="middle">$84M</text>
+  <text x="126" y="228" font-family="monospace" font-size="7" fill="#4ADE80" text-anchor="middle">▲ 23%</text>
+
+  <rect x="186" y="176" width="100" height="60" rx="2" fill="#1A1B1E" stroke="#1F2024" stroke-width="1"/>
+  <text x="236" y="198" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">CUSTOMERS</text>
+  <text x="236" y="214" font-family="monospace" font-size="14" fill="#E8E9EB" text-anchor="middle">4,281</text>
+  <text x="236" y="228" font-family="monospace" font-size="7" fill="#4ADE80" text-anchor="middle">▲ 18%</text>
+
+  <rect x="296" y="176" width="100" height="60" rx="2" fill="#1A1B1E" stroke="#1F2024" stroke-width="1"/>
+  <text x="346" y="198" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">NPS</text>
+  <text x="346" y="214" font-family="monospace" font-size="14" fill="#E8E9EB" text-anchor="middle">72</text>
+  <text x="346" y="228" font-family="monospace" font-size="7" fill="#4ADE80" text-anchor="middle">▲ 8pts</text>
+
+  <rect x="406" y="176" width="96" height="60" rx="2" fill="#1A1B1E" stroke="#FF6B35" stroke-width="1"/>
+  <text x="454" y="198" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">CHURN</text>
+  <text x="454" y="214" font-family="monospace" font-size="14" fill="#FF6B35" text-anchor="middle">2.8%</text>
+  <text x="454" y="228" font-family="monospace" font-size="7" fill="#FF6B35" text-anchor="middle">▲ 0.4%</text>
+
+  <!-- Spark lines below KPI cards -->
+  <polyline points="76,260 100,255 124,248 148,250 172,244" fill="none" stroke="#4ADE80" stroke-width="1" opacity="0.7"/>
+  <polyline points="186,260 210,255 234,250 258,246 282,242" fill="none" stroke="#4ADE80" stroke-width="1" opacity="0.7"/>
+  <polyline points="296,260 320,258 344,252 368,248 392,244" fill="none" stroke="#4ADE80" stroke-width="1" opacity="0.7"/>
+  <polyline points="406,260 430,260 454,264 478,264 502,266" fill="none" stroke="#FF6B35" stroke-width="1" opacity="0.7"/>
+
+  <!-- Card footer -->
+  <rect x="60" y="408" width="460" height="28" rx="4" fill="#0A0B0D"/>
+  <text x="76" y="426" font-family="monospace" font-size="7" fill="#2A2B30">Last updated: 2024-12-31 23:59 UTC · Auto-refresh: 1h · Data as of close</text>
+
+  <!-- === REPORT 2: Table Report === -->
+  <rect x="540" y="136" width="500" height="300" rx="4" fill="#0F1018" stroke="#1F2024" stroke-width="1"/>
+  <rect x="540" y="136" width="500" height="28" rx="4" fill="#1A1B1E"/>
+  <rect x="540" y="136" width="4" height="28" fill="#3D2BFF"/>
+  <text x="556" y="155" font-family="monospace" font-size="9" fill="#8A8C92" letter-spacing="1">REGIONAL PERFORMANCE TABLE</text>
+  <text x="1028" y="155" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">YTD 2024</text>
+
+  <!-- Table header row -->
+  <rect x="556" y="172" width="468" height="20" fill="#1A1B1E"/>
+  <text x="566" y="185" font-family="monospace" font-size="8" fill="#555860">REGION</text>
+  <text x="690" y="185" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">REVENUE</text>
+  <text x="780" y="185" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">QUOTA</text>
+  <text x="860" y="185" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">ATTAIN.</text>
+  <text x="960" y="185" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">TREND</text>
+  <text x="1016" y="185" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">YoY</text>
+  <!-- Separator -->
+  <line x1="556" y1="192" x2="1024" y2="192" stroke="#2A2B30" stroke-width="1"/>
+
+  <!-- Data rows -->
+  <rect x="556" y="192" width="468" height="18"/>
+  <text x="566" y="204" font-family="monospace" font-size="8" fill="#E8E9EB">North America</text>
+  <text x="690" y="204" font-family="monospace" font-size="8" fill="#E8E9EB" text-anchor="end">$34.2M</text>
+  <text x="780" y="204" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">$32.0M</text>
+  <text x="860" y="204" font-family="monospace" font-size="8" fill="#4ADE80" text-anchor="end">107%</text>
+  <polyline points="890,204 905,200 920,198 935,196 950,194" fill="none" stroke="#4ADE80" stroke-width="1" opacity="0.8"/>
+  <text x="1016" y="204" font-family="monospace" font-size="8" fill="#4ADE80" text-anchor="end">+24%</text>
+  <line x1="556" y1="210" x2="1024" y2="210" stroke="#1F2024" stroke-width="0.5"/>
+
+  <text x="566" y="224" font-family="monospace" font-size="8" fill="#E8E9EB">EMEA</text>
+  <text x="690" y="224" font-family="monospace" font-size="8" fill="#E8E9EB" text-anchor="end">$22.8M</text>
+  <text x="780" y="224" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">$25.0M</text>
+  <text x="860" y="224" font-family="monospace" font-size="8" fill="#FACC15" text-anchor="end">91%</text>
+  <polyline points="890,224 905,224 920,222 935,223 950,221" fill="none" stroke="#FACC15" stroke-width="1" opacity="0.8"/>
+  <text x="1016" y="224" font-family="monospace" font-size="8" fill="#4ADE80" text-anchor="end">+17%</text>
+  <line x1="556" y1="230" x2="1024" y2="230" stroke="#1F2024" stroke-width="0.5"/>
+
+  <text x="566" y="244" font-family="monospace" font-size="8" fill="#E8E9EB">APAC</text>
+  <text x="690" y="244" font-family="monospace" font-size="8" fill="#E8E9EB" text-anchor="end">$18.1M</text>
+  <text x="780" y="244" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">$16.0M</text>
+  <text x="860" y="244" font-family="monospace" font-size="8" fill="#4ADE80" text-anchor="end">113%</text>
+  <polyline points="890,244 905,242 920,238 935,236 950,232" fill="none" stroke="#4ADE80" stroke-width="1" opacity="0.8"/>
+  <text x="1016" y="244" font-family="monospace" font-size="8" fill="#4ADE80" text-anchor="end">+31%</text>
+  <line x1="556" y1="250" x2="1024" y2="250" stroke="#1F2024" stroke-width="0.5"/>
+
+  <text x="566" y="264" font-family="monospace" font-size="8" fill="#E8E9EB">Latin America</text>
+  <text x="690" y="264" font-family="monospace" font-size="8" fill="#E8E9EB" text-anchor="end">$6.4M</text>
+  <text x="780" y="264" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">$8.0M</text>
+  <text x="860" y="264" font-family="monospace" font-size="8" fill="#FF6B35" text-anchor="end">80%</text>
+  <polyline points="890,264 905,266 920,267 935,265 950,268" fill="none" stroke="#FF6B35" stroke-width="1" opacity="0.8"/>
+  <text x="1016" y="264" font-family="monospace" font-size="8" fill="#FACC15" text-anchor="end">+9%</text>
+  <line x1="556" y1="270" x2="1024" y2="270" stroke="#1F2024" stroke-width="0.5"/>
+
+  <text x="566" y="284" font-family="monospace" font-size="8" fill="#E8E9EB">India &amp; MEA</text>
+  <text x="690" y="284" font-family="monospace" font-size="8" fill="#E8E9EB" text-anchor="end">$2.5M</text>
+  <text x="780" y="284" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">$2.0M</text>
+  <text x="860" y="284" font-family="monospace" font-size="8" fill="#4ADE80" text-anchor="end">125%</text>
+  <polyline points="890,284 905,282 920,278 935,274 950,270" fill="none" stroke="#4ADE80" stroke-width="1" opacity="0.8"/>
+  <text x="1016" y="284" font-family="monospace" font-size="8" fill="#4ADE80" text-anchor="end">+48%</text>
+  <line x1="556" y1="290" x2="1024" y2="290" stroke="#1F2024" stroke-width="0.5"/>
+
+  <!-- Total row -->
+  <rect x="556" y="290" width="468" height="20" fill="#1A1B1E"/>
+  <text x="566" y="304" font-family="monospace" font-size="8" fill="#E8E9EB" font-weight="bold">TOTAL</text>
+  <text x="690" y="304" font-family="monospace" font-size="8" fill="#E8E9EB" text-anchor="end">$84.0M</text>
+  <text x="780" y="304" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">$83.0M</text>
+  <text x="860" y="304" font-family="monospace" font-size="8" fill="#4ADE80" text-anchor="end">101%</text>
+  <text x="1016" y="304" font-family="monospace" font-size="8" fill="#4ADE80" text-anchor="end">+23%</text>
+
+  <!-- Card footer -->
+  <rect x="540" y="408" width="500" height="28" rx="4" fill="#0A0B0D"/>
+  <text x="556" y="426" font-family="monospace" font-size="7" fill="#2A2B30">Source: CRM + ERP · Refreshed: Daily at 06:00 UTC · Currency: USD</text>
+
+  <!-- === REPORT 3: Chart Report === -->
+  <rect x="1060" y="136" width="480" height="300" rx="4" fill="#0F1018" stroke="#1F2024" stroke-width="1"/>
+  <rect x="1060" y="136" width="480" height="28" rx="4" fill="#1A1B1E"/>
+  <rect x="1060" y="136" width="4" height="28" fill="#3D2BFF"/>
+  <text x="1076" y="155" font-family="monospace" font-size="9" fill="#8A8C92" letter-spacing="1">REVENUE TREND CHART</text>
+  <text x="1528" y="155" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">12M ROLLING</text>
+
+  <!-- Chart area -->
+  <!-- Y-axis -->
+  <text x="1072" y="196" font-family="monospace" font-size="7" fill="#555860">$90M</text>
+  <text x="1072" y="236" font-family="monospace" font-size="7" fill="#555860">$70M</text>
+  <text x="1072" y="276" font-family="monospace" font-size="7" fill="#555860">$50M</text>
+  <text x="1072" y="316" font-family="monospace" font-size="7" fill="#555860">$30M</text>
+  <text x="1072" y="356" font-family="monospace" font-size="7" fill="#555860">$10M</text>
+
+  <!-- Gridlines -->
+  <g stroke="#1F2024" stroke-width="0.5">
+    <line x1="1098" y1="192" x2="1528" y2="192"/>
+    <line x1="1098" y1="232" x2="1528" y2="232"/>
+    <line x1="1098" y1="272" x2="1528" y2="272"/>
+    <line x1="1098" y1="312" x2="1528" y2="312"/>
+    <line x1="1098" y1="352" x2="1528" y2="352"/>
+    <line x1="1098" y1="392" x2="1528" y2="392"/>
+  </g>
+
+  <!-- Area chart -->
+  <polygon points="1098,392 1134,370 1170,355 1206,342 1242,330 1278,318 1314,308 1350,295 1386,282 1422,268 1458,258 1494,245 1528,232 1528,392"
+    fill="#3D2BFF" opacity="0.07"/>
+  <!-- Line -->
+  <polyline points="1098,392 1134,370 1170,355 1206,342 1242,330 1278,318 1314,308 1350,295 1386,282 1422,268 1458,258 1494,245 1528,232"
+    fill="none" stroke="#3D2BFF" stroke-width="2"/>
+  <!-- Data points -->
+  <g fill="#3D2BFF" stroke="#0F1018" stroke-width="2">
+    <circle cx="1098" cy="392" r="3"/>
+    <circle cx="1170" cy="355" r="3"/>
+    <circle cx="1242" cy="330" r="3"/>
+    <circle cx="1314" cy="308" r="3"/>
+    <circle cx="1386" cy="282" r="3"/>
+    <circle cx="1458" cy="258" r="3"/>
+    <circle cx="1528" cy="232" r="4"/>
+  </g>
+
+  <!-- X-axis labels -->
+  <text x="1098" y="405" font-family="monospace" font-size="7" fill="#555860">Jan</text>
+  <text x="1170" y="405" font-family="monospace" font-size="7" fill="#555860">Mar</text>
+  <text x="1242" y="405" font-family="monospace" font-size="7" fill="#555860">May</text>
+  <text x="1314" y="405" font-family="monospace" font-size="7" fill="#555860">Jul</text>
+  <text x="1386" y="405" font-family="monospace" font-size="7" fill="#555860">Sep</text>
+  <text x="1458" y="405" font-family="monospace" font-size="7" fill="#555860">Nov</text>
+  <text x="1528" y="405" font-family="monospace" font-size="7" fill="#3D2BFF" text-anchor="end">Dec</text>
+
+  <!-- Card footer -->
+  <rect x="1060" y="408" width="480" height="28" rx="4" fill="#0A0B0D"/>
+  <text x="1076" y="426" font-family="monospace" font-size="7" fill="#2A2B30">Source: Finance DW · Accrual basis · FX-adjusted to USD · Unaudited</text>
+
+  <!-- === ROW 2 reports === -->
+
+  <!-- Report 4: Operations Status -->
+  <rect x="60" y="464" width="460" height="220" rx="4" fill="#0F1018" stroke="#1F2024" stroke-width="1"/>
+  <rect x="60" y="464" width="460" height="28" rx="4" fill="#1A1B1E"/>
+  <rect x="60" y="464" width="4" height="28" fill="#3D2BFF"/>
+  <text x="76" y="483" font-family="monospace" font-size="9" fill="#8A8C92" letter-spacing="1">OPERATIONS STATUS REPORT</text>
+  <!-- Status items -->
+  <text x="76" y="514" font-family="monospace" font-size="8" fill="#4ADE80">● PRODUCTION  </text>
+  <text x="196" y="514" font-family="monospace" font-size="8" fill="#E8E9EB">All systems operational</text>
+  <text x="76" y="532" font-family="monospace" font-size="8" fill="#4ADE80">● INGESTION   </text>
+  <text x="196" y="532" font-family="monospace" font-size="8" fill="#E8E9EB">4.2B events/day · p99: 180ms</text>
+  <text x="76" y="550" font-family="monospace" font-size="8" fill="#FACC15">● REPLICATION </text>
+  <text x="196" y="550" font-family="monospace" font-size="8" fill="#E8E9EB">Lag: 14s (degraded)</text>
+  <text x="76" y="568" font-family="monospace" font-size="8" fill="#4ADE80">● REPORTING   </text>
+  <text x="196" y="568" font-family="monospace" font-size="8" fill="#E8E9EB">247 reports generated today</text>
+  <text x="76" y="586" font-family="monospace" font-size="8" fill="#4ADE80">● ALERTING    </text>
+  <text x="196" y="586" font-family="monospace" font-size="8" fill="#E8E9EB">3 active / 0 critical</text>
+  <text x="76" y="604" font-family="monospace" font-size="8" fill="#4ADE80">● SCHEDULING  </text>
+  <text x="196" y="604" font-family="monospace" font-size="8" fill="#E8E9EB">All 84 jobs succeeded</text>
+  <!-- Footer -->
+  <rect x="60" y="656" width="460" height="28" rx="4" fill="#0A0B0D"/>
+  <text x="76" y="674" font-family="monospace" font-size="7" fill="#2A2B30">Updated: 2024-12-31 23:45 UTC · SLA: 99.9% · Incident: none active</text>
+
+  <!-- Report 5: Product Analytics -->
+  <rect x="540" y="464" width="500" height="220" rx="4" fill="#0F1018" stroke="#1F2024" stroke-width="1"/>
+  <rect x="540" y="464" width="500" height="28" rx="4" fill="#1A1B1E"/>
+  <rect x="540" y="464" width="4" height="28" fill="#3D2BFF"/>
+  <text x="556" y="483" font-family="monospace" font-size="9" fill="#8A8C92" letter-spacing="1">PRODUCT USAGE ANALYTICS</text>
+  <!-- Mini bar chart -->
+  <g fill="url(#bar-report)">
+    <rect x="570" y="572" width="24" height="60"/>
+    <rect x="604" y="548" width="24" height="84"/>
+    <rect x="638" y="540" width="24" height="92"/>
+    <rect x="672" y="528" width="24" height="104"/>
+    <rect x="706" y="536" width="24" height="96"/>
+    <rect x="740" y="520" width="24" height="112"/>
+    <rect x="774" y="512" width="24" height="120"/>
+    <rect x="808" y="500" width="24" height="132"/>
+    <rect x="842" y="504" width="24" height="128"/>
+    <rect x="876" y="492" width="24" height="140"/>
+    <rect x="910" y="484" width="24" height="148"/>
+    <rect x="944" y="512" width="24" height="120"/>
+  </g>
+  <line x1="556" y1="632" x2="1028" y2="632" stroke="#2A2B30" stroke-width="0.5"/>
+  <!-- Labels -->
+  <text x="570" y="646" font-family="monospace" font-size="7" fill="#555860">J</text>
+  <text x="604" y="646" font-family="monospace" font-size="7" fill="#555860">F</text>
+  <text x="638" y="646" font-family="monospace" font-size="7" fill="#555860">M</text>
+  <text x="672" y="646" font-family="monospace" font-size="7" fill="#555860">A</text>
+  <text x="706" y="646" font-family="monospace" font-size="7" fill="#555860">M</text>
+  <text x="740" y="646" font-family="monospace" font-size="7" fill="#555860">J</text>
+  <text x="774" y="646" font-family="monospace" font-size="7" fill="#555860">J</text>
+  <text x="808" y="646" font-family="monospace" font-size="7" fill="#555860">A</text>
+  <text x="842" y="646" font-family="monospace" font-size="7" fill="#555860">S</text>
+  <text x="876" y="646" font-family="monospace" font-size="7" fill="#555860">O</text>
+  <text x="910" y="646" font-family="monospace" font-size="7" fill="#3D2BFF">N</text>
+  <text x="944" y="646" font-family="monospace" font-size="7" fill="#555860">D</text>
+  <!-- DAU metric -->
+  <text x="970" y="510" font-family="monospace" font-size="8" fill="#555860">DAU</text>
+  <text x="970" y="528" font-family="monospace" font-size="16" fill="#E8E9EB">8,420</text>
+  <text x="970" y="546" font-family="monospace" font-size="8" fill="#4ADE80">+34% YoY</text>
+  <text x="970" y="570" font-family="monospace" font-size="8" fill="#555860">Retention</text>
+  <text x="970" y="588" font-family="monospace" font-size="16" fill="#E8E9EB">84%</text>
+  <text x="970" y="606" font-family="monospace" font-size="8" fill="#4ADE80">D30</text>
+  <!-- Footer -->
+  <rect x="540" y="656" width="500" height="28" rx="4" fill="#0A0B0D"/>
+  <text x="556" y="674" font-family="monospace" font-size="7" fill="#2A2B30">Source: Product telemetry · De-identified · GDPR compliant · Segment</text>
+
+  <!-- Report 6: Finance Summary -->
+  <rect x="1060" y="464" width="480" height="220" rx="4" fill="#0F1018" stroke="#1F2024" stroke-width="1"/>
+  <rect x="1060" y="464" width="480" height="28" rx="4" fill="#1A1B1E"/>
+  <rect x="1060" y="464" width="4" height="28" fill="#3D2BFF"/>
+  <text x="1076" y="483" font-family="monospace" font-size="9" fill="#8A8C92" letter-spacing="1">FINANCE CLOSE REPORT</text>
+  <text x="1528" y="483" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">DEC 2024</text>
+  <!-- Finance table -->
+  <text x="1076" y="514" font-family="monospace" font-size="8" fill="#555860">P&amp;L SUMMARY</text>
+  <line x1="1076" y1="520" x2="1528" y2="520" stroke="#1F2024" stroke-width="0.5"/>
+  <text x="1076" y="538" font-family="monospace" font-size="8" fill="#E8E9EB">Gross Revenue</text>
+  <text x="1528" y="538" font-family="monospace" font-size="8" fill="#E8E9EB" text-anchor="end">$84,020,000</text>
+  <text x="1076" y="554" font-family="monospace" font-size="8" fill="#555860">  Less: COGS</text>
+  <text x="1528" y="554" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">($29,407,000)</text>
+  <line x1="1076" y1="560" x2="1528" y2="560" stroke="#1F2024" stroke-width="0.5"/>
+  <text x="1076" y="576" font-family="monospace" font-size="8" fill="#E8E9EB">Gross Profit</text>
+  <text x="1528" y="576" font-family="monospace" font-size="8" fill="#E8E9EB" text-anchor="end">$54,613,000</text>
+  <text x="1076" y="592" font-family="monospace" font-size="8" fill="#4ADE80">  Gross Margin</text>
+  <text x="1528" y="592" font-family="monospace" font-size="8" fill="#4ADE80" text-anchor="end">65.0%</text>
+  <text x="1076" y="608" font-family="monospace" font-size="8" fill="#555860">  Less: OpEx</text>
+  <text x="1528" y="608" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">($38,209,000)</text>
+  <line x1="1076" y1="614" x2="1528" y2="614" stroke="#1F2024" stroke-width="0.5"/>
+  <text x="1076" y="630" font-family="monospace" font-size="8" fill="#E8E9EB" font-weight="bold">EBITDA</text>
+  <text x="1528" y="630" font-family="monospace" font-size="8" fill="#E8E9EB" text-anchor="end">$16,404,000</text>
+  <text x="1076" y="646" font-family="monospace" font-size="8" fill="#3D2BFF">  EBITDA Margin</text>
+  <text x="1528" y="646" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="end">19.5%</text>
+  <!-- Footer -->
+  <rect x="1060" y="656" width="480" height="28" rx="4" fill="#0A0B0D"/>
+  <text x="1076" y="674" font-family="monospace" font-size="7" fill="#2A2B30">Preliminary · Unaudited · Prepared per IFRS · CFO review pending</text>
+
+  <!-- Global footer band -->
+  <rect x="60" y="712" width="1480" height="36" rx="4" fill="#1A1B1E" stroke="#2A2B30" stroke-width="1"/>
+  <rect x="60" y="712" width="8" height="36" fill="#3D2BFF" rx="2"/>
+  <text x="82" y="730" font-family="monospace" font-size="8" fill="#555860">Generated: 2024-12-31 23:59 UTC  ·  Distribution: EXEC, FINANCE, OPS, PRODUCT</text>
+  <text x="82" y="742" font-family="monospace" font-size="7" fill="#2A2B30">CONFIDENTIAL — Softwire Enterprise Reporting Suite v4.2.1 — Report ID: RPT-2024-Q4-0847</text>
+  <text x="1528" y="736" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="end">247 reports</text>
+  <text x="1528" y="748" font-family="monospace" font-size="7" fill="#555860" text-anchor="end">scheduled today</text>
+
+  <!-- Label -->
+  <text x="80" y="870" font-family="monospace" font-size="18" fill="#1F2024" letter-spacing="4">ENTERPRISE REPORTING SUITE</text>
+  <text x="80" y="892" font-family="monospace" font-size="11" fill="#2A2B30" letter-spacing="2">UNIFIED REPORTING PLATFORM · CONSISTENT STANDARDS ACROSS ALL OUTPUTS</text>
+
+  <text x="1580" y="990" font-family="monospace" font-size="8" fill="#2A2B30" text-anchor="end">TODO: Replace with real photography</text>
+</svg>

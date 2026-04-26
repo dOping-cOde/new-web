@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0B0D"/>
+      <stop offset="100%" stop-color="#0D0E13"/>
+    </linearGradient>
+    <linearGradient id="cost-curve" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF6B35"/>
+      <stop offset="60%" stop-color="#FACC15"/>
+      <stop offset="100%" stop-color="#4ADE80"/>
+    </linearGradient>
+    <linearGradient id="area-fill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4ADE80" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#4ADE80" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="before-fill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B35" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#FF6B35" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+
+  <!-- Grid -->
+  <g stroke="#1A1B1E" stroke-width="0.5" fill="none">
+    <line x1="0" y1="200" x2="1600" y2="200"/>
+    <line x1="0" y1="400" x2="1600" y2="400"/>
+    <line x1="0" y1="600" x2="1600" y2="600"/>
+    <line x1="0" y1="750" x2="1600" y2="750"/>
+    <line x1="320" y1="0" x2="320" y2="1000"/>
+    <line x1="640" y1="0" x2="640" y2="1000"/>
+    <line x1="960" y1="0" x2="960" y2="1000"/>
+    <line x1="1280" y1="0" x2="1280" y2="1000"/>
+  </g>
+
+  <!-- Main chart area -->
+  <rect x="80" y="100" width="1140" height="560" rx="4" fill="#0A0B0D" stroke="#1F2024" stroke-width="1"/>
+  <rect x="80" y="100" width="1140" height="28" rx="4" fill="#1A1B1E"/>
+  <text x="96" y="118" font-family="monospace" font-size="10" fill="#8A8C92" letter-spacing="1">CLOUD SPEND TRAJECTORY · MONTHLY (USD)</text>
+
+  <!-- Y-axis labels -->
+  <text x="76" y="168" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">$500k</text>
+  <text x="76" y="248" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">$400k</text>
+  <text x="76" y="328" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">$300k</text>
+  <text x="76" y="408" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">$200k</text>
+  <text x="76" y="488" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">$100k</text>
+  <text x="76" y="568" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">$0</text>
+
+  <!-- Y-axis grid lines -->
+  <g stroke="#1F2024" stroke-width="0.5">
+    <line x1="80" y1="164" x2="1220" y2="164"/>
+    <line x1="80" y1="244" x2="1220" y2="244"/>
+    <line x1="80" y1="324" x2="1220" y2="324"/>
+    <line x1="80" y1="404" x2="1220" y2="404"/>
+    <line x1="80" y1="484" x2="1220" y2="484"/>
+    <line x1="80" y1="564" x2="1220" y2="564"/>
+  </g>
+
+  <!-- X-axis labels -->
+  <text x="130" y="580" font-family="monospace" font-size="8" fill="#555860" text-anchor="middle">JAN</text>
+  <text x="220" y="580" font-family="monospace" font-size="8" fill="#555860" text-anchor="middle">FEB</text>
+  <text x="310" y="580" font-family="monospace" font-size="8" fill="#555860" text-anchor="middle">MAR</text>
+  <text x="400" y="580" font-family="monospace" font-size="8" fill="#555860" text-anchor="middle">APR</text>
+  <text x="490" y="580" font-family="monospace" font-size="8" fill="#555860" text-anchor="middle">MAY</text>
+  <text x="580" y="580" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="middle" font-weight="bold">JUN ▼</text>
+  <text x="670" y="580" font-family="monospace" font-size="8" fill="#555860" text-anchor="middle">JUL</text>
+  <text x="760" y="580" font-family="monospace" font-size="8" fill="#555860" text-anchor="middle">AUG</text>
+  <text x="850" y="580" font-family="monospace" font-size="8" fill="#555860" text-anchor="middle">SEP</text>
+  <text x="940" y="580" font-family="monospace" font-size="8" fill="#555860" text-anchor="middle">OCT</text>
+  <text x="1030" y="580" font-family="monospace" font-size="8" fill="#555860" text-anchor="middle">NOV</text>
+  <text x="1120" y="580" font-family="monospace" font-size="8" fill="#555860" text-anchor="middle">DEC</text>
+  <text x="1200" y="580" font-family="monospace" font-size="8" fill="#555860" text-anchor="middle">JAN+</text>
+
+  <!-- "Before" trajectory (dashed projection, what would have been) -->
+  <!-- Area under before curve -->
+  <polygon points="130,404 220,388 310,372 400,356 490,340 580,324 670,308 760,292 850,276 940,260 1040,244 1140,228 1220,212 1220,564 130,564"
+    fill="url(#before-fill)"/>
+  <!-- Before curve (dashed) -->
+  <polyline points="130,404 220,388 310,372 400,356 490,340 580,324 670,308 760,292 850,276 940,260 1040,244 1140,228 1220,212"
+    fill="none" stroke="#FF6B35" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.5"/>
+  <text x="1190" y="204" font-family="monospace" font-size="8" fill="#FF6B35" text-anchor="end">PROJECTED (old)</text>
+
+  <!-- Optimization event marker -->
+  <line x1="580" y1="128" x2="580" y2="564" stroke="#3D2BFF" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.7"/>
+  <rect x="545" y="128" width="72" height="18" rx="2" fill="#3D2BFF" opacity="0.2" stroke="#3D2BFF" stroke-width="1" opacity="0.6"/>
+  <text x="581" y="140" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="middle">OPTIMIZATION</text>
+
+  <!-- Actual cost curve (after) -->
+  <!-- Area fill under actual curve -->
+  <polygon points="130,404 220,388 310,372 400,356 490,340 580,340 670,484 760,484 850,484 940,484 1040,468 1140,452 1220,436 1220,564 130,564"
+    fill="url(#area-fill)" opacity="0.5"/>
+  <!-- Actual curve -->
+  <polyline points="130,404 220,388 310,372 400,356 490,340 580,340 670,484 760,484 850,468 940,452 1040,436 1140,420 1200,412"
+    fill="none" stroke="url(#cost-curve)" stroke-width="2.5"/>
+
+  <!-- Savings annotation -->
+  <!-- Vertical bracket -->
+  <line x1="1080" y1="228" x2="1080" y2="436" stroke="#4ADE80" stroke-width="1.5"/>
+  <line x1="1070" y1="228" x2="1090" y2="228" stroke="#4ADE80" stroke-width="1.5"/>
+  <line x1="1070" y1="436" x2="1090" y2="436" stroke="#4ADE80" stroke-width="1.5"/>
+  <text x="1095" y="336" font-family="monospace" font-size="12" fill="#4ADE80">−62%</text>
+  <text x="1095" y="350" font-family="monospace" font-size="8" fill="#4ADE80">saved</text>
+
+  <!-- Data points on actual curve -->
+  <g fill="#4ADE80" opacity="0.8">
+    <circle cx="670" cy="484" r="4"/>
+    <circle cx="760" cy="484" r="4"/>
+    <circle cx="850" cy="468" r="4"/>
+    <circle cx="940" cy="452" r="4"/>
+    <circle cx="1040" cy="436" r="4"/>
+    <circle cx="1140" cy="420" r="4"/>
+  </g>
+  <g fill="#FF6B35" opacity="0.7">
+    <circle cx="130" cy="404" r="3"/>
+    <circle cx="220" cy="388" r="3"/>
+    <circle cx="310" cy="372" r="3"/>
+    <circle cx="400" cy="356" r="3"/>
+    <circle cx="490" cy="340" r="3"/>
+    <circle cx="580" cy="340" r="4" fill="#FACC15"/>
+  </g>
+
+  <!-- KPI cards - right panel -->
+  <rect x="1260" y="100" width="300" height="560" rx="4" fill="#0F1018" stroke="#1F2024" stroke-width="1"/>
+  <rect x="1260" y="100" width="300" height="28" rx="4" fill="#1A1B1E"/>
+  <text x="1274" y="119" font-family="monospace" font-size="10" fill="#8A8C92" letter-spacing="1">COST SAVINGS</text>
+
+  <!-- Savings breakdown -->
+  <text x="1274" y="156" font-family="monospace" font-size="9" fill="#555860">TOTAL ANNUAL SAVING</text>
+  <text x="1274" y="178" font-family="monospace" font-size="28" fill="#4ADE80">$2.1M</text>
+  <rect x="1274" y="188" width="266" height="1" fill="#1F2024"/>
+
+  <text x="1274" y="210" font-family="monospace" font-size="9" fill="#555860">COMPUTE RIGHTSIZING</text>
+  <text x="1550" y="210" font-family="monospace" font-size="9" fill="#4ADE80" text-anchor="end">−48%</text>
+  <text x="1274" y="226" font-family="monospace" font-size="8" fill="#2A2B30">Idle cluster elimination</text>
+  <rect x="1274" y="232" width="266" height="1" fill="#1F2024"/>
+
+  <text x="1274" y="254" font-family="monospace" font-size="9" fill="#555860">STORAGE TIERING</text>
+  <text x="1550" y="254" font-family="monospace" font-size="9" fill="#4ADE80" text-anchor="end">−71%</text>
+  <text x="1274" y="270" font-family="monospace" font-size="8" fill="#2A2B30">Cold data archival</text>
+  <rect x="1274" y="276" width="266" height="1" fill="#1F2024"/>
+
+  <text x="1274" y="298" font-family="monospace" font-size="9" fill="#555860">QUERY EFFICIENCY</text>
+  <text x="1550" y="298" font-family="monospace" font-size="9" fill="#4ADE80" text-anchor="end">−55%</text>
+  <text x="1274" y="314" font-family="monospace" font-size="8" fill="#2A2B30">Partitioning + caching</text>
+  <rect x="1274" y="320" width="266" height="1" fill="#1F2024"/>
+
+  <text x="1274" y="342" font-family="monospace" font-size="9" fill="#555860">SLOT RESERVATION</text>
+  <text x="1550" y="342" font-family="monospace" font-size="9" fill="#4ADE80" text-anchor="end">−62%</text>
+  <text x="1274" y="358" font-family="monospace" font-size="8" fill="#2A2B30">On-demand → committed</text>
+  <rect x="1274" y="364" width="266" height="1" fill="#1F2024"/>
+
+  <!-- Cloud provider icons (text-based) -->
+  <text x="1274" y="390" font-family="monospace" font-size="8" fill="#555860">PROVIDERS OPTIMISED</text>
+  <rect x="1274" y="398" width="70" height="20" rx="2" fill="#1A1B1E" stroke="#2A2B30" stroke-width="1"/>
+  <text x="1309" y="412" font-family="monospace" font-size="8" fill="#8A8C92" text-anchor="middle">BigQuery</text>
+  <rect x="1352" y="398" width="60" height="20" rx="2" fill="#1A1B1E" stroke="#2A2B30" stroke-width="1"/>
+  <text x="1382" y="412" font-family="monospace" font-size="8" fill="#8A8C92" text-anchor="middle">Redshift</text>
+  <rect x="1420" y="398" width="52" height="20" rx="2" fill="#1A1B1E" stroke="#2A2B30" stroke-width="1"/>
+  <text x="1446" y="412" font-family="monospace" font-size="8" fill="#8A8C92" text-anchor="middle">Snowfl.</text>
+  <rect x="1274" y="426" width="60" height="20" rx="2" fill="#1A1B1E" stroke="#2A2B30" stroke-width="1"/>
+  <text x="1304" y="440" font-family="monospace" font-size="8" fill="#8A8C92" text-anchor="middle">Databricks</text>
+  <rect x="1342" y="426" width="60" height="20" rx="2" fill="#1A1B1E" stroke="#2A2B30" stroke-width="1"/>
+  <text x="1372" y="440" font-family="monospace" font-size="8" fill="#8A8C92" text-anchor="middle">AWS S3</text>
+
+  <text x="1274" y="476" font-family="monospace" font-size="8" fill="#555860">IMPLEMENTATION TIME</text>
+  <text x="1274" y="494" font-family="monospace" font-size="16" fill="#E8E9EB">8 weeks</text>
+  <text x="1274" y="512" font-family="monospace" font-size="8" fill="#555860">NO DATA MIGRATION</text>
+  <rect x="1274" y="518" width="266" height="1" fill="#1F2024"/>
+  <text x="1274" y="538" font-family="monospace" font-size="8" fill="#555860">ROI PERIOD</text>
+  <text x="1274" y="556" font-family="monospace" font-size="16" fill="#E8E9EB">3.2 months</text>
+  <text x="1274" y="580" font-family="monospace" font-size="8" fill="#3D2BFF">STATUS: ONGOING OPTIMISATION</text>
+  <text x="1274" y="596" font-family="monospace" font-size="8" fill="#4ADE80">FinOps dashboard live</text>
+  <text x="1274" y="612" font-family="monospace" font-size="8" fill="#555860">Automated cost alerts active</text>
+  <text x="1274" y="628" font-family="monospace" font-size="8" fill="#555860">Monthly review cadence</text>
+
+  <!-- Label -->
+  <text x="80" y="870" font-family="monospace" font-size="16" fill="#1F2024" letter-spacing="4">CLOUD ANALYTICS COST OPTIMIZATION</text>
+  <text x="80" y="892" font-family="monospace" font-size="11" fill="#2A2B30" letter-spacing="2">62% CLOUD SPEND REDUCTION · FINOPS · MULTI-CLOUD</text>
+
+  <text x="1580" y="990" font-family="monospace" font-size="8" fill="#2A2B30" text-anchor="end">TODO: Replace with real photography</text>
+</svg>

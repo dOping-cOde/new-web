@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0B0D"/>
+      <stop offset="100%" stop-color="#0E0F14"/>
+    </linearGradient>
+    <linearGradient id="depth-fade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3D2BFF" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#3D2BFF" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="scan-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3D2BFF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#3D2BFF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#3D2BFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-sm">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+    <clipPath id="bridge-clip">
+      <rect x="100" y="150" width="1400" height="700"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg-grad)"/>
+
+  <!-- Depth gradient background bands -->
+  <rect x="0" y="0" width="1600" height="1000" fill="url(#depth-fade)" opacity="0.06"/>
+
+  <!-- Subtle grid -->
+  <g stroke="#1A1B1E" stroke-width="0.5" fill="none">
+    <line x1="0" y1="300" x2="1600" y2="300"/>
+    <line x1="0" y1="450" x2="1600" y2="450"/>
+    <line x1="0" y1="600" x2="1600" y2="600"/>
+    <line x1="0" y1="750" x2="1600" y2="750"/>
+    <line x1="266" y1="0" x2="266" y2="1000"/>
+    <line x1="533" y1="0" x2="533" y2="1000"/>
+    <line x1="800" y1="0" x2="800" y2="1000"/>
+    <line x1="1066" y1="0" x2="1066" y2="1000"/>
+    <line x1="1333" y1="0" x2="1333" y2="1000"/>
+  </g>
+
+  <!-- Bridge wireframe - arch bridge structure -->
+  <!-- Deck/roadway -->
+  <rect x="100" y="580" width="1400" height="8" fill="none" stroke="#2A2B30" stroke-width="1.5"/>
+
+  <!-- Main arch -->
+  <path d="M 200 580 Q 800 200 1400 580" fill="none" stroke="#3A3B42" stroke-width="2"/>
+  <path d="M 200 580 Q 800 210 1400 580" fill="none" stroke="#2A2B30" stroke-width="1" opacity="0.5"/>
+
+  <!-- Arch hangers (vertical cables from arch to deck) -->
+  <g stroke="#2A2B30" stroke-width="1" fill="none" opacity="0.6">
+    <line x1="250" y1="527" x2="250" y2="580"/>
+    <line x1="310" y1="464" x2="310" y2="580"/>
+    <line x1="380" y1="406" x2="380" y2="580"/>
+    <line x1="460" y1="356" x2="460" y2="580"/>
+    <line x1="550" y1="310" x2="550" y2="580"/>
+    <line x1="650" y1="272" x2="650" y2="580"/>
+    <line x1="750" y1="250" x2="750" y2="580"/>
+    <line x1="800" y1="244" x2="800" y2="580"/>
+    <line x1="850" y1="250" x2="850" y2="580"/>
+    <line x1="950" y1="272" x2="950" y2="580"/>
+    <line x1="1050" y1="310" x2="1050" y2="580"/>
+    <line x1="1140" y1="356" x2="1140" y2="580"/>
+    <line x1="1220" y1="406" x2="1220" y2="580"/>
+    <line x1="1290" y1="464" x2="1290" y2="580"/>
+    <line x1="1350" y1="527" x2="1350" y2="580"/>
+  </g>
+
+  <!-- Point cloud dots on arch -->
+  <!-- Dense near, sparse far (left side = near viewer) -->
+  <g fill="#3D2BFF" opacity="0.8">
+    <!-- Left arch cluster (near) -->
+    <circle cx="200" cy="580" r="3"/>
+    <circle cx="220" cy="562" r="2.5"/>
+    <circle cx="235" cy="547" r="2.5"/>
+    <circle cx="250" cy="527" r="3"/>
+    <circle cx="268" cy="510" r="2"/>
+    <circle cx="285" cy="494" r="2"/>
+    <circle cx="310" cy="464" r="2.5"/>
+    <circle cx="332" cy="446" r="2"/>
+    <circle cx="355" cy="428" r="2"/>
+    <circle cx="380" cy="406" r="2.5"/>
+    <circle cx="408" cy="387" r="2"/>
+    <circle cx="434" cy="370" r="1.5"/>
+    <circle cx="460" cy="356" r="2"/>
+    <circle cx="490" cy="340" r="1.5"/>
+    <circle cx="520" cy="325" r="1.5"/>
+    <circle cx="550" cy="310" r="2"/>
+  </g>
+  <!-- Scattered additional cloud points -->
+  <g fill="#3D2BFF">
+    <circle cx="215" cy="575" r="1.5" opacity="0.6"/>
+    <circle cx="225" cy="569" r="1" opacity="0.5"/>
+    <circle cx="243" cy="557" r="1.5" opacity="0.7"/>
+    <circle cx="262" cy="540" r="1" opacity="0.5"/>
+    <circle cx="278" cy="524" r="1.5" opacity="0.6"/>
+    <circle cx="295" cy="508" r="1" opacity="0.4"/>
+    <circle cx="318" cy="488" r="1.5" opacity="0.5"/>
+    <circle cx="340" cy="472" r="1" opacity="0.4"/>
+    <circle cx="366" cy="453" r="1.5" opacity="0.5"/>
+    <circle cx="392" cy="434" r="1" opacity="0.4"/>
+    <circle cx="420" cy="416" r="1.5" opacity="0.5"/>
+    <circle cx="448" cy="400" r="1" opacity="0.4"/>
+  </g>
+  <!-- Right arch - fading (distance) -->
+  <g fill="#3D2BFF" opacity="0.35">
+    <circle cx="650" cy="272" r="1.5"/>
+    <circle cx="700" cy="256" r="1.5"/>
+    <circle cx="750" cy="250" r="1.5"/>
+    <circle cx="800" cy="244" r="2"/>
+    <circle cx="850" cy="250" r="1.5"/>
+    <circle cx="900" cy="260" r="1.5"/>
+    <circle cx="950" cy="272" r="1.5"/>
+    <circle cx="1000" cy="290" r="1"/>
+    <circle cx="1050" cy="310" r="1"/>
+    <circle cx="1100" cy="332" r="1"/>
+    <circle cx="1140" cy="356" r="1"/>
+    <circle cx="1180" cy="382" r="1"/>
+    <circle cx="1220" cy="406" r="1"/>
+    <circle cx="1260" cy="434" r="1"/>
+    <circle cx="1290" cy="464" r="0.8"/>
+    <circle cx="1310" cy="490" r="0.8"/>
+    <circle cx="1330" cy="518" r="0.8"/>
+    <circle cx="1350" cy="527" r="0.8"/>
+    <circle cx="1370" cy="553" r="0.8"/>
+    <circle cx="1400" cy="580" r="1"/>
+  </g>
+
+  <!-- Deck point cloud -->
+  <g fill="#2A2B30" opacity="0.8">
+    <circle cx="150" cy="583" r="1.5"/>
+    <circle cx="200" cy="583" r="1.5"/>
+    <circle cx="250" cy="583" r="1.5"/>
+    <circle cx="300" cy="583" r="1.5"/>
+    <circle cx="350" cy="583" r="1.5"/>
+    <circle cx="400" cy="583" r="1.5"/>
+    <circle cx="450" cy="583" r="1.5"/>
+    <circle cx="500" cy="583" r="1.5"/>
+    <circle cx="550" cy="583" r="1.5"/>
+    <circle cx="600" cy="583" r="1.5"/>
+    <circle cx="650" cy="583" r="1.5"/>
+    <circle cx="700" cy="583" r="1.5"/>
+    <circle cx="750" cy="583" r="1"/>
+    <circle cx="800" cy="583" r="1"/>
+    <circle cx="850" cy="583" r="1"/>
+    <circle cx="900" cy="583" r="1"/>
+    <circle cx="950" cy="583" r="0.8"/>
+    <circle cx="1000" cy="583" r="0.8"/>
+    <circle cx="1050" cy="583" r="0.8"/>
+    <circle cx="1100" cy="583" r="0.8"/>
+    <circle cx="1150" cy="583" r="0.8"/>
+    <circle cx="1200" cy="583" r="0.8"/>
+    <circle cx="1250" cy="583" r="0.8"/>
+    <circle cx="1300" cy="583" r="0.8"/>
+    <circle cx="1350" cy="583" r="0.8"/>
+    <circle cx="1400" cy="583" r="0.8"/>
+  </g>
+
+  <!-- LiDAR scan lines (sweeping beams) -->
+  <line x1="200" y1="580" x2="700" y2="300" stroke="url(#scan-line)" stroke-width="1.5" opacity="0.6"/>
+  <line x1="200" y1="580" x2="900" y2="250" stroke="url(#scan-line)" stroke-width="1" opacity="0.3"/>
+  <line x1="200" y1="580" x2="500" y2="240" stroke="url(#scan-line)" stroke-width="1" opacity="0.3"/>
+
+  <!-- LiDAR origin -->
+  <circle cx="200" cy="580" r="8" fill="#3D2BFF" opacity="0.3" filter="url(#glow-sm)"/>
+  <circle cx="200" cy="580" r="4" fill="#3D2BFF" opacity="0.8"/>
+  <text x="214" y="572" font-family="monospace" font-size="9" fill="#3D2BFF">LiDAR UNIT 01</text>
+
+  <!-- Depth indicator -->
+  <text x="120" y="620" font-family="monospace" font-size="9" fill="#555860">NEAR</text>
+  <line x1="120" y1="630" x2="1480" y2="630" stroke="#2A2B30" stroke-width="1"/>
+  <text x="1480" y="620" font-family="monospace" font-size="9" fill="#2A2B30" text-anchor="end">FAR</text>
+  <!-- Depth gradient bar -->
+  <defs>
+    <linearGradient id="depth-bar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3D2BFF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#3D2BFF" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+  <rect x="120" y="632" width="1360" height="3" fill="url(#depth-bar)"/>
+
+  <!-- Inspection data panel -->
+  <rect x="1260" y="140" width="280" height="220" rx="4" fill="#0F1018" stroke="#1F2024" stroke-width="1"/>
+  <rect x="1260" y="140" width="280" height="26" rx="4" fill="#1A1B1E"/>
+  <text x="1274" y="158" font-family="monospace" font-size="10" fill="#8A8C92" letter-spacing="1">LiDAR SCAN DATA</text>
+  <text x="1274" y="188" font-family="monospace" font-size="9" fill="#555860">POINT DENSITY</text>
+  <text x="1490" y="188" font-family="monospace" font-size="9" fill="#E8E9EB" text-anchor="end">847 pts/m²</text>
+  <rect x="1274" y="194" width="246" height="1" fill="#1F2024"/>
+  <text x="1274" y="212" font-family="monospace" font-size="9" fill="#555860">SCAN RANGE</text>
+  <text x="1490" y="212" font-family="monospace" font-size="9" fill="#E8E9EB" text-anchor="end">0.3 – 200m</text>
+  <rect x="1274" y="218" width="246" height="1" fill="#1F2024"/>
+  <text x="1274" y="236" font-family="monospace" font-size="9" fill="#555860">DEFLECTION (MAX)</text>
+  <text x="1490" y="236" font-family="monospace" font-size="9" fill="#FF6B35" text-anchor="end">+3.2mm</text>
+  <rect x="1274" y="242" width="246" height="1" fill="#1F2024"/>
+  <text x="1274" y="260" font-family="monospace" font-size="9" fill="#555860">CRACK INDEX</text>
+  <text x="1490" y="260" font-family="monospace" font-size="9" fill="#4ADE80" text-anchor="end">0.04 LOW</text>
+  <rect x="1274" y="266" width="246" height="1" fill="#1F2024"/>
+  <text x="1274" y="284" font-family="monospace" font-size="9" fill="#555860">SCAN COVERAGE</text>
+  <text x="1490" y="284" font-family="monospace" font-size="9" fill="#3D2BFF" text-anchor="end">94.7%</text>
+  <rect x="1274" y="290" width="246" height="1" fill="#1F2024"/>
+  <text x="1274" y="308" font-family="monospace" font-size="9" fill="#555860">CONDITION GRADE</text>
+  <text x="1490" y="308" font-family="monospace" font-size="9" fill="#E8E9EB" text-anchor="end">B+ GOOD</text>
+  <rect x="1274" y="314" width="246" height="1" fill="#1F2024"/>
+  <text x="1274" y="342" font-family="monospace" font-size="9" fill="#4ADE80">SCAN IN PROGRESS</text>
+
+  <!-- Label -->
+  <text x="60" y="820" font-family="monospace" font-size="22" fill="#1F2024" letter-spacing="4">BRIDGESENSE</text>
+  <text x="60" y="842" font-family="monospace" font-size="11" fill="#2A2B30" letter-spacing="2">AI-POWERED BRIDGE INSPECTION · LiDAR + COMPUTER VISION</text>
+
+  <text x="1580" y="990" font-family="monospace" font-size="8" fill="#2A2B30" text-anchor="end">TODO: Replace with real photography</text>
+</svg>

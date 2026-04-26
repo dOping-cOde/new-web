@@ -1,0 +1,221 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0C0D12"/>
+      <stop offset="100%" stop-color="#0A0B0D"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <filter id="glow-sm">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+    <linearGradient id="bar-a" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#3D2BFF" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#3D2BFF" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+
+  <!-- Grid -->
+  <g stroke="#1A1B1E" stroke-width="0.5" fill="none">
+    <line x1="0" y1="250" x2="1600" y2="250"/>
+    <line x1="0" y1="500" x2="1600" y2="500"/>
+    <line x1="0" y1="750" x2="1600" y2="750"/>
+    <line x1="400" y1="0" x2="400" y2="1000"/>
+    <line x1="800" y1="0" x2="800" y2="1000"/>
+    <line x1="1200" y1="0" x2="1200" y2="1000"/>
+  </g>
+
+  <!-- Chat interface - left panel -->
+  <rect x="80" y="100" width="640" height="680" rx="8" fill="#0F1018" stroke="#1F2024" stroke-width="1"/>
+  <!-- Header -->
+  <rect x="80" y="100" width="640" height="40" rx="8" fill="#1A1B1E"/>
+  <circle cx="106" cy="120" r="8" fill="#3D2BFF" opacity="0.6"/>
+  <text x="122" y="124" font-family="monospace" font-size="10" fill="#E8E9EB">Conversational Data Agent</text>
+  <circle cx="688" cy="120" r="4" fill="#4ADE80"/>
+
+  <!-- Message 1 - User -->
+  <rect x="340" y="164" width="356" height="44" rx="12" fill="#1F2024"/>
+  <text x="360" y="181" font-family="monospace" font-size="9" fill="#E8E9EB">What were our top 5 revenue</text>
+  <text x="360" y="197" font-family="monospace" font-size="9" fill="#E8E9EB">products last quarter?</text>
+  <text x="688" y="216" font-family="monospace" font-size="7" fill="#555860" text-anchor="end">09:14</text>
+
+  <!-- Message 2 - Agent thinking -->
+  <rect x="96" y="224" width="280" height="32" rx="12" fill="#1A1B1E" stroke="#1F2024" stroke-width="1"/>
+  <text x="116" y="241" font-family="monospace" font-size="9" fill="#555860">Querying revenue.products...</text>
+  <circle cx="384" cy="240" r="3" fill="#3D2BFF" opacity="0.7"/>
+  <circle cx="394" cy="240" r="3" fill="#3D2BFF" opacity="0.5"/>
+  <circle cx="404" cy="240" r="3" fill="#3D2BFF" opacity="0.3"/>
+
+  <!-- SQL translation display -->
+  <rect x="96" y="272" width="560" height="80" rx="4" fill="#0A0B0D" stroke="#2A2B30" stroke-width="1"/>
+  <text x="112" y="290" font-family="monospace" font-size="8" fill="#555860">→ Generated SQL</text>
+  <text x="112" y="308" font-family="monospace" font-size="8" fill="#3D2BFF">SELECT</text>
+  <text x="156" y="308" font-family="monospace" font-size="8" fill="#8A8C92">product_name, SUM(revenue) as total_rev</text>
+  <text x="112" y="322" font-family="monospace" font-size="8" fill="#3D2BFF">FROM</text>
+  <text x="152" y="322" font-family="monospace" font-size="8" fill="#8A8C92">fact_sales fs JOIN dim_products p ON fs.product_id = p.id</text>
+  <text x="112" y="336" font-family="monospace" font-size="8" fill="#3D2BFF">WHERE</text>
+  <text x="155" y="336" font-family="monospace" font-size="8" fill="#8A8C92">quarter = 'Q3-2024'</text>
+  <text x="112" y="350" font-family="monospace" font-size="8" fill="#3D2BFF">ORDER BY</text>
+  <text x="165" y="350" font-family="monospace" font-size="8" fill="#8A8C92">total_rev DESC LIMIT 5</text>
+
+  <!-- Response with mini bar chart -->
+  <rect x="96" y="368" width="440" height="180" rx="12" fill="#1A1B1E" stroke="#1F2024" stroke-width="1"/>
+  <text x="116" y="388" font-family="monospace" font-size="9" fill="#E8E9EB">Here are the top 5 by revenue (Q3 2024):</text>
+  <!-- Mini bar chart inside bubble -->
+  <!-- Bars -->
+  <g>
+    <rect x="116" y="440" width="6" height="80" fill="#3D2BFF" opacity="0.3"/>
+    <rect x="116" y="396" width="200" height="16" rx="2" fill="#3D2BFF" opacity="0.5"/>
+    <text x="328" y="408" font-family="monospace" font-size="8" fill="#E8E9EB">Enterprise Suite · $4.2M</text>
+
+    <rect x="116" y="420" width="168" height="16" rx="2" fill="#3D2BFF" opacity="0.4"/>
+    <text x="296" y="432" font-family="monospace" font-size="8" fill="#E8E9EB">Data Platform · $3.5M</text>
+
+    <rect x="116" y="444" width="140" height="16" rx="2" fill="#3D2BFF" opacity="0.35"/>
+    <text x="268" y="456" font-family="monospace" font-size="8" fill="#E8E9EB">Analytics API · $2.9M</text>
+
+    <rect x="116" y="468" width="115" height="16" rx="2" fill="#3D2BFF" opacity="0.3"/>
+    <text x="243" y="480" font-family="monospace" font-size="8" fill="#E8E9EB">Consulting · $2.4M</text>
+
+    <rect x="116" y="492" width="96" height="16" rx="2" fill="#3D2BFF" opacity="0.25"/>
+    <text x="224" y="504" font-family="monospace" font-size="8" fill="#E8E9EB">Training · $2.0M</text>
+  </g>
+  <text x="96" y="556" font-family="monospace" font-size="7" fill="#555860">09:14 · 342ms</text>
+
+  <!-- Message 3 - User followup -->
+  <rect x="330" y="572" width="366" height="32" rx="12" fill="#1F2024"/>
+  <text x="350" y="593" font-family="monospace" font-size="9" fill="#E8E9EB">Show YoY growth for Enterprise Suite</text>
+  <text x="688" y="614" font-family="monospace" font-size="7" fill="#555860" text-anchor="end">09:15</text>
+
+  <!-- Agent response with sparkline -->
+  <rect x="96" y="628" width="400" height="120" rx="12" fill="#1A1B1E" stroke="#1F2024" stroke-width="1"/>
+  <text x="116" y="648" font-family="monospace" font-size="9" fill="#E8E9EB">Enterprise Suite YoY growth:</text>
+  <!-- Sparkline -->
+  <polyline points="116,720 166,710 216,695 266,700 316,680 366,660 416,640 466,625"
+    fill="none" stroke="#3D2BFF" stroke-width="1.5" opacity="0.8"/>
+  <line x1="116" y1="730" x2="480" y2="730" stroke="#2A2B30" stroke-width="0.5"/>
+  <text x="116" y="742" font-family="monospace" font-size="7" fill="#555860">2018</text>
+  <text x="476" y="742" font-family="monospace" font-size="7" fill="#555860" text-anchor="end">2024</text>
+  <text x="380" y="668" font-family="monospace" font-size="8" fill="#4ADE80">+127% (6yr CAGR: 14.7%)</text>
+  <text x="96" y="756" font-family="monospace" font-size="7" fill="#555860">09:15 · 218ms</text>
+
+  <!-- NL → SQL flow diagram - right panel -->
+  <rect x="800" y="100" width="720" height="200" rx="4" fill="#0F1018" stroke="#1F2024" stroke-width="1"/>
+  <rect x="800" y="100" width="720" height="26" rx="4" fill="#1A1B1E"/>
+  <text x="816" y="118" font-family="monospace" font-size="10" fill="#8A8C92" letter-spacing="1">NATURAL LANGUAGE → SQL PIPELINE</text>
+
+  <!-- Pipeline steps -->
+  <!-- Step 1 -->
+  <rect x="820" y="142" width="100" height="40" rx="4" fill="#1A1B1E" stroke="#2A2B30" stroke-width="1"/>
+  <text x="870" y="158" font-family="monospace" font-size="8" fill="#8A8C92" text-anchor="middle">NL QUERY</text>
+  <text x="870" y="172" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">User input</text>
+  <!-- Arrow -->
+  <line x1="920" y1="162" x2="944" y2="162" stroke="#2A2B30" stroke-width="1"/>
+  <polygon points="944,157 954,162 944,167" fill="#2A2B30"/>
+  <!-- Step 2 -->
+  <rect x="954" y="142" width="110" height="40" rx="4" fill="#1A1B1E" stroke="#3D2BFF" stroke-width="1" opacity="0.6"/>
+  <text x="1009" y="158" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="middle">INTENT</text>
+  <text x="1009" y="172" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">LLM parse</text>
+  <!-- Arrow -->
+  <line x1="1064" y1="162" x2="1088" y2="162" stroke="#2A2B30" stroke-width="1"/>
+  <polygon points="1088,157 1098,162 1088,167" fill="#2A2B30"/>
+  <!-- Step 3 -->
+  <rect x="1098" y="142" width="120" height="40" rx="4" fill="#1A1B1E" stroke="#3D2BFF" stroke-width="1" opacity="0.6"/>
+  <text x="1158" y="158" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="middle">SCHEMA MAP</text>
+  <text x="1158" y="172" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">Table + column</text>
+  <!-- Arrow -->
+  <line x1="1218" y1="162" x2="1242" y2="162" stroke="#2A2B30" stroke-width="1"/>
+  <polygon points="1242,157 1252,162 1242,167" fill="#2A2B30"/>
+  <!-- Step 4 -->
+  <rect x="1252" y="142" width="100" height="40" rx="4" fill="#1A1B1E" stroke="#3D2BFF" stroke-width="1" opacity="0.8"/>
+  <text x="1302" y="158" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="middle">SQL GEN</text>
+  <text x="1302" y="172" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">Dialect-aware</text>
+  <!-- Arrow -->
+  <line x1="1352" y1="162" x2="1376" y2="162" stroke="#2A2B30" stroke-width="1"/>
+  <polygon points="1376,157 1386,162 1376,167" fill="#2A2B30"/>
+  <!-- Step 5 -->
+  <rect x="1386" y="142" width="110" height="40" rx="4" fill="#1A1B1E" stroke="#4ADE80" stroke-width="1" opacity="0.6"/>
+  <text x="1441" y="158" font-family="monospace" font-size="8" fill="#4ADE80" text-anchor="middle">RESULT</text>
+  <text x="1441" y="172" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">Formatted</text>
+
+  <!-- Stats row -->
+  <text x="820" y="214" font-family="monospace" font-size="8" fill="#555860">AVG LATENCY: 342ms</text>
+  <text x="980" y="214" font-family="monospace" font-size="8" fill="#555860">ACCURACY: 94.8%</text>
+  <text x="1140" y="214" font-family="monospace" font-size="8" fill="#555860">SCHEMAS: 847 tables</text>
+  <text x="1320" y="214" font-family="monospace" font-size="8" fill="#3D2BFF">DIALECTS: 6</text>
+  <text x="1466" y="214" font-family="monospace" font-size="8" fill="#4ADE80">LIVE</text>
+
+  <!-- Supported data panel -->
+  <rect x="800" y="320" width="720" height="360" rx="4" fill="#0F1018" stroke="#1F2024" stroke-width="1"/>
+  <rect x="800" y="320" width="720" height="26" rx="4" fill="#1A1B1E"/>
+  <text x="816" y="338" font-family="monospace" font-size="10" fill="#8A8C92" letter-spacing="1">CONNECTED DATA SOURCES</text>
+
+  <!-- Data source cards -->
+  <rect x="820" y="360" width="160" height="100" rx="4" fill="#1A1B1E" stroke="#2A2B30" stroke-width="1"/>
+  <text x="900" y="384" font-family="monospace" font-size="9" fill="#8A8C92" text-anchor="middle">BigQuery</text>
+  <text x="900" y="402" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">847 tables</text>
+  <text x="900" y="418" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">14 datasets</text>
+  <text x="900" y="434" font-family="monospace" font-size="7" fill="#4ADE80" text-anchor="middle">● CONNECTED</text>
+  <text x="900" y="452" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">3.2TB indexed</text>
+
+  <rect x="998" y="360" width="160" height="100" rx="4" fill="#1A1B1E" stroke="#2A2B30" stroke-width="1"/>
+  <text x="1078" y="384" font-family="monospace" font-size="9" fill="#8A8C92" text-anchor="middle">PostgreSQL</text>
+  <text x="1078" y="402" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">312 tables</text>
+  <text x="1078" y="418" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">8 schemas</text>
+  <text x="1078" y="434" font-family="monospace" font-size="7" fill="#4ADE80" text-anchor="middle">● CONNECTED</text>
+  <text x="1078" y="452" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">890GB indexed</text>
+
+  <rect x="1176" y="360" width="160" height="100" rx="4" fill="#1A1B1E" stroke="#2A2B30" stroke-width="1"/>
+  <text x="1256" y="384" font-family="monospace" font-size="9" fill="#8A8C92" text-anchor="middle">Snowflake</text>
+  <text x="1256" y="402" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">1,240 tables</text>
+  <text x="1256" y="418" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">22 databases</text>
+  <text x="1256" y="434" font-family="monospace" font-size="7" fill="#4ADE80" text-anchor="middle">● CONNECTED</text>
+  <text x="1256" y="452" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">8.1TB indexed</text>
+
+  <rect x="1354" y="360" width="140" height="100" rx="4" fill="#1A1B1E" stroke="#2A2B30" stroke-width="1"/>
+  <text x="1424" y="384" font-family="monospace" font-size="9" fill="#8A8C92" text-anchor="middle">dbt Cloud</text>
+  <text x="1424" y="402" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">480 models</text>
+  <text x="1424" y="418" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">Lineage graph</text>
+  <text x="1424" y="434" font-family="monospace" font-size="7" fill="#4ADE80" text-anchor="middle">● CONNECTED</text>
+  <text x="1424" y="452" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">Metadata sync</text>
+
+  <!-- Query history chart -->
+  <text x="820" y="490" font-family="monospace" font-size="9" fill="#555860">QUERY VOLUME (LAST 7 DAYS)</text>
+  <!-- Mini bar chart -->
+  <g fill="#3D2BFF" opacity="0.6">
+    <rect x="820" y="560" width="28" height="40"/>
+    <rect x="860" y="540" width="28" height="60"/>
+    <rect x="900" y="530" width="28" height="70"/>
+    <rect x="940" y="515" width="28" height="85"/>
+    <rect x="980" y="525" width="28" height="75"/>
+    <rect x="1020" y="505" width="28" height="95"/>
+    <rect x="1060" y="490" width="28" height="110"/>
+  </g>
+  <line x1="820" y1="600" x2="1100" y2="600" stroke="#2A2B30" stroke-width="0.5"/>
+  <text x="820" y="612" font-family="monospace" font-size="7" fill="#555860">Mon</text>
+  <text x="1096" y="612" font-family="monospace" font-size="7" fill="#555860" text-anchor="end">Sun</text>
+  <text x="1105" y="545" font-family="monospace" font-size="8" fill="#3D2BFF">+34%</text>
+  <text x="1105" y="558" font-family="monospace" font-size="7" fill="#555860">WoW</text>
+
+  <!-- Metrics grid -->
+  <text x="1160" y="510" font-family="monospace" font-size="9" fill="#555860">TOTAL QUERIES</text>
+  <text x="1160" y="530" font-family="monospace" font-size="20" fill="#E8E9EB">47,832</text>
+  <text x="1340" y="510" font-family="monospace" font-size="9" fill="#555860">SUCCESS RATE</text>
+  <text x="1340" y="530" font-family="monospace" font-size="20" fill="#4ADE80">97.4%</text>
+  <text x="1160" y="572" font-family="monospace" font-size="9" fill="#555860">AVG CONFIDENCE</text>
+  <text x="1160" y="592" font-family="monospace" font-size="20" fill="#E8E9EB">0.91</text>
+  <text x="1340" y="572" font-family="monospace" font-size="9" fill="#555860">UNIQUE USERS</text>
+  <text x="1340" y="592" font-family="monospace" font-size="20" fill="#E8E9EB">284</text>
+  <text x="1160" y="630" font-family="monospace" font-size="8" fill="#3D2BFF">HALLUCINATION RATE: 0.2%</text>
+  <text x="1160" y="646" font-family="monospace" font-size="8" fill="#555860">Validated via result sampling</text>
+  <text x="1160" y="662" font-family="monospace" font-size="8" fill="#555860">Human review threshold: 0.5</text>
+
+  <!-- Label -->
+  <text x="80" y="870" font-family="monospace" font-size="18" fill="#1F2024" letter-spacing="4">CONVERSATIONAL DATA AGENT</text>
+  <text x="80" y="892" font-family="monospace" font-size="11" fill="#2A2B30" letter-spacing="2">NATURAL LANGUAGE → SQL · LLM-POWERED ANALYTICS INTERFACE</text>
+
+  <text x="1580" y="990" font-family="monospace" font-size="8" fill="#2A2B30" text-anchor="end">TODO: Replace with real photography</text>
+</svg>
