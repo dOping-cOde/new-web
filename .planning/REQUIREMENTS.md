@@ -88,20 +88,20 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Performance
 
-- [ ] **PERF-01**: Lighthouse mobile: 90+ Performance, 100 Accessibility, 100 Best Practices, 100 SEO
-- [ ] **PERF-02**: LCP <2.0s on mobile
-- [ ] **PERF-03**: CLS <0.05
-- [ ] **PERF-04**: Total JS <250KB initial route
-- [ ] **PERF-05**: Three.js scenes lazy-loaded, <60KB each
-- [ ] **PERF-06**: All images use next/image with proper sizes, blur placeholders, AVIF/WebP
-- [ ] **PERF-07**: Critical fonts preloaded, non-critical deferred
-- [ ] **PERF-08**: pnpm build produces no TypeScript or ESLint errors, no console warnings
+- [x] **PERF-01**: Lighthouse mobile: 90+ Performance, 100 Accessibility, 100 Best Practices, 100 SEO
+- [x] **PERF-02**: LCP <2.0s on mobile
+- [x] **PERF-03**: CLS <0.05
+- [x] **PERF-04**: Total JS <250KB initial route
+- [x] **PERF-05**: Three.js scenes lazy-loaded, <60KB each
+- [x] **PERF-06**: All images use next/image with proper sizes, blur placeholders, AVIF/WebP
+- [x] **PERF-07**: Critical fonts preloaded, non-critical deferred
+- [x] **PERF-08**: pnpm build produces no TypeScript or ESLint errors, no console warnings
 
 ### Documentation
 
-- [ ] **DOC-01**: README.md with setup instructions, content-edit guide, deployment notes
-- [ ] **DOC-02**: Every placeholder asset has a TODO comment indicating what needs replacement
-- [ ] **DOC-03**: Contact form has TODO comment showing where to wire Resend/Formspree
+- [x] **DOC-01**: README.md with setup instructions, content-edit guide, deployment notes
+- [x] **DOC-02**: Every placeholder asset has a TODO comment indicating what needs replacement
+- [x] **DOC-03**: Contact form has TODO comment showing where to wire Resend/Formspree
 
 ## v2 Requirements
 
@@ -204,17 +204,17 @@ Deferred to future release. Tracked but not in current roadmap.
 | A11Y-07 | Phase 4 | Complete |
 | A11Y-08 | Phase 4 | Complete |
 | A11Y-09 | Phase 4 | Complete |
-| PERF-01 | Phase 4 | Pending |
-| PERF-02 | Phase 4 | Pending |
-| PERF-03 | Phase 4 | Pending |
-| PERF-04 | Phase 4 | Pending |
-| PERF-05 | Phase 4 | Pending |
-| PERF-06 | Phase 4 | Pending |
-| PERF-07 | Phase 4 | Pending |
-| PERF-08 | Phase 4 | Pending |
-| DOC-01 | Phase 4 | Pending |
-| DOC-02 | Phase 4 | Pending |
-| DOC-03 | Phase 4 | Pending |
+| PERF-01 | Phase 4 | Complete |
+| PERF-02 | Phase 4 | Complete |
+| PERF-03 | Phase 4 | Complete |
+| PERF-04 | Phase 4 | Complete |
+| PERF-05 | Phase 4 | Complete |
+| PERF-06 | Phase 4 | Complete |
+| PERF-07 | Phase 4 | Complete |
+| PERF-08 | Phase 4 | Complete |
+| DOC-01 | Phase 4 | Complete |
+| DOC-02 | Phase 4 | Complete |
+| DOC-03 | Phase 4 | Complete |
 
 **Coverage:**
 - v1 requirements: 69 total (note: file previously stated 56 — count updated to reflect actual requirements)
