@@ -180,28 +180,28 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 
     // --- Styled standard HTML elements ---
     h1: ({ children, ...props }: ComponentPropsWithoutRef<"h1">) => (
-      <h1 className="text-display-md text-text mt-4xl mb-xl" {...props}>
+      <h1 className="text-display-md text-inherit mt-4xl mb-xl" {...props}>
         {children}
       </h1>
     ),
     h2: ({ children, ...props }: ComponentPropsWithoutRef<"h2">) => (
-      <h2 className="text-h2 text-text mt-3xl mb-lg" {...props}>
+      <h2 className="text-h2 text-inherit mt-3xl mb-lg" {...props}>
         {children}
       </h2>
     ),
     h3: ({ children, ...props }: ComponentPropsWithoutRef<"h3">) => (
-      <h3 className="text-h3 text-text mt-2xl mb-md" {...props}>
+      <h3 className="text-h3 text-inherit mt-2xl mb-md" {...props}>
         {children}
       </h3>
     ),
     p: ({ children, ...props }: ComponentPropsWithoutRef<"p">) => (
-      <p className="text-body text-text mb-lg" {...props}>
+      <p className="text-body text-inherit mb-lg" {...props}>
         {children}
       </p>
     ),
     ul: ({ children, ...props }: ComponentPropsWithoutRef<"ul">) => (
       <ul
-        className="text-body text-text mb-lg pl-xl list-disc space-y-sm"
+        className="text-body text-inherit mb-lg pl-xl list-disc space-y-sm"
         {...props}
       >
         {children}
@@ -209,7 +209,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     ol: ({ children, ...props }: ComponentPropsWithoutRef<"ol">) => (
       <ol
-        className="text-body text-text mb-lg pl-xl list-decimal space-y-sm"
+        className="text-body text-inherit mb-lg pl-xl list-decimal space-y-sm"
         {...props}
       >
         {children}
@@ -244,7 +244,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     table: ({ children, ...props }: ComponentPropsWithoutRef<"table">) => (
       <div className="overflow-x-auto my-2xl">
         <table
-          className="w-full text-body-sm text-text border-collapse"
+          className="w-full text-body-sm text-inherit border-collapse"
           {...props}
         >
           {children}
@@ -261,7 +261,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     td: ({ children, ...props }: ComponentPropsWithoutRef<"td">) => (
       <td
-        className="text-body-sm text-text border-b border-border-light px-md py-sm"
+        className="text-body-sm text-inherit border-b border-border-light px-md py-sm"
         {...props}
       >
         {children}
