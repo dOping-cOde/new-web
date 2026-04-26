@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 01-foundation/01-01-PLAN.md
-last_updated: "2026-04-26T10:10:54.738Z"
+stopped_at: Completed 01-foundation/01-02-PLAN.md
+last_updated: "2026-04-26T10:16:13.664Z"
 last_activity: 2026-04-26
 progress:
   total_phases: 4
   completed_phases: 0
   total_plans: 4
-  completed_plans: 1
+  completed_plans: 2
   percent: 0
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-04-26)
 ## Current Position
 
 Phase: 01 (foundation) — EXECUTING
-Plan: 2 of 4
+Plan: 3 of 4
 Status: Ready to execute
 Last activity: 2026-04-26
 
@@ -53,6 +53,7 @@ Progress: [░░░░░░░░░░] 0%
 
 *Updated after each plan completion*
 | Phase 01-foundation P01 | 8 | 2 tasks | 19 files |
+| Phase 01-foundation P02 | 2 | 2 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -71,6 +72,8 @@ Recent decisions affecting current work:
 - [Phase 01-foundation]: Tailwind v4 CSS-first: @theme {} in globals.css, no tailwind.config.js — v4 does not auto-detect JS config
 - [Phase 01-foundation]: Design tokens dual-declared as CSS vars AND @theme utilities — CSS vars for GSAP/JS access, @theme for Tailwind utility generation
 - [Phase 01-foundation]: Custom spacing overrides Tailwind defaults — p-lg = 24px per DESIGN.md; all future components must use DESIGN.md spacing not Tailwind defaults
+- [Phase 01-foundation]: Caption polymorphic typing uses explicit props interface instead of ComponentProps<'span'> — avoids ref type conflict in strict TypeScript when as='div'
+- [Phase 01-foundation]: Use rounded-[9999px] instead of rounded-pill — @theme defines --radius-pill but Tailwind v4 does not auto-generate a rounded-pill utility class from a CSS var
 
 ### Pending Todos
 
@@ -82,6 +85,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-26T10:10:54.736Z
-Stopped at: Completed 01-foundation/01-01-PLAN.md
+Last session: 2026-04-26T10:16:13.662Z
+Stopped at: Completed 01-foundation/01-02-PLAN.md
 Resume file: None

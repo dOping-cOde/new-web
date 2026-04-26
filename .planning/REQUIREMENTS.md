@@ -15,8 +15,8 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **FOUND-04**: DESIGN.md placed at project root with complete design system spec
 - [ ] **FOUND-05**: Sticky navbar with backdrop-filter blur, theme-aware (light/dark auto-detection via IntersectionObserver)
 - [ ] **FOUND-06**: Footer with 4-column grid, dark background, consistent across all pages
-- [ ] **FOUND-07**: Core UI components: Button (primary/secondary), Pill, StatBlock, Caption, SectionHeader, Container
-- [ ] **FOUND-08**: Mobile responsive layout at all breakpoints (mobile, tablet, desktop)
+- [x] **FOUND-07**: Core UI components: Button (primary/secondary), Pill, StatBlock, Caption, SectionHeader, Container
+- [x] **FOUND-08**: Mobile responsive layout at all breakpoints (mobile, tablet, desktop)
 
 ### Pages
 
@@ -152,8 +152,8 @@ Deferred to future release. Tracked but not in current roadmap.
 | FOUND-04 | Phase 1 | Complete |
 | FOUND-05 | Phase 1 | Pending |
 | FOUND-06 | Phase 1 | Pending |
-| FOUND-07 | Phase 1 | Pending |
-| FOUND-08 | Phase 1 | Pending |
+| FOUND-07 | Phase 1 | Complete |
+| FOUND-08 | Phase 1 | Complete |
 | PAGE-01 | Phase 2 | Pending |
 | PAGE-02 | Phase 2 | Pending |
 | PAGE-03 | Phase 2 | Pending |
