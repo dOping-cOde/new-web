@@ -93,6 +93,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 4/4 | Complete   | 2026-04-26 |
-| 2. Content & Pages | 0/9 | Planning complete | - |
+| 2. Content & Pages | 3/9 | In Progress|  |
 | 3. Animation & WebGL | 0/TBD | Not started | - |
 | 4. Quality | 0/TBD | Not started | - |
