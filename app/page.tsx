@@ -10,6 +10,7 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StatBlock } from "@/components/ui/StatBlock";
 import { Button } from "@/components/ui/Button";
 import { Caption } from "@/components/ui/Caption";
+import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { CAPABILITIES } from "@/content/services";
 
 // Override template title for home page — full brand name as title
@@ -89,24 +90,26 @@ export default function Home() {
       {/* ===== Section 2: Capability strip (light bg) ===== */}
       <section className="bg-bg-light py-5xl max-md:py-3xl">
         <Container>
-          <SectionHeader
-            kicker="WHAT WE BUILD"
-            heading="Six capabilities. One engineering team."
-            headingSize="text-display-md"
-          />
+          <ScrollReveal>
+            <SectionHeader
+              kicker="WHAT WE BUILD"
+              heading="Six capabilities. One engineering team."
+              headingSize="text-display-md"
+            />
 
-          {/* 3×2 grid on desktop, 2-col on tablet, 1-col on mobile */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-xl mt-2xl">
-            {CAPABILITIES.map((capability) => (
-              <ServiceTile
-                key={capability.id}
-                title={capability.title}
-                description={capability.description}
-                tag={capability.tag}
-                href={`/services#${capability.anchorId}`}
-              />
-            ))}
-          </div>
+            {/* 3×2 grid on desktop, 2-col on tablet, 1-col on mobile */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-xl mt-2xl">
+              {CAPABILITIES.map((capability) => (
+                <ServiceTile
+                  key={capability.id}
+                  title={capability.title}
+                  description={capability.description}
+                  tag={capability.tag}
+                  href={`/services#${capability.anchorId}`}
+                />
+              ))}
+            </div>
+          </ScrollReveal>
         </Container>
       </section>
 
@@ -154,13 +157,15 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Stat row — 4 StatBlock components */}
-          <div className="flex flex-row flex-wrap gap-2xl mt-2xl">
-            <StatBlock value="5 min" label="Refresh interval" dark={true} />
-            <StatBlock value="40 days" label="Load survey retention" dark={true} />
-            <StatBlock value="0.5" label="Accuracy class" dark={true} />
-            <StatBlock value="24/7" label="Monitoring" dark={true} />
-          </div>
+          {/* Stat row — 4 StatBlock components with scroll-reveal */}
+          <ScrollReveal delay={0.1}>
+            <div className="flex flex-row flex-wrap gap-2xl mt-2xl">
+              <StatBlock value="5 min" label="Refresh interval" dark={true} />
+              <StatBlock value="40 days" label="Load survey retention" dark={true} />
+              <StatBlock value="0.5" label="Accuracy class" dark={true} />
+              <StatBlock value="24/7" label="Monitoring" dark={true} />
+            </div>
+          </ScrollReveal>
 
           {/* CTA */}
           <div className="mt-2xl">
@@ -179,27 +184,29 @@ export default function Home() {
       {/* ===== Section 4: Portfolio teaser grid (light bg) ===== */}
       <section className="py-5xl max-md:py-3xl">
         <Container>
-          <SectionHeader
-            kicker="RECENT WORK"
-            heading="Systems in production."
-            headingSize="text-display-md"
-          />
+          <ScrollReveal>
+            <SectionHeader
+              kicker="RECENT WORK"
+              heading="Systems in production."
+              headingSize="text-display-md"
+            />
 
-          {/* 4-card grid: 4 col desktop, 2 col tablet, 1 col mobile */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-xl mt-2xl">
-            {FEATURED_CARDS.map((card) => (
-              <PortfolioCard
-                key={card.slug}
-                slug={card.slug}
-                title={card.title}
-                category={card.category}
-                subcategory={card.subcategory}
-                excerpt={card.excerpt}
-                heroImage={card.heroImage}
-                heroImageAlt={card.heroImageAlt}
-              />
-            ))}
-          </div>
+            {/* 4-card grid: 4 col desktop, 2 col tablet, 1 col mobile */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-xl mt-2xl">
+              {FEATURED_CARDS.map((card) => (
+                <PortfolioCard
+                  key={card.slug}
+                  slug={card.slug}
+                  title={card.title}
+                  category={card.category}
+                  subcategory={card.subcategory}
+                  excerpt={card.excerpt}
+                  heroImage={card.heroImage}
+                  heroImageAlt={card.heroImageAlt}
+                />
+              ))}
+            </div>
+          </ScrollReveal>
 
           {/* "See all" link */}
           <Link
