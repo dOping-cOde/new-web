@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Softwires Technologies — engineers who build AI systems for energy, healthcare, and infrastructure. Not sloganeers.",
+  openGraph: {
+    title: "About — Softwires",
+    description:
+      "Softwires Technologies — engineers who build AI systems for energy, healthcare, and infrastructure. Not sloganeers.",
+  },
 };
 
 export default function AboutPage() {

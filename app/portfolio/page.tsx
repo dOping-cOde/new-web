@@ -8,7 +8,12 @@ import { PortfolioGrid } from "./PortfolioGrid";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Eleven AI systems built for production — from transformer monitoring to cancer screening. Browse by industry: Energy, Healthcare, Infrastructure, Insurance, Data & Analytics.",
+    "Eleven AI systems built for production — transformer monitoring to cancer screening. Industries: Energy, Healthcare, Infrastructure, Insurance.",
+  openGraph: {
+    title: "Portfolio — Softwires",
+    description:
+      "Eleven AI systems built for production — transformer monitoring to cancer screening. Industries: Energy, Healthcare, Infrastructure, Insurance.",
+  },
 };
 
 /**

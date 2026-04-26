@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Tell us what you are building. Softwires responds within two business days with technical depth.",
+  openGraph: {
+    title: "Contact — Softwires",
+    description:
+      "Tell us what you are building. Softwires responds within two business days with technical depth.",
+  },
 };
 
 export default function ContactPage() {
