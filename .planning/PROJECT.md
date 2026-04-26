@@ -16,22 +16,20 @@ The site must convey engineered seriousness — the calm authority of a firm tha
 - ✓ Editorial Light aesthetic: off-white canvas, generous whitespace, large display type, single Deep Indigo (#3D2BFF) accent — Validated in Phase 1: Foundation
 - ✓ Self-hosted fonts: Fraunces (display), Inter (body), JetBrains Mono (technical) — Validated in Phase 1: Foundation
 - ✓ Responsive design: mobile, tablet, desktop breakpoints — Validated in Phase 1: Foundation
+- ✓ 5 top-level pages: Home, Services, Portfolio, About, Contact — Validated in Phase 2: Content & Pages
+- ✓ 11 case-study detail pages under Portfolio (5 Tier A, 6 Tier B) — Validated in Phase 2: Content & Pages
+- ✓ Dark cinematic sections for case-study heroes — Validated in Phase 2: Content & Pages
+- ✓ MDX-based case study content with typed frontmatter — Validated in Phase 2: Content & Pages
+- ✓ Contact form with mailto fallback — Validated in Phase 2: Content & Pages
 
 ### Active
 
-- [ ] 5 top-level pages: Home, Services, Portfolio, About, Contact
-- [ ] 11 case-study detail pages under Portfolio (5 Tier A real-client, 6 Tier B capability showcases)
-- [ ] Dark cinematic sections for case-study heroes and architecture diagrams
 - [ ] WebGL hero (Three.js particle field) on homepage, point-cloud bridge on BridgeSense
 - [ ] GSAP ScrollTrigger for scroll-pinned architecture sections, hero text reveal, parallax
 - [ ] Framer Motion for component micro-interactions (hover-lift, number counters, filter FLIP)
-- [ ] MDX-based case study content with typed frontmatter
 - [ ] Full SEO: metadata per route, JSON-LD schemas, sitemap, robots, dynamic OG images
 - [ ] WCAG 2.1 AA accessibility, full keyboard nav, prefers-reduced-motion support
 - [ ] Lighthouse mobile: 90+ Performance, 100 Accessibility, 100 Best Practices, 100 SEO
-- [ ] Contact form with mailto fallback (TODO comments for Resend/Formspree)
-- [ ] Self-hosted fonts: Fraunces (display), Inter (body), JetBrains Mono (technical)
-- [ ] Responsive design: mobile, tablet, desktop breakpoints
 - [ ] No backend, no CMS, no database, no analytics/cookie banner for v1
 
 ### Out of Scope
@@ -97,4 +95,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-26 after Phase 1: Foundation complete*
+*Last updated: 2026-04-26 after Phase 2: Content & Pages complete*
