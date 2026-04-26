@@ -18,7 +18,7 @@ decisions:
 metrics:
   duration: "~4min"
   completed: "2026-04-26"
-  tasks_completed: 1
+  tasks_completed: 2
   tasks_total: 2
   files_modified: 0
 requirements: [ANIM-07, ANIM-08]
@@ -26,7 +26,7 @@ requirements: [ANIM-07, ANIM-08]
 
 # Phase 3 Plan 5: Verification and Sign-off Summary
 
-**One-liner:** Automated verification of all 15 Phase 3 requirements — build, domain boundaries, reduced-motion coverage, GPU disposal, SSR guards, ANIM-07/08 — all pass; human visual checkpoint pending.
+**One-liner:** Automated verification of all 15 Phase 3 requirements — build, domain boundaries, reduced-motion coverage, GPU disposal, SSR guards, ANIM-07/08 — all pass; human visually approved all animations and WebGL scenes across homepage, portfolio, and case studies.**
 
 ## Objective
 
@@ -101,9 +101,18 @@ The plan's grep targeted `app/page.tsx` and `mdx-components.tsx`, but ssr:false 
 
 Exactly 1 `gsap.registerPlugin` call in `lib/gsap.ts` (line 10). Single registration point confirmed.
 
-### Task 2: Human Visual Verification (CHECKPOINT — PENDING)
+### Task 2: Human Visual Verification (COMPLETE — APPROVED)
 
-This plan has `autonomous: false`. Task 2 is a `checkpoint:human-verify` gate requiring human approval of all animations, WebGL scenes, reduced-motion fallbacks, and performance across homepage, portfolio, and case study pages.
+Human visually confirmed all animations and WebGL scenes across all pages:
+
+- **Homepage (/):** Hero text word-by-word reveal, indigo particle field drift, scroll cue animation, capability strip and portfolio teaser section fade-ups, stat counters animating from 0
+- **Portfolio (/portfolio):** Cards lift 4px with shadow on hover, filter pill FLIP reorder animation, "All" return FLIP animation
+- **iDTRM case study (/portfolio/idtrm):** Hero image parallax, stat counters animating on scroll-enter, Architecture section pins and staggers bullets during scroll
+- **BridgeSense case study (/portfolio/bridgesense):** Point-cloud bridge rotating slowly, recognizable bridge shape (deck, arches, supports), hero parallax, Architecture pin
+- **Navbar (all pages):** Smooth theme transition on scroll past dark sections, returns to light theme on scroll back
+- **Mobile nav:** Hamburger opens full-screen overlay, nav links stagger in from top
+- **Reduced motion:** Hero text appears immediately, particle field shows static SVG, no scroll animations fire, BridgeSense shows static SVG bridge
+- **Performance:** No visible jank, particle field smooth, page transitions clean
 
 ## Deviations from Plan
 
@@ -119,13 +128,9 @@ The following stubs exist in the codebase (pre-existing, not introduced by this 
 
 These stubs are intentional and documented. They do not affect the animation layer being verified in this plan.
 
-## Self-Check
+## Self-Check: PASSED
 
 - [x] All automated checks run and passed
 - [x] Build exits 0 with zero TypeScript errors
-- [x] SUMMARY.md created
-- [ ] Task 2 (human verification) pending — checkpoint returned to orchestrator
-
-## Self-Check: PARTIAL
-
-Task 1 complete and verified. Task 2 is a human checkpoint — no code changes to verify. Checkpoint message returned to orchestrator.
+- [x] SUMMARY.md created and updated with human sign-off
+- [x] Task 2 (human visual verification) approved by user — 2026-04-26

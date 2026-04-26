@@ -46,8 +46,8 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **ANIM-04**: Framer Motion: animated metric counters on stat blocks (useMotionValue, trigger on scroll-enter)
 - [x] **ANIM-05**: Framer Motion: hover-lift on portfolio cards (translateY -4px, shadow transition, 320ms)
 - [x] **ANIM-06**: Framer Motion: portfolio filter with FLIP technique (layout prop)
-- [ ] **ANIM-07**: Navbar theme transition: backdrop-filter blur + CSS variable color swap on light/dark section crossing (320ms)
-- [ ] **ANIM-08**: Mobile nav: hamburger to full-screen overlay with stagger reveal
+- [x] **ANIM-07**: Navbar theme transition: backdrop-filter blur + CSS variable color swap on light/dark section crossing (320ms)
+- [x] **ANIM-08**: Mobile nav: hamburger to full-screen overlay with stagger reveal
 - [x] **ANIM-09**: Scroll reveal: fade-up on scroll into view for section content
 - [x] **ANIM-10**: All animations use `@gsap/react` useGSAP hook for proper cleanup
 
@@ -174,8 +174,8 @@ Deferred to future release. Tracked but not in current roadmap.
 | ANIM-04 | Phase 3 | Complete |
 | ANIM-05 | Phase 3 | Complete |
 | ANIM-06 | Phase 3 | Complete |
-| ANIM-07 | Phase 3 | Pending |
-| ANIM-08 | Phase 3 | Pending |
+| ANIM-07 | Phase 3 | Complete |
+| ANIM-08 | Phase 3 | Complete |
 | ANIM-09 | Phase 3 | Complete |
 | ANIM-10 | Phase 3 | Complete |
 | GL-01 | Phase 3 | Complete |
