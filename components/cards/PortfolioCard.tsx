@@ -36,14 +36,22 @@ export function PortfolioCard({
       )}
     >
       {/* Image area — 16:10 aspect ratio; relative required for next/image fill */}
-      <div className="relative aspect-[16/10] overflow-hidden rounded-md">
-        <Image
-          src={heroImage}
-          alt={heroImageAlt}
-          fill
-          className="object-cover group-hover:scale-[1.02] transition-transform duration-normal"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
+      <div className="relative aspect-[16/10] overflow-hidden rounded-md bg-surface-elevated">
+        {heroImage ? (
+          <Image
+            src={heroImage}
+            alt={heroImageAlt}
+            fill
+            className="object-cover group-hover:scale-[1.02] transition-transform duration-normal"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        ) : (
+          /* Placeholder shown until real photography is available */
+          <div className="absolute inset-0 flex items-center justify-center bg-surface-elevated">
+            {/* TODO: replace with real project photography when assets are available */}
+            <span className="text-mono-sm text-text-muted-dark">{heroImageAlt}</span>
+          </div>
+        )}
       </div>
 
       {/* Content area */}

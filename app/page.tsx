@@ -1,149 +1,221 @@
-{/* Component showcase — will be replaced by real homepage in Phase 2 */}
+import type { Metadata } from "next";
+import Link from "next/link";
+import { HeroLight } from "@/components/sections/HeroLight";
+import { ServiceTile } from "@/components/cards/ServiceTile";
+import { PortfolioCard } from "@/components/cards/PortfolioCard";
+import { ManifestoBand } from "@/components/sections/ManifestoBand";
+import { CTABand } from "@/components/sections/CTABand";
+import { Container } from "@/components/layout/Container";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { StatBlock } from "@/components/ui/StatBlock";
 import { Button } from "@/components/ui/Button";
 import { Caption } from "@/components/ui/Caption";
-import { Pill } from "@/components/ui/Pill";
-import { StatBlock } from "@/components/ui/StatBlock";
-import { SectionHeader } from "@/components/ui/SectionHeader";
-import { Container } from "@/components/layout/Container";
+import { CAPABILITIES } from "@/content/services";
 
+// Override template title for home page — full brand name as title
+export const metadata: Metadata = {
+  title: "Softwires Technologies — AI Engineering for the Physical World",
+  description:
+    "Softwires builds AI systems that monitor transformers, inspect bridges, screen for cancer, and detect fraud. Deployed in production across India and beyond.",
+};
+
+// Featured portfolio cards — hardcoded per spec (4 of the Tier A case studies)
+// TODO: replace placeholder hero images with real photography
+const FEATURED_CARDS = [
+  {
+    slug: "bridgesense",
+    title: "BridgeSense",
+    category: "Infrastructure",
+    subcategory: "LiDAR · Computer Vision",
+    excerpt:
+      "Drone-mounted LiDAR system detecting 1.5–3mm structural changes across bridges and viaducts with 0.92 F1-score accuracy.",
+    heroImage: "",
+    heroImageAlt: "BridgeSense — LiDAR point-cloud bridge inspection dashboard",
+  },
+  {
+    slug: "salt-lick",
+    title: "Salt-Lick",
+    category: "Healthcare",
+    subcategory: "Clinical AI · Risk Scoring",
+    excerpt:
+      "Cancer risk stratification platform triaging patients across spoke-hub networks before symptoms progress to late stage.",
+    heroImage: "",
+    heroImageAlt: "Salt-Lick — cancer risk stratification dashboard",
+  },
+  {
+    slug: "ai-copter",
+    title: "AI-Copter",
+    category: "Infrastructure",
+    subcategory: "Drones · Computer Vision",
+    excerpt:
+      "Autonomous aerial inspection system combining drone telemetry with real-time AI analysis for large-scale infrastructure surveys.",
+    heroImage: "",
+    heroImageAlt: "AI-Copter — drone inspection operations dashboard",
+  },
+  {
+    slug: "fwa-platform",
+    title: "FWA Platform",
+    category: "Insurance",
+    subcategory: "Fraud Detection · AI Agents",
+    excerpt:
+      "Fraud, waste, and abuse detection system processing insurance claims at scale with automated investigation and flagging.",
+    heroImage: "",
+    heroImageAlt: "FWA Platform — fraud detection and case management dashboard",
+  },
+];
+
+/**
+ * Home page — primary entry point for technical buyers.
+ * Sections: Hero → Capability Strip → Featured Case Study (dark) → Portfolio Teaser → Manifesto → CTA
+ * Server Component.
+ */
 export default function Home() {
   return (
     <main>
-      {/* ===== LIGHT SECTION — tests navbar in light mode (min 100vh) ===== */}
-      <section className="bg-bg-light min-h-screen py-4xl">
+      {/* ===== Section 1: Hero (full viewport, light bg) ===== */}
+      <HeroLight
+        headline="AI engineered for the physical world."
+        highlightWord="engineered"
+        headlineSize="text-display-xl"
+        intro="Softwires builds AI systems that monitor transformers, inspect bridges, screen for cancer, and detect fraud — deployed in production across India and beyond."
+        primaryCTA={{ label: "See our work", href: "/portfolio" }}
+        secondaryCTA={{ label: "Talk to engineering", href: "/contact" }}
+        showScrollCue={true}
+      >
+        {/* TODO: Phase 3 — Three.js particle field (HeroParticleField.tsx), falls back to SVG noise under reduced-motion */}
+        <div className="absolute inset-0 -z-10" />
+      </HeroLight>
+
+      {/* ===== Section 2: Capability strip (light bg) ===== */}
+      <section className="bg-bg-light py-5xl max-md:py-3xl">
         <Container>
           <SectionHeader
-            kicker="COMPONENT LIBRARY"
-            heading="Foundation Components"
-            intro="Six atomic building blocks for the Softwires marketing site — encoding the design system into reusable React components."
-            className="mb-3xl"
-          />
-
-          {/* Buttons */}
-          <div className="mb-2xl">
-            <Caption as="p" className="mb-lg">BUTTONS</Caption>
-            <div className="flex flex-wrap gap-md items-center">
-              <Button variant="primary">Get in touch</Button>
-              <Button variant="primary" arrow>View case study</Button>
-              <Button variant="secondary">Learn more</Button>
-              <Button variant="secondary" arrow href="/services">Our services</Button>
-            </div>
-          </div>
-
-          {/* Pills */}
-          <div className="mb-2xl">
-            <Caption as="p" className="mb-lg">PILLS</Caption>
-            <div className="flex flex-wrap gap-sm">
-              <Pill active>All</Pill>
-              <Pill>Energy</Pill>
-              <Pill>Healthcare</Pill>
-              <Pill>Infrastructure</Pill>
-              <Pill>Security</Pill>
-              <Pill as="span">Next.js</Pill>
-              <Pill as="span">TypeScript</Pill>
-              <Pill as="span">Three.js</Pill>
-            </div>
-          </div>
-
-          {/* Stats */}
-          <div className="mb-2xl">
-            <Caption as="p" className="mb-lg">STAT BLOCKS</Caption>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-xl">
-              <StatBlock value="8" label="DTRs monitored" />
-              <StatBlock value="5 min" label="Detection latency" />
-              <StatBlock value="94%" label="Accuracy rate" />
-              <StatBlock value="11" label="Case studies" />
-            </div>
-          </div>
-
-          {/* Caption standalone */}
-          <div className="mb-2xl">
-            <Caption as="p" className="mb-lg">CAPTION VARIANTS</Caption>
-            <div className="space-y-sm">
-              <div><Caption>DEFAULT MUTED KICKER</Caption></div>
-              <div><Caption className="text-accent">ACCENT KICKER — CASE STUDY</Caption></div>
-              <div><Caption as="p">AS PARAGRAPH ELEMENT</Caption></div>
-            </div>
-          </div>
-
-          {/* Container size debug */}
-          <div className="mb-2xl">
-            <Caption as="p" className="mb-lg">CONTAINER WIDTHS</Caption>
-            <div className="space-y-md">
-              <div className="border border-dashed border-border-light p-md">
-                <Caption className="text-accent">DEFAULT (1200px max)</Caption>
-              </div>
-            </div>
-          </div>
-
-          <Container size="wide" className="border border-dashed border-border-light p-md -mx-xl md:-mx-xl max-sm:-mx-[20px]">
-            <Caption className="text-accent">WIDE CONTAINER (1440px max)</Caption>
-          </Container>
-        </Container>
-      </section>
-
-      {/* ===== DARK SECTION — tests navbar theme detection via data-theme="dark" (min 100vh) ===== */}
-      {/* This dark section tests navbar theme detection via data-theme="dark" */}
-      <section className="bg-bg-dark min-h-screen py-4xl" data-theme="dark">
-        <Container>
-          <SectionHeader
-            kicker="FEATURED * ENERGY"
-            heading="Components on Dark"
-            intro="All components support a dark prop that inverts text colors for use inside dark cinematic sections. Scroll to see the navbar switch to its dark color scheme."
-            dark
-            className="mb-3xl"
-          />
-
-          {/* Buttons on dark */}
-          <div className="mb-2xl">
-            <Caption as="p" className="mb-lg text-text-muted-dark">BUTTONS ON DARK</Caption>
-            <div className="flex flex-wrap gap-md items-center">
-              <Button variant="primary">Get in touch</Button>
-              <Button variant="primary" arrow>View case study</Button>
-              <Button variant="secondary">Learn more</Button>
-              <Button variant="secondary" arrow>Our services</Button>
-            </div>
-          </div>
-
-          {/* Stats dark */}
-          <div className="mb-2xl">
-            <Caption as="p" className="mb-lg text-text-muted-dark">STAT BLOCKS — DARK</Caption>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-xl">
-              <StatBlock value="8" label="DTRs monitored" dark />
-              <StatBlock value="5 min" label="Detection latency" dark />
-              <StatBlock value="94%" label="Accuracy rate" dark />
-              <StatBlock value="11" label="Case studies" dark />
-            </div>
-          </div>
-
-          {/* SectionHeader — centered variant */}
-          <SectionHeader
-            kicker="CENTERED VARIANT"
-            heading="Centered Section Header"
-            intro="Used for hero sections and standalone callouts where centered alignment improves visual balance."
-            align="center"
+            kicker="WHAT WE BUILD"
+            heading="Six capabilities. One engineering team."
             headingSize="text-display-md"
-            dark
-          />
-        </Container>
-      </section>
-
-      {/* ===== LIGHT SECTION — tests navbar switching back from dark to light ===== */}
-      <section className="bg-bg-light min-h-screen py-4xl">
-        <Container>
-          <SectionHeader
-            kicker="NAVBAR DETECTION"
-            heading="Back to Light"
-            intro="Scroll back up into the dark section above to see the navbar switch to its dark color scheme. Scroll down and the navbar returns to light. The IntersectionObserver fires with ~320ms CSS transition."
-            className="mb-3xl"
           />
 
-          <div className="flex flex-wrap gap-md items-center">
-            <Button variant="primary" href="/contact">Talk to engineering</Button>
-            <Button variant="secondary" href="/services">View services</Button>
+          {/* 3×2 grid on desktop, 2-col on tablet, 1-col on mobile */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-xl mt-2xl">
+            {CAPABILITIES.map((capability) => (
+              <ServiceTile
+                key={capability.id}
+                title={capability.title}
+                description={capability.description}
+                tag={capability.tag}
+                href={`/services#${capability.anchorId}`}
+              />
+            ))}
           </div>
         </Container>
       </section>
+
+      {/* ===== Section 3: Featured case study (DARK section, full-bleed) ===== */}
+      {/*
+        D-06 note: Headline says "8,000 distribution transformers" — this refers to the total
+        transformer population being monitored across the distribution network. The deployed
+        hardware uses 8 DTRs (the real figure from source deck). The headline is accurate.
+      */}
+      <section
+        data-theme="dark"
+        className="bg-bg-dark text-text-inverted py-5xl max-md:py-3xl"
+      >
+        <Container>
+          <Caption as="p" className="text-text-muted-dark">
+            FEATURED · ENERGY
+          </Caption>
+
+          <h2 className="text-display-lg text-text-inverted mt-lg max-w-[820px]">
+            Real-time monitoring across 8,000 distribution transformers.
+          </h2>
+
+          {/* 2-column layout: body copy left, dashboard placeholder right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2xl mt-2xl">
+            {/* Left: iDTRM body copy */}
+            <div>
+              <p className="text-body-lg text-text-muted-dark">
+                iDTRM is a GPRS-connected distribution transformer monitoring
+                system deployed across central India&apos;s power network. Each
+                installed DTR pushes load, voltage, and fault data to a central
+                platform every five minutes — surfacing transformer health before
+                consumers notice a failure. The system pre-warns grid operations
+                teams of overloading, phase imbalances, and incipient faults,
+                compressing the detection cycle from days of manual inspection to
+                sub-hourly automated alerts.
+              </p>
+            </div>
+
+            {/* Right: iDTRM dashboard placeholder */}
+            <div className="bg-surface-elevated rounded-xl aspect-video flex items-center justify-center">
+              <span className="text-mono-sm text-text-muted-dark">
+                iDTRM Dashboard — geo-tagged map + live KPI tiles
+              </span>
+              {/* TODO: replace with actual dashboard mock or screenshot */}
+            </div>
+          </div>
+
+          {/* Stat row — 4 StatBlock components */}
+          <div className="flex flex-row flex-wrap gap-2xl mt-2xl">
+            <StatBlock value="5 min" label="Refresh interval" dark={true} />
+            <StatBlock value="40 days" label="Load survey retention" dark={true} />
+            <StatBlock value="0.5" label="Accuracy class" dark={true} />
+            <StatBlock value="24/7" label="Monitoring" dark={true} />
+          </div>
+
+          {/* CTA */}
+          <div className="mt-2xl">
+            <Button
+              variant="secondary"
+              href="/portfolio/idtrm"
+              arrow
+              className="border-border-dark text-text-inverted hover:bg-text-inverted/5"
+            >
+              Read the case study
+            </Button>
+          </div>
+        </Container>
+      </section>
+
+      {/* ===== Section 4: Portfolio teaser grid (light bg) ===== */}
+      <section className="py-5xl max-md:py-3xl">
+        <Container>
+          <SectionHeader
+            kicker="RECENT WORK"
+            heading="Systems in production."
+            headingSize="text-display-md"
+          />
+
+          {/* 4-card grid: 4 col desktop, 2 col tablet, 1 col mobile */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-xl mt-2xl">
+            {FEATURED_CARDS.map((card) => (
+              <PortfolioCard
+                key={card.slug}
+                slug={card.slug}
+                title={card.title}
+                category={card.category}
+                subcategory={card.subcategory}
+                excerpt={card.excerpt}
+                heroImage={card.heroImage}
+                heroImageAlt={card.heroImageAlt}
+              />
+            ))}
+          </div>
+
+          {/* "See all" link */}
+          <Link
+            href="/portfolio"
+            className="text-body font-medium text-accent hover:text-accent-hover transition-colors duration-fast mt-xl inline-block"
+          >
+            See all 11 projects <span aria-hidden="true">&rarr;</span>
+          </Link>
+        </Container>
+      </section>
+
+      {/* ===== Section 5: Manifesto ===== */}
+      <ManifestoBand />
+
+      {/* ===== Section 6: CTA Band ===== */}
+      <CTABand />
     </main>
   );
 }
