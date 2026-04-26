@@ -97,8 +97,9 @@ export default function Home() {
         primaryCTA={{ label: "See our work", href: "/portfolio" }}
         secondaryCTA={{ label: "Talk to engineering", href: "/contact" }}
         showScrollCue={true}
+        backgroundImage="/images/hero/home-bg.svg"
       >
-        <HeroParticleFieldLoader className="absolute inset-0 -z-10" />
+        <HeroParticleFieldLoader className="absolute inset-0 z-0" />
       </HeroLight>
 
       {/* ===== Section 2: Capability strip (light bg) ===== */}

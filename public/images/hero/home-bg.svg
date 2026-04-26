@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800" fill="none">
+  <!-- Homepage hero background: neural network / particle field topology -->
+  <!-- Light structural grid lines in #E8E6DF, accent nodes/edges in #3D2BFF at ~8-12% opacity -->
+
+  <!-- ── Faint structural grid ── -->
+  <g stroke="#E8E6DF" stroke-width="1" opacity="0.7">
+    <!-- Sparse horizontal guides -->
+    <line x1="0" y1="200" x2="1600" y2="200"/>
+    <line x1="0" y1="400" x2="1600" y2="400"/>
+    <line x1="0" y1="600" x2="1600" y2="600"/>
+    <!-- Sparse vertical guides -->
+    <line x1="320"  y1="0" x2="320"  y2="800"/>
+    <line x1="640"  y1="0" x2="640"  y2="800"/>
+    <line x1="960"  y1="0" x2="960"  y2="800"/>
+    <line x1="1280" y1="0" x2="1280" y2="800"/>
+  </g>
+
+  <!-- ── Neural network edges: indigo at 9% opacity ── -->
+  <!-- Primary network cluster — centred in the right half so it doesn't crowd left-aligned text -->
+  <g stroke="#3D2BFF" stroke-width="1" opacity="0.09">
+    <!-- Spoke hub from central node (1050, 380) -->
+    <line x1="1050" y1="380" x2="820"  y2="210"/>
+    <line x1="1050" y1="380" x2="960"  y2="150"/>
+    <line x1="1050" y1="380" x2="1180" y2="120"/>
+    <line x1="1050" y1="380" x2="1320" y2="200"/>
+    <line x1="1050" y1="380" x2="1420" y2="320"/>
+    <line x1="1050" y1="380" x2="1460" y2="480"/>
+    <line x1="1050" y1="380" x2="1350" y2="580"/>
+    <line x1="1050" y1="380" x2="1180" y2="640"/>
+    <line x1="1050" y1="380" x2="880"  y2="620"/>
+    <line x1="1050" y1="380" x2="740"  y2="520"/>
+    <line x1="1050" y1="380" x2="700"  y2="380"/>
+    <line x1="1050" y1="380" x2="780"  y2="260"/>
+
+    <!-- Cross-connections between outer nodes -->
+    <line x1="820"  y1="210" x2="960"  y2="150"/>
+    <line x1="960"  y1="150" x2="1180" y2="120"/>
+    <line x1="1180" y1="120" x2="1320" y2="200"/>
+    <line x1="1320" y1="200" x2="1420" y2="320"/>
+    <line x1="1420" y1="320" x2="1460" y2="480"/>
+    <line x1="1460" y1="480" x2="1350" y2="580"/>
+    <line x1="1350" y1="580" x2="1180" y2="640"/>
+    <line x1="1180" y1="640" x2="880"  y2="620"/>
+    <line x1="880"  y1="620" x2="740"  y2="520"/>
+    <line x1="740"  y1="520" x2="700"  y2="380"/>
+    <line x1="700"  y1="380" x2="780"  y2="260"/>
+    <line x1="780"  y1="260" x2="820"  y2="210"/>
+
+    <!-- Second-ring skip connections -->
+    <line x1="820"  y1="210" x2="1180" y2="120"/>
+    <line x1="960"  y1="150" x2="1320" y2="200"/>
+    <line x1="1180" y1="120" x2="1460" y2="480"/>
+    <line x1="1420" y1="320" x2="1180" y2="640"/>
+    <line x1="1350" y1="580" x2="700"  y2="380"/>
+    <line x1="880"  y1="620" x2="780"  y2="260"/>
+
+    <!-- Satellite sub-cluster — upper left (partially visible behind text, intentionally faint) -->
+    <line x1="200"  y1="100" x2="380"  y2="180"/>
+    <line x1="380"  y1="180" x2="460"  y2="80"/>
+    <line x1="460"  y1="80"  x2="560"  y2="160"/>
+    <line x1="200"  y1="100" x2="460"  y2="80"/>
+    <line x1="380"  y1="180" x2="560"  y2="160"/>
+
+    <!-- Satellite sub-cluster — lower left -->
+    <line x1="160"  y1="580" x2="340"  y2="660"/>
+    <line x1="340"  y1="660" x2="500"  y2="700"/>
+    <line x1="500"  y1="700" x2="600"  y2="620"/>
+    <line x1="160"  y1="580" x2="340"  y2="500"/>
+    <line x1="340"  y1="500" x2="500"  y2="700"/>
+    <line x1="340"  y1="500" x2="600"  y2="620"/>
+
+    <!-- Long-range connectors tying clusters together -->
+    <line x1="560"  y1="160" x2="780"  y2="260"/>
+    <line x1="600"  y1="620" x2="740"  y2="520"/>
+    <line x1="380"  y1="180" x2="700"  y2="380"/>
+  </g>
+
+  <!-- ── Particle nodes ── -->
+  <!-- Outer/satellite nodes: structural grey -->
+  <g fill="#E8E6DF" opacity="0.9">
+    <!-- Upper-left cluster -->
+    <circle cx="200"  cy="100" r="3"/>
+    <circle cx="380"  cy="180" r="3"/>
+    <circle cx="460"  cy="80"  r="3"/>
+    <circle cx="560"  cy="160" r="2.5"/>
+    <!-- Lower-left cluster -->
+    <circle cx="160"  cy="580" r="3"/>
+    <circle cx="340"  cy="660" r="3"/>
+    <circle cx="500"  cy="700" r="2.5"/>
+    <circle cx="600"  cy="620" r="3"/>
+    <circle cx="340"  cy="500" r="2.5"/>
+  </g>
+
+  <!-- Outer ring nodes: indigo at 18% opacity -->
+  <g fill="#3D2BFF" opacity="0.18">
+    <circle cx="820"  cy="210" r="4"/>
+    <circle cx="960"  cy="150" r="3.5"/>
+    <circle cx="1180" cy="120" r="4"/>
+    <circle cx="1320" cy="200" r="3.5"/>
+    <circle cx="1420" cy="320" r="4"/>
+    <circle cx="1460" cy="480" r="3.5"/>
+    <circle cx="1350" cy="580" r="4"/>
+    <circle cx="1180" cy="640" r="3.5"/>
+    <circle cx="880"  cy="620" r="4"/>
+    <circle cx="740"  cy="520" r="3.5"/>
+    <circle cx="700"  cy="380" r="4"/>
+    <circle cx="780"  cy="260" r="3.5"/>
+  </g>
+
+  <!-- Central hub node: indigo, slightly more visible -->
+  <g fill="#3D2BFF" opacity="0.22">
+    <circle cx="1050" cy="380" r="7"/>
+  </g>
+  <!-- Central hub ring -->
+  <circle cx="1050" cy="380" r="14" stroke="#3D2BFF" stroke-width="1" opacity="0.10" fill="none"/>
+  <circle cx="1050" cy="380" r="24" stroke="#3D2BFF" stroke-width="0.75" stroke-dasharray="3 6" opacity="0.07" fill="none"/>
+
+  <!-- ── Subtle dot field (scattered particles) ── -->
+  <!-- These represent the broader particle field, very faint -->
+  <g fill="#3D2BFF" opacity="0.08">
+    <circle cx="120"  cy="300" r="2"/>
+    <circle cx="260"  cy="360" r="1.5"/>
+    <circle cx="440"  cy="280" r="2"/>
+    <circle cx="540"  cy="440" r="1.5"/>
+    <circle cx="640"  cy="300" r="2"/>
+    <circle cx="480"  cy="560" r="1.5"/>
+    <circle cx="620"  cy="740" r="2"/>
+    <circle cx="900"  cy="740" r="1.5"/>
+    <circle cx="1100" cy="720" r="2"/>
+    <circle cx="1260" cy="700" r="1.5"/>
+    <circle cx="1480" cy="660" r="2"/>
+    <circle cx="1540" cy="400" r="1.5"/>
+    <circle cx="1500" cy="160" r="2"/>
+    <circle cx="1380" cy="80"  r="1.5"/>
+    <circle cx="1100" cy="40"  r="2"/>
+    <circle cx="840"  cy="60"  r="1.5"/>
+    <circle cx="640"  cy="60"  r="2"/>
+    <circle cx="80"   cy="440" r="1.5"/>
+    <circle cx="60"   cy="220" r="2"/>
+    <circle cx="1560" cy="740" r="1.5"/>
+  </g>
+
+  <!-- ── Grid intersection accent dots ── -->
+  <g fill="#E8E6DF" opacity="0.8">
+    <circle cx="320"  cy="200" r="2.5"/>
+    <circle cx="640"  cy="200" r="2.5"/>
+    <circle cx="960"  cy="200" r="2.5"/>
+    <circle cx="1280" cy="200" r="2.5"/>
+    <circle cx="320"  cy="400" r="2.5"/>
+    <circle cx="640"  cy="400" r="2.5"/>
+    <circle cx="960"  cy="400" r="2.5"/>
+    <circle cx="1280" cy="400" r="2.5"/>
+    <circle cx="320"  cy="600" r="2.5"/>
+    <circle cx="640"  cy="600" r="2.5"/>
+    <circle cx="960"  cy="600" r="2.5"/>
+    <circle cx="1280" cy="600" r="2.5"/>
+  </g>
+</svg>
