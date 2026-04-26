@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { fraunces, inter, jetbrainsMono } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,9 +17,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+    >
       <body>
+        <a href="#main-content" className="skip-to-content">
+          Skip to content
+        </a>
+        {/* Navbar will be added in Plan 03 */}
         <main id="main-content">{children}</main>
+        {/* Footer will be added in Plan 03 */}
       </body>
     </html>
   );
