@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M 0 0 L 6 3 L 0 6 Z" fill="#3D2BFF"/>
+    </marker>
+    <filter id="node-shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#3D2BFF" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="500" height="400" fill="#FAFAF7"/>
+
+  <!-- Title -->
+  <text x="250" y="30" font-family="sans-serif" font-size="11" fill="#8A8C92" text-anchor="middle" letter-spacing="2">AGENT EXECUTION LOOP</text>
+
+  <!-- Center circle (subtle) -->
+  <circle cx="250" cy="200" r="75" fill="#FFFFFF" stroke="#E8E6DF" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text x="250" y="196" font-family="sans-serif" font-size="9" fill="#8A8C92" text-anchor="middle">autonomous</text>
+  <text x="250" y="210" font-family="sans-serif" font-size="9" fill="#8A8C92" text-anchor="middle">agent loop</text>
+
+  <!-- ─── NODE: PERCEIVE (top) ─── -->
+  <g filter="url(#node-shadow)">
+    <rect x="185" y="48" width="130" height="64" rx="10" fill="#FFFFFF" stroke="#3D2BFF" stroke-width="1.5"/>
+  </g>
+  <!-- Eye icon -->
+  <ellipse cx="233" cy="72" rx="10" ry="6" fill="none" stroke="#3D2BFF" stroke-width="1.5"/>
+  <circle cx="233" cy="72" r="3" fill="#3D2BFF"/>
+  <text x="250" y="91" font-family="sans-serif" font-size="12" font-weight="600" fill="#0A0B0D" text-anchor="middle">Perceive</text>
+  <text x="250" y="105" font-family="sans-serif" font-size="9" fill="#8A8C92" text-anchor="middle">Sensors · APIs · Streams</text>
+
+  <!-- ─── NODE: PLAN (right) ─── -->
+  <g filter="url(#node-shadow)">
+    <rect x="338" y="138" width="130" height="64" rx="10" fill="#FFFFFF" stroke="#3D2BFF" stroke-width="1.5"/>
+  </g>
+  <!-- Brain icon (simplified) -->
+  <path d="M 375 162 Q 375 155 382 155 Q 389 155 389 162 Q 393 160 393 166 Q 393 172 387 172 L 375 172 Q 371 172 371 166 Q 371 160 375 162 Z" fill="none" stroke="#3D2BFF" stroke-width="1.5"/>
+  <text x="403" y="176" font-family="sans-serif" font-size="12" font-weight="600" fill="#0A0B0D" text-anchor="middle">Plan</text>
+  <text x="403" y="190" font-family="sans-serif" font-size="9" fill="#8A8C92" text-anchor="middle">Reason · Strategise</text>
+
+  <!-- ─── NODE: ACT (bottom) ─── -->
+  <g filter="url(#node-shadow)">
+    <rect x="185" y="288" width="130" height="64" rx="10" fill="#FFFFFF" stroke="#3D2BFF" stroke-width="1.5"/>
+  </g>
+  <!-- Hand/action icon -->
+  <rect x="233" y="305" width="6" height="14" rx="2" fill="#3D2BFF"/>
+  <rect x="241" y="308" width="5" height="11" rx="2" fill="#3D2BFF"/>
+  <rect x="248" y="308" width="5" height="11" rx="2" fill="#3D2BFF"/>
+  <rect x="255" y="310" width="5" height="9" rx="2" fill="#3D2BFF"/>
+  <text x="250" y="333" font-family="sans-serif" font-size="12" font-weight="600" fill="#0A0B0D" text-anchor="middle">Act</text>
+  <text x="250" y="347" font-family="sans-serif" font-size="9" fill="#8A8C92" text-anchor="middle">Execute · Integrate</text>
+
+  <!-- ─── NODE: VERIFY (left) ─── -->
+  <g filter="url(#node-shadow)">
+    <rect x="32" y="138" width="130" height="64" rx="10" fill="#FFFFFF" stroke="#3D2BFF" stroke-width="1.5"/>
+  </g>
+  <!-- Checkmark icon -->
+  <circle cx="72" cy="166" r="10" fill="none" stroke="#3D2BFF" stroke-width="1.5"/>
+  <path d="M 66 166 L 70 171 L 78 161" fill="none" stroke="#3D2BFF" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="97" y="176" font-family="sans-serif" font-size="12" font-weight="600" fill="#0A0B0D" text-anchor="middle">Verify</text>
+  <text x="97" y="190" font-family="sans-serif" font-size="9" fill="#8A8C92" text-anchor="middle">Audit · Escalate</text>
+
+  <!-- ─── Arrows (curved, clockwise) ─── -->
+  <!-- Perceive → Plan (top-right arc) -->
+  <path d="M 315 80 Q 390 80 380 138" fill="none" stroke="#3D2BFF" stroke-width="2" marker-end="url(#arrow)" opacity="0.85"/>
+
+  <!-- Plan → Act (right-bottom arc) -->
+  <path d="M 420 202 Q 420 300 318 305" fill="none" stroke="#3D2BFF" stroke-width="2" marker-end="url(#arrow)" opacity="0.85"/>
+
+  <!-- Act → Verify (bottom-left arc) -->
+  <path d="M 185 320 Q 110 320 120 202" fill="none" stroke="#3D2BFF" stroke-width="2" marker-end="url(#arrow)" opacity="0.85"/>
+
+  <!-- Verify → Perceive (left-top arc) -->
+  <path d="M 80 138 Q 80 80 185 80" fill="none" stroke="#3D2BFF" stroke-width="2" marker-end="url(#arrow)" opacity="0.85"/>
+
+  <!-- Step numbers -->
+  <text x="362" y="77" font-family="monospace" font-size="9" fill="#3D2BFF">①</text>
+  <text x="434" y="255" font-family="monospace" font-size="9" fill="#3D2BFF">②</text>
+  <text x="130" y="335" font-family="monospace" font-size="9" fill="#3D2BFF">③</text>
+  <text x="65" y="110" font-family="monospace" font-size="9" fill="#3D2BFF">④</text>
+
+  <!-- Footer label -->
+  <text x="250" y="385" font-family="sans-serif" font-size="9" fill="#8A8C92" text-anchor="middle">Deterministic fallbacks · Full audit trail · Human escalation paths</text>
+</svg>

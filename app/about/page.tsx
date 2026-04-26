@@ -1,4 +1,5 @@
 import { type Metadata } from "next";
+import Image from "next/image";
 import { HeroLight } from "@/components/sections/HeroLight";
 import { CTABand } from "@/components/sections/CTABand";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -195,14 +196,19 @@ export default function AboutPage() {
             headingSize="text-display-md"
             align="center"
           />
-          {/* TODO: replace with real partner/client logos — see PART-01 */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-xl mt-2xl">
             {Array.from({ length: 6 }).map((_, i) => (
               <div
                 key={i}
-                className="aspect-[3/1] bg-surface rounded-md border border-border-light flex items-center justify-center"
+                className="flex items-center justify-center"
               >
-                <span className="text-caption text-text-muted">Partner Logo</span>
+                <Image
+                  src={`/images/partners/partner-${i + 1}.svg`}
+                  alt={`Partner ${i + 1} logo placeholder`}
+                  width={200}
+                  height={60}
+                  className="w-full h-auto"
+                />
               </div>
             ))}
           </div>

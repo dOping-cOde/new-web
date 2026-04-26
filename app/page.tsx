@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { HeroLight } from "@/components/sections/HeroLight";
 import { ServiceTile } from "@/components/cards/ServiceTile";
 import { PortfolioCard } from "@/components/cards/PortfolioCard";
@@ -161,12 +162,16 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Right: iDTRM dashboard placeholder */}
-            <div className="bg-surface-elevated rounded-xl aspect-video flex items-center justify-center">
-              <span className="text-mono-sm text-text-muted-dark">
-                iDTRM Dashboard — geo-tagged map + live KPI tiles
-              </span>
-              {/* TODO: replace with actual dashboard mock or screenshot */}
+            {/* Right: iDTRM dashboard mock */}
+            <div className="bg-surface-elevated rounded-xl overflow-hidden">
+              <Image
+                src="/images/idtrm-dashboard.svg"
+                alt="iDTRM dashboard — geo-tagged Madhya Pradesh transformer map with live KPI tiles and voltage time-series chart"
+                width={600}
+                height={400}
+                className="w-full h-auto"
+                priority={false}
+              />
             </div>
           </div>
 

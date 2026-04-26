@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M 0 0 L 6 3 L 0 6 Z" fill="#3D2BFF"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="500" height="400" fill="#FAFAF7"/>
+
+  <!-- Title -->
+  <text x="250" y="26" font-family="sans-serif" font-size="11" fill="#8A8C92" text-anchor="middle" letter-spacing="2">STRUCTURAL INSPECTION PIPELINE</text>
+
+  <!-- ─── PIPELINE NODES (linear, left to right) ─── -->
+
+  <!-- Step 1: Drone -->
+  <rect x="12" y="80" width="82" height="90" rx="8" fill="#FFFFFF" stroke="#E8E6DF" stroke-width="1.5"/>
+  <!-- Drone icon -->
+  <circle cx="53" cy="110" r="8" fill="none" stroke="#0A0B0D" stroke-width="1.5"/>
+  <line x1="53" y1="118" x2="53" y2="125" stroke="#0A0B0D" stroke-width="1.5"/>
+  <line x1="35" y1="110" x2="53" y2="110" stroke="#0A0B0D" stroke-width="1"/>
+  <line x1="53" y1="110" x2="71" y2="110" stroke="#0A0B0D" stroke-width="1"/>
+  <circle cx="33" cy="108" r="5" fill="none" stroke="#3D2BFF" stroke-width="1.5"/>
+  <circle cx="73" cy="108" r="5" fill="none" stroke="#3D2BFF" stroke-width="1.5"/>
+  <text x="53" y="152" font-family="sans-serif" font-size="9" fill="#0A0B0D" text-anchor="middle" font-weight="600">Drone</text>
+  <text x="53" y="164" font-family="sans-serif" font-size="8" fill="#8A8C92" text-anchor="middle">Aerial Survey</text>
+
+  <!-- Arrow 1 -->
+  <line x1="94" y1="125" x2="116" y2="125" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 2: LiDAR scan lines -->
+  <rect x="118" y="80" width="82" height="90" rx="8" fill="#FFFFFF" stroke="#E8E6DF" stroke-width="1.5"/>
+  <!-- LiDAR fan illustration -->
+  <circle cx="159" cy="105" r="4" fill="#3D2BFF"/>
+  <line x1="159" y1="105" x2="128" y2="140" stroke="#3D2BFF" stroke-width="0.8" opacity="0.4"/>
+  <line x1="159" y1="105" x2="136" y2="142" stroke="#3D2BFF" stroke-width="0.8" opacity="0.5"/>
+  <line x1="159" y1="105" x2="145" y2="143" stroke="#3D2BFF" stroke-width="0.8" opacity="0.6"/>
+  <line x1="159" y1="105" x2="155" y2="143" stroke="#3D2BFF" stroke-width="0.8" opacity="0.7"/>
+  <line x1="159" y1="105" x2="165" y2="143" stroke="#3D2BFF" stroke-width="0.8" opacity="0.6"/>
+  <line x1="159" y1="105" x2="175" y2="141" stroke="#3D2BFF" stroke-width="0.8" opacity="0.5"/>
+  <line x1="159" y1="105" x2="183" y2="137" stroke="#3D2BFF" stroke-width="0.8" opacity="0.4"/>
+  <line x1="159" y1="105" x2="190" y2="131" stroke="#3D2BFF" stroke-width="0.8" opacity="0.3"/>
+  <!-- Bridge silhouette -->
+  <rect x="127" y="140" width="64" height="3" fill="#E8E6DF"/>
+  <line x1="140" y1="143" x2="140" y2="155" stroke="#E8E6DF" stroke-width="2"/>
+  <line x1="178" y1="143" x2="178" y2="155" stroke="#E8E6DF" stroke-width="2"/>
+  <text x="159" y="152" font-family="sans-serif" font-size="9" fill="#0A0B0D" text-anchor="middle" font-weight="600">LiDAR</text>
+  <text x="159" y="164" font-family="sans-serif" font-size="8" fill="#8A8C92" text-anchor="middle">Scan</text>
+
+  <!-- Arrow 2 -->
+  <line x1="200" y1="125" x2="222" y2="125" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 3: Point cloud -->
+  <rect x="224" y="80" width="82" height="90" rx="8" fill="#EDE9FF" stroke="#3D2BFF" stroke-width="2"/>
+  <!-- Point cloud dots -->
+  <g fill="#3D2BFF">
+    <circle cx="248" cy="100" r="1.5" opacity="0.9"/>
+    <circle cx="256" cy="105" r="1.5" opacity="0.7"/>
+    <circle cx="244" cy="112" r="1.5" opacity="0.8"/>
+    <circle cx="262" cy="108" r="1.5" opacity="1"/>
+    <circle cx="270" cy="100" r="1.5" opacity="0.6"/>
+    <circle cx="278" cy="106" r="1.5" opacity="0.9"/>
+    <circle cx="286" cy="101" r="1.5" opacity="0.7"/>
+    <circle cx="294" cy="107" r="1.5" opacity="0.8"/>
+    <circle cx="250" cy="118" r="1.5" opacity="0.5"/>
+    <circle cx="258" cy="122" r="1.5" opacity="0.7"/>
+    <circle cx="266" cy="116" r="1.5" opacity="0.9"/>
+    <circle cx="274" cy="121" r="1.5" opacity="0.6"/>
+    <circle cx="282" cy="115" r="1.5" opacity="0.8"/>
+    <circle cx="290" cy="119" r="1.5" opacity="0.5"/>
+    <circle cx="246" cy="130" r="1.5" opacity="0.7"/>
+    <circle cx="260" cy="133" r="1.5" opacity="0.4"/>
+    <circle cx="272" cy="128" r="1.5" opacity="0.8"/>
+    <circle cx="284" cy="132" r="1.5" opacity="0.6"/>
+    <circle cx="298" cy="126" r="1.5" opacity="0.9"/>
+    <!-- Anomaly highlight -->
+    <circle cx="260" cy="133" r="5" fill="none" stroke="#EF4444" stroke-width="1"/>
+  </g>
+  <text x="265" y="152" font-family="sans-serif" font-size="9" fill="#3D2BFF" text-anchor="middle" font-weight="600">Point Cloud</text>
+  <text x="265" y="164" font-family="sans-serif" font-size="8" fill="#3D2BFF" text-anchor="middle">Processing</text>
+
+  <!-- Arrow 3 -->
+  <line x1="306" y1="125" x2="328" y2="125" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 4: 3D Model -->
+  <rect x="330" y="80" width="82" height="90" rx="8" fill="#FFFFFF" stroke="#E8E6DF" stroke-width="1.5"/>
+  <!-- Wireframe cube -->
+  <g stroke="#3D2BFF" stroke-width="1" fill="none" opacity="0.7">
+    <rect x="354" y="100" width="34" height="30"/>
+    <polygon points="354,100 368,92 402,92 388,100" fill="#3D2BFF" opacity="0.08"/>
+    <polygon points="388,100 402,92 402,122 388,130" fill="#3D2BFF" opacity="0.05"/>
+    <line x1="388" y1="100" x2="388" y2="130"/>
+    <line x1="354" y1="100" x2="368" y2="92"/>
+    <line x1="388" y1="100" x2="402" y2="92"/>
+    <line x1="402" y1="92" x2="402" y2="122"/>
+    <line x1="368" y1="92" x2="402" y2="92"/>
+    <line x1="402" y1="122" x2="388" y2="130"/>
+  </g>
+  <text x="371" y="152" font-family="sans-serif" font-size="9" fill="#0A0B0D" text-anchor="middle" font-weight="600">3D Model</text>
+  <text x="371" y="164" font-family="sans-serif" font-size="8" fill="#8A8C92" text-anchor="middle">Reconstruction</text>
+
+  <!-- Arrow 4 -->
+  <line x1="412" y1="125" x2="434" y2="125" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 5: Report -->
+  <rect x="436" y="80" width="52" height="90" rx="8" fill="#FFFFFF" stroke="#E8E6DF" stroke-width="1.5"/>
+  <!-- Document with check -->
+  <rect x="448" y="96" width="28" height="36" rx="2" fill="#F0EEE8" stroke="#E8E6DF" stroke-width="1"/>
+  <line x1="452" y1="105" x2="472" y2="105" stroke="#E8E6DF" stroke-width="1"/>
+  <line x1="452" y1="111" x2="472" y2="111" stroke="#E8E6DF" stroke-width="1"/>
+  <line x1="452" y1="117" x2="465" y2="117" stroke="#E8E6DF" stroke-width="1"/>
+  <circle cx="468" cy="123" r="7" fill="#3D2BFF" opacity="0.15"/>
+  <path d="M 464 123 L 467 126 L 472 119" fill="none" stroke="#3D2BFF" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="462" y="152" font-family="sans-serif" font-size="8" fill="#0A0B0D" text-anchor="middle" font-weight="600">Report</text>
+  <text x="462" y="164" font-family="sans-serif" font-size="7" fill="#8A8C92" text-anchor="middle">Change</text>
+
+  <!-- ─── METRICS SECTION ─── -->
+  <line x1="20" y1="195" x2="480" y2="195" stroke="#E8E6DF" stroke-width="1"/>
+
+  <text x="250" y="215" font-family="sans-serif" font-size="10" fill="#8A8C92" text-anchor="middle" letter-spacing="1">DETECTION PERFORMANCE</text>
+
+  <!-- Metric boxes -->
+  <rect x="20" y="228" width="140" height="64" rx="6" fill="#FFFFFF" stroke="#E8E6DF" stroke-width="1.5"/>
+  <text x="90" y="250" font-family="sans-serif" font-size="22" fill="#0A0B0D" text-anchor="middle" font-weight="700">1.5mm</text>
+  <text x="90" y="268" font-family="sans-serif" font-size="9" fill="#8A8C92" text-anchor="middle">minimum change detection</text>
+  <text x="90" y="282" font-family="sans-serif" font-size="8" fill="#8A8C92" text-anchor="middle">LiDAR resolution</text>
+
+  <rect x="180" y="228" width="140" height="64" rx="6" fill="#FFFFFF" stroke="#E8E6DF" stroke-width="1.5"/>
+  <text x="250" y="250" font-family="sans-serif" font-size="22" fill="#3D2BFF" text-anchor="middle" font-weight="700">0.92</text>
+  <text x="250" y="268" font-family="sans-serif" font-size="9" fill="#8A8C92" text-anchor="middle">F1-score accuracy</text>
+  <text x="250" y="282" font-family="sans-serif" font-size="8" fill="#8A8C92" text-anchor="middle">CNN-LSTM model</text>
+
+  <rect x="340" y="228" width="140" height="64" rx="6" fill="#FFFFFF" stroke="#E8E6DF" stroke-width="1.5"/>
+  <text x="410" y="250" font-family="sans-serif" font-size="22" fill="#0A0B0D" text-anchor="middle" font-weight="700">1 pass</text>
+  <text x="410" y="268" font-family="sans-serif" font-size="9" fill="#8A8C92" text-anchor="middle">vs 6-day manual</text>
+  <text x="410" y="282" font-family="sans-serif" font-size="8" fill="#8A8C92" text-anchor="middle">inspection cycle</text>
+
+  <!-- ─── SYSTEMS DEPLOYED ─── -->
+  <rect x="20" y="312" width="460" height="68" rx="6" fill="#FFFFFF" stroke="#E8E6DF" stroke-width="1"/>
+  <text x="36" y="332" font-family="sans-serif" font-size="9" fill="#8A8C92" letter-spacing="1">SYSTEMS DEPLOYED</text>
+  <text x="36" y="350" font-family="sans-serif" font-size="10" fill="#0A0B0D" font-weight="600">BridgeSense</text>
+  <text x="36" y="366" font-family="sans-serif" font-size="9" fill="#8A8C92">Bridges · Viaducts · Civil infrastructure</text>
+  <line x1="180" y1="325" x2="180" y2="372" stroke="#E8E6DF" stroke-width="1"/>
+  <text x="196" y="350" font-family="sans-serif" font-size="10" fill="#0A0B0D" font-weight="600">AI-Copter</text>
+  <text x="196" y="366" font-family="sans-serif" font-size="9" fill="#8A8C92">Mining · Underground · Confined spaces</text>
+</svg>

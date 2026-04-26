@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M 0 0 L 6 3 L 0 6 Z" fill="#3D2BFF"/>
+    </marker>
+    <marker id="arrow-out" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M 0 0 L 6 3 L 0 6 Z" fill="#8A8C92"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="500" height="400" fill="#FAFAF7"/>
+
+  <!-- Title -->
+  <text x="250" y="26" font-family="sans-serif" font-size="11" fill="#8A8C92" text-anchor="middle" letter-spacing="2">SEMANTIC DATA LAYER</text>
+
+  <!-- ─── LEFT: DATA SOURCES ─── -->
+  <text x="72" y="56" font-family="sans-serif" font-size="9" fill="#8A8C92" text-anchor="middle" letter-spacing="1">SOURCES</text>
+
+  <!-- Source 1: Snowflake (abstract snowflake) -->
+  <rect x="20" y="65" width="104" height="70" rx="8" fill="#FFFFFF" stroke="#E8E6DF" stroke-width="1.5"/>
+  <!-- Snowflake abstract shape -->
+  <g stroke="#0EA5E9" stroke-width="1.5" stroke-linecap="round">
+    <line x1="72" y1="80" x2="72" y2="105"/>
+    <line x1="60" y1="86" x2="84" y2="99"/>
+    <line x1="84" y1="86" x2="60" y2="99"/>
+    <line x1="67" y1="80" x2="72" y2="86"/>
+    <line x1="77" y1="80" x2="72" y2="86"/>
+    <line x1="67" y1="105" x2="72" y2="99"/>
+    <line x1="77" y1="105" x2="72" y2="99"/>
+  </g>
+  <text x="72" y="124" font-family="sans-serif" font-size="9" fill="#0A0B0D" text-anchor="middle" font-weight="600">Snowflake</text>
+
+  <!-- Source 2: Databricks (delta/triangle) -->
+  <rect x="20" y="150" width="104" height="70" rx="8" fill="#FFFFFF" stroke="#E8E6DF" stroke-width="1.5"/>
+  <polygon points="72,165 54,192 90,192" fill="none" stroke="#FF6B35" stroke-width="2"/>
+  <polygon points="72,173 60,192 84,192" fill="#FF6B35" opacity="0.15"/>
+  <text x="72" y="210" font-family="sans-serif" font-size="9" fill="#0A0B0D" text-anchor="middle" font-weight="600">Databricks</text>
+
+  <!-- Source 3: BigQuery (cube) -->
+  <rect x="20" y="235" width="104" height="70" rx="8" fill="#FFFFFF" stroke="#E8E6DF" stroke-width="1.5"/>
+  <g stroke="#4285F4" stroke-width="1.5" fill="none">
+    <rect x="50" y="250" width="20" height="18" rx="1"/>
+    <rect x="74" y="250" width="20" height="18" rx="1" fill="#4285F4" opacity="0.1"/>
+    <rect x="50" y="272" width="20" height="18" rx="1" fill="#4285F4" opacity="0.05"/>
+    <rect x="74" y="272" width="20" height="18" rx="1"/>
+  </g>
+  <text x="72" y="295" font-family="sans-serif" font-size="9" fill="#0A0B0D" text-anchor="middle" font-weight="600">BigQuery</text>
+
+  <!-- ─── CENTER ARROWS TO SEMANTIC LAYER ─── -->
+  <line x1="124" y1="100" x2="196" y2="180" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.7"/>
+  <line x1="124" y1="185" x2="196" y2="195" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.7"/>
+  <line x1="124" y1="270" x2="196" y2="210" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.7"/>
+
+  <!-- ─── CENTER: SEMANTIC LAYER ─── -->
+  <rect x="198" y="148" width="104" height="104" rx="10" fill="#3D2BFF"/>
+  <text x="250" y="185" font-family="sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="700">Unified</text>
+  <text x="250" y="200" font-family="sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="700">Semantic</text>
+  <text x="250" y="215" font-family="sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="700">Layer</text>
+  <text x="250" y="232" font-family="sans-serif" font-size="8" fill="#EDE9FF" text-anchor="middle">dbt · GraphQL · API</text>
+  <!-- Subtle grid pattern on the block -->
+  <line x1="218" y1="148" x2="218" y2="252" stroke="#FFFFFF" stroke-width="0.3" opacity="0.3"/>
+  <line x1="238" y1="148" x2="238" y2="252" stroke="#FFFFFF" stroke-width="0.3" opacity="0.3"/>
+  <line x1="258" y1="148" x2="258" y2="252" stroke="#FFFFFF" stroke-width="0.3" opacity="0.3"/>
+  <line x1="278" y1="148" x2="278" y2="252" stroke="#FFFFFF" stroke-width="0.3" opacity="0.3"/>
+  <line x1="198" y1="168" x2="302" y2="168" stroke="#FFFFFF" stroke-width="0.3" opacity="0.3"/>
+  <line x1="198" y1="188" x2="302" y2="188" stroke="#FFFFFF" stroke-width="0.3" opacity="0.3"/>
+  <line x1="198" y1="208" x2="302" y2="208" stroke="#FFFFFF" stroke-width="0.3" opacity="0.3"/>
+  <line x1="198" y1="228" x2="302" y2="228" stroke="#FFFFFF" stroke-width="0.3" opacity="0.3"/>
+
+  <!-- ─── RIGHT: CONSUMERS ─── -->
+  <text x="408" y="56" font-family="sans-serif" font-size="9" fill="#8A8C92" text-anchor="middle" letter-spacing="1">CONSUMERS</text>
+
+  <!-- Consumer 1: BI Tools -->
+  <rect x="376" y="65" width="104" height="70" rx="8" fill="#FFFFFF" stroke="#E8E6DF" stroke-width="1.5"/>
+  <!-- Bar chart icon -->
+  <rect x="398" y="100" width="10" height="24" rx="1" fill="#3D2BFF" opacity="0.4"/>
+  <rect x="410" y="90" width="10" height="34" rx="1" fill="#3D2BFF" opacity="0.7"/>
+  <rect x="422" y="95" width="10" height="29" rx="1" fill="#3D2BFF" opacity="0.9"/>
+  <rect x="434" y="82" width="10" height="42" rx="1" fill="#3D2BFF"/>
+  <text x="428" y="124" font-family="sans-serif" font-size="9" fill="#0A0B0D" text-anchor="middle" font-weight="600">BI Tools</text>
+
+  <!-- Consumer 2: AI Models -->
+  <rect x="376" y="150" width="104" height="70" rx="8" fill="#EDE9FF" stroke="#3D2BFF" stroke-width="1.5"/>
+  <!-- Neural net icon -->
+  <g fill="#3D2BFF">
+    <circle cx="405" cy="175" r="5"/>
+    <circle cx="405" cy="195" r="5"/>
+    <circle cx="428" cy="165" r="5" opacity="0.6"/>
+    <circle cx="428" cy="180" r="5" opacity="0.8"/>
+    <circle cx="428" cy="195" r="5" opacity="0.6"/>
+    <circle cx="450" cy="175" r="5"/>
+    <circle cx="450" cy="195" r="5"/>
+  </g>
+  <g stroke="#3D2BFF" stroke-width="0.8" fill="none" opacity="0.5">
+    <line x1="410" y1="175" x2="423" y2="165"/>
+    <line x1="410" y1="175" x2="423" y2="180"/>
+    <line x1="410" y1="175" x2="423" y2="195"/>
+    <line x1="410" y1="195" x2="423" y2="165"/>
+    <line x1="410" y1="195" x2="423" y2="180"/>
+    <line x1="410" y1="195" x2="423" y2="195"/>
+    <line x1="433" y1="165" x2="445" y2="175"/>
+    <line x1="433" y1="180" x2="445" y2="175"/>
+    <line x1="433" y1="195" x2="445" y2="175"/>
+    <line x1="433" y1="165" x2="445" y2="195"/>
+    <line x1="433" y1="180" x2="445" y2="195"/>
+    <line x1="433" y1="195" x2="445" y2="195"/>
+  </g>
+  <text x="428" y="208" font-family="sans-serif" font-size="9" fill="#3D2BFF" text-anchor="middle" font-weight="600">AI Models</text>
+
+  <!-- Consumer 3: NL Analytics -->
+  <rect x="376" y="235" width="104" height="70" rx="8" fill="#FFFFFF" stroke="#E8E6DF" stroke-width="1.5"/>
+  <!-- Chat bubble with SQL -->
+  <rect x="393" y="250" width="54" height="30" rx="6" fill="#F0EEE8" stroke="#E8E6DF" stroke-width="1"/>
+  <text x="420" y="263" font-family="monospace" font-size="7" fill="#3D2BFF" text-anchor="middle">SELECT *</text>
+  <text x="420" y="273" font-family="monospace" font-size="7" fill="#8A8C92" text-anchor="middle">FROM …</text>
+  <path d="M 406 280 L 400 287 L 414 280 Z" fill="#F0EEE8" stroke="#E8E6DF" stroke-width="0.5"/>
+  <text x="428" y="295" font-family="sans-serif" font-size="8" fill="#0A0B0D" text-anchor="middle" font-weight="600">NL Analytics</text>
+
+  <!-- Arrows from semantic layer to consumers -->
+  <line x1="302" y1="180" x2="374" y2="115" stroke="#8A8C92" stroke-width="1.5" marker-end="url(#arrow-out)" opacity="0.6"/>
+  <line x1="302" y1="200" x2="374" y2="200" stroke="#8A8C92" stroke-width="1.5" marker-end="url(#arrow-out)" opacity="0.6"/>
+  <line x1="302" y1="220" x2="374" y2="265" stroke="#8A8C92" stroke-width="1.5" marker-end="url(#arrow-out)" opacity="0.6"/>
+
+  <!-- ─── BOTTOM STAT BAR ─── -->
+  <rect x="20" y="330" width="460" height="50" rx="6" fill="#FFFFFF" stroke="#E8E6DF" stroke-width="1"/>
+  <text x="36" y="352" font-family="sans-serif" font-size="9" fill="#8A8C92">Sub-second query response</text>
+  <line x1="195" y1="335" x2="195" y2="372" stroke="#E8E6DF" stroke-width="1"/>
+  <text x="211" y="352" font-family="sans-serif" font-size="9" fill="#8A8C92">40%+ cloud cost reduction</text>
+  <line x1="360" y1="335" x2="360" y2="372" stroke="#E8E6DF" stroke-width="1"/>
+  <text x="376" y="352" font-family="sans-serif" font-size="9" fill="#8A8C92">1000x OLAP throughput</text>
+  <text x="36" y="368" font-family="monospace" font-size="8" fill="#3D2BFF">Snowflake · Databricks · BigQuery · dbt</text>
+</svg>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { SERVICES } from "@/lib/services";
 import { HeroLight } from "@/components/sections/HeroLight";
 import { CTABand } from "@/components/sections/CTABand";
@@ -21,14 +22,14 @@ export const metadata: Metadata = {
   },
 };
 
-// ─── Diagram Placeholders ─────────────────────────────────────────────────────
+// ─── Service Diagram alt-text ─────────────────────────────────────────────────
 
-const DIAGRAM_LABELS: Record<string, string> = {
-  "ai-agents": "Agent loop diagram: perceive > plan > act > verify",
-  chatbots: "Conversational AI architecture",
-  healthcare: "Clinical decision support pipeline",
-  energy: "Grid intelligence monitoring flow",
-  infrastructure: "Structural assessment pipeline",
+const DIAGRAM_ALT: Record<string, string> = {
+  "ai-agents": "Agent loop diagram: Perceive → Plan → Act → Verify circular flow",
+  chatbots: "Conversational AI architecture with RAG pipeline: Document → Embed → Vector Store → Retrieve → Generate",
+  healthcare: "Patient screening pipeline: Patient → Biomarker Collection → AI Risk Score → Specialist Referral, with multimodal input hub",
+  energy: "Grid intelligence flow: Transformer → GPRS → Cloud → Dashboard, with anomaly detection, load forecasting, and theft analytics branches",
+  infrastructure: "Structural inspection pipeline: Drone → LiDAR Scan → Point Cloud → 3D Model → Change Detection Report",
 };
 
 // ─── Data & Analytics sub-cards ──────────────────────────────────────────────
@@ -219,17 +220,20 @@ export default function ServicesPage() {
                       ))}
                     </div>
                   ) : (
-                    /* TODO: replace with real service diagram or illustration for each service */
+                    /* Service diagram SVG */
                     <div
                       className={cn(
-                        "bg-surface rounded-xl aspect-video",
-                        "flex items-center justify-center",
+                        "bg-surface rounded-xl overflow-hidden",
                         "border border-border-light"
                       )}
                     >
-                      <p className="text-body-sm text-text-muted text-center px-lg">
-                        {DIAGRAM_LABELS[service.id]}
-                      </p>
+                      <Image
+                        src={`/images/services/${service.id}.svg`}
+                        alt={DIAGRAM_ALT[service.id] ?? `${service.title} diagram`}
+                        width={500}
+                        height={400}
+                        className="w-full h-auto"
+                      />
                     </div>
                   )}
                 </div>
