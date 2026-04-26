@@ -7,19 +7,69 @@ subcategory: NLP
 client: ""
 year: 2024
 heroImage: /images/portfolio/conversational-data-agent-hero.jpg
-heroImageAlt: Natural-language analytics interface with query and chart response
-excerpt: Natural-language analytics on enterprise data — ask a question in plain English, get a chart and explanation in seconds.
+heroImageAlt: Natural-language analytics interface with a plain-English question and an instant chart response
+excerpt: Natural-language analytics on enterprise data — ask questions in plain English, get governed answers.
 stats:
-  - value: "NL"
-    label: Query interface
-  - value: "Any"
-    label: Data source
-  - value: "Sub-second"
-    label: Response time
-  - value: "6+"
-    label: Languages supported
-techStack: [LLM, RAG, LangChain, OpenAI, Anthropic, Vector DB, SQL, Python]
+  - value: "Natural"
+    label: Language queries
+  - value: "SQL"
+    label: Auto-generated
+  - value: "Self-service"
+    label: Analytics
+  - value: "Governed"
+    label: Data access
+techStack: [NL-to-SQL, LLM Fine-tuning, Data Catalog, Access Control, Semantic Search, RAG]
 relatedSlugs: [unified-semantic-fabric, enterprise-reporting-suite]
 ---
 
-{/* Stub — full content to be added in Plan 08 */}
+## What it does
+
+When an enterprise analyst needs a number, they currently need to know SQL, or know who to ask, or wait for a report to be scheduled. Business users without technical training cannot self-serve. Data teams answer the same ad-hoc questions repeatedly. The gap between data literacy and data access is a productivity ceiling.
+
+The Conversational Data Agent closes that gap. Business users ask questions in plain English: "What were our top five products by margin last quarter?" or "Which regions saw churn increase in the last 90 days?" The agent translates the question to SQL, executes it against the enterprise data warehouse, and returns a structured answer — chart, table, or number — with the underlying query available for audit.
+
+Access controls apply at the query layer, not at the application layer. The agent generates SQL that respects the requesting user's data permissions. Finance analysts see finance data. Regional managers see their region. Sensitive data stays gated even when questions are asked in natural language.
+
+## How it works
+
+**Problem it solves**
+
+Natural language is the interface most people use to think about data. SQL is not. The gap between question and query requires either technical training — which most business users do not have — or an intermediary who translates the question into SQL and returns the result. This intermediary model does not scale. Data teams become query execution services. Business users wait.
+
+**Approach**
+
+The Conversational Data Agent uses a fine-tuned LLM with enterprise data context to translate natural language questions into SQL. The fine-tuning process is data-catalog-aware: the model learns the schema, table relationships, and semantic meaning of the enterprise's specific data — not a generic database, the actual tables and columns with their business definitions.
+
+The data catalog integration is critical to query accuracy. Without it, the model guesses at column names and relationships. With it, the model uses verified column definitions, confirmed joins, and business-level metric definitions from the semantic layer to generate SQL that reflects how the enterprise actually defines its data.
+
+A retrieval-augmented generation (RAG) layer handles queries that reference business context — "our standard reporting regions" or "the KPIs we track for customer success" — by retrieving relevant context from the catalog before generating SQL.
+
+Generated SQL is executed against the warehouse with the requesting user's access credentials. The access control enforcement happens at the database layer, not in the application — the agent cannot generate a query that returns data the user is not permitted to see.
+
+**Outcome**
+
+Business users self-serve analytical questions without SQL training or data team involvement. Data teams shift from answering repetitive ad-hoc queries to building curated datasets and models. The query audit trail provides governance documentation for compliance — every natural-language question is traceable to the SQL it generated and the data it accessed.
+
+## Tech stack
+
+The NL-to-SQL translation layer uses a large language model fine-tuned on the enterprise's schema and business definitions. Fine-tuning scope is targeted: the model learns the enterprise's tables, columns, and relationships without requiring retraining of the full base model. LoRA-based fine-tuning keeps the customization cost manageable.
+
+The data catalog provides the semantic grounding that separates accurate query generation from hallucinated results. The catalog maps column names to business definitions, tables to business concepts, and joins to verified relationship paths. The RAG layer queries the catalog at inference time to inject schema context into the prompt.
+
+Access control enforcement uses the enterprise's existing identity and access management infrastructure. The agent authenticates as the requesting user and executes queries with that user's warehouse permissions. No elevated credentials are used in the query path.
+
+The query execution layer connects to Snowflake, BigQuery, Databricks, Redshift, or standard SQL-compatible data warehouses. The interface layer is configurable: web application, Slack integration, Teams integration, or API endpoint depending on how the enterprise prefers to surface the capability.
+
+## Where it fits
+
+**When business users need analytical self-service without SQL training**
+
+The most common constraint on analytical self-service is query syntax, not data access. When the enterprise has the right data in the warehouse but not the right people to write SQL queries, the conversational agent provides the translation layer.
+
+**When data teams spend significant time on repetitive ad-hoc query requests**
+
+If data team logs show the same ten questions asked in different forms across different months, a conversational agent can serve those questions automatically. Data teams recover the time spent on repetitive requests.
+
+**When natural-language queries must respect enterprise data governance**
+
+Consumer-grade AI assistants connected to enterprise data without access control create governance risk. The Conversational Data Agent enforces the enterprise's existing access permissions at the query layer — the model cannot bypass access control by phrasing a question differently.

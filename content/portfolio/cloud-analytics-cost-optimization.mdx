@@ -7,19 +7,67 @@ subcategory: FinOps
 client: ""
 year: 2024
 heroImage: /images/portfolio/cloud-analytics-cost-optimization-hero.jpg
-heroImageAlt: Cloud cost dashboard showing spend reduction across data platforms
-excerpt: Reduce Snowflake, Databricks, and BigQuery spend by 50%+ — intelligent query routing and pre-aggregation without changing BI tools.
+heroImageAlt: Cloud cost dashboard showing spend reduction across Snowflake, Databricks, and BigQuery data platforms
+excerpt: Reduce Snowflake, Databricks, and BigQuery spend by 40%+ — without sacrificing query performance.
 stats:
-  - value: "50%+"
-    label: Cloud cost reduction
-  - value: "Snowflake"
-    label: Optimized
-  - value: "Databricks"
-    label: Optimized
-  - value: "BigQuery"
-    label: Optimized
-techStack: [Snowflake, Databricks, BigQuery, Kyvos, Python, FinOps, Terraform]
-relatedSlugs: [bi-acceleration-engine, multidimensional-olap-modernization]
+  - value: "40%+"
+    label: Cost reduction
+  - value: "Zero"
+    label: Performance trade-off
+  - value: "3"
+    label: Cloud platforms
+  - value: "Weeks"
+    label: Time to savings
+techStack: [Snowflake Optimization, Databricks Tuning, BigQuery Slots, Query Profiling, Caching Layers, FinOps]
+relatedSlugs: [bi-acceleration-engine, enterprise-reporting-suite]
 ---
 
-{/* Stub — full content to be added in Plan 08 */}
+## What it does
+
+When an enterprise moves analytics workloads to Snowflake, Databricks, or BigQuery, cloud cost management becomes a discipline in itself. Warehouse auto-scaling, unoptimized queries, and redundant computation generate bills that grow faster than the data. Cost targets set at deployment are exceeded within months. The response — throttling compute or cancelling workloads — degrades the analytics experience the platform was supposed to improve.
+
+Cloud Analytics Cost Optimization reduces platform spend by 40% or more through query profiling, warehouse sizing, caching layer configuration, and auto-scaling policy tuning. Performance is not traded for savings — the same queries run faster and at lower cost after optimization.
+
+Savings materialize in weeks, not months, because the work is configuration and query rewriting, not infrastructure migration.
+
+## How it works
+
+**Problem it solves**
+
+Cloud data platforms charge for compute consumed. Every inefficient query, every over-provisioned warehouse, every result set recomputed instead of cached consumes budget that delivers no analytical value. Enterprises that deploy Snowflake, Databricks, or BigQuery without a FinOps discipline find that usage grows 2-3x faster than anticipated. The cost problem is structural: without visibility into which queries and which workloads are driving spend, optimization is guesswork.
+
+**Approach**
+
+The optimization process starts with a query profile. Every query running against the platform over a 30-day window is analyzed: compute consumed, scan volume, result cache hit rate, execution plan efficiency, and clustering effectiveness. This profile identifies the high-cost queries — typically 10-20% of queries account for 80%+ of cost — and quantifies the savings opportunity in each.
+
+Optimization applies at three layers. Query rewriting eliminates redundant scans, pushes predicates to reduce scan volume, and rewrites cross-joins that masquerade as analytical queries. Warehouse sizing right-sizes compute clusters for actual workload profiles — most analytics workloads run efficiently on smaller compute than default configurations provision. Caching layer configuration increases result cache hit rates, so repeated queries serve from cache rather than recomputing.
+
+Auto-scaling policies are tuned to actual workload patterns: smaller warehouses for low-concurrency periods, burst capacity for peak periods, aggressive suspension policies for idle time. On BigQuery, slot reservation configurations are reviewed against actual query patterns.
+
+**Outcome**
+
+Cost reduction of 40% or more is achievable in most enterprise environments without query performance degradation. In many cases, query performance improves alongside cost reduction because the optimizations that reduce scan volume also reduce query execution time.
+
+## Tech stack
+
+Snowflake optimization uses warehouse suspension policies, query result cache configuration, clustering key analysis, and materialized view strategy. Query profile analysis uses Snowflake's QUERY\_HISTORY and QUERY\_ATTRIBUTION\_HISTORY views to attribute cost at the query and user level.
+
+Databricks cost management uses cluster auto-termination, spot instance policies, job cluster versus all-purpose cluster cost analysis, and Delta Lake optimization for scan reduction. Photon engine configuration is reviewed where applicable.
+
+BigQuery optimization uses slot commitment analysis, on-demand versus flat-rate cost comparison, partition and clustering strategy review, and BI Engine configuration for frequently-run dashboards.
+
+Query profiling is platform-specific but methodology-consistent: identify high-cost queries, profile execution plans, apply targeted optimizations, and measure cost delta after each change. FinOps tagging ensures cost attribution remains visible across teams as the platform scales.
+
+## Where it fits
+
+**When Snowflake, Databricks, or BigQuery spend has exceeded budget targets**
+
+Cloud analytics cost overruns typically trace to a small number of unoptimized high-cost queries, over-provisioned warehouse configurations, and low result cache hit rates. Profiling and targeted optimization address the root causes without reducing analytical capability.
+
+**When finance has mandated cloud cost reduction without degrading analytics**
+
+Cutting compute budget by throttling queries or reducing warehouse sizes degrades analyst experience. The optimization approach achieves the same cost reduction through query efficiency and caching — analysts experience faster queries, not slower ones.
+
+**When a new analytics platform is being deployed and cost governance must be established upfront**
+
+Cost optimization is cheaper to build in at deployment than to retrofit after usage patterns have hardened. Platform configuration, query standards, and auto-scaling policies established at deployment prevent cost overruns from developing.
