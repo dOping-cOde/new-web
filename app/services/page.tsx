@@ -130,6 +130,7 @@ export default function ServicesPage() {
         headline="Six capabilities. One engineering team."
         headlineSize="text-display-lg"
         intro="We build AI systems end-to-end — from research prototype to production deployment. Each capability is backed by shipped work, not slide decks."
+        backgroundImage="/images/hero/services-bg.svg"
       />
 
       {/* Section 2: Sticky Anchor Nav (client component for IntersectionObserver) */}

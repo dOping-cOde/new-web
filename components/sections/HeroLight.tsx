@@ -24,6 +24,8 @@ interface HeroLightProps {
   /** Show scroll cue at bottom of section (home page only) */
   showScrollCue?: boolean;
   className?: string;
+  /** Optional SVG/image URL applied as a full-bleed background on the section (e.g. hero texture) */
+  backgroundImage?: string;
   /** Additional content rendered after CTAs (e.g. WebGL canvas placeholder) */
   children?: React.ReactNode;
 }
@@ -42,6 +44,7 @@ export function HeroLight({
   secondaryCTA,
   showScrollCue = false,
   className,
+  backgroundImage,
   children,
 }: HeroLightProps) {
   const isFullViewport = headlineSize === "text-display-xl";
@@ -82,6 +85,11 @@ export function HeroLight({
         isFullViewport && "min-h-[calc(100vh-64px)] flex flex-col justify-center",
         className
       )}
+      style={
+        backgroundImage
+          ? { backgroundImage: `url(${backgroundImage})`, backgroundSize: "cover", backgroundPosition: "center" }
+          : undefined
+      }
     >
       <Container>
         {kicker && (

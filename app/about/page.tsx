@@ -26,6 +26,7 @@ export default function AboutPage() {
         headline="Engineers, not sloganeers."
         headlineSize="text-display-lg"
         intro="We build AI systems that run in transformers, bridges, hospitals, and mines. Our measure is uptime, not slides."
+        backgroundImage="/images/hero/about-bg.svg"
       />
 
       {/* 2. Origin section */}

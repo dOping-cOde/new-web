@@ -24,6 +24,7 @@ export default function ContactPage() {
         headline="Tell us what you're building."
         headlineSize="text-display-lg"
         intro="We respond within two business days. For technical depth, include what runs in production today and what's broken about it."
+        backgroundImage="/images/hero/contact-bg.svg"
       />
 
       {/* 2. Form */}

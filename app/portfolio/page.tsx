@@ -31,6 +31,7 @@ export default async function PortfolioPage() {
         headline="Eleven systems. Built for production."
         headlineSize="text-display-lg"
         intro="Real AI systems deployed in energy grids, hospitals, bridges, and insurance platforms. Each one runs in production."
+        backgroundImage="/images/hero/portfolio-bg.svg"
       />
 
       <PortfolioGrid caseStudies={caseStudies} />
