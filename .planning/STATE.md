@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 04-quality 04-02-PLAN.md
-last_updated: "2026-04-26T15:42:01.207Z"
+stopped_at: Completed 04-quality 04-03-PLAN.md
+last_updated: "2026-04-26T15:44:32.665Z"
 last_activity: 2026-04-26
 progress:
   total_phases: 4
   completed_phases: 3
   total_plans: 23
-  completed_plans: 20
+  completed_plans: 21
   percent: 0
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-04-26)
 ## Current Position
 
 Phase: 04 (quality) — EXECUTING
-Plan: 3 of 5
+Plan: 4 of 5
 Status: Ready to execute
 Last activity: 2026-04-26
 
@@ -74,6 +74,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 03-animation-webgl P05 | 4min | 2 tasks | 0 files |
 | Phase 04-quality P01 | 4min | 2 tasks | 10 files |
 | Phase 04-quality P02 | 10min | 2 tasks | 5 files |
+| Phase 04-quality P03 | 6min | 2 tasks | 9 files |
 
 ## Accumulated Context
 
@@ -136,6 +137,9 @@ Recent decisions affecting current work:
 - [Phase 04-quality]: metadataBase in root layout resolves all page-level metadata to absolute canonical URLs — no per-page alternates.canonical needed
 - [Phase 04-quality]: OG images use system fonts only — no custom font loading in edge runtime to avoid OG image generation failures
 - [Phase 04-quality]: JSON-LD injected as inline script tags with < escaped as \u003c for XSS safety; case study pages use <article> not <main> since layout.tsx provides main wrapper; serviceJsonLd rendered via SERVICES.map so schema auto-syncs with metadata
+- [Phase 04-quality]: aria-pressed and aria-current both applied to AnchorNav active buttons: pressed = toggle state, current = location context
+- [Phase 04-quality]: MobileNav triggerRef prop: Navbar passes hamburgerRef so overlay can return focus on close without DOM coupling
+- [Phase 04-quality]: focus-visible: Tailwind utilities for form inputs — ring shows on keyboard navigation only, not mouse clicks
 
 ### Pending Todos
 
@@ -147,6 +151,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-26T15:42:01.204Z
-Stopped at: Completed 04-quality 04-02-PLAN.md
+Last session: 2026-04-26T15:44:32.663Z
+Stopped at: Completed 04-quality 04-03-PLAN.md
 Resume file: None

@@ -76,15 +76,15 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Accessibility
 
-- [ ] **A11Y-01**: WCAG 2.1 AA compliance minimum, AAA for body text contrast
-- [ ] **A11Y-02**: Full keyboard navigation: entire site usable without mouse
-- [ ] **A11Y-03**: Visible focus indicators: 2px indigo ring, 2px offset, never outline:none without replacement
-- [ ] **A11Y-04**: Skip-to-content link at top of every page
-- [ ] **A11Y-05**: prefers-reduced-motion: GSAP timelines convert to instant state changes, Three.js scenes pause with static fallback, Framer Motion respects natively
-- [ ] **A11Y-06**: Form errors announced via aria-live="polite"
-- [ ] **A11Y-07**: All interactive elements have accessible names (ARIA labels on icon buttons)
-- [ ] **A11Y-08**: Color is never the sole carrier of information
-- [ ] **A11Y-09**: Heading order strictly enforced across all pages
+- [x] **A11Y-01**: WCAG 2.1 AA compliance minimum, AAA for body text contrast
+- [x] **A11Y-02**: Full keyboard navigation: entire site usable without mouse
+- [x] **A11Y-03**: Visible focus indicators: 2px indigo ring, 2px offset, never outline:none without replacement
+- [x] **A11Y-04**: Skip-to-content link at top of every page
+- [x] **A11Y-05**: prefers-reduced-motion: GSAP timelines convert to instant state changes, Three.js scenes pause with static fallback, Framer Motion respects natively
+- [x] **A11Y-06**: Form errors announced via aria-live="polite"
+- [x] **A11Y-07**: All interactive elements have accessible names (ARIA labels on icon buttons)
+- [x] **A11Y-08**: Color is never the sole carrier of information
+- [x] **A11Y-09**: Heading order strictly enforced across all pages
 
 ### Performance
 
@@ -195,15 +195,15 @@ Deferred to future release. Tracked but not in current roadmap.
 | SEO-10 | Phase 4 | Complete |
 | SEO-11 | Phase 4 | Complete |
 | SEO-12 | Phase 4 | Complete |
-| A11Y-01 | Phase 4 | Pending |
-| A11Y-02 | Phase 4 | Pending |
-| A11Y-03 | Phase 4 | Pending |
-| A11Y-04 | Phase 4 | Pending |
-| A11Y-05 | Phase 4 | Pending |
-| A11Y-06 | Phase 4 | Pending |
-| A11Y-07 | Phase 4 | Pending |
-| A11Y-08 | Phase 4 | Pending |
-| A11Y-09 | Phase 4 | Pending |
+| A11Y-01 | Phase 4 | Complete |
+| A11Y-02 | Phase 4 | Complete |
+| A11Y-03 | Phase 4 | Complete |
+| A11Y-04 | Phase 4 | Complete |
+| A11Y-05 | Phase 4 | Complete |
+| A11Y-06 | Phase 4 | Complete |
+| A11Y-07 | Phase 4 | Complete |
+| A11Y-08 | Phase 4 | Complete |
+| A11Y-09 | Phase 4 | Complete |
 | PERF-01 | Phase 4 | Pending |
 | PERF-02 | Phase 4 | Pending |
 | PERF-03 | Phase 4 | Pending |

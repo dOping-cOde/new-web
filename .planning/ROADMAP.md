@@ -93,7 +93,7 @@ Plans:
 Plans:
 - [x] 04-01-PLAN.md — SEO infrastructure: sitemap, robots, OG images, canonical URLs, metadata completion
 - [x] 04-02-PLAN.md — JSON-LD structured data (Organization, WebSite, Service, Article+BreadcrumbList) and heading hierarchy audit
-- [ ] 04-03-PLAN.md — Accessibility audit and fixes: keyboard nav, focus rings, ARIA labels, contrast, heading order
+- [x] 04-03-PLAN.md — Accessibility audit and fixes: keyboard nav, focus rings, ARIA labels, contrast, heading order
 - [ ] 04-04-PLAN.md — Performance optimization (fonts, images, bundle) and documentation (README, TODO audit)
 - [ ] 04-05-PLAN.md — Final verification: automated requirement checks + human visual sign-off
 **UI hint**: yes
@@ -108,4 +108,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | 1. Foundation | 4/4 | Complete   | 2026-04-26 |
 | 2. Content & Pages | 9/9 | Complete    | 2026-04-26 |
 | 3. Animation & WebGL | 5/5 | Complete   | 2026-04-26 |
-| 4. Quality | 2/5 | In Progress|  |
+| 4. Quality | 3/5 | In Progress|  |
