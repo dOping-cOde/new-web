@@ -9,14 +9,26 @@ interface MobileNavProps {
   isOpen: boolean;
   onClose: () => void;
   links: ReadonlyArray<{ label: string; href: string }>;
+  /** Ref to the trigger button — focus returns here when overlay closes (WCAG 2.1 §2.4.3) */
+  triggerRef?: React.RefObject<HTMLButtonElement | null>;
 }
 
-export function MobileNav({ isOpen, onClose, links }: MobileNavProps) {
+export function MobileNav({ isOpen, onClose, links, triggerRef }: MobileNavProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
+  const wasOpenRef = useRef(false);
 
   // Per D-11: Focus trapping and body scroll lock
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen) {
+      // Return focus to trigger when overlay closes (WCAG 2.1 SC 2.4.3)
+      if (wasOpenRef.current && triggerRef?.current) {
+        triggerRef.current.focus();
+      }
+      wasOpenRef.current = false;
+      return;
+    }
+
+    wasOpenRef.current = true;
 
     // Lock body scroll
     document.body.style.overflow = "hidden";
@@ -55,11 +67,12 @@ export function MobileNav({ isOpen, onClose, links }: MobileNavProps) {
       document.body.style.overflow = "";
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, triggerRef]);
 
   return (
     <div
       ref={overlayRef}
+      id="mobile-nav-overlay"
       className={cn(
         "fixed inset-0 z-40 md:hidden",
         "bg-bg-dark",

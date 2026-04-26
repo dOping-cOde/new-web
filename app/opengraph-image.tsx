@@ -12,11 +12,11 @@ export default function OGImage() {
         justifyContent: 'center', alignItems: 'flex-start', padding: '80px',
         backgroundColor: '#0A0A0A', color: '#FAFAF7',
       }}>
-        <div style={{ width: 80, height: 3, backgroundColor: '#3D2BFF', marginBottom: 40 }} />
-        <div style={{ fontSize: 64, fontWeight: 700, lineHeight: 1.1, marginBottom: 24 }}>
+        <div style={{ display: 'flex', width: 80, height: 3, backgroundColor: '#3D2BFF', marginBottom: 40 }} />
+        <div style={{ display: 'flex', fontSize: 64, fontWeight: 700, lineHeight: 1.1, marginBottom: 24 }}>
           Softwires Technologies
         </div>
-        <div style={{ fontSize: 28, color: '#A0A0A0', lineHeight: 1.4 }}>
+        <div style={{ display: 'flex', fontSize: 28, color: '#A0A0A0', lineHeight: 1.4 }}>
           AI Engineering for the Physical World
         </div>
       </div>

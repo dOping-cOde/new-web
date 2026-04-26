@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
@@ -17,6 +17,7 @@ const NAV_LINKS = [
 export function Navbar() {
   const [isDark, setIsDark] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
 
   // Per D-06: IntersectionObserver watches elements with data-theme="dark"
   // When navbar (top 64px) overlaps a dark section, swap to dark theme
@@ -118,10 +119,12 @@ export function Navbar() {
 
           {/* Mobile hamburger — per D-10: morphs to X via CSS transforms */}
           <button
+            ref={hamburgerRef}
             className="md:hidden relative w-[24px] h-[24px] flex flex-col items-center justify-center gap-[6px]"
             onClick={toggleMobile}
             aria-label={isMobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMobileOpen}
+            aria-controls="mobile-nav-overlay"
           >
             <span
               className={cn(
@@ -146,6 +149,7 @@ export function Navbar() {
         isOpen={isMobileOpen}
         onClose={closeMobile}
         links={NAV_LINKS}
+        triggerRef={hamburgerRef}
       />
 
       {/* Spacer to prevent content from going under fixed navbar */}

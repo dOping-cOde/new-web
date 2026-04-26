@@ -13,24 +13,28 @@ export default async function OGImage({ params }: { params: Promise<{ slug: stri
   const { slug } = await params
   const caseStudy = getCaseStudyBySlug(slug)
 
+  const excerpt = caseStudy.excerpt.length > 120
+    ? caseStudy.excerpt.slice(0, 117) + '...'
+    : caseStudy.excerpt
+
   return new ImageResponse(
     (
       <div style={{
         width: '100%', height: '100%', display: 'flex', flexDirection: 'column',
         justifyContent: 'center', alignItems: 'flex-start', padding: '80px',
-        backgroundColor: '#0A0A0A', color: '#FAFAF7',
+        backgroundColor: '#0A0A0A', color: '#FAFAF7', position: 'relative',
       }}>
-        <div style={{ fontSize: 18, color: '#A0A0A0', textTransform: 'uppercase', letterSpacing: 2, marginBottom: 24 }}>
-          {caseStudy.category} · {caseStudy.subcategory}
+        <div style={{ display: 'flex', fontSize: 18, color: '#A0A0A0', textTransform: 'uppercase', letterSpacing: 2, marginBottom: 24 }}>
+          {`${caseStudy.category} · ${caseStudy.subcategory}`}
         </div>
-        <div style={{ width: 80, height: 3, backgroundColor: '#3D2BFF', marginBottom: 40 }} />
-        <div style={{ fontSize: 56, fontWeight: 700, lineHeight: 1.1, marginBottom: 24, maxWidth: 900 }}>
+        <div style={{ display: 'flex', width: 80, height: 3, backgroundColor: '#3D2BFF', marginBottom: 40 }} />
+        <div style={{ display: 'flex', fontSize: 56, fontWeight: 700, lineHeight: 1.1, marginBottom: 24, maxWidth: 900 }}>
           {caseStudy.title}
         </div>
-        <div style={{ fontSize: 24, color: '#A0A0A0', lineHeight: 1.4, maxWidth: 800 }}>
-          {caseStudy.excerpt.length > 120 ? caseStudy.excerpt.slice(0, 117) + '...' : caseStudy.excerpt}
+        <div style={{ display: 'flex', fontSize: 24, color: '#A0A0A0', lineHeight: 1.4, maxWidth: 800 }}>
+          {excerpt}
         </div>
-        <div style={{ position: 'absolute', bottom: 60, left: 80, fontSize: 18, color: '#666' }}>
+        <div style={{ display: 'flex', position: 'absolute', bottom: 60, left: 80, fontSize: 18, color: '#666' }}>
           softwires.in
         </div>
       </div>

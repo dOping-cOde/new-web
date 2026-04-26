@@ -83,8 +83,10 @@ export function ServicesAnchorNav() {
                   "text-body-sm shrink-0",
                   "transition-colors duration-fast",
                   "relative pb-xs bg-transparent border-0 cursor-pointer",
-                  isActive ? "text-accent" : "text-text-muted hover:text-text"
+                  isActive ? "text-accent font-medium" : "text-text-muted hover:text-text"
                 )}
+                aria-pressed={isActive}
+                aria-current={isActive ? "true" : undefined}
                 onClick={() => {
                   document
                     .getElementById(id)

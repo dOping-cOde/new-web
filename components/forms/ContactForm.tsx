@@ -29,7 +29,8 @@ const defaultFormData: FormData = {
 const inputBaseStyles = cn(
   "w-full text-body border border-border-light rounded-md p-md",
   "bg-surface text-text placeholder:text-text-muted",
-  "focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent",
+  // Use focus-visible for keyboard users; suppress default outline and provide accent ring
+  "focus-visible:outline-none focus-visible:border-accent focus-visible:ring-1 focus-visible:ring-accent",
   "transition-colors duration-fast"
 );
 
@@ -145,6 +146,7 @@ export function ContactForm() {
           type="text"
           name="name"
           required
+          aria-required="true"
           value={formData.name}
           onChange={handleChange}
           onBlur={() => handleBlur("name")}
@@ -175,6 +177,7 @@ export function ContactForm() {
           type="email"
           name="email"
           required
+          aria-required="true"
           value={formData.email}
           onChange={handleChange}
           onBlur={() => handleBlur("email")}
@@ -205,6 +208,7 @@ export function ContactForm() {
           type="text"
           name="company"
           required
+          aria-required="true"
           value={formData.company}
           onChange={handleChange}
           onBlur={() => handleBlur("company")}
@@ -276,6 +280,7 @@ export function ContactForm() {
           id="description"
           name="description"
           required
+          aria-required="true"
           rows={4}
           value={formData.description}
           onChange={handleChange}
@@ -332,7 +337,7 @@ export function ContactForm() {
       {/* Submit */}
       <div className="pt-sm">
         <Button type="submit" variant="primary" className="w-full sm:w-auto">
-          Send
+          Send message
         </Button>
       </div>
 
