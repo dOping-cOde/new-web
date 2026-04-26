@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Design system, scaffold, fonts, nav, footer, core components (completed 2026-04-26)
 - [x] **Phase 2: Content & Pages** - All 17 routes (5 top-level + 11 case studies) with professional copy (completed 2026-04-26)
-- [ ] **Phase 3: Animation & WebGL** - GSAP scroll animations, Framer Motion interactions, Three.js scenes
+- [x] **Phase 3: Animation & WebGL** - GSAP scroll animations, Framer Motion interactions, Three.js scenes (completed 2026-04-26)
 - [ ] **Phase 4: Quality** - SEO metadata, accessibility audit, performance validation, documentation
 
 ## Phase Details
@@ -76,7 +76,7 @@ Plans:
 - [x] 03-02-PLAN.md — GSAP integrations: hero text reveal, scroll-pinned Architecture sections, image parallax
 - [x] 03-03-PLAN.md — Framer Motion integrations: hover-lift, stat counters, FLIP filter, scroll reveal
 - [x] 03-04-PLAN.md — Three.js scenes: homepage particle field, BridgeSense point-cloud bridge
-- [ ] 03-05-PLAN.md — Verification: automated checks (domain boundary, reduced motion, GPU disposal) + human visual inspection
+- [x] 03-05-PLAN.md — Verification: automated checks (domain boundary, reduced motion, GPU disposal) + human visual inspection
 **UI hint**: yes
 
 ### Phase 4: Quality
@@ -100,5 +100,5 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 |-------|----------------|--------|-----------|
 | 1. Foundation | 4/4 | Complete   | 2026-04-26 |
 | 2. Content & Pages | 9/9 | Complete    | 2026-04-26 |
-| 3. Animation & WebGL | 3/5 | In Progress|  |
+| 3. Animation & WebGL | 5/5 | Complete   | 2026-04-26 |
 | 4. Quality | 0/TBD | Not started | - |

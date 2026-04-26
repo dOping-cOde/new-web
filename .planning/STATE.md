@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 03-04-PLAN.md
-last_updated: "2026-04-26T13:05:17.650Z"
+stopped_at: "Task 2 checkpoint: 03-05-PLAN.md human visual verification"
+last_updated: "2026-04-26T13:26:58.510Z"
 last_activity: 2026-04-26
 progress:
   total_phases: 4
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 18
-  completed_plans: 17
+  completed_plans: 18
   percent: 0
 ---
 
@@ -70,6 +70,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 03-animation-webgl P02 | 4min | 2 tasks | 6 files |
 | Phase 03-animation-webgl P03 | 10min | 2 tasks | 5 files |
 | Phase 03-animation-webgl P04 | 5min | 2 tasks | 7 files |
+| Phase 03-animation-webgl P05 | 4min | 1 tasks | 0 files |
 
 ## Accumulated Context
 
@@ -126,6 +127,7 @@ Recent decisions affecting current work:
 - [Phase 03-animation-webgl]: Client wrapper pattern for ssr:false: next/dynamic with ssr:false forbidden in Server Components — created *Loader.tsx client wrappers (HeroParticleFieldLoader, PointCloudBridgeLoader) to hold dynamic imports
 - [Phase 03-animation-webgl]: frameloop=always for both Three.js scenes — continuous drift/rotation requires per-frame invalidation, making demand equivalent to always; AdaptiveDpr handles mobile DPR scaling
 - [Phase 03-animation-webgl]: Procedural bridge geometry chosen for BridgeSense (D-05): deck grid + parabolic arches + hangers + piers, ~3500 pts with LiDAR-scan jitter, no external model files, well under 60KB
+- [Phase 03-animation-webgl]: SSR guard via Loader pattern: ssr:false in HeroParticleFieldLoader + PointCloudBridgeLoader client wrappers, not in page.tsx or mdx-components.tsx — correct per D-06
 
 ### Pending Todos
 
@@ -137,6 +139,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-26T13:05:17.648Z
-Stopped at: Completed 03-04-PLAN.md
+Last session: 2026-04-26T13:26:49.263Z
+Stopped at: Task 2 checkpoint: 03-05-PLAN.md human visual verification
 Resume file: None
