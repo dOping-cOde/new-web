@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 };
 
 // Featured portfolio cards — hardcoded per spec (4 of the Tier A case studies)
-// TODO: replace placeholder hero images with real photography
+// TODO: replace SVG placeholders with real project photography
 const FEATURED_CARDS = [
   {
     slug: "bridgesense",
@@ -38,7 +38,7 @@ const FEATURED_CARDS = [
     subcategory: "LiDAR · Computer Vision",
     excerpt:
       "Drone-mounted LiDAR system detecting 1.5–3mm structural changes across bridges and viaducts with 0.92 F1-score accuracy.",
-    heroImage: "",
+    heroImage: "/images/portfolio/bridgesense-hero.svg",
     heroImageAlt: "BridgeSense — LiDAR point-cloud bridge inspection dashboard",
   },
   {
@@ -48,7 +48,7 @@ const FEATURED_CARDS = [
     subcategory: "Clinical AI · Risk Scoring",
     excerpt:
       "Cancer risk stratification platform triaging patients across spoke-hub networks before symptoms progress to late stage.",
-    heroImage: "",
+    heroImage: "/images/portfolio/salt-lick-hero.svg",
     heroImageAlt: "Salt-Lick — cancer risk stratification dashboard",
   },
   {
@@ -58,7 +58,7 @@ const FEATURED_CARDS = [
     subcategory: "Drones · Computer Vision",
     excerpt:
       "Autonomous aerial inspection system combining drone telemetry with real-time AI analysis for large-scale infrastructure surveys.",
-    heroImage: "",
+    heroImage: "/images/portfolio/ai-copter-hero.svg",
     heroImageAlt: "AI-Copter — drone inspection operations dashboard",
   },
   {
@@ -68,7 +68,7 @@ const FEATURED_CARDS = [
     subcategory: "Fraud Detection · AI Agents",
     excerpt:
       "Fraud, waste, and abuse detection system processing insurance claims at scale with automated investigation and flagging.",
-    heroImage: "",
+    heroImage: "/images/portfolio/fwa-platform-hero.svg",
     heroImageAlt: "FWA Platform — fraud detection and case management dashboard",
   },
 ];
