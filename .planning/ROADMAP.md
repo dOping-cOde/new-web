@@ -75,7 +75,7 @@ Plans:
 - [x] 03-01-PLAN.md — Animation foundation: GSAP plugin registration, reduced-motion hook, SplitText/CountUp/ScrollReveal components
 - [x] 03-02-PLAN.md — GSAP integrations: hero text reveal, scroll-pinned Architecture sections, image parallax
 - [x] 03-03-PLAN.md — Framer Motion integrations: hover-lift, stat counters, FLIP filter, scroll reveal
-- [ ] 03-04-PLAN.md — Three.js scenes: homepage particle field, BridgeSense point-cloud bridge
+- [x] 03-04-PLAN.md — Three.js scenes: homepage particle field, BridgeSense point-cloud bridge
 - [ ] 03-05-PLAN.md — Verification: automated checks (domain boundary, reduced motion, GPU disposal) + human visual inspection
 **UI hint**: yes
 

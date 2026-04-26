@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 03-03-PLAN.md
-last_updated: "2026-04-26T12:42:27.972Z"
+stopped_at: Completed 03-04-PLAN.md
+last_updated: "2026-04-26T13:05:17.650Z"
 last_activity: 2026-04-26
 progress:
   total_phases: 4
   completed_phases: 2
   total_plans: 18
-  completed_plans: 16
+  completed_plans: 17
   percent: 0
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-04-26)
 ## Current Position
 
 Phase: 03 (animation-webgl) — EXECUTING
-Plan: 4 of 5
+Plan: 5 of 5
 Status: Ready to execute
 Last activity: 2026-04-26
 
@@ -69,6 +69,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 03-animation-webgl P01 | 1min | 2 tasks | 5 files |
 | Phase 03-animation-webgl P02 | 4min | 2 tasks | 6 files |
 | Phase 03-animation-webgl P03 | 10min | 2 tasks | 5 files |
+| Phase 03-animation-webgl P04 | 5min | 2 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -122,6 +123,9 @@ Recent decisions affecting current work:
 - [Phase 03-animation-webgl]: SplitText highlightWord prop wraps matching word in text-accent class — GSAP .split-word selector still targets all words including highlighted one
 - [Phase 03-animation-webgl]: PortfolioCard wraps Link in motion.div (not motion(Link)) for hover-lift — simpler, avoids ref forwarding complexity with Next.js Link
 - [Phase 03-animation-webgl]: StatBlock parseStatValue regex splits numeric/prefix/suffix from mixed strings (5 min, 24/7, 0.92) — non-numeric values render as plain text
+- [Phase 03-animation-webgl]: Client wrapper pattern for ssr:false: next/dynamic with ssr:false forbidden in Server Components — created *Loader.tsx client wrappers (HeroParticleFieldLoader, PointCloudBridgeLoader) to hold dynamic imports
+- [Phase 03-animation-webgl]: frameloop=always for both Three.js scenes — continuous drift/rotation requires per-frame invalidation, making demand equivalent to always; AdaptiveDpr handles mobile DPR scaling
+- [Phase 03-animation-webgl]: Procedural bridge geometry chosen for BridgeSense (D-05): deck grid + parabolic arches + hangers + piers, ~3500 pts with LiDAR-scan jitter, no external model files, well under 60KB
 
 ### Pending Todos
 
@@ -133,6 +137,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-26T12:42:27.969Z
-Stopped at: Completed 03-03-PLAN.md
+Last session: 2026-04-26T13:05:17.648Z
+Stopped at: Completed 03-04-PLAN.md
 Resume file: None
