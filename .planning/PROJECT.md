@@ -22,11 +22,12 @@ The site must convey engineered seriousness — the calm authority of a firm tha
 - ✓ MDX-based case study content with typed frontmatter — Validated in Phase 2: Content & Pages
 - ✓ Contact form with mailto fallback — Validated in Phase 2: Content & Pages
 
+- ✓ WebGL hero (Three.js particle field) on homepage, point-cloud bridge on BridgeSense — Validated in Phase 3: Animation & WebGL
+- ✓ GSAP ScrollTrigger for scroll-pinned architecture sections, hero text reveal, parallax — Validated in Phase 3: Animation & WebGL
+- ✓ Framer Motion for component micro-interactions (hover-lift, number counters, filter FLIP) — Validated in Phase 3: Animation & WebGL
+
 ### Active
 
-- [ ] WebGL hero (Three.js particle field) on homepage, point-cloud bridge on BridgeSense
-- [ ] GSAP ScrollTrigger for scroll-pinned architecture sections, hero text reveal, parallax
-- [ ] Framer Motion for component micro-interactions (hover-lift, number counters, filter FLIP)
 - [ ] Full SEO: metadata per route, JSON-LD schemas, sitemap, robots, dynamic OG images
 - [ ] WCAG 2.1 AA accessibility, full keyboard nav, prefers-reduced-motion support
 - [ ] Lighthouse mobile: 90+ Performance, 100 Accessibility, 100 Best Practices, 100 SEO
@@ -95,4 +96,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-26 after Phase 2: Content & Pages complete*
+*Last updated: 2026-04-26 after Phase 3: Animation & WebGL complete*
