@@ -9,8 +9,8 @@ import { Container } from "@/components/layout/Container";
 export default function Home() {
   return (
     <main>
-      {/* ===== LIGHT SECTION ===== */}
-      <section className="bg-bg-light py-4xl">
+      {/* ===== LIGHT SECTION — tests navbar in light mode (min 100vh) ===== */}
+      <section className="bg-bg-light min-h-screen py-4xl">
         <Container>
           <SectionHeader
             kicker="COMPONENT LIBRARY"
@@ -82,13 +82,14 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ===== DARK SECTION ===== */}
-      <section className="bg-bg-dark py-4xl">
+      {/* ===== DARK SECTION — tests navbar theme detection via data-theme="dark" (min 100vh) ===== */}
+      {/* This dark section tests navbar theme detection via data-theme="dark" */}
+      <section className="bg-bg-dark min-h-screen py-4xl" data-theme="dark">
         <Container>
           <SectionHeader
-            kicker="DARK VARIANT"
+            kicker="FEATURED * ENERGY"
             heading="Components on Dark"
-            intro="All components support a dark prop that inverts text colors for use inside dark cinematic sections."
+            intro="All components support a dark prop that inverts text colors for use inside dark cinematic sections. Scroll to see the navbar switch to its dark color scheme."
             dark
             className="mb-3xl"
           />
@@ -124,6 +125,23 @@ export default function Home() {
             headingSize="text-display-md"
             dark
           />
+        </Container>
+      </section>
+
+      {/* ===== LIGHT SECTION — tests navbar switching back from dark to light ===== */}
+      <section className="bg-bg-light min-h-screen py-4xl">
+        <Container>
+          <SectionHeader
+            kicker="NAVBAR DETECTION"
+            heading="Back to Light"
+            intro="Scroll back up into the dark section above to see the navbar switch to its dark color scheme. Scroll down and the navbar returns to light. The IntersectionObserver fires with ~320ms CSS transition."
+            className="mb-3xl"
+          />
+
+          <div className="flex flex-wrap gap-md items-center">
+            <Button variant="primary" href="/contact">Talk to engineering</Button>
+            <Button variant="secondary" href="/services">View services</Button>
+          </div>
         </Container>
       </section>
     </main>

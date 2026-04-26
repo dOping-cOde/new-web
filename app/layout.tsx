@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { fraunces, inter, jetbrainsMono } from "@/lib/fonts";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -25,9 +27,9 @@ export default function RootLayout({
         <a href="#main-content" className="skip-to-content">
           Skip to content
         </a>
-        {/* Navbar will be added in Plan 03 */}
+        <Navbar />
         <main id="main-content">{children}</main>
-        {/* Footer will be added in Plan 03 */}
+        <Footer />
       </body>
     </html>
   );
