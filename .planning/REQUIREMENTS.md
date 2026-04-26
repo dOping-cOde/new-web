@@ -30,13 +30,13 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Case Studies
 
 - [x] **CASE-01**: MDX content pipeline with @next/mdx, gray-matter + Zod for typed frontmatter validation
-- [ ] **CASE-02**: 5 Tier A case study pages (iDTRM, BridgeSense, Salt-Lick, AI-Copter, FWA Platform) with dark hero, problem section, system section, architecture diagram, AI/ML stack grid, outcomes with stats, up-next navigation
+- [x] **CASE-02**: 5 Tier A case study pages (iDTRM, BridgeSense, Salt-Lick, AI-Copter, FWA Platform) with dark hero, problem section, system section, architecture diagram, AI/ML stack grid, outcomes with stats, up-next navigation
 - [ ] **CASE-03**: 6 Tier B capability showcase pages (Unified Semantic Fabric, BI Acceleration Engine, Multidimensional OLAP Modernization, Cloud Analytics Cost Optimization, Conversational Data Agent, Enterprise Reporting Suite) with dark hero, what-it-does 3-column, tech stack, use-case examples
-- [ ] **CASE-04**: Dynamic routes via generateStaticParams for all 11 slugs
-- [ ] **CASE-05**: Related case study navigation (up-next links via relatedSlugs frontmatter)
-- [ ] **CASE-06**: Professional copy using technical-precision voice with real numbers from source decks
-- [ ] **CASE-07**: Esperer Bioresearch named; other clients use placeholders with TODO comments
-- [ ] **CASE-08**: iDTRM uses 8 DTRs (real deck figure, not 8,000)
+- [x] **CASE-04**: Dynamic routes via generateStaticParams for all 11 slugs
+- [x] **CASE-05**: Related case study navigation (up-next links via relatedSlugs frontmatter)
+- [x] **CASE-06**: Professional copy using technical-precision voice with real numbers from source decks
+- [x] **CASE-07**: Esperer Bioresearch named; other clients use placeholders with TODO comments
+- [x] **CASE-08**: iDTRM uses 8 DTRs (real deck figure, not 8,000)
 
 ### Animation
 
@@ -161,13 +161,13 @@ Deferred to future release. Tracked but not in current roadmap.
 | PAGE-05 | Phase 2 | Pending |
 | PAGE-06 | Phase 2 | Pending |
 | CASE-01 | Phase 2 | Complete |
-| CASE-02 | Phase 2 | Pending |
+| CASE-02 | Phase 2 | Complete |
 | CASE-03 | Phase 2 | Pending |
-| CASE-04 | Phase 2 | Pending |
-| CASE-05 | Phase 2 | Pending |
-| CASE-06 | Phase 2 | Pending |
-| CASE-07 | Phase 2 | Pending |
-| CASE-08 | Phase 2 | Pending |
+| CASE-04 | Phase 2 | Complete |
+| CASE-05 | Phase 2 | Complete |
+| CASE-06 | Phase 2 | Complete |
+| CASE-07 | Phase 2 | Complete |
+| CASE-08 | Phase 2 | Complete |
 | ANIM-01 | Phase 3 | Pending |
 | ANIM-02 | Phase 3 | Pending |
 | ANIM-03 | Phase 3 | Pending |
