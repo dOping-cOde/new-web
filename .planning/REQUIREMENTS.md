@@ -53,11 +53,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### WebGL
 
-- [ ] **GL-01**: Homepage hero: Three.js particle field (indigo particles, low opacity, drifting) via R3F + drei, lazy-loaded, <60KB JS
-- [ ] **GL-02**: BridgeSense case study: rotating point-cloud bridge visualization via R3F
-- [ ] **GL-03**: All Three.js scenes loaded via next/dynamic with ssr: false
-- [ ] **GL-04**: Static SVG fallback under prefers-reduced-motion
-- [ ] **GL-05**: Explicit GPU resource disposal (geometry, material, texture) on unmount
+- [x] **GL-01**: Homepage hero: Three.js particle field (indigo particles, low opacity, drifting) via R3F + drei, lazy-loaded, <60KB JS
+- [x] **GL-02**: BridgeSense case study: rotating point-cloud bridge visualization via R3F
+- [x] **GL-03**: All Three.js scenes loaded via next/dynamic with ssr: false
+- [x] **GL-04**: Static SVG fallback under prefers-reduced-motion
+- [x] **GL-05**: Explicit GPU resource disposal (geometry, material, texture) on unmount
 
 ### SEO
 
@@ -178,11 +178,11 @@ Deferred to future release. Tracked but not in current roadmap.
 | ANIM-08 | Phase 3 | Pending |
 | ANIM-09 | Phase 3 | Complete |
 | ANIM-10 | Phase 3 | Complete |
-| GL-01 | Phase 3 | Pending |
-| GL-02 | Phase 3 | Pending |
-| GL-03 | Phase 3 | Pending |
-| GL-04 | Phase 3 | Pending |
-| GL-05 | Phase 3 | Pending |
+| GL-01 | Phase 3 | Complete |
+| GL-02 | Phase 3 | Complete |
+| GL-03 | Phase 3 | Complete |
+| GL-04 | Phase 3 | Complete |
+| GL-05 | Phase 3 | Complete |
 | SEO-01 | Phase 4 | Pending |
 | SEO-02 | Phase 4 | Pending |
 | SEO-03 | Phase 4 | Pending |
