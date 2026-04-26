@@ -25,7 +25,7 @@ export default async function PortfolioPage() {
   const caseStudies = await getAllCaseStudies();
 
   return (
-    <main>
+    <>
       <HeroLight
         kicker="PORTFOLIO"
         headline="Eleven systems. Built for production."
@@ -36,6 +36,6 @@ export default async function PortfolioPage() {
       <PortfolioGrid caseStudies={caseStudies} />
 
       <CTABand />
-    </main>
+    </>
   );
 }

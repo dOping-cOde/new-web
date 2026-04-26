@@ -22,7 +22,7 @@ export function Pill({
         "transition-colors duration-fast",
         "border",
         active
-          ? "bg-accent text-text-inverted border-accent"
+          ? "bg-accent text-text-inverted border-accent font-semibold"
           : "bg-transparent text-text-muted border-border-light hover:border-text hover:text-text",
         Component === "button" &&
           "focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2",
