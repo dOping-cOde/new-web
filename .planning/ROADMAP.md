@@ -56,7 +56,7 @@ Plans:
 - [x] 02-05-PLAN.md — Services page with sticky anchor nav and 6 service sections
 - [x] 02-06-PLAN.md — Portfolio index with filter bar and 11 stub MDX files
 - [x] 02-07-PLAN.md — Case study [slug] template + 5 Tier A MDX files with production copy
-- [ ] 02-08-PLAN.md — 6 Tier B capability showcase MDX files with production copy
+- [x] 02-08-PLAN.md — 6 Tier B capability showcase MDX files with production copy
 - [ ] 02-09-PLAN.md — About page, Contact page with form, branded 404, visual verification
 **UI hint**: yes
 
@@ -93,6 +93,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 4/4 | Complete   | 2026-04-26 |
-| 2. Content & Pages | 3/9 | In Progress|  |
+| 2. Content & Pages | 8/9 | In Progress|  |
 | 3. Animation & WebGL | 0/TBD | Not started | - |
 | 4. Quality | 0/TBD | Not started | - |

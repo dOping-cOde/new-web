@@ -31,7 +31,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **CASE-01**: MDX content pipeline with @next/mdx, gray-matter + Zod for typed frontmatter validation
 - [x] **CASE-02**: 5 Tier A case study pages (iDTRM, BridgeSense, Salt-Lick, AI-Copter, FWA Platform) with dark hero, problem section, system section, architecture diagram, AI/ML stack grid, outcomes with stats, up-next navigation
-- [ ] **CASE-03**: 6 Tier B capability showcase pages (Unified Semantic Fabric, BI Acceleration Engine, Multidimensional OLAP Modernization, Cloud Analytics Cost Optimization, Conversational Data Agent, Enterprise Reporting Suite) with dark hero, what-it-does 3-column, tech stack, use-case examples
+- [x] **CASE-03**: 6 Tier B capability showcase pages (Unified Semantic Fabric, BI Acceleration Engine, Multidimensional OLAP Modernization, Cloud Analytics Cost Optimization, Conversational Data Agent, Enterprise Reporting Suite) with dark hero, what-it-does 3-column, tech stack, use-case examples
 - [x] **CASE-04**: Dynamic routes via generateStaticParams for all 11 slugs
 - [x] **CASE-05**: Related case study navigation (up-next links via relatedSlugs frontmatter)
 - [x] **CASE-06**: Professional copy using technical-precision voice with real numbers from source decks
@@ -162,7 +162,7 @@ Deferred to future release. Tracked but not in current roadmap.
 | PAGE-06 | Phase 2 | Pending |
 | CASE-01 | Phase 2 | Complete |
 | CASE-02 | Phase 2 | Complete |
-| CASE-03 | Phase 2 | Pending |
+| CASE-03 | Phase 2 | Complete |
 | CASE-04 | Phase 2 | Complete |
 | CASE-05 | Phase 2 | Complete |
 | CASE-06 | Phase 2 | Complete |
