@@ -1,5 +1,13 @@
 import type { MDXComponents } from "mdx/types";
 import type { ComponentPropsWithoutRef } from "react";
+import dynamic from "next/dynamic";
+
+// Dynamically import ScrollPinnedArchitecture to isolate GSAP client-side behavior
+// SSR is intentional — the section renders server-side, GSAP attaches on hydration
+const ScrollPinnedArchitecture = dynamic(
+  () => import("@/components/motion/ScrollPinnedArchitecture"),
+  { ssr: true }
+);
 
 // ============================================================
 // Custom MDX components for case study content
@@ -49,7 +57,9 @@ function SystemSection({
   );
 }
 
-// Architecture — dark section (will be scroll-pinned in Phase 3)
+// Architecture — dark scroll-pinned section (upgraded in Phase 3 per D-10, ANIM-02)
+// Delegates to ScrollPinnedArchitecture Client Component for GSAP scroll-pin behavior.
+// All 5 Tier A case studies use this component (D-09).
 function Architecture({
   children,
   className = "",
@@ -58,13 +68,9 @@ function Architecture({
   className?: string;
 }) {
   return (
-    <section
-      className={`py-4xl bg-bg-dark text-text-inverted ${className}`}
-      data-theme="dark"
-      aria-label="Technical Architecture"
-    >
-      <div className="max-w-[1200px] mx-auto px-lg">{children}</div>
-    </section>
+    <ScrollPinnedArchitecture className={className}>
+      {children}
+    </ScrollPinnedArchitecture>
   );
 }
 
