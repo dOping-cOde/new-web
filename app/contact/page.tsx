@@ -39,23 +39,25 @@ export default function ContactPage() {
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-xl">
             <div>
-              <Caption as="p">ADDRESS</Caption>
-              {/* TODO: add real office address */}
+              <Caption as="p">MUMBAI</Caption>
               <p className="text-body-sm text-text-muted mt-sm">
-                [Office address placeholder]
+                Rd. no.14 MIDC, Plot no. X16,<br />
+                Andheri East, Mumbai, India 400093
+              </p>
+            </div>
+            <div>
+              <Caption as="p">INDORE</Caption>
+              <p className="text-body-sm text-text-muted mt-sm">
+                Palasia Square,<br />
+                Indore, Madhya Pradesh, India 452001
               </p>
             </div>
             <div>
               <Caption as="p">PHONE</Caption>
-              {/* TODO: add real phone number */}
               <p className="text-body-sm text-text-muted mt-sm">
-                [Phone placeholder]
-              </p>
-            </div>
-            <div>
-              <Caption as="p">HOURS</Caption>
-              <p className="text-body-sm text-text-muted mt-sm">
-                Monday–Friday, 9:00–18:00 IST
+                <a href="tel:+918305710098" className="hover:text-text transition-colors duration-fast">
+                  +91 83057 10098
+                </a>
               </p>
             </div>
           </div>

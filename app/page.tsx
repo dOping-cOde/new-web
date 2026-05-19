@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { HeroLight } from "@/components/sections/HeroLight";
+import { VideoHero } from "@/components/sections/VideoHero";
 import { ServiceTile } from "@/components/cards/ServiceTile";
 import { PortfolioCard } from "@/components/cards/PortfolioCard";
 import { ManifestoBand } from "@/components/sections/ManifestoBand";
@@ -13,7 +13,6 @@ import { Button } from "@/components/ui/Button";
 import { Caption } from "@/components/ui/Caption";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { CAPABILITIES } from "@/content/services";
-import { HeroParticleFieldLoader } from "@/components/three/HeroParticleFieldLoader";
 import { websiteJsonLd } from "@/lib/jsonld";
 
 // Override template title for home page — full brand name as title
@@ -88,19 +87,16 @@ export default function Home() {
           __html: JSON.stringify(websiteJsonLd()).replace(/</g, "\\u003c"),
         }}
       />
-      {/* ===== Section 1: Hero (full viewport, light bg) ===== */}
-      <HeroLight
+      {/* ===== Section 1: Video Hero (full viewport, dark bg) ===== */}
+      <VideoHero
         headline="AI engineered for the physical world."
         highlightWord="engineered"
-        headlineSize="text-display-xl"
-        intro="Softwires builds AI systems that monitor transformers, inspect bridges, screen for cancer, and detect fraud — deployed in production across India and beyond."
+        subheadline="Softwires builds AI systems that monitor transformers, inspect bridges, screen for cancer, and detect fraud — deployed in production across India and beyond."
         primaryCTA={{ label: "See our work", href: "/portfolio" }}
         secondaryCTA={{ label: "Talk to engineering", href: "/contact" }}
-        showScrollCue={true}
-        backgroundImage="/images/hero/home-bg.svg"
-      >
-        <HeroParticleFieldLoader className="absolute inset-0 z-0" />
-      </HeroLight>
+        videoSrc="/videos/hero.webm"
+        posterSrc="/images/hero/hero-poster.jpg"
+      />
 
       {/* ===== Section 2: Capability strip (light bg) ===== */}
       <section className="bg-bg-light py-5xl max-md:py-3xl">
