@@ -8,8 +8,23 @@ import type { ServiceMeta } from "./types";
 
 export const SERVICES: ServiceMeta[] = [
   {
-    id: "ai-agents",
+    id: "enterprise-ai",
     number: "01",
+    label: "ENTERPRISE AI",
+    title: "AI-Native Analytics That Scale to Trillions of Data Points",
+    anchorId: "enterprise-ai",
+    description:
+      "Enterprise-grade AI analytics platforms that deliver sub-second insights on massive datasets — connecting BI tools, cloud data warehouses, and decision-makers without compromising governance.",
+    techStack: ["Smart OLAP", "BI Integration", "Cloud-Native", "Semantic Layer", "AI/ML", "Data Governance"],
+    useCases: [
+      "Unified BI acceleration layers that deliver interactive analytics on trillion-row datasets across Tableau, Power BI, and Excel without moving data",
+      "Cloud-native analytics platforms on Snowflake, Databricks, and BigQuery that cut query times from minutes to sub-second while reducing compute costs",
+      "AI-powered self-service analytics that let business users explore enterprise data through natural language — with full governance and lineage tracking",
+    ],
+  },
+  {
+    id: "ai-agents",
+    number: "02",
     label: "AI AGENTS",
     title: "Autonomous Systems That Operate at Industrial Scale",
     anchorId: "ai-agents",
@@ -24,7 +39,7 @@ export const SERVICES: ServiceMeta[] = [
   },
   {
     id: "chatbots",
-    number: "02",
+    number: "03",
     label: "CONVERSATIONAL",
     title: "Conversational Intelligence Built for Technical Environments",
     anchorId: "chatbots",
@@ -39,7 +54,7 @@ export const SERVICES: ServiceMeta[] = [
   },
   {
     id: "healthcare",
-    number: "03",
+    number: "04",
     label: "HEALTHCARE",
     title: "Clinical AI That Operates Under Real Compliance Constraints",
     anchorId: "healthcare",
@@ -55,7 +70,7 @@ export const SERVICES: ServiceMeta[] = [
   },
   {
     id: "energy",
-    number: "04",
+    number: "05",
     label: "ENERGY",
     title: "Real-Time Intelligence for Grid Operations and Asset Management",
     anchorId: "energy",
@@ -71,7 +86,7 @@ export const SERVICES: ServiceMeta[] = [
   },
   {
     id: "infrastructure",
-    number: "05",
+    number: "06",
     label: "INFRASTRUCTURE",
     title: "AI-Powered Inspection and Structural Intelligence",
     anchorId: "infrastructure",
@@ -87,7 +102,7 @@ export const SERVICES: ServiceMeta[] = [
   },
   {
     id: "data-analytics",
-    number: "06",
+    number: "07",
     label: "DATA & ANALYTICS",
     title: "Analytics Infrastructure That Thinks at the Speed of Your Business",
     anchorId: "data-analytics",

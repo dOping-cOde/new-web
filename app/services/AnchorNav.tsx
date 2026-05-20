@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 // Client component: uses IntersectionObserver for active-section detection.
 
 const NAV_LINKS = [
+  { label: "Enterprise AI", id: "enterprise-ai" },
   { label: "AI Agents", id: "ai-agents" },
   { label: "Chatbots", id: "chatbots" },
   { label: "Healthcare", id: "healthcare" },

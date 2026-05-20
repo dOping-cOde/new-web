@@ -14,11 +14,11 @@ import { serviceJsonLd } from "@/lib/jsonld";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Six AI engineering capabilities: autonomous agents to grid intelligence. Full-stack AI for energy, healthcare, infrastructure, and enterprise.",
+    "Seven AI engineering capabilities: autonomous agents to enterprise intelligence. Full-stack AI for energy, healthcare, infrastructure, and enterprise.",
   openGraph: {
     title: "Services — Softwires",
     description:
-      "Six AI engineering capabilities: autonomous agents to grid intelligence. Full-stack AI for energy, healthcare, infrastructure, and enterprise.",
+      "Seven AI engineering capabilities: autonomous agents to enterprise intelligence. Full-stack AI for energy, healthcare, infrastructure, and enterprise.",
   },
 };
 
@@ -30,6 +30,7 @@ const DIAGRAM_ALT: Record<string, string> = {
   healthcare: "Patient screening pipeline: Patient → Biomarker Collection → AI Risk Score → Specialist Referral, with multimodal input hub",
   energy: "Grid intelligence flow: Transformer → GPRS → Cloud → Dashboard, with anomaly detection, load forecasting, and theft analytics branches",
   infrastructure: "Structural inspection pipeline: Drone → LiDAR Scan → Point Cloud → 3D Model → Change Detection Report",
+  "enterprise-ai": "Enterprise AI analytics architecture: Data Sources → Smart OLAP Engine → BI Tools, with governance, AI/ML, and cloud layers",
 };
 
 // ─── Data & Analytics sub-cards ──────────────────────────────────────────────
@@ -73,6 +74,47 @@ const DATA_ANALYTICS_CARDS = [
   },
 ];
 
+// ─── Enterprise AI sub-cards ─────────────────────────────────────────────────
+
+const ENTERPRISE_AI_CARDS = [
+  {
+    title: "Smart OLAP Analytics Engine",
+    description: "Sub-second queries on trillion-row datasets without pre-aggregation",
+    tags: ["OLAP", "In-Memory", "Columnar"],
+    href: "/portfolio",
+  },
+  {
+    title: "Universal BI Connectivity",
+    description: "Native integration with Tableau, Power BI, Excel, and Looker",
+    tags: ["BI Tools", "ODBC/JDBC", "Live Connect"],
+    href: "/portfolio",
+  },
+  {
+    title: "Cloud Data Platform Acceleration",
+    description: "Accelerate Snowflake, Databricks, and BigQuery without data movement",
+    tags: ["Snowflake", "Databricks", "BigQuery"],
+    href: "/portfolio",
+  },
+  {
+    title: "AI-Powered Self-Service Analytics",
+    description: "Natural-language exploration with governed access and lineage tracking",
+    tags: ["NL Queries", "AI/ML", "Auto-Insights"],
+    href: "/portfolio",
+  },
+  {
+    title: "Enterprise Data Governance",
+    description: "Row-level security, audit trails, and compliance across all analytics",
+    tags: ["RBAC", "Lineage", "Compliance"],
+    href: "/portfolio",
+  },
+  {
+    title: "Operational Intelligence Layer",
+    description: "Real-time dashboards and alerting for mission-critical KPIs",
+    tags: ["Real-Time", "Alerting", "Embedded BI"],
+    href: "/portfolio",
+  },
+];
+
 // ─── Per-service production copy ──────────────────────────────────────────────
 
 const SERVICE_COPY: Record<string, string[]> = {
@@ -106,6 +148,11 @@ const SERVICE_COPY: Record<string, string[]> = {
     "Our natural-language analytics interfaces let non-technical stakeholders query enterprise data without SQL knowledge — connected to live data catalogs, not static snapshots. We build on production-grade NL-to-SQL architectures with LLM reasoning layers that understand your specific business schema.",
     "Cost optimization engagements consistently reduce Snowflake, Databricks, and BigQuery spend by 40% or more through query profiling, materialization strategy, and caching architecture. We treat analytics infrastructure as an engineering problem, not a configuration problem.",
   ],
+  "enterprise-ai": [
+    "We build AI-native analytics platforms that deliver interactive, sub-second insights on datasets spanning trillions of data points. Our smart OLAP engine sits between your cloud data warehouse and your BI tools — accelerating every query without requiring data movement, pre-aggregation, or changes to existing dashboards. The result is analytics that feel instantaneous, even at enterprise scale.",
+    "Every platform we ship connects natively to the tools your teams already use — Tableau, Power BI, Excel, Looker, and custom applications via ODBC/JDBC. We eliminate the gap between where data lives and where decisions happen. AI-powered self-service layers let business users explore data through natural language, surface automated insights, and build their own analyses — all under full governance with row-level security, audit trails, and data lineage.",
+    "Our cloud-native architecture deploys on Snowflake, Databricks, BigQuery, and Azure Synapse — scaling elastically with workload demand. Intelligent caching and query optimization reduce cloud compute costs while delivering faster results. From retail and financial services to manufacturing and telecommunications, we build the analytics backbone that turns massive data investments into real-time operational intelligence.",
+  ],
 };
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -127,7 +174,7 @@ export default function ServicesPage() {
       {/* Section 1: Page Hero */}
       <HeroLight
         kicker="SERVICES"
-        headline="Six capabilities. One engineering team."
+        headline="Seven capabilities. One engineering team."
         headlineSize="text-display-lg"
         intro="We build AI systems end-to-end — from research prototype to production deployment. Each capability is backed by shipped work, not slide decks."
         backgroundImage="/images/hero/services-bg.svg"
@@ -141,6 +188,7 @@ export default function ServicesPage() {
         const isImageLeft = index % 2 !== 0; // 0,2,4 = text-left, image-right; 1,3,5 = image-left, text-right
         const copy = SERVICE_COPY[service.id] ?? [];
         const isDataAnalytics = service.id === "data-analytics";
+        const isEnterpriseAI = service.id === "enterprise-ai";
 
         return (
           <section
@@ -207,10 +255,10 @@ export default function ServicesPage() {
 
                 {/* Visual column */}
                 <div className={cn(isImageLeft ? "lg:order-1" : "lg:order-2")}>
-                  {isDataAnalytics ? (
-                    /* Data & Analytics: CapabilityCard sub-grid */
+                  {isDataAnalytics || isEnterpriseAI ? (
+                    /* Sub-grid of CapabilityCards */
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
-                      {DATA_ANALYTICS_CARDS.map((card) => (
+                      {(isEnterpriseAI ? ENTERPRISE_AI_CARDS : DATA_ANALYTICS_CARDS).map((card) => (
                         <CapabilityCard
                           key={card.title}
                           title={card.title}

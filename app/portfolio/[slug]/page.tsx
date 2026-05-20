@@ -196,7 +196,11 @@ function TierBLayout({
       />
 
       {/* MDX body — Tier B content sections */}
-      <div className="bg-bg-light">{children}</div>
+      <div className="bg-bg-light py-3xl">
+        <div className="max-w-[720px] mx-auto px-lg">
+          {children}
+        </div>
+      </div>
 
       <CTABand
         headline="Start a conversation"
