@@ -12,9 +12,6 @@ const NAV_LINKS = [
   { label: "Enterprise AI", id: "enterprise-ai" },
   { label: "AI Agents", id: "ai-agents" },
   { label: "Chatbots", id: "chatbots" },
-  { label: "Healthcare", id: "healthcare" },
-  { label: "Energy", id: "energy" },
-  { label: "Infrastructure", id: "infrastructure" },
   { label: "Data & Analytics", id: "data-analytics" },
 ];
 

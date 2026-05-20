@@ -14,11 +14,11 @@ import { serviceJsonLd } from "@/lib/jsonld";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Seven AI engineering capabilities: autonomous agents to enterprise intelligence. Full-stack AI for energy, healthcare, infrastructure, and enterprise.",
+    "Four AI engineering capabilities: enterprise analytics, autonomous agents, conversational intelligence, and data infrastructure.",
   openGraph: {
     title: "Services — Softwires",
     description:
-      "Seven AI engineering capabilities: autonomous agents to enterprise intelligence. Full-stack AI for energy, healthcare, infrastructure, and enterprise.",
+      "Four AI engineering capabilities: enterprise analytics, autonomous agents, conversational intelligence, and data infrastructure.",
   },
 };
 
@@ -27,9 +27,6 @@ export const metadata: Metadata = {
 const DIAGRAM_ALT: Record<string, string> = {
   "ai-agents": "Agent loop diagram: Perceive → Plan → Act → Verify circular flow",
   chatbots: "Conversational AI architecture with RAG pipeline: Document → Embed → Vector Store → Retrieve → Generate",
-  healthcare: "Patient screening pipeline: Patient → Biomarker Collection → AI Risk Score → Specialist Referral, with multimodal input hub",
-  energy: "Grid intelligence flow: Transformer → GPRS → Cloud → Dashboard, with anomaly detection, load forecasting, and theft analytics branches",
-  infrastructure: "Structural inspection pipeline: Drone → LiDAR Scan → Point Cloud → 3D Model → Change Detection Report",
   "enterprise-ai": "Enterprise AI analytics architecture: Data Sources → Smart OLAP Engine → BI Tools, with governance, AI/ML, and cloud layers",
 };
 
@@ -128,21 +125,6 @@ const SERVICE_COPY: Record<string, string[]> = {
     "Our RAG architectures connect directly to your existing documentation systems, knowledge bases, and operational runbooks. We handle chunking strategy, embedding selection, vector store design, and retrieval tuning. The result is a system that surfaces the right answer, not the plausible one.",
     "Voice-enabled interfaces extend coverage to field environments where hands-free operation is non-negotiable. We integrate ASR and TTS pipelines with function-calling architectures to build interfaces that route, escalate, and act — not just respond.",
   ],
-  healthcare: [
-    "We build AI systems for clinical environments under real compliance constraints. DPDP Act, NABH, and IRDAI standards are built in from day one — not retrofitted after the model is trained. Compliance is not an afterthought; it is an architectural constraint.",
-    "Our cancer risk stratification models are deployed in spoke-hub networks to triage patients before symptoms progress to late stage. Multimodal diagnostic support systems process imaging, lab results, and longitudinal patient data in under 15 minutes. Population health platforms identify at-risk cohorts across 100+ biomarkers for preventive intervention programs.",
-    "The Salt-Lick platform — built for Esperer Bioresearch — demonstrates what AI-driven early detection looks like at population scale. We bring the same engineering discipline to every clinical engagement: quantified accuracy metrics, explainability reports, and real-world deployment documentation.",
-  ],
-  energy: [
-    "We build real-time monitoring and predictive maintenance systems for grid infrastructure. Distribution transformer monitoring with sub-5-minute refresh cycles. Load forecasting that correlates weather, historical consumption, and infrastructure state. Theft analytics that detect tampered metering points before losses compound.",
-    "Our systems are designed for the operational reality of grid environments: intermittent connectivity, legacy SCADA interfaces, heterogeneous sensor data, and regulatory reporting requirements. We integrate at the data layer — not the dashboard layer.",
-    "iDTRM is the reference deployment: 8 distribution transformer monitoring units with real-time anomaly detection across the distribution network. We built the ingestion pipeline, the anomaly models, and the operator interface. The system pre-warns grid failures before consumers notice.",
-  ],
-  infrastructure: [
-    "We build computer vision and LiDAR-based inspection systems for bridges, viaducts, and large-scale civil infrastructure. BridgeSense detects structural changes of 1.5–3mm using drone-mounted LiDAR at 0.92 F1-score accuracy — compressing 6-day manual inspection cycles into single-pass aerial surveys.",
-    "Point cloud processing pipelines extract settlement, deflection, and cracking metrics from raw LiDAR data at scale. CNN-LSTM architectures detect anomalous change patterns over time, distinguishing seasonal thermal variation from genuine structural degradation with high precision.",
-    "AI-Copter extends the same inspection capability to mining environments, underground structures, and confined-space assets where human inspection is operationally impractical. We build the full stack: sensor integration, data pipelines, ML models, and operator-facing reporting tools.",
-  ],
   "data-analytics": [
     "We build analytics infrastructure that makes enterprise data genuinely useful at sub-second query response times. Semantic data layers eliminate metric inconsistencies across business units and BI tools. OLAP modernization replaces legacy cube engines with architectures that deliver 1000x faster analytical throughput.",
     "Our natural-language analytics interfaces let non-technical stakeholders query enterprise data without SQL knowledge — connected to live data catalogs, not static snapshots. We build on production-grade NL-to-SQL architectures with LLM reasoning layers that understand your specific business schema.",
@@ -174,7 +156,7 @@ export default function ServicesPage() {
       {/* Section 1: Page Hero */}
       <HeroLight
         kicker="SERVICES"
-        headline="Seven capabilities. One engineering team."
+        headline="Four capabilities. One engineering team."
         headlineSize="text-display-lg"
         intro="We build AI systems end-to-end — from research prototype to production deployment. Each capability is backed by shipped work, not slide decks."
         backgroundImage="/images/hero/services-bg.svg"
