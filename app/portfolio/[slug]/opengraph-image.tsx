@@ -15,7 +15,7 @@ export default async function OGImage({ params }: { params: Promise<{ slug: stri
 
   const excerpt = caseStudy.excerpt.length > 120
     ? caseStudy.excerpt.slice(0, 117) + '...'
-    : caseStudy.excerpt
+    : caseStudy.excerpt 
 
   return new ImageResponse(
     (

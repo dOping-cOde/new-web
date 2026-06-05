@@ -9,6 +9,14 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    // Remote insights imagery served by the DigitalCrew CMS API (CMS path is still /blogs)
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "api.digitalcrew.co.in",
+        pathname: "/blogs/**",
+      },
+    ],
   },
 };
 

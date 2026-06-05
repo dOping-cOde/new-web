@@ -7,6 +7,7 @@ import type {
   WithContext,
 } from "schema-dts";
 import type { CaseStudyFrontmatter } from "@/lib/types";
+import type { InsightPost } from "@/lib/insights";
 
 // ============================================================
 // JSON-LD Utility
@@ -104,6 +105,26 @@ export function articleJsonLd(
     ...(caseStudy.heroImage
       ? { image: `${baseUrl}${caseStudy.heroImage}` }
       : {}),
+  };
+}
+
+/**
+ * Article JSON-LD — one per insight detail page.
+ * Sourced from the CMS API (absolute image URL, published date).
+ */
+export function insightJsonLd(post: InsightPost): WithContext<Article> {
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://softwires.in";
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.metaDescription,
+    url: `${baseUrl}/insights/${post.slug}`,
+    ...(post.date ? { datePublished: post.date } : {}),
+    author: { "@type": "Organization", name: "Softwires Technologies" },
+    publisher: { "@id": `${baseUrl}/#organization` },
+    ...(post.image ? { image: post.image } : {}),
   };
 }
 
