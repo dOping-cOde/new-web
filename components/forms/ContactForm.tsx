@@ -36,12 +36,23 @@ const inputBaseStyles = cn(
 
 const labelStyles = "text-body-sm font-medium block mb-sm";
 
+// DigitalCrew CMS endpoint that receives contact submissions.
+// Override per-environment with NEXT_PUBLIC_CONTACT_API_URL if needed.
+const CONTACT_ENDPOINT =
+  process.env.NEXT_PUBLIC_CONTACT_API_URL ||
+  "https://api.digitalcrew.co.in/api/v1/public/submit-contact-us";
+
 export function ContactForm() {
   const [formData, setFormData] = useState<FormData>(defaultFormData);
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  function validate(): boolean {
+  // Field order used to focus the first invalid input on submit.
+  const fieldOrder: (keyof FormData)[] = ["name", "email", "company", "description"];
+
+  function validate(): Partial<Record<keyof FormData, string>> {
     const newErrors: Partial<Record<keyof FormData, string>> = {};
 
     if (!formData.name || formData.name.trim().length < 2) {
@@ -58,7 +69,7 @@ export function ContactForm() {
     }
 
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    return newErrors;
   }
 
   function handleBlur(field: keyof FormData) {
@@ -104,27 +115,59 @@ export function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!validate()) return;
 
-    // Construct mailto payload
-    const subject = encodeURIComponent(
-      `New inquiry from ${formData.name} at ${formData.company}`
-    );
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\nRole: ${formData.role || "Not specified"}\nSector: ${formData.sector || "Not specified"}\n\nDescription:\n${formData.description}\n\nTimeline: ${formData.timeline || "Not specified"}\nBudget: ${formData.budget || "Not specified"}`
-    );
-    window.location.href = `mailto:hello@softwires.in?subject=${subject}&body=${body}`;
-    // TODO: replace with Resend or Formspree integration — see DOC-03
-    setSubmitted(true);
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      // Make the blocked submit obvious: jump to the first invalid field.
+      const firstInvalid = fieldOrder.find((k) => validationErrors[k]);
+      if (firstInvalid && typeof document !== "undefined") {
+        const el = document.getElementById(firstInvalid);
+        el?.focus();
+        el?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+      return;
+    }
+
+    setSubmitting(true);
+    setSubmitError(null);
+
+    // Map the form's `description` textarea to the API's `message` field.
+    const payload = {
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      company: formData.company.trim(),
+      role: formData.role,
+      sector: formData.sector,
+      message: formData.description.trim(),
+      timeline: formData.timeline.trim(),
+      budget: formData.budget.trim(),
+    };
+
+    try {
+      const res = await fetch(CONTACT_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error(`Request failed (${res.status})`);
+      setSubmitted(true);
+    } catch {
+      setSubmitError(
+        "Something went wrong sending your message. Please try again, or email us directly at hello@softwires.in."
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
     return (
       <div className="max-w-[640px] mx-auto text-center py-2xl">
         <p className="text-body text-accent">
-          Your message has been prepared. Your email client should open shortly.
+          Thank you — your message has been sent. We&apos;ll respond within two
+          business days.
         </p>
       </div>
     );
@@ -334,10 +377,26 @@ export function ContactForm() {
         />
       </div>
 
+      {/* Submit-level error */}
+      {submitError && (
+        <p
+          className="text-body-sm text-accent"
+          role="alert"
+          aria-live="assertive"
+        >
+          {submitError}
+        </p>
+      )}
+
       {/* Submit */}
       <div className="pt-sm">
-        <Button type="submit" variant="primary" className="w-full sm:w-auto">
-          Send message
+        <Button
+          type="submit"
+          variant="primary"
+          className="w-full sm:w-auto disabled:opacity-60 disabled:cursor-not-allowed"
+          disabled={submitting}
+        >
+          {submitting ? "Sending…" : "Send message"}
         </Button>
       </div>
 
