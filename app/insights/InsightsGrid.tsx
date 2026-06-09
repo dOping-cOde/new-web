@@ -43,7 +43,7 @@ export function InsightsGrid({ posts }: InsightsGridProps) {
     <>
       {/* Filter bar — sticky below navbar (navbar is 64px tall).
           Hidden when there is only one category (just "All"). */}
-      {categories.length > 1 && (
+      {/* {categories.length > 1 && (
         <div
           className="sticky top-[64px] z-40 bg-bg-light/95 backdrop-blur-sm border-b border-border-light"
           role="navigation"
@@ -64,7 +64,7 @@ export function InsightsGrid({ posts }: InsightsGridProps) {
             </div>
           </Container>
         </div>
-      )}
+      )} */}
 
       {/* Card grid */}
       <Container className="mt-2xl pb-5xl">

@@ -48,14 +48,17 @@ export function InsightCard({
 
   const cardContent = (
     <Link href={`/insights/${slug}`} className="group block">
-      {/* Image area — 16:10 aspect ratio; relative required for next/image fill */}
+      {/* Image area — taller 16:10 box for a substantial card. object-contain
+          shows the full CMS banner (wide ~2.13:1, with edge text) without
+          cropping; the leftover top/bottom space is the neutral
+          bg-surface-elevated backing. */}
       <div className="relative aspect-[16/10] overflow-hidden rounded-md bg-surface-elevated">
         {image ? (
           <Image
             src={image}
             alt={imageAlt}
             fill
-            className="object-cover group-hover:scale-[1.02] transition-transform duration-normal"
+            className="object-contain group-hover:scale-[1.02] transition-transform duration-normal"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         ) : (
