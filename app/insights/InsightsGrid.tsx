@@ -41,30 +41,7 @@ export function InsightsGrid({ posts }: InsightsGridProps) {
 
   return (
     <>
-      {/* Filter bar — sticky below navbar (navbar is 64px tall).
-          Hidden when there is only one category (just "All"). */}
-      {/* {categories.length > 1 && (
-        <div
-          className="sticky top-[64px] z-40 bg-bg-light/95 backdrop-blur-sm border-b border-border-light"
-          role="navigation"
-          aria-label="Filter insights by topic"
-        >
-          <Container>
-            <div className="flex flex-row gap-sm py-md overflow-x-auto">
-              {categories.map((category) => (
-                <Pill
-                  key={category}
-                  active={activeFilter === category}
-                  onClick={() => setActiveFilter(category)}
-                  aria-pressed={activeFilter === category}
-                >
-                  {category}
-                </Pill>
-              ))}
-            </div>
-          </Container>
-        </div>
-      )} */}
+    
 
       {/* Card grid */}
       <Container className="mt-2xl pb-5xl">
