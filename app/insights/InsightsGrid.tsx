@@ -3,10 +3,8 @@
 // Framer Motion domain — FLIP filter animation (D-01, ANIM-06)
 // Mirrors app/portfolio/PortfolioGrid.tsx.
 
-import { useMemo, useState } from "react";
 import { motion, AnimatePresence, LayoutGroup } from "motion/react";
 import { Container } from "@/components/layout/Container";
-import { Pill } from "@/components/ui/Pill";
 import { InsightCard } from "@/components/cards/InsightCard";
 import type { InsightSummary } from "@/lib/insights";
 import { useReducedMotion } from "@/lib/useReducedMotion";
@@ -22,27 +20,12 @@ interface InsightsGridProps {
  * matches whatever the CMS returns.
  */
 export function InsightsGrid({ posts }: InsightsGridProps) {
-  const [activeFilter, setActiveFilter] = useState<string>("All");
   const prefersReducedMotion = useReducedMotion();
 
-  // Unique categories present in the data, in first-seen order.
-  const categories = useMemo(() => {
-    const seen = new Set<string>();
-    for (const p of posts) {
-      if (p.category) seen.add(p.category);
-    }
-    return ["All", ...seen];
-  }, [posts]);
-
-  const filtered =
-    activeFilter === "All"
-      ? posts
-      : posts.filter((p) => p.category === activeFilter);
+  const filtered = posts;
 
   return (
     <>
-    
-
       {/* Card grid */}
       <Container className="mt-2xl pb-5xl">
         {filtered.length === 0 ? (
