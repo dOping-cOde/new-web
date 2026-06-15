@@ -125,7 +125,7 @@ export default async function IndustryPage({ params }: PageProps) {
               {relatedServices.map((service) => (
                 <Link
                   key={service.id}
-                  href={`/services#${service.anchorId}`}
+                  href={`/services/${service.anchorId}`}
                   className={cn(
                     "block border border-border-light rounded-lg p-xl",
                     "bg-surface",

@@ -7,6 +7,13 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/layout/Container";
 import { MobileNav } from "@/components/layout/MobileNav";
 
+const SERVICES = [
+  { label: "Enterprise AI", href: "/services/enterprise-ai" },
+  { label: "AI Agents", href: "/services/ai-agents" },
+  { label: "Chatbots", href: "/services/chatbots" },
+  { label: "Data & Analytics", href: "/services/data-analytics" },
+] as const;
+
 const INDUSTRIES = [
   { label: "Healthcare", href: "/industries/healthcare" },
   { label: "Retail", href: "/industries/retail" },
@@ -19,7 +26,7 @@ const INDUSTRIES = [
 ] as const;
 
 const NAV_LINKS = [
-  { label: "Services", href: "/services" },
+  { label: "Services", href: "/services", children: SERVICES },
   { label: "Industries", href: "/industries", children: INDUSTRIES },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Insights", href: "/insights" },
@@ -30,9 +37,9 @@ const NAV_LINKS = [
 export function Navbar() {
   const [isDark, setIsDark] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [industriesOpen, setIndustriesOpen] = useState(false);
-  const industriesTimeout = useRef<ReturnType<typeof setTimeout>>(null);
-  const industriesRef = useRef<HTMLDivElement>(null);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const dropdownTimeout = useRef<ReturnType<typeof setTimeout>>(null);
+  const navLinksRef = useRef<HTMLDivElement>(null);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
 
   // Per D-06: IntersectionObserver watches elements with data-theme="dark"
@@ -64,24 +71,24 @@ export function Navbar() {
     return () => observer.disconnect();
   }, []);
 
-  // Close industries dropdown when clicking outside
+  // Close any open dropdown when clicking outside the nav links
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
-      if (industriesRef.current && !industriesRef.current.contains(e.target as Node)) {
-        setIndustriesOpen(false);
+      if (navLinksRef.current && !navLinksRef.current.contains(e.target as Node)) {
+        setOpenDropdown(null);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const openIndustries = useCallback(() => {
-    if (industriesTimeout.current) clearTimeout(industriesTimeout.current);
-    setIndustriesOpen(true);
+  const openDropdownFor = useCallback((label: string) => {
+    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
+    setOpenDropdown(label);
   }, []);
 
-  const closeIndustries = useCallback(() => {
-    industriesTimeout.current = setTimeout(() => setIndustriesOpen(false), 150);
+  const closeDropdown = useCallback(() => {
+    dropdownTimeout.current = setTimeout(() => setOpenDropdown(null), 150);
   }, []);
 
   const toggleMobile = useCallback(() => {
@@ -118,18 +125,18 @@ export function Navbar() {
           </Link>
 
           {/* Desktop nav links — centered */}
-          <div className="hidden md:flex items-center gap-xl">
+          <div ref={navLinksRef} className="hidden md:flex items-center gap-xl">
             {NAV_LINKS.map((link) => {
               const hasChildren = "children" in link && link.children;
+              const isOpen = openDropdown === link.label;
 
               if (hasChildren) {
                 return (
                   <div
                     key={link.href}
-                    ref={industriesRef}
                     className="relative"
-                    onMouseEnter={openIndustries}
-                    onMouseLeave={closeIndustries}
+                    onMouseEnter={() => openDropdownFor(link.label)}
+                    onMouseLeave={closeDropdown}
                   >
                     <button
                       className={cn(
@@ -141,15 +148,19 @@ export function Navbar() {
                         "after:transition-all after:duration-normal",
                         "hover:after:w-full"
                       )}
-                      onClick={() => setIndustriesOpen((prev) => !prev)}
-                      aria-expanded={industriesOpen}
+                      onClick={() =>
+                        setOpenDropdown((prev) =>
+                          prev === link.label ? null : link.label
+                        )
+                      }
+                      aria-expanded={isOpen}
                       aria-haspopup="true"
                     >
                       {link.label}
                       <svg
                         className={cn(
                           "w-[12px] h-[12px] transition-transform duration-normal",
-                          industriesOpen && "rotate-180"
+                          isOpen && "rotate-180"
                         )}
                         viewBox="0 0 12 12"
                         fill="none"
@@ -164,7 +175,7 @@ export function Navbar() {
                       className={cn(
                         "absolute top-full left-1/2 -translate-x-1/2 pt-[12px]",
                         "transition-all duration-normal",
-                        industriesOpen
+                        isOpen
                           ? "opacity-100 translate-y-0 pointer-events-auto"
                           : "opacity-0 -translate-y-[4px] pointer-events-none"
                       )}
@@ -190,7 +201,7 @@ export function Navbar() {
                                 : "hover:bg-black/[0.03]",
                               "hover:text-accent"
                             )}
-                            onClick={() => setIndustriesOpen(false)}
+                            onClick={() => setOpenDropdown(null)}
                           >
                             {child.label}
                           </Link>

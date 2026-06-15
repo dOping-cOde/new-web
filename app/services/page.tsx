@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Link from "next/link";
 import { SERVICES } from "@/lib/services";
 import { HeroLight } from "@/components/sections/HeroLight";
 import { CTABand } from "@/components/sections/CTABand";
-import { CapabilityCard } from "@/components/cards/CapabilityCard";
 import { Caption } from "@/components/ui/Caption";
 import { Pill } from "@/components/ui/Pill";
 import { Container } from "@/components/layout/Container";
-import { ServicesAnchorNav } from "./AnchorNav";
 import { cn } from "@/lib/utils";
 import { serviceJsonLd } from "@/lib/jsonld";
 
@@ -22,127 +20,12 @@ export const metadata: Metadata = {
   },
 };
 
-// ─── Service Diagram alt-text ─────────────────────────────────────────────────
-
-const DIAGRAM_ALT: Record<string, string> = {
-  "ai-agents": "Agent loop diagram: Perceive → Plan → Act → Verify circular flow",
-  chatbots: "Conversational AI architecture with RAG pipeline: Document → Embed → Vector Store → Retrieve → Generate",
-  "enterprise-ai": "Enterprise AI analytics architecture: Data Sources → Smart OLAP Engine → BI Tools, with governance, AI/ML, and cloud layers",
-};
-
-// ─── Data & Analytics sub-cards ──────────────────────────────────────────────
-
-const DATA_ANALYTICS_CARDS = [
-  {
-    title: "Unified Semantic Fabric",
-    description: "One source of truth across BI and AI",
-    tags: ["Semantic Layer", "dbt", "GraphQL"],
-    href: "/portfolio/unified-semantic-fabric",
-  },
-  {
-    title: "BI Acceleration Engine",
-    description: "Sub-second analytics on enterprise datasets at scale",
-    tags: ["OLAP", "In-Memory", "Aggregation"],
-    href: "/portfolio/bi-acceleration-engine",
-  },
-  {
-    title: "Multidimensional OLAP Modernization",
-    description: "Replace legacy cube engines — SSAS, Essbase, TM1",
-    tags: ["Cube Migration", "Cloud OLAP", "MDX"],
-    href: "/portfolio/multidimensional-olap-modernization",
-  },
-  {
-    title: "Cloud Analytics Cost Optimization",
-    description: "Reduce Snowflake/Databricks/BigQuery spend by 40%+",
-    tags: ["FinOps", "Query Optimization", "Caching"],
-    href: "/portfolio/cloud-analytics-cost-optimization",
-  },
-  {
-    title: "Conversational Data Agent",
-    description: "Natural-language analytics on enterprise data",
-    tags: ["NL-to-SQL", "LLM", "Data Catalog"],
-    href: "/portfolio/conversational-data-agent",
-  },
-  {
-    title: "Enterprise Reporting Suite",
-    description: "Unified reporting across business units",
-    tags: ["Dashboards", "Embedded BI", "Scheduling"],
-    href: "/portfolio/enterprise-reporting-suite",
-  },
-];
-
-// ─── Enterprise AI sub-cards ─────────────────────────────────────────────────
-
-const ENTERPRISE_AI_CARDS = [
-  {
-    title: "Smart OLAP Analytics Engine",
-    description: "Sub-second queries on trillion-row datasets without pre-aggregation",
-    tags: ["OLAP", "In-Memory", "Columnar"],
-    href: "/portfolio",
-  },
-  {
-    title: "Universal BI Connectivity",
-    description: "Native integration with Tableau, Power BI, Excel, and Looker",
-    tags: ["BI Tools", "ODBC/JDBC", "Live Connect"],
-    href: "/portfolio",
-  },
-  {
-    title: "Cloud Data Platform Acceleration",
-    description: "Accelerate Snowflake, Databricks, and BigQuery without data movement",
-    tags: ["Snowflake", "Databricks", "BigQuery"],
-    href: "/portfolio",
-  },
-  {
-    title: "AI-Powered Self-Service Analytics",
-    description: "Natural-language exploration with governed access and lineage tracking",
-    tags: ["NL Queries", "AI/ML", "Auto-Insights"],
-    href: "/portfolio",
-  },
-  {
-    title: "Enterprise Data Governance",
-    description: "Row-level security, audit trails, and compliance across all analytics",
-    tags: ["RBAC", "Lineage", "Compliance"],
-    href: "/portfolio",
-  },
-  {
-    title: "Operational Intelligence Layer",
-    description: "Real-time dashboards and alerting for mission-critical KPIs",
-    tags: ["Real-Time", "Alerting", "Embedded BI"],
-    href: "/portfolio",
-  },
-];
-
-// ─── Per-service production copy ──────────────────────────────────────────────
-
-const SERVICE_COPY: Record<string, string[]> = {
-  "ai-agents": [
-    "We build multi-agent systems that perceive their environment, plan across multiple steps, and execute actions in operational infrastructure. These are not chatbot wrappers — they are autonomous pipelines integrated directly into enterprise workflows, API surfaces, and IoT event streams.",
-    "Each agent system ships with deterministic fallbacks and human escalation paths. We design for auditability: every decision is logged, every action is reversible, and every threshold is configurable. Production AI that your operations team can actually trust.",
-    "Deployment targets include incident management platforms, procurement systems, field operations tools, and compliance pipelines. We build on LangGraph and CrewAI for orchestration, MCP for model-context management, and support both cloud-hosted and air-gapped local model deployments.",
-  ],
-  chatbots: [
-    "We build production-grade conversational AI grounded in your knowledge base, not in generic LLM priors. Every system is engineered for accuracy, auditability, and graceful degradation — not for demo performance.",
-    "Our RAG architectures connect directly to your existing documentation systems, knowledge bases, and operational runbooks. We handle chunking strategy, embedding selection, vector store design, and retrieval tuning. The result is a system that surfaces the right answer, not the plausible one.",
-    "Voice-enabled interfaces extend coverage to field environments where hands-free operation is non-negotiable. We integrate ASR and TTS pipelines with function-calling architectures to build interfaces that route, escalate, and act — not just respond.",
-  ],
-  "data-analytics": [
-    "We build analytics infrastructure that makes enterprise data genuinely useful at sub-second query response times. Semantic data layers eliminate metric inconsistencies across business units and BI tools. OLAP modernization replaces legacy cube engines with architectures that deliver 1000x faster analytical throughput.",
-    "Our natural-language analytics interfaces let non-technical stakeholders query enterprise data without SQL knowledge — connected to live data catalogs, not static snapshots. We build on production-grade NL-to-SQL architectures with LLM reasoning layers that understand your specific business schema.",
-    "Cost optimization engagements consistently reduce Snowflake, Databricks, and BigQuery spend by 40% or more through query profiling, materialization strategy, and caching architecture. We treat analytics infrastructure as an engineering problem, not a configuration problem.",
-  ],
-  "enterprise-ai": [
-    "We build AI-native analytics platforms that deliver interactive, sub-second insights on datasets spanning trillions of data points. Our smart OLAP engine sits between your cloud data warehouse and your BI tools — accelerating every query without requiring data movement, pre-aggregation, or changes to existing dashboards. The result is analytics that feel instantaneous, even at enterprise scale.",
-    "Every platform we ship connects natively to the tools your teams already use — Tableau, Power BI, Excel, Looker, and custom applications via ODBC/JDBC. We eliminate the gap between where data lives and where decisions happen. AI-powered self-service layers let business users explore data through natural language, surface automated insights, and build their own analyses — all under full governance with row-level security, audit trails, and data lineage.",
-    "Our cloud-native architecture deploys on Snowflake, Databricks, BigQuery, and Azure Synapse — scaling elastically with workload demand. Intelligent caching and query optimization reduce cloud compute costs while delivering faster results. From retail and financial services to manufacturing and telecommunications, we build the analytics backbone that turns massive data investments into real-time operational intelligence.",
-  ],
-};
-
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function ServicesPage() {
   return (
     <>
-      {/* 6 Service JSON-LD schemas — one per service (SEO-06) */}
+      {/* Service JSON-LD schemas — one per service (SEO-06) */}
       {SERVICES.map((service) => (
         <script
           key={`ld-${service.id}`}
@@ -153,7 +36,7 @@ export default function ServicesPage() {
         />
       ))}
 
-      {/* Section 1: Page Hero */}
+      {/* Page Hero */}
       <HeroLight
         kicker="SERVICES"
         headline="Four capabilities. One engineering team."
@@ -162,119 +45,48 @@ export default function ServicesPage() {
         backgroundImage="/images/hero/services-bg.svg"
       />
 
-      {/* Section 2: Sticky Anchor Nav (client component for IntersectionObserver) */}
-      <ServicesAnchorNav />
-
-      {/* Section 3: Six service sections */}
-      {SERVICES.map((service, index) => {
-        const isImageLeft = index % 2 !== 0; // 0,2,4 = text-left, image-right; 1,3,5 = image-left, text-right
-        const copy = SERVICE_COPY[service.id] ?? [];
-        const isDataAnalytics = service.id === "data-analytics";
-        const isEnterpriseAI = service.id === "enterprise-ai";
-
-        return (
-          <section
-            key={service.id}
-            id={service.anchorId}
-            className="py-4xl md:py-5xl border-b border-border-light"
-          >
-            <Container>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-2xl items-start">
-                {/* Text column */}
-                <div className={cn(isImageLeft ? "lg:order-2" : "lg:order-1")}>
-                  <Caption as="p" className="text-text-muted">
-                    {service.number} · {service.label}
-                  </Caption>
-                  <h2 className="text-display-md mt-lg text-text">
-                    {service.title}
-                  </h2>
-
-                  <div className="mt-xl space-y-lg">
-                    {copy.map((para, i) => (
-                      <p key={i} className="text-body text-text-muted">
-                        {para}
-                      </p>
-                    ))}
-                  </div>
-
-                  {/* Tech stack pills */}
-                  <div className="flex flex-wrap gap-sm mt-xl">
-                    {service.techStack.map((tech) => (
-                      <Pill key={tech} as="span">
-                        {tech}
-                      </Pill>
-                    ))}
-                  </div>
-
-                  {/* Use case bullets */}
-                  <ul className="mt-xl space-y-sm">
-                    {service.useCases.map((useCase, i) => (
-                      <li
-                        key={i}
-                        className="text-body-sm text-text-muted flex items-start gap-sm"
-                      >
-                        <span
-                          className="text-accent mt-[3px] shrink-0"
-                          aria-hidden="true"
-                        >
-                          ·
-                        </span>
-                        <span>{useCase}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Case study link */}
-                  {service.caseStudySlug && (
-                    <a
-                      href={`/portfolio/${service.caseStudySlug}`}
-                      className="text-body-sm text-accent mt-lg inline-block hover:underline"
-                    >
-                      Read the case study &rarr;
-                    </a>
-                  )}
+      {/* Service grid — each links to its dedicated page */}
+      <section className="py-5xl max-md:py-3xl bg-bg-light border-b border-border-light">
+        <Container>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-xl">
+            {SERVICES.map((service) => (
+              <Link
+                key={service.id}
+                href={`/services/${service.id}`}
+                className={cn(
+                  "group block",
+                  "border border-border-light rounded-lg p-xl",
+                  "bg-surface",
+                  "transition-all duration-normal",
+                  "hover:-translate-y-1 hover:shadow-sm"
+                )}
+              >
+                <Caption className="text-text-muted">
+                  {service.number} · {service.label}
+                </Caption>
+                <h2 className="text-h3 mt-sm text-text group-hover:text-accent transition-colors duration-fast">
+                  {service.title}
+                </h2>
+                <p className="text-body-sm text-text-muted mt-md line-clamp-3">
+                  {service.description}
+                </p>
+                <div className="flex flex-wrap gap-xs mt-lg">
+                  {service.techStack.slice(0, 4).map((tech) => (
+                    <Pill key={tech} as="span">
+                      {tech}
+                    </Pill>
+                  ))}
                 </div>
+                <span className="text-body-sm text-accent mt-lg inline-block">
+                  Explore capability &rarr;
+                </span>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </section>
 
-                {/* Visual column */}
-                <div className={cn(isImageLeft ? "lg:order-1" : "lg:order-2")}>
-                  {isDataAnalytics || isEnterpriseAI ? (
-                    /* Sub-grid of CapabilityCards */
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
-                      {(isEnterpriseAI ? ENTERPRISE_AI_CARDS : DATA_ANALYTICS_CARDS).map((card) => (
-                        <CapabilityCard
-                          key={card.title}
-                          title={card.title}
-                          description={card.description}
-                          tags={card.tags}
-                          href={card.href}
-                        />
-                      ))}
-                    </div>
-                  ) : (
-                    /* Service diagram SVG */
-                    <div
-                      className={cn(
-                        "bg-surface rounded-xl overflow-hidden",
-                        "border border-border-light"
-                      )}
-                    >
-                      <Image
-                        src={`/images/services/${service.id}.svg`}
-                        alt={DIAGRAM_ALT[service.id] ?? `${service.title} diagram`}
-                        width={500}
-                        height={400}
-                        className="w-full h-auto"
-                      />
-                    </div>
-                  )}
-                </div>
-              </div>
-            </Container>
-          </section>
-        );
-      })}
-
-      {/* Section 4: Engagement Model Band */}
+      {/* Engagement Model Band */}
       <section className="bg-bg-light py-5xl">
         <Container>
           <div className="max-w-[900px] mx-auto">
@@ -321,7 +133,7 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      {/* Section 5: CTA Band */}
+      {/* CTA Band */}
       <CTABand />
     </>
   );

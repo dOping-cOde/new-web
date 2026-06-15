@@ -79,7 +79,7 @@ export function serviceJsonLd(service: {
     "@type": "Service",
     name: service.title,
     description: service.description,
-    url: `${baseUrl}/services#${service.anchorId}`,
+    url: `${baseUrl}/services/${service.anchorId}`,
     provider: { "@id": `${baseUrl}/#organization` },
   };
 }

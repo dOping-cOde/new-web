@@ -4,12 +4,13 @@ import { Container } from "@/components/layout/Container";
 
 const FOOTER_LINKS = {
   services: [
-    { label: "AI Agents", href: "/services#ai-agents" },
-    { label: "AI Chatbots", href: "/services#chatbots" },
-    { label: "Healthcare", href: "/services#healthcare" },
-    { label: "Energy", href: "/services#energy" },
-    { label: "Infrastructure", href: "/services#infrastructure" },
-    { label: "Data & Analytics", href: "/services#data-analytics" },
+    { label: "Enterprise AI", href: "/services/enterprise-ai" },
+    { label: "AI Agents", href: "/services/ai-agents" },
+    { label: "AI Chatbots", href: "/services/chatbots" },
+    { label: "Healthcare", href: "/industries/healthcare" },
+    { label: "Energy", href: "/industries/energy" },
+    { label: "Infrastructure", href: "/industries/infrastructure" },
+    { label: "Data & Analytics", href: "/services/data-analytics" },
   ],
   portfolio: [
     { label: "iDTRM", href: "/portfolio/idtrm" },

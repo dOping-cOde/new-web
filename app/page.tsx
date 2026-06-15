@@ -116,7 +116,7 @@ export default function Home() {
                   title={capability.title}
                   description={capability.description}
                   tag={capability.tag}
-                  href={`/services#${capability.anchorId}`}
+                  href="/services"
                 />
               ))}
             </div>

@@ -68,3 +68,21 @@ export const SERVICES: ServiceMeta[] = [
     ],
   },
 ];
+
+/**
+ * Returns all service slugs (service ids) for generateStaticParams.
+ */
+export function getServiceSlugs(): Array<{ slug: string }> {
+  return SERVICES.map((s) => ({ slug: s.id }));
+}
+
+/**
+ * Returns service metadata by slug (service id). Throws if not found.
+ */
+export function getServiceBySlug(slug: string): ServiceMeta {
+  const service = SERVICES.find((s) => s.id === slug);
+  if (!service) {
+    throw new Error(`Service not found: ${slug}`);
+  }
+  return service;
+}
