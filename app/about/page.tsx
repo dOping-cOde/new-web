@@ -1,5 +1,4 @@
 import { type Metadata } from "next";
-import Image from "next/image";
 import { HeroLight } from "@/components/sections/HeroLight";
 import { CTABand } from "@/components/sections/CTABand";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -184,34 +183,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* 5. Partnerships band */}
-      <section className="py-5xl max-md:py-3xl bg-bg-light border-t border-border-light">
-        <Container>
-          <SectionHeader
-            heading="Trusted by teams across industries"
-            headingSize="text-display-md"
-            align="center"
-          />
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-xl mt-2xl">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <div
-                key={i}
-                className="flex items-center justify-center"
-              >
-                <Image
-                  src={`/images/partners/partner-${i + 1}.svg`}
-                  alt={`Client logo placeholder ${i + 1}`}
-                  width={200}
-                  height={60}
-                  className="w-full h-auto"
-                />
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* 6. CTA */}
+      {/* 5. CTA */}
       <CTABand />
     </>
   );

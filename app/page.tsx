@@ -49,6 +49,7 @@ export default function Home() {
         aside={<HeroMascot />}
       />
 
+
       {/* ===== Section 2: Capability strip (light bg) ===== */}
       <section className="bg-bg-light py-5xl max-md:py-3xl">
         <Container>
