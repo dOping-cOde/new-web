@@ -1,0 +1,16 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Squircle tile in brand accent yellow -->
+  <path
+    d="M50 4 C18 4 4 18 4 50 C4 82 18 96 50 96 C82 96 96 82 96 50 C96 18 82 4 50 4 Z"
+    fill="#FFD400"
+  />
+  <!-- Dark "S" monogram (matches the primary button: yellow bg, dark text) -->
+  <path
+    d="M67 39 C67 31 59 28 50 28 C40 28 33 33 33 41 C33 48 41 51 50 52 C59 53 67 56 67 63 C67 71 59 74 50 74 C41 74 33 71 33 63"
+    fill="none"
+    stroke="#0B0B0D"
+    stroke-width="13"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>
