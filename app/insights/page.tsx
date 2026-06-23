@@ -12,11 +12,11 @@ export const revalidate = 300;
 export const metadata: Metadata = {
   title: "Insights",
   description:
-    "Insights on AI engineering, chatbots, and data systems from the Softwires team.",
+    "Practical writing on front-end engineering — performance, architecture, design systems, accessibility, and motion — from the Softiques team.",
   openGraph: {
-    title: "Insights — Softwires",
+    title: "Insights — Softiques",
     description:
-      "Insights on AI engineering, chatbots, and data systems from the Softwires team.",
+      "Practical writing on front-end engineering — performance, architecture, design systems, accessibility, and motion — from the Softiques team.",
   },
 };
 
@@ -32,9 +32,9 @@ export default async function InsightsPage() {
     <>
       <HeroLight
         kicker="INSIGHTS"
-        headline="Insights from the Softwires team."
+        headline="Notes from the engineering team."
         headlineSize="text-display-lg"
-        intro="Practical thinking on AI systems, chatbots, and the engineering behind products that ship."
+        intro="Practical writing on performance, architecture, design systems, accessibility, and motion — the engineering behind products that ship."
         backgroundImage="/images/hero/insights-bg.svg"
       />
 

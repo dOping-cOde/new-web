@@ -5,8 +5,8 @@
       <stop offset="100%" stop-color="#0A0B0D"/>
     </radialGradient>
     <radialGradient id="gauge-glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#3D2BFF" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#3D2BFF" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#FFD400" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#FFD400" stop-opacity="0"/>
     </radialGradient>
     <filter id="glow">
       <feGaussianBlur stdDeviation="5"/>
@@ -15,8 +15,8 @@
       <feGaussianBlur stdDeviation="2"/>
     </filter>
     <linearGradient id="bar-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#3D2BFF" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#3D2BFF" stop-opacity="0.4"/>
+      <stop offset="0%" stop-color="#FFD400" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FFD400" stop-opacity="0.4"/>
     </linearGradient>
     <linearGradient id="bar-before" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#2A2B30" stop-opacity="0.9"/>
@@ -41,7 +41,7 @@
   <!-- Gauge track -->
   <path d="M 280 450 A 200 200 0 0 1 680 450" fill="none" stroke="#1F2024" stroke-width="24"/>
   <!-- Gauge fill - fast! (almost full) -->
-  <path d="M 280 450 A 200 200 0 0 1 650 310" fill="none" stroke="#3D2BFF" stroke-width="24" stroke-linecap="round"/>
+  <path d="M 280 450 A 200 200 0 0 1 650 310" fill="none" stroke="#FFD400" stroke-width="24" stroke-linecap="round"/>
   <!-- Outer ring -->
   <circle cx="480" cy="450" r="200" fill="none" stroke="#2A2B30" stroke-width="1"/>
   <circle cx="480" cy="450" r="175" fill="none" stroke="#1F2024" stroke-width="0.5"/>
@@ -65,13 +65,13 @@
   <text x="700" y="470" font-family="monospace" font-size="9" fill="#555860" text-anchor="middle">1s+</text>
 
   <!-- Needle -->
-  <line x1="480" y1="450" x2="640" y2="308" stroke="#3D2BFF" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="480" cy="450" r="12" fill="#1A1B1E" stroke="#3D2BFF" stroke-width="2"/>
-  <circle cx="480" cy="450" r="5" fill="#3D2BFF"/>
+  <line x1="480" y1="450" x2="640" y2="308" stroke="#FFD400" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="480" cy="450" r="12" fill="#1A1B1E" stroke="#FFD400" stroke-width="2"/>
+  <circle cx="480" cy="450" r="5" fill="#FFD400"/>
 
   <!-- Center text -->
   <text x="480" y="530" font-family="monospace" font-size="28" fill="#E8E9EB" text-anchor="middle" font-weight="bold">87ms</text>
-  <text x="480" y="550" font-family="monospace" font-size="10" fill="#3D2BFF" text-anchor="middle" letter-spacing="2">SUB-SECOND</text>
+  <text x="480" y="550" font-family="monospace" font-size="10" fill="#FFD400" text-anchor="middle" letter-spacing="2">SUB-SECOND</text>
   <text x="480" y="568" font-family="monospace" font-size="9" fill="#555860" text-anchor="middle">avg query response</text>
 
   <!-- Before/After bar chart - right of gauge -->
@@ -103,47 +103,47 @@
   <rect x="826" y="218" width="40" height="230" fill="url(#bar-before)" opacity="0.7"/>
   <rect x="872" y="420" width="40" height="28" fill="url(#bar-grad)"/>
   <text x="867" y="462" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">Q1</text>
-  <text x="892" y="416" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="middle">87ms</text>
+  <text x="892" y="416" font-family="monospace" font-size="8" fill="#FFD400" text-anchor="middle">87ms</text>
   <text x="846" y="214" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">46s</text>
 
   <!-- Query 2: Aggregation -->
   <rect x="940" y="268" width="40" height="180" fill="url(#bar-before)" opacity="0.7"/>
   <rect x="986" y="427" width="40" height="21" fill="url(#bar-grad)"/>
   <text x="983" y="462" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">Q2</text>
-  <text x="1006" y="423" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="middle">63ms</text>
+  <text x="1006" y="423" font-family="monospace" font-size="8" fill="#FFD400" text-anchor="middle">63ms</text>
   <text x="960" y="264" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">33s</text>
 
   <!-- Query 3: Join Heavy -->
   <rect x="1054" y="248" width="40" height="200" fill="url(#bar-before)" opacity="0.7"/>
   <rect x="1100" y="422" width="40" height="26" fill="url(#bar-grad)"/>
   <text x="1097" y="462" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">Q3</text>
-  <text x="1120" y="418" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="middle">124ms</text>
+  <text x="1120" y="418" font-family="monospace" font-size="8" fill="#FFD400" text-anchor="middle">124ms</text>
   <text x="1074" y="244" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">37s</text>
 
   <!-- Query 4: Time-series -->
   <rect x="1168" y="308" width="40" height="140" fill="url(#bar-before)" opacity="0.7"/>
   <rect x="1214" y="436" width="40" height="12" fill="url(#bar-grad)"/>
   <text x="1211" y="462" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">Q4</text>
-  <text x="1234" y="432" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="middle">42ms</text>
+  <text x="1234" y="432" font-family="monospace" font-size="8" fill="#FFD400" text-anchor="middle">42ms</text>
   <text x="1188" y="304" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">26s</text>
 
   <!-- Query 5: Full scan -->
   <rect x="1282" y="208" width="40" height="240" fill="url(#bar-before)" opacity="0.7"/>
   <rect x="1328" y="418" width="40" height="30" fill="url(#bar-grad)"/>
   <text x="1325" y="462" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">Q5</text>
-  <text x="1348" y="414" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="middle">200ms</text>
+  <text x="1348" y="414" font-family="monospace" font-size="8" fill="#FFD400" text-anchor="middle">200ms</text>
   <text x="1302" y="204" font-family="monospace" font-size="7" fill="#555860" text-anchor="middle">58s</text>
 
   <!-- Legend -->
   <rect x="870" y="476" width="12" height="10" fill="#2A2B30"/>
   <text x="888" y="485" font-family="monospace" font-size="8" fill="#555860">BEFORE</text>
-  <rect x="950" y="476" width="12" height="10" fill="#3D2BFF"/>
-  <text x="968" y="485" font-family="monospace" font-size="8" fill="#3D2BFF">AFTER (BI Engine)</text>
+  <rect x="950" y="476" width="12" height="10" fill="#FFD400"/>
+  <text x="968" y="485" font-family="monospace" font-size="8" fill="#FFD400">AFTER (BI Engine)</text>
 
   <!-- Avg speedup badge -->
-  <rect x="1100" y="470" width="220" height="40" rx="4" fill="#3D2BFF" opacity="0.15" stroke="#3D2BFF" stroke-width="1" opacity="0.5"/>
-  <text x="1210" y="488" font-family="monospace" font-size="10" fill="#3D2BFF" text-anchor="middle">AVG SPEEDUP</text>
-  <text x="1210" y="504" font-family="monospace" font-size="14" fill="#3D2BFF" text-anchor="middle" font-weight="bold">340× faster</text>
+  <rect x="1100" y="470" width="220" height="40" rx="4" fill="#FFD400" opacity="0.15" stroke="#FFD400" stroke-width="1" opacity="0.5"/>
+  <text x="1210" y="488" font-family="monospace" font-size="10" fill="#FFD400" text-anchor="middle">AVG SPEEDUP</text>
+  <text x="1210" y="504" font-family="monospace" font-size="14" fill="#FFD400" text-anchor="middle" font-weight="bold">340× faster</text>
 
   <!-- KPI row bottom -->
   <rect x="100" y="680" width="1400" height="120" rx="4" fill="#0F1018" stroke="#1F2024" stroke-width="1"/>
@@ -159,7 +159,7 @@
 
   <text x="520" y="726" font-family="monospace" font-size="28" fill="#E8E9EB" text-anchor="middle">340×</text>
   <text x="520" y="746" font-family="monospace" font-size="9" fill="#8A8C92" text-anchor="middle">AVERAGE SPEEDUP</text>
-  <text x="520" y="760" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="middle">across query types</text>
+  <text x="520" y="760" font-family="monospace" font-size="8" fill="#FFD400" text-anchor="middle">across query types</text>
 
   <text x="800" y="726" font-family="monospace" font-size="28" fill="#E8E9EB" text-anchor="middle">99.2%</text>
   <text x="800" y="746" font-family="monospace" font-size="9" fill="#8A8C92" text-anchor="middle">CACHE HIT RATE</text>

@@ -40,7 +40,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${caseStudy.title} — Softwires`,
+    title: `${caseStudy.title} — Softiques`,
     description: caseStudy.excerpt,
     openGraph: {
       title: caseStudy.title,
@@ -73,7 +73,7 @@ function TierALayout({
     .join(" · ");
 
   const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://softwires.in";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://softiques.com";
 
   return (
     <article>
@@ -163,7 +163,7 @@ function TierBLayout({
   children: React.ReactNode;
 }) {
   const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://softwires.in";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://softiques.com";
 
   return (
     <article>

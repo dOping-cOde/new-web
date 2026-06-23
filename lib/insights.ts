@@ -1,49 +1,12 @@
-import { z } from "zod";
+import { ARTICLES, type LocalArticle } from "@/content/insights";
 
 // ============================================================
-// Insights data layer — DigitalCrew CMS API client
-// Source endpoints (the CMS still names these "blogs"):
-//   GET /all-blogs?website=softwires       → list
-//   GET /blog-details?slug=<slug>          → single post
+// Insights data layer — local, first-party articles.
 //
-// External API responses are validated with Zod and mapped to
-// clean, UI-facing types. Raw CMS fields (HTML body, mixed date
-// formats, nullable image) never leak into the components.
+// Previously this fetched from an external CMS; it now reads the
+// articles defined in content/insights.ts. The public API and the
+// UI-facing types are unchanged, so the pages render identically.
 // ============================================================
-
-const API_BASE = process.env.INSIGHTS_API_BASE || "https://api.digitalcrew.co.in";
-const WEBSITE = process.env.INSIGHTS_API_WEBSITE || "softwires";
-
-// Revalidate cached responses every 5 minutes (ISR).
-const REVALIDATE_SECONDS = 300;
-
-// ─── Raw API schemas ──────────────────────────────────────────────────────────
-
-const rawInsightSchema = z.object({
-  id: z.number(),
-  slug: z.string(),
-  title: z.string(),
-  category: z.string().nullable().optional(),
-  description: z.string().nullable().optional(), // HTML body (Quill output)
-  meta_title: z.string().nullable().optional(),
-  meta_description: z.string().nullable().optional(),
-  meta_keyword: z.string().nullable().optional(),
-  image: z.string().nullable().optional(), // absolute URL
-  added_date: z.string().nullable().optional(), // "YYYY-MM-DD" or ""
-  createdAt: z.string().nullable().optional(), // ISO timestamp
-});
-
-type RawInsight = z.infer<typeof rawInsightSchema>;
-
-const listResponseSchema = z.object({
-  status: z.boolean().optional(),
-  data: z.array(rawInsightSchema).default([]),
-});
-
-const detailResponseSchema = z.object({
-  status: z.boolean().optional(),
-  data: rawInsightSchema.nullable().default(null),
-});
 
 // ─── Clean UI-facing types ────────────────────────────────────────────────────
 
@@ -87,7 +50,6 @@ function htmlToText(html: string): string {
 function buildExcerpt(html: string, maxLen = 160): string {
   const text = htmlToText(html);
   if (text.length <= maxLen) return text;
-  // Cut on a word boundary near maxLen.
   const slice = text.slice(0, maxLen);
   const lastSpace = slice.lastIndexOf(" ");
   return `${slice.slice(0, lastSpace > 40 ? lastSpace : maxLen).trim()}…`;
@@ -100,146 +62,70 @@ function readingTime(html: string): string {
   return `${minutes} min read`;
 }
 
-/** Normalize the CMS's mixed date fields to "YYYY-MM-DD". */
-function normalizeDate(raw: RawInsight): string {
-  const candidate = raw.added_date?.trim() || raw.createdAt?.trim() || "";
-  if (!candidate) return "";
-  // Both "YYYY-MM-DD" and ISO timestamps start with the date.
-  const match = candidate.match(/^\d{4}-\d{2}-\d{2}/);
-  return match ? match[0] : candidate.slice(0, 10);
+// ─── Mappers ──────────────────────────────────────────────────────────────────
+
+/** Stable numeric id derived from the article's position. */
+function idFor(slug: string): number {
+  const i = ARTICLES.findIndex((a) => a.slug === slug);
+  return i >= 0 ? i + 1 : 0;
 }
 
-/**
- * Defense-in-depth: strip <script>/<style> blocks and inline event handlers
- * before the trusted CMS HTML is injected. The body is first-party content;
- * if untrusted authors are ever onboarded, swap this for a full sanitizer
- * (e.g. isomorphic-dompurify).
- */
-/**
- * Normalize the CMS's Quill HTML into clean, themeable markup.
- *
- * The editor emits justified paragraphs, hardcoded inline colors/backgrounds,
- * empty `&nbsp;` spacer paragraphs, and "headings" that are really just bold
- * paragraphs. Left unchanged, that renders as a flat, monotonous wall of text.
- *
- * This pass:
- *   1. strips dangerous nodes (script/style, inline handlers, javascript:)
- *   2. removes inline `style`/`class` attributes so the theme styles win
- *   3. drops empty spacer paragraphs
- *   4. promotes standalone bold paragraphs into real <h2> headings
- *   5. unwraps now-bare <span>s
- * so the article reads with proper hierarchy and rhythm.
- */
-function sanitizeHtml(html: string): string {
-  return (
-    html
-      // 1 — security
-      .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "")
-      .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, "")
-      .replace(/\son\w+\s*=\s*"[^"]*"/gi, "")
-      .replace(/\son\w+\s*=\s*'[^']*'/gi, "")
-      .replace(/javascript:/gi, "")
-      // 2 — strip editor styling so site theme applies
-      .replace(/\sstyle\s*=\s*"[^"]*"/gi, "")
-      .replace(/\sstyle\s*=\s*'[^']*'/gi, "")
-      .replace(/\sclass\s*=\s*"[^"]*"/gi, "")
-      .replace(/\sclass\s*=\s*'[^']*'/gi, "")
-      // 3 — normalize whitespace + drop empty spacer paragraphs
-      .replace(/&nbsp;/gi, " ")
-      .replace(/<p>\s*(?:<br\s*\/?>)?\s*<\/p>/gi, "")
-      // 4 — promote bold-only paragraphs to headings (max ~120 chars)
-      .replace(
-        /<p>\s*<strong>([^<]{1,120}?)<\/strong>\s*<\/p>/gi,
-        (_m, text) => `<h2>${String(text).trim()}</h2>`
-      )
-      // 5 — unwrap stripped-bare spans
-      .replace(/<span>\s*<\/span>/gi, "")
-      .replace(/<span>(.*?)<\/span>/gi, "$1")
-      .trim()
-  );
-}
-
-function toSummary(raw: RawInsight): InsightSummary {
-  const html = raw.description ?? "";
+function toSummary(a: LocalArticle): InsightSummary {
   return {
-    id: raw.id,
-    slug: raw.slug,
-    title: raw.title,
-    category: raw.category?.trim() || "General",
-    excerpt:
-      raw.meta_description?.trim() && raw.meta_description.trim() !== raw.title
-        ? raw.meta_description.trim()
-        : buildExcerpt(html),
-    image: raw.image?.trim() || null,
-    imageAlt: raw.title,
-    date: normalizeDate(raw),
-    readingTime: readingTime(html),
+    id: idFor(a.slug),
+    slug: a.slug,
+    title: a.title,
+    category: a.category?.trim() || "General",
+    excerpt: a.excerpt?.trim() || buildExcerpt(a.html),
+    image: a.image?.trim() || null,
+    imageAlt: a.imageAlt || a.title,
+    date: a.date,
+    readingTime: readingTime(a.html),
   };
 }
 
-function toPost(raw: RawInsight): InsightPost {
-  const html = raw.description ?? "";
+function toPost(a: LocalArticle): InsightPost {
   return {
-    ...toSummary(raw),
-    html: sanitizeHtml(html),
-    metaTitle: raw.meta_title?.trim() || raw.title,
-    metaDescription: raw.meta_description?.trim() || buildExcerpt(html),
-    metaKeyword: raw.meta_keyword?.trim() || "",
+    ...toSummary(a),
+    html: a.html.trim(),
+    metaTitle: a.metaTitle?.trim() || a.title,
+    metaDescription: a.metaDescription?.trim() || a.excerpt?.trim() || buildExcerpt(a.html),
+    metaKeyword: a.metaKeyword?.trim() || "",
   };
+}
+
+// ─── Scheduling ───────────────────────────────────────────────────────────────
+// Articles with a future `date` are scheduled: hidden from the listing, the
+// sitemap, and direct access until their publish date arrives. Because the
+// Insights routes use ISR (`export const revalidate`), `today()` is recomputed
+// on each regeneration, so scheduled posts go live automatically — no redeploy.
+
+/** Current date as "YYYY-MM-DD" (UTC), recomputed on each render / ISR pass. */
+function today(): string {
+  return new Date().toISOString().slice(0, 10);
+}
+
+/** A post is live once its date is on or before today; a future date = scheduled. */
+function isPublished(a: LocalArticle): boolean {
+  return a.date <= today();
 }
 
 // ─── Public data loaders ──────────────────────────────────────────────────────
 
-/**
- * Returns all published insight summaries, newest-first.
- * Returns an empty array (never throws) if the API is unreachable, so the
- * listing page degrades gracefully instead of erroring.
- */
+/** Returns all published insight summaries, newest-first (scheduled ones excluded). */
 export async function getAllInsights(): Promise<InsightSummary[]> {
-  try {
-    const res = await fetch(
-      `${API_BASE}/all-blogs?website=${encodeURIComponent(WEBSITE)}`,
-      { next: { revalidate: REVALIDATE_SECONDS } }
-    );
-    if (!res.ok) return [];
-
-    const json = await res.json();
-    const parsed = listResponseSchema.safeParse(json);
-    if (!parsed.success) return [];
-
-    return parsed.data.data
-      .map(toSummary)
-      .sort((a, b) => b.date.localeCompare(a.date));
-  } catch {
-    return [];
-  }
+  return ARTICLES.filter(isPublished)
+    .map(toSummary)
+    .sort((a, b) => b.date.localeCompare(a.date));
 }
 
-/**
- * Returns a single insight by slug, or null if not found / API error.
- */
+/** Returns a single insight by slug, or null if not found or not yet published. */
 export async function getInsightBySlug(slug: string): Promise<InsightPost | null> {
-  try {
-    const res = await fetch(
-      `${API_BASE}/blog-details?slug=${encodeURIComponent(slug)}`,
-      { next: { revalidate: REVALIDATE_SECONDS } }
-    );
-    if (!res.ok) return null;
-
-    const json = await res.json();
-    const parsed = detailResponseSchema.safeParse(json);
-    if (!parsed.success || !parsed.data.data) return null;
-
-    return toPost(parsed.data.data);
-  } catch {
-    return null;
-  }
+  const article = ARTICLES.find((a) => a.slug === slug);
+  return article && isPublished(article) ? toPost(article) : null;
 }
 
-/**
- * Returns all slugs for generateStaticParams.
- */
+/** Returns published slugs for generateStaticParams and the sitemap. */
 export async function getInsightSlugs(): Promise<Array<{ slug: string }>> {
-  const posts = await getAllInsights();
-  return posts.map((p) => ({ slug: p.slug }));
+  return ARTICLES.filter(isPublished).map((a) => ({ slug: a.slug }));
 }

@@ -1,16 +1,8 @@
-"use client";
-
-// GSAP domain — image parallax (D-01, ANIM-03)
-
-import { useRef } from "react";
 import Image from "next/image";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "@/lib/gsap";
 import { cn } from "@/lib/utils";
 import { Caption } from "@/components/ui/Caption";
 import { StatBlock } from "@/components/ui/StatBlock";
 import { Container } from "@/components/layout/Container";
-import { useReducedMotion } from "@/lib/useReducedMotion";
 
 interface HeroDarkProps {
   /** Kicker text, e.g. "ENERGY · IOT · CLIENT: [DISCOM]" */
@@ -29,9 +21,11 @@ interface HeroDarkProps {
 }
 
 /**
- * HeroDark — shared dark cinematic hero for all 11 case-study pages.
+ * HeroDark — shared dark cinematic hero (case studies + insight detail pages).
  * Carries data-theme="dark" for navbar IntersectionObserver detection.
- * Client Component (required for GSAP parallax via useGSAP).
+ *
+ * The hero image fills a 16:10 frame with object-cover. Cover art is authored
+ * at 16:10, so the image maps 1:1 to the frame — fully visible, no crop.
  */
 export function HeroDark({
   kicker,
@@ -42,36 +36,8 @@ export function HeroDark({
   stats,
   className,
 }: HeroDarkProps) {
-  const sectionRef = useRef<HTMLElement>(null);
-  const imageContainerRef = useRef<HTMLDivElement>(null);
-  const prefersReducedMotion = useReducedMotion();
-
-  // Image parallax at 0.85x scroll speed (ANIM-03)
-  // Under reduced motion, skip entirely — image stays static
-  useGSAP(
-    () => {
-      if (prefersReducedMotion || !heroImage || !imageContainerRef.current) return;
-
-      gsap.to(imageContainerRef.current, {
-        y: () => window.innerHeight * 0.15,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-    },
-    {
-      scope: sectionRef,
-      dependencies: [prefersReducedMotion, heroImage],
-    }
-  );
-
   return (
     <section
-      ref={sectionRef}
       data-theme="dark"
       className={cn(
         "bg-bg-dark text-text-inverted overflow-hidden",
@@ -94,20 +60,14 @@ export function HeroDark({
 
         {heroImage && (
           <div className="relative mt-2xl w-full aspect-[16/10] rounded-xl overflow-hidden">
-            <div
-              ref={imageContainerRef}
-              className="absolute inset-0"
-            >
-              {/* TODO: Replace with real project photography when assets are available */}
-              <Image
-                src={heroImage}
-                alt={heroImageAlt ?? ""}
-                fill
-                priority
-                sizes="100vw"
-                className="object-cover"
-              />
-            </div>
+            <Image
+              src={heroImage}
+              alt={heroImageAlt ?? ""}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
           </div>
         )}
 

@@ -65,7 +65,7 @@
   <text x="310" y="580" font-family="monospace" font-size="8" fill="#555860" text-anchor="middle">MAR</text>
   <text x="400" y="580" font-family="monospace" font-size="8" fill="#555860" text-anchor="middle">APR</text>
   <text x="490" y="580" font-family="monospace" font-size="8" fill="#555860" text-anchor="middle">MAY</text>
-  <text x="580" y="580" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="middle" font-weight="bold">JUN ▼</text>
+  <text x="580" y="580" font-family="monospace" font-size="8" fill="#FFD400" text-anchor="middle" font-weight="bold">JUN ▼</text>
   <text x="670" y="580" font-family="monospace" font-size="8" fill="#555860" text-anchor="middle">JUL</text>
   <text x="760" y="580" font-family="monospace" font-size="8" fill="#555860" text-anchor="middle">AUG</text>
   <text x="850" y="580" font-family="monospace" font-size="8" fill="#555860" text-anchor="middle">SEP</text>
@@ -84,9 +84,9 @@
   <text x="1190" y="204" font-family="monospace" font-size="8" fill="#FF6B35" text-anchor="end">PROJECTED (old)</text>
 
   <!-- Optimization event marker -->
-  <line x1="580" y1="128" x2="580" y2="564" stroke="#3D2BFF" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.7"/>
-  <rect x="545" y="128" width="72" height="18" rx="2" fill="#3D2BFF" opacity="0.2" stroke="#3D2BFF" stroke-width="1" opacity="0.6"/>
-  <text x="581" y="140" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="middle">OPTIMIZATION</text>
+  <line x1="580" y1="128" x2="580" y2="564" stroke="#FFD400" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.7"/>
+  <rect x="545" y="128" width="72" height="18" rx="2" fill="#FFD400" opacity="0.2" stroke="#FFD400" stroke-width="1" opacity="0.6"/>
+  <text x="581" y="140" font-family="monospace" font-size="8" fill="#FFD400" text-anchor="middle">OPTIMIZATION</text>
 
   <!-- Actual cost curve (after) -->
   <!-- Area fill under actual curve -->
@@ -171,7 +171,7 @@
   <rect x="1274" y="518" width="266" height="1" fill="#1F2024"/>
   <text x="1274" y="538" font-family="monospace" font-size="8" fill="#555860">ROI PERIOD</text>
   <text x="1274" y="556" font-family="monospace" font-size="16" fill="#E8E9EB">3.2 months</text>
-  <text x="1274" y="580" font-family="monospace" font-size="8" fill="#3D2BFF">STATUS: ONGOING OPTIMISATION</text>
+  <text x="1274" y="580" font-family="monospace" font-size="8" fill="#FFD400">STATUS: ONGOING OPTIMISATION</text>
   <text x="1274" y="596" font-family="monospace" font-size="8" fill="#4ADE80">FinOps dashboard live</text>
   <text x="1274" y="612" font-family="monospace" font-size="8" fill="#555860">Automated cost alerts active</text>
   <text x="1274" y="628" font-family="monospace" font-size="8" fill="#555860">Monthly review cadence</text>

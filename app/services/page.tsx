@@ -12,11 +12,11 @@ import { serviceJsonLd } from "@/lib/jsonld";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Four AI engineering capabilities: enterprise analytics, autonomous agents, conversational intelligence, and data infrastructure.",
+    "Six capabilities under one roof: website development, app development, game development, ERP, AI, and machine learning.",
   openGraph: {
-    title: "Services — Softwires",
+    title: "Services — Softiques",
     description:
-      "Four AI engineering capabilities: enterprise analytics, autonomous agents, conversational intelligence, and data infrastructure.",
+      "Six capabilities under one roof: website development, app development, game development, ERP, AI, and machine learning.",
   },
 };
 
@@ -39,9 +39,9 @@ export default function ServicesPage() {
       {/* Page Hero */}
       <HeroLight
         kicker="SERVICES"
-        headline="Four capabilities. One engineering team."
+        headline="Six capabilities. One engineering team."
         headlineSize="text-display-lg"
-        intro="We build AI systems end-to-end — from research prototype to production deployment. Each capability is backed by shipped work, not slide decks."
+        intro="We build software end-to-end — from first wireframe to production deployment. Websites, apps, games, ERP, AI, and ML, delivered by one accountable team."
         backgroundImage="/images/hero/services-bg.svg"
       />
 
@@ -113,8 +113,8 @@ export default function ServicesPage() {
                 </span>
                 <p className="text-body-sm text-text-muted mt-md">
                   Engineering sprints with weekly demos and milestone gates. We
-                  ship working systems, not prototypes — every sprint deliverable
-                  runs in your environment with your data. No black boxes.
+                  ship working software, not prototypes — every sprint deliverable
+                  runs in a real environment you can click through. No black boxes.
                 </p>
               </div>
               <div>
@@ -123,9 +123,9 @@ export default function ServicesPage() {
                   Ongoing
                 </span>
                 <p className="text-body-sm text-text-muted mt-md">
-                  Post-launch monitoring, model drift detection, retraining
-                  pipelines, and operational support. We stay accountable to
-                  production performance, not just delivery metrics.
+                  Post-launch monitoring, maintenance, performance tuning, and
+                  feature iteration. We stay accountable to how the product
+                  performs in production, not just to the delivery date.
                 </p>
               </div>
             </div>

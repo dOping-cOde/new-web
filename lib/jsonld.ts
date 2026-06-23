@@ -31,15 +31,15 @@ export function jsonLdScript(data: WithContext<Organization | WebSite | Service 
  */
 export function organizationJsonLd(): WithContext<Organization> {
   const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://softwires.in";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://softiques.com";
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": `${baseUrl}/#organization`,
-    name: "Softwires Technologies",
+    name: "Softiques",
     url: baseUrl,
     description:
-      "AI engineering for energy, healthcare, and infrastructure.",
+      "Software development studio building websites, apps, games, ERP, and AI/ML solutions.",
     sameAs: [],
   };
 }
@@ -51,12 +51,12 @@ export function organizationJsonLd(): WithContext<Organization> {
  */
 export function websiteJsonLd(): WithContext<WebSite> {
   const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://softwires.in";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://softiques.com";
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${baseUrl}/#website`,
-    name: "Softwires Technologies",
+    name: "Softiques",
     url: baseUrl,
     publisher: { "@id": `${baseUrl}/#organization` },
   };
@@ -73,7 +73,7 @@ export function serviceJsonLd(service: {
   anchorId: string;
 }): WithContext<Service> {
   const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://softwires.in";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://softiques.com";
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -93,7 +93,7 @@ export function articleJsonLd(
   caseStudy: CaseStudyFrontmatter
 ): WithContext<Article> {
   const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://softwires.in";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://softiques.com";
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -114,7 +114,7 @@ export function articleJsonLd(
  */
 export function insightJsonLd(post: InsightPost): WithContext<Article> {
   const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://softwires.in";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://softiques.com";
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -122,7 +122,7 @@ export function insightJsonLd(post: InsightPost): WithContext<Article> {
     description: post.metaDescription,
     url: `${baseUrl}/insights/${post.slug}`,
     ...(post.date ? { datePublished: post.date } : {}),
-    author: { "@type": "Organization", name: "Softwires Technologies" },
+    author: { "@type": "Organization", name: "Softiques" },
     publisher: { "@id": `${baseUrl}/#organization` },
     ...(post.image ? { image: post.image } : {}),
   };

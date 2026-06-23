@@ -1,25 +1,25 @@
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/layout/Container";
+import { LeadForm } from "@/components/forms/LeadForm";
 
 interface CTABandProps {
   headline?: string;
   body?: string;
+  /** Kept for backwards-compatibility with existing call sites; no longer rendered. */
   ctaLabel?: string;
   ctaHref?: string;
   className?: string;
 }
 
 /**
- * CTABand — reusable CTA section shared by Home, Services, and About pages.
- * Centered layout with display-md headline, body text, and a single primary CTA.
- * Server Component.
+ * CTABand — reusable conversion section shared by Home, Services, About,
+ * Portfolio, Insights, and Industries pages. Renders the site-wide LeadForm so
+ * visitors can book a consultation from any page.
+ * Server Component (LeadForm is a client component rendered as a child).
  */
 export function CTABand({
-  headline = "Have a system that needs intelligence?",
-  body = "Tell us what you're building. We'll respond within two business days.",
-  ctaLabel = "Start a conversation",
-  ctaHref = "/contact",
+  headline = "Have a project in mind?",
+  body = "Tell us what you're building and we'll get back to you shortly.",
   className,
 }: CTABandProps) {
   return (
@@ -39,9 +39,7 @@ export function CTABand({
           {body}
         </p>
 
-        <Button variant="primary" href={ctaHref} className="mt-2xl">
-          {ctaLabel}
-        </Button>
+        <LeadForm className="mt-2xl" />
       </Container>
     </section>
   );

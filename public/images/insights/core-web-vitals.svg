@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" fill="none" role="img" aria-label="Core Web Vitals article cover">
+  <rect width="1200" height="750" fill="#0B0B0D"/>
+  <rect width="1200" height="750" fill="url(#g)"/>
+  <defs><radialGradient id="g" cx="80%" cy="20%" r="80%"><stop offset="0%" stop-color="#FFD400" stop-opacity="0.10"/><stop offset="60%" stop-color="#0B0B0D" stop-opacity="0"/></radialGradient></defs>
+  <rect x="80" y="120" width="64" height="8" fill="#FFD400"/>
+  <text x="80" y="180" font-family="monospace" font-size="22" letter-spacing="3" fill="#FFD400">PERFORMANCE</text>
+  <text x="80" y="290" font-family="Georgia, serif" font-size="76" fill="#F4F4F2" font-weight="300">Core Web Vitals</text>
+  <text x="80" y="370" font-family="Georgia, serif" font-size="76" fill="#F4F4F2" font-weight="300">in 2026</text>
+  <!-- gauges -->
+  <g transform="translate(80,440)" font-family="monospace" font-size="20" fill="#9C9CA2">
+    <text x="0" y="0">LCP</text><rect x="60" y="-16" width="220" height="10" rx="5" fill="#1C1C1F"/><rect x="60" y="-16" width="170" height="10" rx="5" fill="#FFD400"/>
+    <text x="330" y="0">INP</text><rect x="390" y="-16" width="220" height="10" rx="5" fill="#1C1C1F"/><rect x="390" y="-16" width="150" height="10" rx="5" fill="#FFD400"/>
+    <text x="660" y="0">CLS</text><rect x="720" y="-16" width="220" height="10" rx="5" fill="#1C1C1F"/><rect x="720" y="-16" width="200" height="10" rx="5" fill="#FFD400"/>
+  </g>
+  <text x="80" y="560" font-family="sans-serif" font-size="24" fill="#9C9CA2">Softiques · Insights</text>
+</svg>

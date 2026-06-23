@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${industry.label} — Industries`,
     description: industry.intro,
     openGraph: {
-      title: `${industry.label} — Softwires Industries`,
+      title: `${industry.label} — Softiques Industries`,
       description: industry.intro,
     },
   };

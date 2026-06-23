@@ -22,6 +22,17 @@ interface InsightCardProps {
   className?: string;
 }
 
+// Every card shows the description truncated to the same number of words, so
+// the text block is a consistent height across cards.
+const EXCERPT_WORDS = 18;
+
+/** Truncate a string to at most `max` words, adding an ellipsis when cut. */
+function truncateWords(text: string, max: number): string {
+  const words = text.trim().split(/\s+/);
+  if (words.length <= max) return text.trim();
+  return words.slice(0, max).join(" ") + "…";
+}
+
 /** Format an ISO date string ("2026-05-12") as "12 May 2026" without locale drift. */
 function formatDate(iso: string): string {
   const [y, m, d] = iso.split("-").map((n) => parseInt(n, 10));
@@ -47,18 +58,16 @@ export function InsightCard({
   const prefersReducedMotion = useReducedMotion();
 
   const cardContent = (
-    <Link href={`/insights/${slug}`} className="group block">
-      {/* Image area — taller 16:10 box for a substantial card. object-contain
-          shows the full CMS banner (wide ~2.13:1, with edge text) without
-          cropping; the leftover top/bottom space is the neutral
-          bg-surface-elevated backing. */}
-      <div className="relative aspect-[16/10] overflow-hidden rounded-md bg-surface-elevated">
+    <Link href={`/insights/${slug}`} className="group flex h-full flex-col">
+      {/* Image area — fixed 16:10 box. object-cover fills it without distortion;
+          covers are authored at 16:10 so nothing is cropped. */}
+      <div className="relative aspect-[16/10] overflow-hidden bg-surface-elevated">
         {image ? (
           <Image
             src={image}
             alt={imageAlt}
             fill
-            className="object-contain group-hover:scale-[1.02] transition-transform duration-normal"
+            className="object-cover group-hover:scale-[1.02] transition-transform duration-normal"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         ) : (
@@ -71,24 +80,25 @@ export function InsightCard({
         )}
       </div>
 
-      {/* Content area */}
-      <div className="p-lg">
+      {/* Content area — flex column so the date can pin to the bottom and every
+          card ends up the same height. */}
+      <div className="flex flex-grow flex-col p-lg">
         {/* Category + reading time kicker */}
         <Caption className="text-accent">
           {category} &middot; {readingTime}
         </Caption>
 
-        {/* Title */}
-        <h3 className="text-h3 mt-sm">{title}</h3>
+        {/* Title — reserve two lines so 1- and 2-line titles align */}
+        <h3 className="text-h3 mt-sm line-clamp-2 min-h-[2.6em]">{title}</h3>
 
-        {/* Excerpt */}
-        <p className="text-body-sm text-text-muted mt-sm line-clamp-2">
-          {excerpt}
+        {/* Excerpt — truncated to a fixed word count and clamped to two lines */}
+        <p className="text-body-sm text-text-muted mt-sm line-clamp-2 min-h-[2.8em]">
+          {truncateWords(excerpt, EXCERPT_WORDS)}
         </p>
 
-        {/* Date */}
+        {/* Date — pinned to the bottom of the card */}
         {date && (
-          <p className="text-mono-sm text-text-muted mt-md">{formatDate(date)}</p>
+          <p className="text-mono-sm text-text-muted mt-auto pt-md">{formatDate(date)}</p>
         )}
       </div>
     </Link>
@@ -98,7 +108,7 @@ export function InsightCard({
     return (
       <div
         className={cn(
-          "border border-border-light rounded-lg",
+          "h-full overflow-hidden border border-border-light rounded-lg",
           "bg-surface",
           className
         )}
@@ -111,7 +121,7 @@ export function InsightCard({
   return (
     <motion.div
       className={cn(
-        "border border-border-light rounded-lg",
+        "h-full overflow-hidden border border-border-light rounded-lg",
         "bg-surface",
         className
       )}

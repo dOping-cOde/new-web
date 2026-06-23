@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="400" viewBox="0 0 500 400" fill="none" role="img" aria-label="ERP solutions">
+  <rect width="500" height="400" fill="#151517"/>
+  <!-- center hub -->
+  <circle cx="250" cy="200" r="44" fill="#FFD400"/>
+  <text x="250" y="205" font-family="sans-serif" font-size="15" font-weight="700" fill="#0A0A0A" text-anchor="middle">ERP</text>
+  <!-- modules -->
+  <g font-family="monospace" font-size="12" fill="#F4F4F2" text-anchor="middle">
+    <line x1="250" y1="156" x2="250" y2="96" stroke="#2A2A2E" stroke-width="1.5"/>
+    <line x1="294" y1="200" x2="392" y2="200" stroke="#2A2A2E" stroke-width="1.5"/>
+    <line x1="206" y1="200" x2="108" y2="200" stroke="#2A2A2E" stroke-width="1.5"/>
+    <line x1="250" y1="244" x2="250" y2="304" stroke="#2A2A2E" stroke-width="1.5"/>
+    <line x1="282" y1="168" x2="350" y2="110" stroke="#2A2A2E" stroke-width="1.5"/>
+    <line x1="218" y1="168" x2="150" y2="110" stroke="#2A2A2E" stroke-width="1.5"/>
+    <rect x="206" y="60" width="88" height="36" rx="6" fill="#1C1C1F" stroke="#2A2A2E"/><text x="250" y="83">Finance</text>
+    <rect x="392" y="182" width="96" height="36" rx="6" fill="#1C1C1F" stroke="#2A2A2E"/><text x="440" y="205">Inventory</text>
+    <rect x="12" y="182" width="96" height="36" rx="6" fill="#1C1C1F" stroke="#2A2A2E"/><text x="60" y="205">Sales</text>
+    <rect x="206" y="304" width="88" height="36" rx="6" fill="#1C1C1F" stroke="#2A2A2E"/><text x="250" y="327">HR</text>
+    <rect x="330" y="74" width="96" height="36" rx="6" fill="#1C1C1F" stroke="#2A2A2E"/><text x="378" y="97">Purchasing</text>
+    <rect x="74" y="74" width="88" height="36" rx="6" fill="#1C1C1F" stroke="#2A2A2E"/><text x="118" y="97">CRM</text>
+  </g>
+  <text x="250" y="370" font-family="monospace" font-size="14" fill="#9C9CA2" text-anchor="middle">one platform · one source of truth</text>
+</svg>

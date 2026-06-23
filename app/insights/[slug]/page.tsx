@@ -13,13 +13,14 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Container } from "@/components/layout/Container";
 import { insightJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
 
-// Revalidate every 5 minutes; allow posts not in the prebuilt set to render
-// on demand (the CMS can publish at any time).
-export const revalidate = 300;
+// Only published articles are prebuilt. Scheduled (future-dated) posts aren't in
+// generateStaticParams yet, so allow on-demand rendering and revalidate hourly:
+// once a post's date arrives, getInsightBySlug returns it and the page goes live.
 export const dynamicParams = true;
+export const revalidate = 3600;
 
 export async function generateStaticParams() {
-  return getInsightSlugs(); // Array<{ slug: string }>
+  return getInsightSlugs(); // published slugs only
 }
 
 // ============================================================
@@ -36,7 +37,7 @@ export async function generateMetadata({
   if (!post) return { title: "Not Found" };
 
   return {
-    title: `${post.metaTitle} — Softwires`,
+    title: `${post.metaTitle} — Softiques`,
     description: post.metaDescription,
     ...(post.metaKeyword ? { keywords: post.metaKeyword } : {}),
     openGraph: {
@@ -93,7 +94,7 @@ export default async function InsightPostPage({
     .filter(Boolean)
     .join(" · ");
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://softwires.in";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://softiques.com";
 
   return (
     <article>

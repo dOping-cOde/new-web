@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Eleven AI systems built for production — transformer monitoring to cancer screening. Industries: Energy, Healthcare, Infrastructure, Insurance.",
   openGraph: {
-    title: "Portfolio — Softwires",
+    title: "Portfolio — Softiques",
     description:
       "Eleven AI systems built for production — transformer monitoring to cancer screening. Industries: Energy, Healthcare, Infrastructure, Insurance.",
   },

@@ -60,7 +60,7 @@ function ParticleScene() {
   return (
     <Points ref={pointsRef} positions={positions} stride={3}>
       <PointMaterial
-        color="#3D2BFF"
+        color="#FFD400"
         size={0.03}
         transparent={true}
         opacity={0.4}
@@ -91,12 +91,12 @@ function ParticleFallbackSVG({ className = "" }: { className?: string }) {
           height="40"
           patternUnits="userSpaceOnUse"
         >
-          <circle cx="4"  cy="4"  r="1" fill="#3D2BFF" opacity="0.25" />
-          <circle cx="20" cy="14" r="0.8" fill="#3D2BFF" opacity="0.18" />
-          <circle cx="36" cy="8"  r="1.2" fill="#3D2BFF" opacity="0.20" />
-          <circle cx="12" cy="30" r="0.7" fill="#3D2BFF" opacity="0.15" />
-          <circle cx="28" cy="36" r="1"   fill="#3D2BFF" opacity="0.22" />
-          <circle cx="8"  cy="20" r="0.6" fill="#3D2BFF" opacity="0.12" />
+          <circle cx="4"  cy="4"  r="1" fill="#FFD400" opacity="0.25" />
+          <circle cx="20" cy="14" r="0.8" fill="#FFD400" opacity="0.18" />
+          <circle cx="36" cy="8"  r="1.2" fill="#FFD400" opacity="0.20" />
+          <circle cx="12" cy="30" r="0.7" fill="#FFD400" opacity="0.15" />
+          <circle cx="28" cy="36" r="1"   fill="#FFD400" opacity="0.22" />
+          <circle cx="8"  cy="20" r="0.6" fill="#FFD400" opacity="0.12" />
         </pattern>
       </defs>
       <rect width="100%" height="100%" fill="url(#particle-pattern)" />

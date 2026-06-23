@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
   <defs>
     <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M 0 0 L 6 3 L 0 6 Z" fill="#3D2BFF"/>
+      <path d="M 0 0 L 6 3 L 0 6 Z" fill="#FFD400"/>
     </marker>
     <filter id="hub-shadow">
-      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#3D2BFF" flood-opacity="0.2"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#FFD400" flood-opacity="0.2"/>
     </filter>
   </defs>
 
@@ -24,38 +24,38 @@
   <text x="65" y="122" font-family="sans-serif" font-size="8" fill="#8A8C92" text-anchor="middle">Intake</text>
 
   <!-- Arrow -->
-  <line x1="110" y1="84" x2="136" y2="84" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="110" y1="84" x2="136" y2="84" stroke="#FFD400" stroke-width="1.5" marker-end="url(#arrow)"/>
 
   <!-- Biomarker collection -->
   <rect x="138" y="48" width="90" height="72" rx="8" fill="#FFFFFF" stroke="#E8E6DF" stroke-width="1.5"/>
   <!-- Vial icon -->
-  <rect x="172" y="58" width="12" height="22" rx="3" fill="none" stroke="#3D2BFF" stroke-width="1.5"/>
-  <rect x="172" y="68" width="12" height="12" rx="0" fill="#3D2BFF" opacity="0.3"/>
-  <line x1="169" y1="62" x2="187" y2="62" stroke="#3D2BFF" stroke-width="1"/>
+  <rect x="172" y="58" width="12" height="22" rx="3" fill="none" stroke="#FFD400" stroke-width="1.5"/>
+  <rect x="172" y="68" width="12" height="12" rx="0" fill="#FFD400" opacity="0.3"/>
+  <line x1="169" y1="62" x2="187" y2="62" stroke="#FFD400" stroke-width="1"/>
   <text x="183" y="110" font-family="sans-serif" font-size="9" fill="#0A0B0D" text-anchor="middle" font-weight="600">Biomarker</text>
   <text x="183" y="122" font-family="sans-serif" font-size="8" fill="#8A8C92" text-anchor="middle">Collection</text>
 
   <!-- Arrow -->
-  <line x1="228" y1="84" x2="254" y2="84" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="228" y1="84" x2="254" y2="84" stroke="#FFD400" stroke-width="1.5" marker-end="url(#arrow)"/>
 
   <!-- AI Risk Score -->
-  <rect x="256" y="48" width="90" height="72" rx="8" fill="#EDE9FF" stroke="#3D2BFF" stroke-width="2"/>
+  <rect x="256" y="48" width="90" height="72" rx="8" fill="#EDE9FF" stroke="#FFD400" stroke-width="2"/>
   <!-- Score gauge -->
   <path d="M 285 85 A 20 20 0 0 1 321 85" fill="none" stroke="#E8E6DF" stroke-width="4"/>
-  <path d="M 285 85 A 20 20 0 0 1 310 68" fill="none" stroke="#3D2BFF" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="303" cy="84" r="4" fill="#3D2BFF"/>
-  <text x="301" y="110" font-family="sans-serif" font-size="9" fill="#3D2BFF" text-anchor="middle" font-weight="600">AI Risk</text>
-  <text x="301" y="122" font-family="sans-serif" font-size="8" fill="#3D2BFF" text-anchor="middle">Score</text>
+  <path d="M 285 85 A 20 20 0 0 1 310 68" fill="none" stroke="#FFD400" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="303" cy="84" r="4" fill="#FFD400"/>
+  <text x="301" y="110" font-family="sans-serif" font-size="9" fill="#FFD400" text-anchor="middle" font-weight="600">AI Risk</text>
+  <text x="301" y="122" font-family="sans-serif" font-size="8" fill="#FFD400" text-anchor="middle">Score</text>
 
   <!-- Arrow -->
-  <line x1="346" y1="84" x2="372" y2="84" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="346" y1="84" x2="372" y2="84" stroke="#FFD400" stroke-width="1.5" marker-end="url(#arrow)"/>
 
   <!-- Specialist Referral -->
   <rect x="374" y="48" width="106" height="72" rx="8" fill="#FFFFFF" stroke="#E8E6DF" stroke-width="1.5"/>
   <!-- Doc icon -->
-  <circle cx="410" cy="67" r="10" fill="#3D2BFF" opacity="0.15"/>
-  <circle cx="410" cy="67" r="6" fill="#3D2BFF" opacity="0.3"/>
-  <path d="M 415 62 L 415 72 M 410 67 L 420 67" stroke="#3D2BFF" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="410" cy="67" r="10" fill="#FFD400" opacity="0.15"/>
+  <circle cx="410" cy="67" r="6" fill="#FFD400" opacity="0.3"/>
+  <path d="M 415 62 L 415 72 M 410 67 L 420 67" stroke="#FFD400" stroke-width="1.5" stroke-linecap="round"/>
   <text x="427" y="110" font-family="sans-serif" font-size="9" fill="#0A0B0D" text-anchor="middle" font-weight="600">Specialist</text>
   <text x="427" y="122" font-family="sans-serif" font-size="8" fill="#8A8C92" text-anchor="middle">Referral</text>
 
@@ -65,16 +65,16 @@
 
   <!-- ─── HUB section ─── -->
   <!-- Center hub -->
-  <circle cx="250" cy="268" r="48" fill="#EDE9FF" stroke="#3D2BFF" stroke-width="2" filter="url(#hub-shadow)"/>
-  <text x="250" y="262" font-family="sans-serif" font-size="11" fill="#3D2BFF" text-anchor="middle" font-weight="700">AI</text>
-  <text x="250" y="278" font-family="sans-serif" font-size="9" fill="#3D2BFF" text-anchor="middle">Risk Engine</text>
+  <circle cx="250" cy="268" r="48" fill="#EDE9FF" stroke="#FFD400" stroke-width="2" filter="url(#hub-shadow)"/>
+  <text x="250" y="262" font-family="sans-serif" font-size="11" fill="#FFD400" text-anchor="middle" font-weight="700">AI</text>
+  <text x="250" y="278" font-family="sans-serif" font-size="9" fill="#FFD400" text-anchor="middle">Risk Engine</text>
   <text x="250" y="291" font-family="sans-serif" font-size="8" fill="#8A8C92" text-anchor="middle">100+ biomarkers</text>
 
   <!-- Spoke: Lab -->
   <line x1="208" y1="240" x2="108" y2="202" stroke="#E8E6DF" stroke-width="1.5"/>
   <rect x="50" y="180" width="58" height="42" rx="6" fill="#FFFFFF" stroke="#E8E6DF" stroke-width="1.5"/>
   <!-- Flask icon -->
-  <path d="M 71 192 L 68 210 L 83 210 L 80 192 Z" fill="#3D2BFF" opacity="0.15" stroke="#3D2BFF" stroke-width="1" stroke-linejoin="round"/>
+  <path d="M 71 192 L 68 210 L 83 210 L 80 192 Z" fill="#FFD400" opacity="0.15" stroke="#FFD400" stroke-width="1" stroke-linejoin="round"/>
   <text x="79" y="230" font-family="sans-serif" font-size="9" fill="#0A0B0D" text-anchor="middle">Lab</text>
 
   <!-- Spoke: Imaging -->
@@ -95,12 +95,12 @@
   <rect x="214" y="160" width="72" height="42" rx="6" fill="#FFFFFF" stroke="#E8E6DF" stroke-width="1.5"/>
   <!-- X-ray icon -->
   <rect x="228" y="168" width="24" height="24" rx="2" fill="#F0EEE8"/>
-  <ellipse cx="240" cy="180" rx="7" ry="9" fill="none" stroke="#3D2BFF" stroke-width="1"/>
-  <line x1="240" y1="171" x2="240" y2="189" stroke="#3D2BFF" stroke-width="0.5"/>
+  <ellipse cx="240" cy="180" rx="7" ry="9" fill="none" stroke="#FFD400" stroke-width="1"/>
+  <line x1="240" y1="171" x2="240" y2="189" stroke="#FFD400" stroke-width="0.5"/>
   <text x="250" y="212" font-family="sans-serif" font-size="9" fill="#0A0B0D" text-anchor="middle">Imaging</text>
 
   <!-- Bottom output: 15 min label -->
-  <line x1="250" y1="316" x2="250" y2="352" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <rect x="194" y="356" width="112" height="30" rx="6" fill="#3D2BFF"/>
+  <line x1="250" y1="316" x2="250" y2="352" stroke="#FFD400" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="194" y="356" width="112" height="30" rx="6" fill="#FFD400"/>
   <text x="250" y="376" font-family="sans-serif" font-size="9" fill="#FFFFFF" text-anchor="middle" font-weight="600">Decision &lt; 15 min</text>
 </svg>

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     "AI engineering for energy, healthcare, infrastructure, mining, financial services, retail, FMCG, and construction. Shipped systems, not prototypes.",
   openGraph: {
-    title: "Industries — Softwires",
+    title: "Industries — Softiques",
     description:
       "AI engineering for energy, healthcare, infrastructure, mining, financial services, retail, FMCG, and construction. Shipped systems, not prototypes.",
   },

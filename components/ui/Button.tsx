@@ -38,13 +38,13 @@ export function Button({
 
   const variantStyles = {
     primary: cn(
-      "bg-text text-text-inverted",
-      "hover:bg-accent"
+      "bg-accent text-bg-dark",
+      "hover:bg-accent-hover"
     ),
     secondary: cn(
       "bg-transparent border border-border-light",
       "text-text",
-      "hover:bg-text/5"
+      "hover:border-accent hover:text-accent"
     ),
   };
 

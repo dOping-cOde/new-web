@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" fill="none" role="img" aria-label="Accessibility article cover">
+  <rect width="1200" height="750" fill="#0B0B0D"/>
+  <rect width="1200" height="750" fill="url(#g)"/>
+  <defs><radialGradient id="g" cx="80%" cy="20%" r="80%"><stop offset="0%" stop-color="#FFD400" stop-opacity="0.10"/><stop offset="60%" stop-color="#0B0B0D" stop-opacity="0"/></radialGradient></defs>
+  <rect x="80" y="120" width="64" height="8" fill="#FFD400"/>
+  <text x="80" y="180" font-family="monospace" font-size="22" letter-spacing="3" fill="#FFD400">ACCESSIBILITY</text>
+  <text x="80" y="290" font-family="Georgia, serif" font-size="76" fill="#F4F4F2" font-weight="300">Accessible</text>
+  <text x="80" y="368" font-family="Georgia, serif" font-size="76" fill="#F4F4F2" font-weight="300">by Default</text>
+  <!-- a11y figure in focus ring -->
+  <g transform="translate(120,440)">
+    <rect x="-24" y="-24" width="128" height="128" rx="14" fill="none" stroke="#FFD400" stroke-width="3" stroke-dasharray="8 8"/>
+    <circle cx="40" cy="14" r="13" fill="#FFD400"/>
+    <path d="M10 44 h60 M40 36 v44 M40 80 l-20 24 M40 80 l20 24" stroke="#F4F4F2" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <text x="80" y="592" font-family="sans-serif" font-size="24" fill="#9C9CA2">Softiques · Insights</text>
+</svg>

@@ -5,8 +5,8 @@
       <stop offset="100%" stop-color="#0E0F14"/>
     </linearGradient>
     <linearGradient id="bar-report" x1="0%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#3D2BFF" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#3D2BFF" stop-opacity="0.8"/>
+      <stop offset="0%" stop-color="#FFD400" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FFD400" stop-opacity="0.8"/>
     </linearGradient>
   </defs>
 
@@ -25,16 +25,16 @@
   <!-- Consistent header/footer pattern suggesting standardisation -->
   <!-- Global header band -->
   <rect x="60" y="80" width="1480" height="36" rx="4" fill="#1A1B1E" stroke="#2A2B30" stroke-width="1"/>
-  <rect x="60" y="80" width="8" height="36" fill="#3D2BFF" rx="2"/>
+  <rect x="60" y="80" width="8" height="36" fill="#FFD400" rx="2"/>
   <text x="82" y="102" font-family="monospace" font-size="10" fill="#8A8C92" letter-spacing="1">SOFTWIRE ENTERPRISE REPORTING SUITE</text>
   <text x="1520" y="98" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">v4.2.1</text>
-  <text x="1520" y="110" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="end">LIVE</text>
+  <text x="1520" y="110" font-family="monospace" font-size="8" fill="#FFD400" text-anchor="end">LIVE</text>
 
   <!-- === REPORT 1: KPI Dashboard Card === -->
   <rect x="60" y="136" width="460" height="300" rx="4" fill="#0F1018" stroke="#1F2024" stroke-width="1"/>
   <!-- Card header -->
   <rect x="60" y="136" width="460" height="28" rx="4" fill="#1A1B1E"/>
-  <rect x="60" y="136" width="4" height="28" fill="#3D2BFF"/>
+  <rect x="60" y="136" width="4" height="28" fill="#FFD400"/>
   <text x="76" y="155" font-family="monospace" font-size="9" fill="#8A8C92" letter-spacing="1">EXECUTIVE KPI DASHBOARD</text>
   <text x="508" y="155" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">Q4 2024</text>
 
@@ -72,7 +72,7 @@
   <!-- === REPORT 2: Table Report === -->
   <rect x="540" y="136" width="500" height="300" rx="4" fill="#0F1018" stroke="#1F2024" stroke-width="1"/>
   <rect x="540" y="136" width="500" height="28" rx="4" fill="#1A1B1E"/>
-  <rect x="540" y="136" width="4" height="28" fill="#3D2BFF"/>
+  <rect x="540" y="136" width="4" height="28" fill="#FFD400"/>
   <text x="556" y="155" font-family="monospace" font-size="9" fill="#8A8C92" letter-spacing="1">REGIONAL PERFORMANCE TABLE</text>
   <text x="1028" y="155" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">YTD 2024</text>
 
@@ -144,7 +144,7 @@
   <!-- === REPORT 3: Chart Report === -->
   <rect x="1060" y="136" width="480" height="300" rx="4" fill="#0F1018" stroke="#1F2024" stroke-width="1"/>
   <rect x="1060" y="136" width="480" height="28" rx="4" fill="#1A1B1E"/>
-  <rect x="1060" y="136" width="4" height="28" fill="#3D2BFF"/>
+  <rect x="1060" y="136" width="4" height="28" fill="#FFD400"/>
   <text x="1076" y="155" font-family="monospace" font-size="9" fill="#8A8C92" letter-spacing="1">REVENUE TREND CHART</text>
   <text x="1528" y="155" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">12M ROLLING</text>
 
@@ -168,12 +168,12 @@
 
   <!-- Area chart -->
   <polygon points="1098,392 1134,370 1170,355 1206,342 1242,330 1278,318 1314,308 1350,295 1386,282 1422,268 1458,258 1494,245 1528,232 1528,392"
-    fill="#3D2BFF" opacity="0.07"/>
+    fill="#FFD400" opacity="0.07"/>
   <!-- Line -->
   <polyline points="1098,392 1134,370 1170,355 1206,342 1242,330 1278,318 1314,308 1350,295 1386,282 1422,268 1458,258 1494,245 1528,232"
-    fill="none" stroke="#3D2BFF" stroke-width="2"/>
+    fill="none" stroke="#FFD400" stroke-width="2"/>
   <!-- Data points -->
-  <g fill="#3D2BFF" stroke="#0F1018" stroke-width="2">
+  <g fill="#FFD400" stroke="#0F1018" stroke-width="2">
     <circle cx="1098" cy="392" r="3"/>
     <circle cx="1170" cy="355" r="3"/>
     <circle cx="1242" cy="330" r="3"/>
@@ -190,7 +190,7 @@
   <text x="1314" y="405" font-family="monospace" font-size="7" fill="#555860">Jul</text>
   <text x="1386" y="405" font-family="monospace" font-size="7" fill="#555860">Sep</text>
   <text x="1458" y="405" font-family="monospace" font-size="7" fill="#555860">Nov</text>
-  <text x="1528" y="405" font-family="monospace" font-size="7" fill="#3D2BFF" text-anchor="end">Dec</text>
+  <text x="1528" y="405" font-family="monospace" font-size="7" fill="#FFD400" text-anchor="end">Dec</text>
 
   <!-- Card footer -->
   <rect x="1060" y="408" width="480" height="28" rx="4" fill="#0A0B0D"/>
@@ -201,7 +201,7 @@
   <!-- Report 4: Operations Status -->
   <rect x="60" y="464" width="460" height="220" rx="4" fill="#0F1018" stroke="#1F2024" stroke-width="1"/>
   <rect x="60" y="464" width="460" height="28" rx="4" fill="#1A1B1E"/>
-  <rect x="60" y="464" width="4" height="28" fill="#3D2BFF"/>
+  <rect x="60" y="464" width="4" height="28" fill="#FFD400"/>
   <text x="76" y="483" font-family="monospace" font-size="9" fill="#8A8C92" letter-spacing="1">OPERATIONS STATUS REPORT</text>
   <!-- Status items -->
   <text x="76" y="514" font-family="monospace" font-size="8" fill="#4ADE80">● PRODUCTION  </text>
@@ -223,7 +223,7 @@
   <!-- Report 5: Product Analytics -->
   <rect x="540" y="464" width="500" height="220" rx="4" fill="#0F1018" stroke="#1F2024" stroke-width="1"/>
   <rect x="540" y="464" width="500" height="28" rx="4" fill="#1A1B1E"/>
-  <rect x="540" y="464" width="4" height="28" fill="#3D2BFF"/>
+  <rect x="540" y="464" width="4" height="28" fill="#FFD400"/>
   <text x="556" y="483" font-family="monospace" font-size="9" fill="#8A8C92" letter-spacing="1">PRODUCT USAGE ANALYTICS</text>
   <!-- Mini bar chart -->
   <g fill="url(#bar-report)">
@@ -252,7 +252,7 @@
   <text x="808" y="646" font-family="monospace" font-size="7" fill="#555860">A</text>
   <text x="842" y="646" font-family="monospace" font-size="7" fill="#555860">S</text>
   <text x="876" y="646" font-family="monospace" font-size="7" fill="#555860">O</text>
-  <text x="910" y="646" font-family="monospace" font-size="7" fill="#3D2BFF">N</text>
+  <text x="910" y="646" font-family="monospace" font-size="7" fill="#FFD400">N</text>
   <text x="944" y="646" font-family="monospace" font-size="7" fill="#555860">D</text>
   <!-- DAU metric -->
   <text x="970" y="510" font-family="monospace" font-size="8" fill="#555860">DAU</text>
@@ -268,7 +268,7 @@
   <!-- Report 6: Finance Summary -->
   <rect x="1060" y="464" width="480" height="220" rx="4" fill="#0F1018" stroke="#1F2024" stroke-width="1"/>
   <rect x="1060" y="464" width="480" height="28" rx="4" fill="#1A1B1E"/>
-  <rect x="1060" y="464" width="4" height="28" fill="#3D2BFF"/>
+  <rect x="1060" y="464" width="4" height="28" fill="#FFD400"/>
   <text x="1076" y="483" font-family="monospace" font-size="9" fill="#8A8C92" letter-spacing="1">FINANCE CLOSE REPORT</text>
   <text x="1528" y="483" font-family="monospace" font-size="8" fill="#555860" text-anchor="end">DEC 2024</text>
   <!-- Finance table -->
@@ -288,18 +288,18 @@
   <line x1="1076" y1="614" x2="1528" y2="614" stroke="#1F2024" stroke-width="0.5"/>
   <text x="1076" y="630" font-family="monospace" font-size="8" fill="#E8E9EB" font-weight="bold">EBITDA</text>
   <text x="1528" y="630" font-family="monospace" font-size="8" fill="#E8E9EB" text-anchor="end">$16,404,000</text>
-  <text x="1076" y="646" font-family="monospace" font-size="8" fill="#3D2BFF">  EBITDA Margin</text>
-  <text x="1528" y="646" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="end">19.5%</text>
+  <text x="1076" y="646" font-family="monospace" font-size="8" fill="#FFD400">  EBITDA Margin</text>
+  <text x="1528" y="646" font-family="monospace" font-size="8" fill="#FFD400" text-anchor="end">19.5%</text>
   <!-- Footer -->
   <rect x="1060" y="656" width="480" height="28" rx="4" fill="#0A0B0D"/>
   <text x="1076" y="674" font-family="monospace" font-size="7" fill="#2A2B30">Preliminary · Unaudited · Prepared per IFRS · CFO review pending</text>
 
   <!-- Global footer band -->
   <rect x="60" y="712" width="1480" height="36" rx="4" fill="#1A1B1E" stroke="#2A2B30" stroke-width="1"/>
-  <rect x="60" y="712" width="8" height="36" fill="#3D2BFF" rx="2"/>
+  <rect x="60" y="712" width="8" height="36" fill="#FFD400" rx="2"/>
   <text x="82" y="730" font-family="monospace" font-size="8" fill="#555860">Generated: 2024-12-31 23:59 UTC  ·  Distribution: EXEC, FINANCE, OPS, PRODUCT</text>
   <text x="82" y="742" font-family="monospace" font-size="7" fill="#2A2B30">CONFIDENTIAL — Softwire Enterprise Reporting Suite v4.2.1 — Report ID: RPT-2024-Q4-0847</text>
-  <text x="1528" y="736" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="end">247 reports</text>
+  <text x="1528" y="736" font-family="monospace" font-size="8" fill="#FFD400" text-anchor="end">247 reports</text>
   <text x="1528" y="748" font-family="monospace" font-size="7" fill="#555860" text-anchor="end">scheduled today</text>
 
   <!-- Label -->

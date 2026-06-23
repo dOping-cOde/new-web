@@ -5,13 +5,13 @@
       <stop offset="100%" stop-color="#0E0F14"/>
     </linearGradient>
     <linearGradient id="depth-fade" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#3D2BFF" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#3D2BFF" stop-opacity="0.05"/>
+      <stop offset="0%" stop-color="#FFD400" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#FFD400" stop-opacity="0.05"/>
     </linearGradient>
     <linearGradient id="scan-line" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#3D2BFF" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#3D2BFF" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#3D2BFF" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#FFD400" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FFD400" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FFD400" stop-opacity="0"/>
     </linearGradient>
     <filter id="glow">
       <feGaussianBlur stdDeviation="4" result="blur"/>
@@ -72,7 +72,7 @@
 
   <!-- Point cloud dots on arch -->
   <!-- Dense near, sparse far (left side = near viewer) -->
-  <g fill="#3D2BFF" opacity="0.8">
+  <g fill="#FFD400" opacity="0.8">
     <!-- Left arch cluster (near) -->
     <circle cx="200" cy="580" r="3"/>
     <circle cx="220" cy="562" r="2.5"/>
@@ -92,7 +92,7 @@
     <circle cx="550" cy="310" r="2"/>
   </g>
   <!-- Scattered additional cloud points -->
-  <g fill="#3D2BFF">
+  <g fill="#FFD400">
     <circle cx="215" cy="575" r="1.5" opacity="0.6"/>
     <circle cx="225" cy="569" r="1" opacity="0.5"/>
     <circle cx="243" cy="557" r="1.5" opacity="0.7"/>
@@ -107,7 +107,7 @@
     <circle cx="448" cy="400" r="1" opacity="0.4"/>
   </g>
   <!-- Right arch - fading (distance) -->
-  <g fill="#3D2BFF" opacity="0.35">
+  <g fill="#FFD400" opacity="0.35">
     <circle cx="650" cy="272" r="1.5"/>
     <circle cx="700" cy="256" r="1.5"/>
     <circle cx="750" cy="250" r="1.5"/>
@@ -166,9 +166,9 @@
   <line x1="200" y1="580" x2="500" y2="240" stroke="url(#scan-line)" stroke-width="1" opacity="0.3"/>
 
   <!-- LiDAR origin -->
-  <circle cx="200" cy="580" r="8" fill="#3D2BFF" opacity="0.3" filter="url(#glow-sm)"/>
-  <circle cx="200" cy="580" r="4" fill="#3D2BFF" opacity="0.8"/>
-  <text x="214" y="572" font-family="monospace" font-size="9" fill="#3D2BFF">LiDAR UNIT 01</text>
+  <circle cx="200" cy="580" r="8" fill="#FFD400" opacity="0.3" filter="url(#glow-sm)"/>
+  <circle cx="200" cy="580" r="4" fill="#FFD400" opacity="0.8"/>
+  <text x="214" y="572" font-family="monospace" font-size="9" fill="#FFD400">LiDAR UNIT 01</text>
 
   <!-- Depth indicator -->
   <text x="120" y="620" font-family="monospace" font-size="9" fill="#555860">NEAR</text>
@@ -177,8 +177,8 @@
   <!-- Depth gradient bar -->
   <defs>
     <linearGradient id="depth-bar" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#3D2BFF" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#3D2BFF" stop-opacity="0.1"/>
+      <stop offset="0%" stop-color="#FFD400" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FFD400" stop-opacity="0.1"/>
     </linearGradient>
   </defs>
   <rect x="120" y="632" width="1360" height="3" fill="url(#depth-bar)"/>
@@ -200,7 +200,7 @@
   <text x="1490" y="260" font-family="monospace" font-size="9" fill="#4ADE80" text-anchor="end">0.04 LOW</text>
   <rect x="1274" y="266" width="246" height="1" fill="#1F2024"/>
   <text x="1274" y="284" font-family="monospace" font-size="9" fill="#555860">SCAN COVERAGE</text>
-  <text x="1490" y="284" font-family="monospace" font-size="9" fill="#3D2BFF" text-anchor="end">94.7%</text>
+  <text x="1490" y="284" font-family="monospace" font-size="9" fill="#FFD400" text-anchor="end">94.7%</text>
   <rect x="1274" y="290" width="246" height="1" fill="#1F2024"/>
   <text x="1274" y="308" font-family="monospace" font-size="9" fill="#555860">CONDITION GRADE</text>
   <text x="1490" y="308" font-family="monospace" font-size="9" fill="#E8E9EB" text-anchor="end">B+ GOOD</text>

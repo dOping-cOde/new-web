@@ -3,7 +3,6 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { HeroLight } from "@/components/sections/HeroLight";
 import { CTABand } from "@/components/sections/CTABand";
-import { CapabilityCard } from "@/components/cards/CapabilityCard";
 import { Container } from "@/components/layout/Container";
 import { Pill } from "@/components/ui/Pill";
 import { SERVICES, getServiceBySlug, getServiceSlugs } from "@/lib/services";
@@ -21,115 +20,46 @@ export const dynamicParams = false;
 // ─── Service Diagram alt-text ─────────────────────────────────────────────────
 
 const DIAGRAM_ALT: Record<string, string> = {
-  "ai-agents": "Agent loop diagram: Perceive → Plan → Act → Verify circular flow",
-  chatbots: "Conversational AI architecture with RAG pipeline: Document → Embed → Vector Store → Retrieve → Generate",
-  "enterprise-ai": "Enterprise AI analytics architecture: Data Sources → Smart OLAP Engine → BI Tools, with governance, AI/ML, and cloud layers",
+  websites: "Website delivery flow: design → build → optimise → launch",
+  apps: "App architecture: client app → API layer → database and integrations",
+  gaming: "Game development pipeline: design → engine build → playtest → live-ops",
+  erp: "ERP module map: finance, inventory, HR, and sales unified on one platform",
+  ai: "AI solution architecture with a retrieval-augmented generation pipeline",
+  ml: "Machine learning lifecycle: data → train → deploy → monitor → retrain",
 };
-
-// ─── Data & Analytics sub-cards ──────────────────────────────────────────────
-
-const DATA_ANALYTICS_CARDS = [
-  {
-    title: "Unified Semantic Fabric",
-    description: "One source of truth across BI and AI",
-    tags: ["Semantic Layer", "dbt", "GraphQL"],
-    href: "/portfolio/unified-semantic-fabric",
-  },
-  {
-    title: "BI Acceleration Engine",
-    description: "Sub-second analytics on enterprise datasets at scale",
-    tags: ["OLAP", "In-Memory", "Aggregation"],
-    href: "/portfolio/bi-acceleration-engine",
-  },
-  {
-    title: "Multidimensional OLAP Modernization",
-    description: "Replace legacy cube engines — SSAS, Essbase, TM1",
-    tags: ["Cube Migration", "Cloud OLAP", "MDX"],
-    href: "/portfolio/multidimensional-olap-modernization",
-  },
-  {
-    title: "Cloud Analytics Cost Optimization",
-    description: "Reduce Snowflake/Databricks/BigQuery spend by 40%+",
-    tags: ["FinOps", "Query Optimization", "Caching"],
-    href: "/portfolio/cloud-analytics-cost-optimization",
-  },
-  {
-    title: "Conversational Data Agent",
-    description: "Natural-language analytics on enterprise data",
-    tags: ["NL-to-SQL", "LLM", "Data Catalog"],
-    href: "/portfolio/conversational-data-agent",
-  },
-  {
-    title: "Enterprise Reporting Suite",
-    description: "Unified reporting across business units",
-    tags: ["Dashboards", "Embedded BI", "Scheduling"],
-    href: "/portfolio/enterprise-reporting-suite",
-  },
-];
-
-// ─── Enterprise AI sub-cards ─────────────────────────────────────────────────
-
-const ENTERPRISE_AI_CARDS = [
-  {
-    title: "Smart OLAP Analytics Engine",
-    description: "Sub-second queries on trillion-row datasets without pre-aggregation",
-    tags: ["OLAP", "In-Memory", "Columnar"],
-    href: "/portfolio",
-  },
-  {
-    title: "Universal BI Connectivity",
-    description: "Native integration with Tableau, Power BI, Excel, and Looker",
-    tags: ["BI Tools", "ODBC/JDBC", "Live Connect"],
-    href: "/portfolio",
-  },
-  {
-    title: "Cloud Data Platform Acceleration",
-    description: "Accelerate Snowflake, Databricks, and BigQuery without data movement",
-    tags: ["Snowflake", "Databricks", "BigQuery"],
-    href: "/portfolio",
-  },
-  {
-    title: "AI-Powered Self-Service Analytics",
-    description: "Natural-language exploration with governed access and lineage tracking",
-    tags: ["NL Queries", "AI/ML", "Auto-Insights"],
-    href: "/portfolio",
-  },
-  {
-    title: "Enterprise Data Governance",
-    description: "Row-level security, audit trails, and compliance across all analytics",
-    tags: ["RBAC", "Lineage", "Compliance"],
-    href: "/portfolio",
-  },
-  {
-    title: "Operational Intelligence Layer",
-    description: "Real-time dashboards and alerting for mission-critical KPIs",
-    tags: ["Real-Time", "Alerting", "Embedded BI"],
-    href: "/portfolio",
-  },
-];
 
 // ─── Per-service production copy ──────────────────────────────────────────────
 
 const SERVICE_COPY: Record<string, string[]> = {
-  "ai-agents": [
-    "We build multi-agent systems that perceive their environment, plan across multiple steps, and execute actions in operational infrastructure. These are not chatbot wrappers — they are autonomous pipelines integrated directly into enterprise workflows, API surfaces, and IoT event streams.",
-    "Each agent system ships with deterministic fallbacks and human escalation paths. We design for auditability: every decision is logged, every action is reversible, and every threshold is configurable. Production AI that your operations team can actually trust.",
-    "Deployment targets include incident management platforms, procurement systems, field operations tools, and compliance pipelines. We build on LangGraph and CrewAI for orchestration, MCP for model-context management, and support both cloud-hosted and air-gapped local model deployments.",
+  websites: [
+    "We build websites the way product teams build software: component-driven, version-controlled, and measured. Whether it's a marketing site, a storefront, or a logged-in web app, the foundation is the same — a modern React/Next.js stack rendered on the server for speed and search visibility.",
+    "Performance is not an afterthought. Every build is tuned against Core Web Vitals, ships accessible markup to WCAG standards, and is wired to a headless CMS so your team can publish without touching code.",
+    "From there we extend as far as you need: authentication, payments, search, internationalisation, and integrations with the tools you already run. You get a site that loads fast, ranks well, and is genuinely easy to maintain.",
   ],
-  chatbots: [
-    "We build production-grade conversational AI grounded in your knowledge base, not in generic LLM priors. Every system is engineered for accuracy, auditability, and graceful degradation — not for demo performance.",
-    "Our RAG architectures connect directly to your existing documentation systems, knowledge bases, and operational runbooks. We handle chunking strategy, embedding selection, vector store design, and retrieval tuning. The result is a system that surfaces the right answer, not the plausible one.",
-    "Voice-enabled interfaces extend coverage to field environments where hands-free operation is non-negotiable. We integrate ASR and TTS pipelines with function-calling architectures to build interfaces that route, escalate, and act — not just respond.",
+  apps: [
+    "We design and build mobile and web applications end-to-end — interface, API, database, and the deployment pipeline that ties them together. For most products we recommend a cross-platform stack so a single codebase serves both iOS and Android, cutting cost and time to market.",
+    "When raw performance, deep hardware access, or platform-specific polish matters, we build fully native. Either way, the back end is a tested, documented API with the auth, observability, and CI/CD that keep releases boring — in the best way.",
+    "We sweat the details that decide whether an app gets kept or deleted: cold-start time, offline behaviour, push notifications, and a UI that feels right on each platform.",
   ],
-  "data-analytics": [
-    "We build analytics infrastructure that makes enterprise data genuinely useful at sub-second query response times. Semantic data layers eliminate metric inconsistencies across business units and BI tools. OLAP modernization replaces legacy cube engines with architectures that deliver 1000x faster analytical throughput.",
-    "Our natural-language analytics interfaces let non-technical stakeholders query enterprise data without SQL knowledge — connected to live data catalogs, not static snapshots. We build on production-grade NL-to-SQL architectures with LLM reasoning layers that understand your specific business schema.",
-    "Cost optimization engagements consistently reduce Snowflake, Databricks, and BigQuery spend by 40% or more through query profiling, materialization strategy, and caching architecture. We treat analytics infrastructure as an engineering problem, not a configuration problem.",
+  gaming: [
+    "We build games and interactive experiences across mobile, web, and cross-platform targets — from quick hyper-casual loops to real-time multiplayer. We work in Unity and Unreal for native-grade builds, and in WebGL and Three.js when the game needs to run straight in the browser.",
+    "Monetisation, analytics, and live-ops are designed in from the start, not bolted on after launch. Leaderboards, matchmaking, and low-latency networking are handled with battle-tested infrastructure so your players get a smooth, fair experience.",
+    "Beyond games, we bring the same toolkit to gamified products, AR experiences, and interactive 3D — anywhere an interface needs to be more engaging than a static screen.",
   ],
-  "enterprise-ai": [
-    "We build AI-native analytics platforms that deliver interactive, sub-second insights on datasets spanning trillions of data points. Our smart OLAP engine sits between your cloud data warehouse and your BI tools — accelerating every query without requiring data movement, pre-aggregation, or changes to existing dashboards. The result is analytics that feel instantaneous, even at enterprise scale.",
-    "Every platform we ship connects natively to the tools your teams already use — Tableau, Power BI, Excel, Looker, and custom applications via ODBC/JDBC. We eliminate the gap between where data lives and where decisions happen. AI-powered self-service layers let business users explore data through natural language, surface automated insights, and build their own analyses — all under full governance with row-level security, audit trails, and data lineage.",
-    "Our cloud-native architecture deploys on Snowflake, Databricks, BigQuery, and Azure Synapse — scaling elastically with workload demand. Intelligent caching and query optimization reduce cloud compute costs while delivering faster results. From retail and financial services to manufacturing and telecommunications, we build the analytics backbone that turns massive data investments into real-time operational intelligence.",
+  erp: [
+    "We implement and customise ERP that unifies the systems your business actually runs on — finance, inventory, procurement, HR, and sales — into one source of truth. Depending on fit, we build on proven platforms like Odoo and ERPNext or develop bespoke modules where off-the-shelf falls short.",
+    "The hard part of ERP is rarely the software; it's the migration and the workflows. We map your existing processes, move you off spreadsheets and legacy tools cleanly, and automate the steps that quietly eat your team's time.",
+    "Every implementation ships with role-based access, audit trails, and integrations to the payment, logistics, and reporting tools you depend on — so the system fits your operation, not the other way around.",
+  ],
+  ai: [
+    "We build production-grade AI grounded in your own data, not generic model output. Chatbots, copilots, and autonomous agents are engineered for accuracy and auditability — every answer traceable, every action logged, every threshold configurable.",
+    "Our retrieval-augmented architectures connect directly to your documentation, knowledge bases, and operational systems. We handle chunking, embeddings, vector storage, and retrieval tuning so the system surfaces the right answer rather than a plausible one.",
+    "From there we wire AI into the products and workflows you already run — document automation, support deflection, and agentic pipelines — with sensible fallbacks for when a model should hand back to a human.",
+  ],
+  ml: [
+    "We build custom machine-learning systems end-to-end: framing the problem, engineering the data pipeline, training and evaluating models, and shipping them behind a reliable API. The goal is always a measurable business outcome, not a notebook that works once.",
+    "Use cases range from demand forecasting and predictive analytics to recommendation engines and computer vision for detection, classification, and quality inspection. We choose the simplest model that solves the problem, then harden it for production.",
+    "Crucially, we build the MLOps around the model — monitoring, drift detection, and retraining pipelines — so accuracy holds up as your data changes, long after launch.",
   ],
 };
 
@@ -146,7 +76,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${service.title} — Services`,
     description: service.description,
     openGraph: {
-      title: `${service.title} — Softwires Services`,
+      title: `${service.title} — Softiques Services`,
       description: service.description,
     },
   };
@@ -165,8 +95,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   }
 
   const copy = SERVICE_COPY[service.id] ?? [];
-  const isDataAnalytics = service.id === "data-analytics";
-  const isEnterpriseAI = service.id === "enterprise-ai";
 
   return (
     <>
@@ -186,7 +114,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         backgroundImage="/images/hero/services-bg.svg"
       />
 
-      {/* Service detail — same two-column design as the services overview */}
+      {/* Service detail — two-column design */}
       <section className="py-4xl md:py-5xl border-b border-border-light bg-bg-light">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-2xl items-start">
@@ -226,50 +154,24 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   </li>
                 ))}
               </ul>
-
-              {/* Case study link */}
-              {service.caseStudySlug && (
-                <a
-                  href={`/portfolio/${service.caseStudySlug}`}
-                  className="text-body-sm text-accent mt-lg inline-block hover:underline"
-                >
-                  Read the case study &rarr;
-                </a>
-              )}
             </div>
 
-            {/* Visual column */}
+            {/* Visual column — service diagram SVG */}
             <div className="lg:order-2">
-              {isDataAnalytics || isEnterpriseAI ? (
-                /* Sub-grid of CapabilityCards */
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
-                  {(isEnterpriseAI ? ENTERPRISE_AI_CARDS : DATA_ANALYTICS_CARDS).map((card) => (
-                    <CapabilityCard
-                      key={card.title}
-                      title={card.title}
-                      description={card.description}
-                      tags={card.tags}
-                      href={card.href}
-                    />
-                  ))}
-                </div>
-              ) : (
-                /* Service diagram SVG */
-                <div
-                  className={cn(
-                    "bg-surface rounded-xl overflow-hidden",
-                    "border border-border-light"
-                  )}
-                >
-                  <Image
-                    src={`/images/services/${service.id}.svg`}
-                    alt={DIAGRAM_ALT[service.id] ?? `${service.title} diagram`}
-                    width={500}
-                    height={400}
-                    className="w-full h-auto"
-                  />
-                </div>
-              )}
+              <div
+                className={cn(
+                  "bg-surface rounded-xl overflow-hidden",
+                  "border border-border-light"
+                )}
+              >
+                <Image
+                  src={`/images/services/${service.id}.svg`}
+                  alt={DIAGRAM_ALT[service.id] ?? `${service.title} diagram`}
+                  width={500}
+                  height={400}
+                  className="w-full h-auto"
+                />
+              </div>
             </div>
           </div>
         </Container>

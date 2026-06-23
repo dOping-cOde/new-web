@@ -1,70 +1,99 @@
 import type { ServiceMeta } from "./types";
 
 // ============================================================
-// Service Metadata
-// Source: build spec section 4.2, services page brief
+// Service Metadata — Softiques
 // 6 service areas with titles, descriptions, tech stacks, use cases
 // ============================================================
 
 export const SERVICES: ServiceMeta[] = [
   {
-    id: "enterprise-ai",
+    id: "websites",
     number: "01",
-    label: "ENTERPRISE AI",
-    title: "AI-Native Analytics That Scale to Trillions of Data Points",
-    anchorId: "enterprise-ai",
+    label: "WEBSITE DEVELOPMENT",
+    title: "Websites Engineered to Convert and Perform",
+    anchorId: "websites",
     description:
-      "Enterprise-grade AI analytics platforms that deliver sub-second insights on massive datasets — connecting BI tools, cloud data warehouses, and decision-makers without compromising governance.",
-    techStack: ["Smart OLAP", "BI Integration", "Cloud-Native", "Semantic Layer", "AI/ML", "Data Governance"],
+      "Fast, accessible, search-optimised websites — from marketing sites to full web applications — built on a modern stack and tuned for Core Web Vitals.",
+    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Headless CMS", "Vercel"],
     useCases: [
-      "Unified BI acceleration layers that deliver interactive analytics on trillion-row datasets across Tableau, Power BI, and Excel without moving data",
-      "Cloud-native analytics platforms on Snowflake, Databricks, and BigQuery that cut query times from minutes to sub-second while reducing compute costs",
-      "AI-powered self-service analytics that let business users explore enterprise data through natural language — with full governance and lineage tracking",
+      "Marketing and brand sites that load in under two seconds and rank — server-rendered, SEO-clean, and CMS-driven so your team can publish without a developer",
+      "E-commerce storefronts with secure checkout, payment-gateway integration, and inventory sync",
+      "Custom web portals and dashboards with authentication, role-based access, and real-time data",
     ],
   },
   {
-    id: "ai-agents",
+    id: "apps",
     number: "02",
-    label: "AI AGENTS",
-    title: "Autonomous Systems That Operate at Industrial Scale",
-    anchorId: "ai-agents",
+    label: "APP DEVELOPMENT",
+    title: "Mobile and Web Apps Built to Scale",
+    anchorId: "apps",
     description:
-      "Multi-agent systems that reason, plan, and act — integrated directly into your operational infrastructure, not bolted on as an afterthought.",
-    techStack: ["LangGraph", "CrewAI", "MCP", "OpenAI", "Anthropic", "Local models"],
+      "Cross-platform and native applications with clean architecture, a tested API layer, and the CI/CD pipelines that keep shipping reliable as you grow.",
+    techStack: ["React Native", "Flutter", "Swift", "Kotlin", "Node.js", "PostgreSQL"],
     useCases: [
-      "Incident triage agents that escalate, remediate, and log without human intervention",
-      "Procurement and compliance agents that navigate supplier data and regulatory documents autonomously",
-      "Field operations agents that coordinate across IoT sensors, scheduling systems, and human teams",
+      "Cross-platform mobile apps from a single codebase — one team, both iOS and Android, faster time to market",
+      "Native iOS and Android builds when performance, hardware access, or platform polish demands it",
+      "Progressive web apps and the back-end APIs, databases, and integrations that power them",
     ],
   },
   {
-    id: "chatbots",
+    id: "gaming",
     number: "03",
-    label: "CONVERSATIONAL",
-    title: "Conversational Intelligence Built for Technical Environments",
-    anchorId: "chatbots",
+    label: "GAME DEVELOPMENT",
+    title: "Games and Interactive Experiences",
+    anchorId: "gaming",
     description:
-      "Production-grade AI chatbots and voice interfaces grounded in your data — not generic LLM wrappers, but systems engineered for accuracy and auditability.",
-    techStack: ["RAG", "Vector DBs", "Function Calling", "ASR/TTS"],
+      "Mobile, web, and cross-platform games — from hyper-casual to real-time multiplayer — plus gamified product experiences that keep users coming back.",
+    techStack: ["Unity", "Unreal Engine", "C#", "WebGL", "Three.js", "Photon"],
     useCases: [
-      "Customer-facing technical support bots that resolve Tier-1 and Tier-2 queries against live knowledge bases",
-      "Internal knowledge assistants that surface engineering documentation, runbooks, and compliance data on demand",
-      "Voice-enabled field interfaces for environments where hands-free operation is non-negotiable",
+      "2D and 3D mobile games with tuned monetisation, analytics, and live-ops from launch",
+      "Real-time multiplayer and leaderboard systems with low-latency networking",
+      "Gamification, AR experiences, and interactive 3D for products that need to stand out",
     ],
   },
   {
-    id: "data-analytics",
+    id: "erp",
     number: "04",
-    label: "DATA & ANALYTICS",
-    title: "Analytics Infrastructure That Thinks at the Speed of Your Business",
-    anchorId: "data-analytics",
+    label: "ERP SOLUTIONS",
+    title: "ERP Platforms That Run Your Operations",
+    anchorId: "erp",
     description:
-      "Semantic data layers, OLAP modernization, and natural-language analytics interfaces that make enterprise data actually useful — at sub-second query response times.",
-    techStack: ["OLAP", "Semantic Layer", "NL-to-SQL", "Cost Optimization"],
+      "Custom and platform-based ERP that unifies finance, inventory, HR, and sales into one system — automating the workflows your business runs on every day.",
+    techStack: ["Odoo", "ERPNext", "Node.js", "PostgreSQL", "REST / GraphQL", "Cloud"],
     useCases: [
-      "Unified semantic fabric implementations that eliminate metric inconsistencies across business units and BI tools",
-      "Legacy cube engine migrations (SSAS, Essbase, TM1) to modern OLAP architectures with 1000x faster analytical throughput",
-      "Natural-language analytics interfaces that let non-technical stakeholders query enterprise data without SQL knowledge",
+      "Inventory, procurement, and supply-chain modules with real-time stock and reorder automation",
+      "Finance, accounting, HR, and payroll workflows unified under one source of truth",
+      "Custom modules, third-party integrations, and migrations off spreadsheets and legacy software",
+    ],
+  },
+  {
+    id: "ai",
+    number: "05",
+    label: "AI SOLUTIONS",
+    title: "AI Products and Automation",
+    anchorId: "ai",
+    description:
+      "Production-grade AI grounded in your data — chatbots, copilots, and autonomous agents engineered for accuracy and auditability, not demo-day theatre.",
+    techStack: ["OpenAI", "Anthropic", "LangChain", "RAG", "Vector DBs", "Python"],
+    useCases: [
+      "Customer-support and knowledge assistants grounded in your documentation via retrieval-augmented generation",
+      "Document and back-office automation that extracts, classifies, and routes at scale",
+      "AI agents and integrations wired directly into your existing products and workflows",
+    ],
+  },
+  {
+    id: "ml",
+    number: "06",
+    label: "ML SOLUTIONS",
+    title: "Machine Learning, Trained on Your Data",
+    anchorId: "ml",
+    description:
+      "Custom models for prediction, recommendation, and computer vision — built end-to-end with the data pipelines, monitoring, and MLOps that keep them accurate in production.",
+    techStack: ["PyTorch", "TensorFlow", "scikit-learn", "MLflow", "Pandas", "AWS SageMaker"],
+    useCases: [
+      "Predictive analytics and demand forecasting that turn historical data into decisions",
+      "Recommendation engines and personalisation that lift engagement and revenue",
+      "Computer-vision systems for detection, classification, and quality inspection — with MLOps for retraining and drift monitoring",
     ],
   },
 ];

@@ -9,11 +9,11 @@ import { Container } from "@/components/layout/Container";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Softwires Technologies — engineers who build AI systems for energy, healthcare, and infrastructure. Not sloganeers.",
+    "Softiques is a software development studio that designs and builds websites, apps, games, ERP, and AI/ML products. Engineers, not sloganeers.",
   openGraph: {
-    title: "About — Softwires",
+    title: "About — Softiques",
     description:
-      "Softwires Technologies — engineers who build AI systems for energy, healthcare, and infrastructure. Not sloganeers.",
+      "Softiques is a software development studio that designs and builds websites, apps, games, ERP, and AI/ML products. Engineers, not sloganeers.",
   },
 };
 
@@ -25,7 +25,7 @@ export default function AboutPage() {
         kicker="ABOUT"
         headline="Engineers, not sloganeers."
         headlineSize="text-display-lg"
-        intro="We build AI systems that run in transformers, bridges, hospitals, and mines. Our measure is uptime, not slides."
+        intro="We're a software studio that designs and ships real products — websites, apps, games, ERP, and AI/ML. Our measure is what runs in production, not what looks good in a deck."
         backgroundImage="/images/hero/about-bg.svg"
       />
 
@@ -33,39 +33,36 @@ export default function AboutPage() {
       <section className="py-5xl max-md:py-3xl bg-bg-light">
         <Container>
           <div className="max-w-[720px] mx-auto">
-            <h2 className="text-display-md">Why Softwires exists</h2>
+            <h2 className="text-display-md">Why Softiques exists</h2>
             <div className="mt-2xl space-y-xl">
               <p className="text-body text-text-muted">
-                The gap between AI research and physical-world deployment is wider than most
-                people admit. Labs produce models that ace benchmarks in controlled settings.
-                The hard part is running those models next to 415V transformers and LiDAR rigs,
-                in environments where a crashed inference process does not just throw an error —
-                it trips a circuit, delays a diagnosis, or flags a false alarm on a live
-                structure. That gap is where Softwires lives.
+                Too much software gets sold as a slide deck and delivered as a
+                mess — pretty in the pitch, brittle the moment real users and
+                real data show up. The gap between a convincing demo and a
+                product that holds up in production is where most projects
+                quietly fail. Closing that gap is the entire reason Softiques
+                exists.
               </p>
               <p className="text-body text-text-muted">
-                India&apos;s infrastructure is being rebuilt at unprecedented scale. Smart grids
-                are replacing manual switching rooms. Digital health networks are pushing point-of-care
-                diagnostics into tier-3 cities. Structural monitoring systems are watching
-                bridges that carry millions of people every day. Each of these contexts needs
-                AI that works in dust, heat, and unreliable connectivity — not AI that works
-                in a data centre with a redundant 10Gbps uplink.
+                We’re a compact, senior team that designs and builds across the
+                whole stack: marketing sites and web apps, mobile apps, games,
+                ERP platforms, and AI/ML systems. Because the same people carry
+                a project from wireframe to deployment, nothing falls through
+                the cracks between design, front-end, back-end, and ops.
               </p>
               <p className="text-body text-text-muted">
-                Softwires exists to bridge that gap. We are an engineering team that understands
-                both the model and the mounting bracket. Both the neural network and the NABH
-                compliance audit. Both the inference latency budget and the IEC 61850 protocol
-                requirement. We do not translate between engineering and business — we speak
-                both natively, and we build accordingly.
+                We work in a modern, deliberately unglamorous stack — typed,
+                tested, and version-controlled — so what we hand over is
+                something your own team can read, extend, and own. No mystery
+                code. No lock-in. Just software that’s built to last and easy
+                to live with.
               </p>
               <p className="text-body text-text-muted">
-                We started with energy — iDTRM, a transformer monitoring system deployed across
-                8 distribution transformers for a central-Indian DISCOM. That system taught us
-                what real-time edge inference looks like when the alternative is a blackout.
-                We expanded to healthcare (Salt-Lick, a cancer screening platform) and
-                infrastructure (BridgeSense, a structural health monitoring system for bridges),
-                and built a data platform practice along the way. Each system taught us what
-                the next one needed.
+                Whether you’re a startup shipping a first product or an
+                established business modernising what you already run, we plug
+                in as one accountable engineering partner — and stay
+                accountable to how the product performs after launch, not just
+                to the delivery date.
               </p>
             </div>
           </div>
@@ -78,67 +75,59 @@ export default function AboutPage() {
           <div className="max-w-[720px] mx-auto">
             <section className="py-2xl">
               <Caption as="p">01</Caption>
-              <h3 className="text-display-md mt-sm">We engineer for the failure mode</h3>
+              <h3 className="text-display-md mt-sm">We design for the real world</h3>
               <div className="mt-xl space-y-lg">
                 <p className="text-body text-text-muted">
-                  Every system we build is designed around what goes wrong, not what goes right.
-                  Power surges. Monsoon seasons. Network dropouts. Sensor drift at 48°C ambient.
-                  A model that performs at 97% accuracy in a sunny-day demo and falls apart
-                  when the temperature sensor reads null is not a production system — it is a
-                  prototype with a polished presentation layer.
+                  Every product we build is designed around what actually
+                  happens in use — slow networks, messy data, distracted users,
+                  edge cases the happy-path demo never hits. A flow that works
+                  in a controlled walkthrough but breaks on a mid-range phone in
+                  a tunnel isn’t finished.
                 </p>
                 <p className="text-body text-text-muted">
-                  Our architecture reviews always begin with failure trees. We ask: what happens
-                  when connectivity drops mid-inference? What happens when a calibration file
-                  is missing? What happens when the input distribution shifts because a sensor
-                  was replaced with a slightly different model? The answers to those questions
-                  determine the architecture. The happy path is just documentation.
+                  So we prototype early, test on real devices, and instrument
+                  what ships. The questions that shape our architecture are the
+                  uncomfortable ones: what happens when the request fails, the
+                  payment times out, or ten thousand people arrive at once?
                 </p>
               </div>
             </section>
 
             <section className="py-2xl border-t border-border-light">
               <Caption as="p">02</Caption>
-              <h3 className="text-display-md mt-sm">Latency is a feature, not an afterthought</h3>
+              <h3 className="text-display-md mt-sm">Performance is a feature</h3>
               <div className="mt-xl space-y-lg">
                 <p className="text-body text-text-muted">
-                  In physical-world AI, the latency budget is set by physics and consequence,
-                  not by product managers. A transformer overheating has a thermal time constant
-                  measured in seconds — not in the minutes it takes a cloud round-trip to complete.
-                  A crack detected in a bridge member needs a decision in milliseconds, before
-                  vibration propagates. A fraud pattern emerging in a claims stream needs a
-                  score before the payment clears.
+                  Speed isn’t a polish step at the end — it’s a design
+                  constraint from day one. Users abandon slow sites, uninstall
+                  janky apps, and quit laggy games. We treat load time, frame
+                  rate, and responsiveness as first-class requirements, measured
+                  against real budgets.
                 </p>
                 <p className="text-body text-text-muted">
-                  We design for edge inference and on-device processing wherever the latency
-                  requirement demands it. This means model compression, quantisation, and
-                  hardware-aware architecture choices from the first prototype. It also means
-                  building the telemetry pipeline so that edge decisions feed back to a central
-                  learning loop — sub-second at the edge, continuous improvement at the centre.
-                  Both, not one or the other.
+                  That means lean bundles, sensible caching, optimised assets,
+                  and back-ends that stay fast under load. We tune against the
+                  metrics that actually move outcomes: Core Web Vitals,
+                  crash-free sessions, time-to-interactive, and conversion.
                 </p>
               </div>
             </section>
 
             <section className="py-2xl border-t border-border-light">
               <Caption as="p">03</Caption>
-              <h3 className="text-display-md mt-sm">The model is 10% of the system</h3>
+              <h3 className="text-display-md mt-sm">The launch is the start, not the finish</h3>
               <div className="mt-xl space-y-lg">
                 <p className="text-body text-text-muted">
-                  The research community focuses on the model because that is what gets published.
-                  The 90% that makes a model production-ready rarely appears in papers. Data
-                  pipelines that clean, label, and version training data. Monitoring systems
-                  that detect distribution shift before accuracy degrades. Retraining schedules
-                  that keep models current without disrupting live inference. Hardware integration
-                  layers that translate between sensor protocols and model inputs.
+                  Plenty of agencies disappear at go-live. A product is never
+                  truly done — it needs maintenance, monitoring, security
+                  updates, and iteration as you learn what users actually do.
+                  We build with that reality in mind from the first commit.
                 </p>
                 <p className="text-body text-text-muted">
-                  We build all of it. Compliance documentation for NABH or IEC auditors.
-                  Deployment automation that pushes model updates to edge devices over unreliable
-                  connections. Fallback logic that degrades gracefully when a model is unavailable.
-                  When we deliver a system, the model is one component in a stack that has been
-                  tested, instrumented, and hardened for the environment it runs in. That is
-                  what production-ready means.
+                  Clean architecture, documentation, CI/CD, and observability
+                  aren’t extras we tack on — they’re how we work, so the team
+                  who owns the product after us (whether that’s us or you) can
+                  keep moving fast without breaking things.
                 </p>
               </div>
             </section>
@@ -146,43 +135,49 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* 4. Sectors grid */}
+      {/* 4. What we build grid */}
       <section className="py-5xl max-md:py-3xl bg-bg-light border-t border-border-light">
         <Container>
           <SectionHeader
-            kicker="WHERE WE WORK"
-            heading="Five sectors. Real systems."
+            kicker="WHAT WE BUILD"
+            heading="Six capabilities. One team."
             headingSize="text-display-md"
           />
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-xl mt-2xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-xl mt-2xl">
             <div className="border border-border-light rounded-md p-lg">
-              <Caption>Energy</Caption>
+              <Caption>Websites</Caption>
               <p className="text-body-sm text-text-muted mt-sm">
-                Grid intelligence and transformer monitoring
+                Marketing sites, storefronts, and web apps
               </p>
             </div>
             <div className="border border-border-light rounded-md p-lg">
-              <Caption>Healthcare</Caption>
+              <Caption>Apps</Caption>
               <p className="text-body-sm text-text-muted mt-sm">
-                Cancer screening and clinical decision support
+                Cross-platform and native mobile apps
               </p>
             </div>
             <div className="border border-border-light rounded-md p-lg">
-              <Caption>Infrastructure</Caption>
+              <Caption>Games</Caption>
               <p className="text-body-sm text-text-muted mt-sm">
-                Structural assessment and drone inspection
+                Mobile, web, and multiplayer experiences
               </p>
             </div>
             <div className="border border-border-light rounded-md p-lg">
-              <Caption>Insurance</Caption>
+              <Caption>ERP</Caption>
               <p className="text-body-sm text-text-muted mt-sm">
-                Fraud detection and claims automation
+                Finance, inventory, HR, and sales platforms
               </p>
             </div>
             <div className="border border-border-light rounded-md p-lg">
-              <Caption>Data Platforms</Caption>
+              <Caption>AI</Caption>
               <p className="text-body-sm text-text-muted mt-sm">
-                Enterprise analytics and semantic layer
+                Chatbots, copilots, and automation
+              </p>
+            </div>
+            <div className="border border-border-light rounded-md p-lg">
+              <Caption>Machine Learning</Caption>
+              <p className="text-body-sm text-text-muted mt-sm">
+                Prediction, recommendation, and vision
               </p>
             </div>
           </div>
@@ -193,7 +188,7 @@ export default function AboutPage() {
       <section className="py-5xl max-md:py-3xl bg-bg-light border-t border-border-light">
         <Container>
           <SectionHeader
-            heading="Working with leaders across the industry"
+            heading="Trusted by teams across industries"
             headingSize="text-display-md"
             align="center"
           />
@@ -205,7 +200,7 @@ export default function AboutPage() {
               >
                 <Image
                   src={`/images/partners/partner-${i + 1}.svg`}
-                  alt={`Partner ${i + 1} logo placeholder`}
+                  alt={`Client logo placeholder ${i + 1}`}
                   width={200}
                   height={60}
                   className="w-full h-auto"

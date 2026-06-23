@@ -5,8 +5,8 @@
       <stop offset="100%" stop-color="#0A0B0D"/>
     </radialGradient>
     <radialGradient id="cluster-glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#3D2BFF" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#3D2BFF" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#FFD400" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FFD400" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="anomaly-glow" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#FF6B35" stop-opacity="0.3"/>
@@ -112,22 +112,22 @@
 
   <!-- Highlighted normal cluster (indigo) - central -->
   <circle cx="700" cy="480" r="80" fill="url(#cluster-glow)" filter="url(#glow)"/>
-  <circle cx="700" cy="480" r="16" fill="#1A1B1E" stroke="#3D2BFF" stroke-width="2"/>
-  <circle cx="700" cy="480" r="7" fill="#3D2BFF" opacity="0.9"/>
-  <text x="720" y="470" font-family="monospace" font-size="9" fill="#3D2BFF">HUB-01</text>
+  <circle cx="700" cy="480" r="16" fill="#1A1B1E" stroke="#FFD400" stroke-width="2"/>
+  <circle cx="700" cy="480" r="7" fill="#FFD400" opacity="0.9"/>
+  <text x="720" y="470" font-family="monospace" font-size="9" fill="#FFD400">HUB-01</text>
 
-  <circle cx="580" cy="360" r="12" fill="#1A1B1E" stroke="#3D2BFF" stroke-width="1.5"/>
-  <circle cx="580" cy="360" r="5" fill="#3D2BFF" opacity="0.7"/>
-  <circle cx="760" cy="320" r="12" fill="#1A1B1E" stroke="#3D2BFF" stroke-width="1.5"/>
-  <circle cx="760" cy="320" r="5" fill="#3D2BFF" opacity="0.7"/>
-  <circle cx="860" cy="400" r="11" fill="#1A1B1E" stroke="#3D2BFF" stroke-width="1.5"/>
-  <circle cx="860" cy="400" r="4" fill="#3D2BFF" opacity="0.6"/>
-  <circle cx="820" cy="560" r="11" fill="#1A1B1E" stroke="#3D2BFF" stroke-width="1.5"/>
-  <circle cx="820" cy="560" r="4" fill="#3D2BFF" opacity="0.6"/>
-  <circle cx="620" cy="580" r="11" fill="#1A1B1E" stroke="#3D2BFF" stroke-width="1.5"/>
-  <circle cx="620" cy="580" r="4" fill="#3D2BFF" opacity="0.6"/>
-  <circle cx="540" cy="500" r="10" fill="#1A1B1E" stroke="#3D2BFF" stroke-width="1.5"/>
-  <circle cx="540" cy="500" r="4" fill="#3D2BFF" opacity="0.5"/>
+  <circle cx="580" cy="360" r="12" fill="#1A1B1E" stroke="#FFD400" stroke-width="1.5"/>
+  <circle cx="580" cy="360" r="5" fill="#FFD400" opacity="0.7"/>
+  <circle cx="760" cy="320" r="12" fill="#1A1B1E" stroke="#FFD400" stroke-width="1.5"/>
+  <circle cx="760" cy="320" r="5" fill="#FFD400" opacity="0.7"/>
+  <circle cx="860" cy="400" r="11" fill="#1A1B1E" stroke="#FFD400" stroke-width="1.5"/>
+  <circle cx="860" cy="400" r="4" fill="#FFD400" opacity="0.6"/>
+  <circle cx="820" cy="560" r="11" fill="#1A1B1E" stroke="#FFD400" stroke-width="1.5"/>
+  <circle cx="820" cy="560" r="4" fill="#FFD400" opacity="0.6"/>
+  <circle cx="620" cy="580" r="11" fill="#1A1B1E" stroke="#FFD400" stroke-width="1.5"/>
+  <circle cx="620" cy="580" r="4" fill="#FFD400" opacity="0.6"/>
+  <circle cx="540" cy="500" r="10" fill="#1A1B1E" stroke="#FFD400" stroke-width="1.5"/>
+  <circle cx="540" cy="500" r="4" fill="#FFD400" opacity="0.5"/>
   <circle cx="940" cy="680" r="9" fill="#1A1B1E" stroke="#3A3B42" stroke-width="1"/>
   <circle cx="940" cy="680" r="4" fill="#3A3B42" opacity="0.7"/>
   <circle cx="520" cy="660" r="7" fill="#1A1B1E" stroke="#3A3B42" stroke-width="1"/>
@@ -166,7 +166,7 @@
   <rect x="94" y="200" width="14" height="80" fill="#2A2B30" opacity="0.8"/>
   <rect x="114" y="185" width="14" height="95" fill="#2A2B30" opacity="0.8"/>
   <rect x="134" y="205" width="14" height="75" fill="#2A2B30" opacity="0.8"/>
-  <rect x="154" y="230" width="14" height="50" fill="#3D2BFF" opacity="0.6"/>
+  <rect x="154" y="230" width="14" height="50" fill="#FFD400" opacity="0.6"/>
   <rect x="174" y="248" width="14" height="32" fill="#FF6B35" opacity="0.6"/>
   <rect x="194" y="256" width="14" height="24" fill="#FF6B35" opacity="0.7"/>
   <rect x="214" y="260" width="14" height="20" fill="#FF6B35" opacity="0.8"/>
@@ -182,7 +182,7 @@
   <text x="74" y="316" font-family="monospace" font-size="8" fill="#FF6B35">FLAGGED: 847 claims</text>
   <text x="74" y="330" font-family="monospace" font-size="8" fill="#555860">PRECISION: 91.4%</text>
   <text x="74" y="344" font-family="monospace" font-size="8" fill="#555860">RECALL:    88.2%</text>
-  <text x="74" y="358" font-family="monospace" font-size="8" fill="#3D2BFF">F1: 0.898</text>
+  <text x="74" y="358" font-family="monospace" font-size="8" fill="#FFD400">F1: 0.898</text>
   <text x="74" y="372" font-family="monospace" font-size="8" fill="#555860">SAVINGS: $4.2M est.</text>
 
   <!-- Label -->

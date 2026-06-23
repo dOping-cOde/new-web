@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
   <defs>
     <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M 0 0 L 6 3 L 0 6 Z" fill="#3D2BFF"/>
+      <path d="M 0 0 L 6 3 L 0 6 Z" fill="#FFD400"/>
     </marker>
     <filter id="node-shadow">
-      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#3D2BFF" flood-opacity="0.15"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#FFD400" flood-opacity="0.15"/>
     </filter>
   </defs>
 
@@ -39,12 +39,12 @@
 
   <!-- ─── CENTER: SMART OLAP ENGINE ─── -->
   <g filter="url(#node-shadow)">
-    <rect x="170" y="85" width="160" height="190" rx="12" fill="#FFFFFF" stroke="#3D2BFF" stroke-width="2"/>
+    <rect x="170" y="85" width="160" height="190" rx="12" fill="#FFFFFF" stroke="#FFD400" stroke-width="2"/>
   </g>
 
   <!-- Engine header -->
-  <rect x="170" y="85" width="160" height="36" rx="12" fill="#3D2BFF"/>
-  <rect x="170" y="105" width="160" height="16" fill="#3D2BFF"/>
+  <rect x="170" y="85" width="160" height="36" rx="12" fill="#FFD400"/>
+  <rect x="170" y="105" width="160" height="16" fill="#FFD400"/>
   <text x="250" y="108" font-family="sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle">Smart OLAP Engine</text>
 
   <!-- Internal layers -->
@@ -84,26 +84,26 @@
   <text x="430" y="249" font-family="sans-serif" font-size="10" fill="#0A0B0D" text-anchor="middle">Looker</text>
 
   <!-- ─── Arrows: Data Sources → Engine ─── -->
-  <path d="M 120 95 L 168 140" fill="none" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.6"/>
-  <path d="M 120 145 L 168 165" fill="none" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.6"/>
-  <path d="M 120 195 L 168 195" fill="none" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.6"/>
-  <path d="M 120 245 L 168 230" fill="none" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.6"/>
+  <path d="M 120 95 L 168 140" fill="none" stroke="#FFD400" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.6"/>
+  <path d="M 120 145 L 168 165" fill="none" stroke="#FFD400" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.6"/>
+  <path d="M 120 195 L 168 195" fill="none" stroke="#FFD400" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.6"/>
+  <path d="M 120 245 L 168 230" fill="none" stroke="#FFD400" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.6"/>
 
   <!-- ─── Arrows: Engine → BI Tools ─── -->
-  <path d="M 332 140 L 378 95" fill="none" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.6"/>
-  <path d="M 332 165 L 378 145" fill="none" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.6"/>
-  <path d="M 332 195 L 378 195" fill="none" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.6"/>
-  <path d="M 332 230 L 378 245" fill="none" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.6"/>
+  <path d="M 332 140 L 378 95" fill="none" stroke="#FFD400" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.6"/>
+  <path d="M 332 165 L 378 145" fill="none" stroke="#FFD400" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.6"/>
+  <path d="M 332 195 L 378 195" fill="none" stroke="#FFD400" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.6"/>
+  <path d="M 332 230 L 378 245" fill="none" stroke="#FFD400" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.6"/>
 
   <!-- ─── BOTTOM: Governance bar ─── -->
   <g filter="url(#node-shadow)">
-    <rect x="70" y="305" width="360" height="50" rx="10" fill="#FFFFFF" stroke="#3D2BFF" stroke-width="1.5"/>
+    <rect x="70" y="305" width="360" height="50" rx="10" fill="#FFFFFF" stroke="#FFD400" stroke-width="1.5"/>
   </g>
   <text x="250" y="325" font-family="sans-serif" font-size="10" font-weight="600" fill="#0A0B0D" text-anchor="middle">Data Governance Layer</text>
   <text x="250" y="344" font-family="sans-serif" font-size="9" fill="#8A8C92" text-anchor="middle">Row-Level Security  ·  Audit Trails  ·  Lineage Tracking  ·  RBAC</text>
 
   <!-- Governance connections -->
-  <path d="M 250 275 L 250 303" fill="none" stroke="#3D2BFF" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.5"/>
+  <path d="M 250 275 L 250 303" fill="none" stroke="#FFD400" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.5"/>
 
   <!-- Footer label -->
   <text x="250" y="385" font-family="sans-serif" font-size="9" fill="#8A8C92" text-anchor="middle">Sub-second queries · Trillions of data points · Zero data movement</text>

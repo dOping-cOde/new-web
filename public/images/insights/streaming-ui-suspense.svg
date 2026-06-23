@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" fill="none" role="img" aria-label="Streaming UIs with Suspense article cover">
+  <rect width="1200" height="750" fill="#0B0B0D"/>
+  <rect width="1200" height="750" fill="url(#g)"/>
+  <defs><radialGradient id="g" cx="80%" cy="20%" r="80%"><stop offset="0%" stop-color="#FFD400" stop-opacity="0.10"/><stop offset="60%" stop-color="#0B0B0D" stop-opacity="0"/></radialGradient></defs>
+  <rect x="80" y="120" width="64" height="8" fill="#FFD400"/>
+  <text x="80" y="180" font-family="monospace" font-size="22" letter-spacing="3" fill="#FFD400">REACT</text>
+  <text x="80" y="300" font-family="Georgia, serif" font-size="62" fill="#F4F4F2" font-weight="300">Streaming UIs</text>
+  <text x="80" y="378" font-family="Georgia, serif" font-size="62" fill="#F4F4F2" font-weight="300">with Suspense</text>
+  <path d="M90 580 C 240 580, 300 480, 540 480" stroke="#FFD400" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <circle cx="90" cy="580" r="9" fill="#9C9CA2"/>
+    <circle cx="540" cy="480" r="11" fill="#FFD400"/>
+  <text x="80" y="690" font-family="sans-serif" font-size="24" fill="#9C9CA2">Softiques · Insights</text>
+</svg>

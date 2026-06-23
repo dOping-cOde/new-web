@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
   <defs>
     <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M 0 0 L 6 3 L 0 6 Z" fill="#3D2BFF"/>
+      <path d="M 0 0 L 6 3 L 0 6 Z" fill="#FFD400"/>
     </marker>
   </defs>
 
@@ -27,11 +27,11 @@
   <text x="360" y="97" font-family="sans-serif" font-size="10" fill="#0A0B0D" text-anchor="middle">What is our SLA for Tier-2?</text>
 
   <!-- Bot bubble 1 -->
-  <rect x="44" y="114" width="220" height="38" rx="14" fill="#FFFFFF" stroke="#3D2BFF" stroke-width="1.5"/>
+  <rect x="44" y="114" width="220" height="38" rx="14" fill="#FFFFFF" stroke="#FFD400" stroke-width="1.5"/>
   <text x="154" y="130" font-family="sans-serif" font-size="10" fill="#0A0B0D" text-anchor="middle">Based on your runbook v4.2,</text>
   <text x="154" y="145" font-family="sans-serif" font-size="10" fill="#0A0B0D" text-anchor="middle">Tier-2 SLA is 4 hours.</text>
   <!-- Source citation -->
-  <text x="268" y="145" font-family="monospace" font-size="8" fill="#3D2BFF">↗ runbook-v4.2.pdf §3.1</text>
+  <text x="268" y="145" font-family="monospace" font-size="8" fill="#FFD400">↗ runbook-v4.2.pdf §3.1</text>
 
   <!-- User bubble 2 -->
   <rect x="300" y="162" width="150" height="28" rx="14" fill="#E8E6DF"/>
@@ -57,57 +57,57 @@
   <text x="68" y="332" font-family="sans-serif" font-size="9" fill="#0A0B0D" text-anchor="middle">Document</text>
 
   <!-- Arrow -->
-  <line x1="106" y1="293" x2="128" y2="293" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="106" y1="293" x2="128" y2="293" stroke="#FFD400" stroke-width="1.5" marker-end="url(#arrow)"/>
 
   <!-- Embed -->
   <rect x="130" y="265" width="76" height="56" rx="6" fill="#FFFFFF" stroke="#E8E6DF" stroke-width="1.5"/>
   <!-- Embedding grid visual -->
   <g transform="translate(148,276)">
-    <rect x="0" y="0" width="8" height="8" rx="1" fill="#3D2BFF" opacity="0.7"/>
-    <rect x="10" y="0" width="8" height="8" rx="1" fill="#3D2BFF" opacity="0.4"/>
-    <rect x="20" y="0" width="8" height="8" rx="1" fill="#3D2BFF" opacity="0.9"/>
-    <rect x="0" y="10" width="8" height="8" rx="1" fill="#3D2BFF" opacity="0.3"/>
-    <rect x="10" y="10" width="8" height="8" rx="1" fill="#3D2BFF" opacity="0.8"/>
-    <rect x="20" y="10" width="8" height="8" rx="1" fill="#3D2BFF" opacity="0.5"/>
-    <rect x="0" y="20" width="8" height="8" rx="1" fill="#3D2BFF" opacity="0.6"/>
-    <rect x="10" y="20" width="8" height="8" rx="1" fill="#3D2BFF" opacity="0.2"/>
-    <rect x="20" y="20" width="8" height="8" rx="1" fill="#3D2BFF" opacity="0.7"/>
+    <rect x="0" y="0" width="8" height="8" rx="1" fill="#FFD400" opacity="0.7"/>
+    <rect x="10" y="0" width="8" height="8" rx="1" fill="#FFD400" opacity="0.4"/>
+    <rect x="20" y="0" width="8" height="8" rx="1" fill="#FFD400" opacity="0.9"/>
+    <rect x="0" y="10" width="8" height="8" rx="1" fill="#FFD400" opacity="0.3"/>
+    <rect x="10" y="10" width="8" height="8" rx="1" fill="#FFD400" opacity="0.8"/>
+    <rect x="20" y="10" width="8" height="8" rx="1" fill="#FFD400" opacity="0.5"/>
+    <rect x="0" y="20" width="8" height="8" rx="1" fill="#FFD400" opacity="0.6"/>
+    <rect x="10" y="20" width="8" height="8" rx="1" fill="#FFD400" opacity="0.2"/>
+    <rect x="20" y="20" width="8" height="8" rx="1" fill="#FFD400" opacity="0.7"/>
   </g>
   <text x="168" y="332" font-family="sans-serif" font-size="9" fill="#0A0B0D" text-anchor="middle">Embed</text>
 
   <!-- Arrow -->
-  <line x1="206" y1="293" x2="228" y2="293" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="206" y1="293" x2="228" y2="293" stroke="#FFD400" stroke-width="1.5" marker-end="url(#arrow)"/>
 
   <!-- Vector Store -->
-  <rect x="230" y="265" width="76" height="56" rx="6" fill="#EDE9FF" stroke="#3D2BFF" stroke-width="1.5"/>
+  <rect x="230" y="265" width="76" height="56" rx="6" fill="#EDE9FF" stroke="#FFD400" stroke-width="1.5"/>
   <!-- Cylinder icon -->
-  <ellipse cx="268" cy="278" rx="18" ry="5" fill="#3D2BFF" opacity="0.2" stroke="#3D2BFF" stroke-width="1"/>
-  <rect x="250" y="278" width="36" height="18" fill="#3D2BFF" opacity="0.1"/>
-  <ellipse cx="268" cy="296" rx="18" ry="5" fill="none" stroke="#3D2BFF" stroke-width="1"/>
-  <text x="268" y="332" font-family="sans-serif" font-size="9" fill="#3D2BFF" text-anchor="middle" font-weight="600">Vector Store</text>
+  <ellipse cx="268" cy="278" rx="18" ry="5" fill="#FFD400" opacity="0.2" stroke="#FFD400" stroke-width="1"/>
+  <rect x="250" y="278" width="36" height="18" fill="#FFD400" opacity="0.1"/>
+  <ellipse cx="268" cy="296" rx="18" ry="5" fill="none" stroke="#FFD400" stroke-width="1"/>
+  <text x="268" y="332" font-family="sans-serif" font-size="9" fill="#FFD400" text-anchor="middle" font-weight="600">Vector Store</text>
 
   <!-- Arrow -->
-  <line x1="306" y1="293" x2="328" y2="293" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="306" y1="293" x2="328" y2="293" stroke="#FFD400" stroke-width="1.5" marker-end="url(#arrow)"/>
 
   <!-- Retrieve -->
   <rect x="330" y="265" width="76" height="56" rx="6" fill="#FFFFFF" stroke="#E8E6DF" stroke-width="1.5"/>
   <!-- Magnifier -->
-  <circle cx="362" cy="286" r="10" fill="none" stroke="#3D2BFF" stroke-width="1.5"/>
-  <line x1="369" y1="293" x2="376" y2="300" stroke="#3D2BFF" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="356" y1="283" x2="368" y2="289" stroke="#3D2BFF" stroke-width="1" opacity="0.5"/>
+  <circle cx="362" cy="286" r="10" fill="none" stroke="#FFD400" stroke-width="1.5"/>
+  <line x1="369" y1="293" x2="376" y2="300" stroke="#FFD400" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="356" y1="283" x2="368" y2="289" stroke="#FFD400" stroke-width="1" opacity="0.5"/>
   <text x="368" y="332" font-family="sans-serif" font-size="9" fill="#0A0B0D" text-anchor="middle">Retrieve</text>
 
   <!-- Arrow -->
-  <line x1="406" y1="293" x2="428" y2="293" stroke="#3D2BFF" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="406" y1="293" x2="428" y2="293" stroke="#FFD400" stroke-width="1.5" marker-end="url(#arrow)"/>
 
   <!-- Generate -->
-  <rect x="430" y="265" width="40" height="56" rx="6" fill="#3D2BFF"/>
+  <rect x="430" y="265" width="40" height="56" rx="6" fill="#FFD400"/>
   <text x="450" y="289" font-family="sans-serif" font-size="8" fill="#FFFFFF" text-anchor="middle">Gene-</text>
   <text x="450" y="302" font-family="sans-serif" font-size="8" fill="#FFFFFF" text-anchor="middle">rate</text>
   <text x="450" y="332" font-family="sans-serif" font-size="9" fill="#0A0B0D" text-anchor="middle">LLM</text>
 
   <!-- Upward arrow back to chat -->
-  <path d="M 450 265 Q 450 238 420 228" fill="none" stroke="#3D2BFF" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+  <path d="M 450 265 Q 450 238 420 228" fill="none" stroke="#FFD400" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
 
   <!-- Footer -->
   <text x="250" y="360" font-family="sans-serif" font-size="9" fill="#8A8C92" text-anchor="middle">Grounded in your knowledge base · RAG-native · Auditable sources</text>

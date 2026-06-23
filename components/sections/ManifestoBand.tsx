@@ -2,9 +2,9 @@ import { cn } from "@/lib/utils";
 import { Container } from "@/components/layout/Container";
 
 const DEFAULT_PARAGRAPHS = [
-  "We work where the cost of failure is not a rollback and a post-mortem. It is a blackout, a misdiagnosis, a bridge that does not get inspected. Our systems earn their place by running reliably in environments where downtime has physical consequences.",
-  "Our AI lives next to hardware — in substations, on drones, inside hospital networks. Regulated environments with real compliance requirements. We do not get to move fast and break things. We move deliberately and build things that last.",
-  "We measure ourselves by uptime and accuracy, not engagement metrics. A model that scores 0.92 F1 in the lab but fails in a monsoon is not a model we ship. We test where the system will live, not where it was trained.",
+  "Plenty of agencies can spin up a landing page. Fewer can take a product from a blank Figma file to something that holds up under real users, real data, and real load. That's the work we care about.",
+  "We build with a modern, boring-on-purpose stack — typed, tested, and version-controlled — so the thing we hand over is something your own team can read, extend, and trust. No mystery code, no lock-in.",
+  "We measure ourselves by what runs in production: page speed, crash-free sessions, conversion, uptime. A demo that impresses in a meeting but falls over on launch day isn't something we'd ship.",
 ];
 
 interface ManifestoBandProps {
@@ -19,7 +19,7 @@ interface ManifestoBandProps {
  * Server Component.
  */
 export function ManifestoBand({
-  headline = "We don't ship demos. We ship systems.",
+  headline = "From idea to impact — we build software that delivers.",
   paragraphs = DEFAULT_PARAGRAPHS,
   className,
 }: ManifestoBandProps) {

@@ -5,20 +5,20 @@
       <stop offset="100%" stop-color="#0E0F14"/>
     </linearGradient>
     <linearGradient id="plane1-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#3D2BFF" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#3D2BFF" stop-opacity="0.05"/>
+      <stop offset="0%" stop-color="#FFD400" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#FFD400" stop-opacity="0.05"/>
     </linearGradient>
     <linearGradient id="plane2-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#3D2BFF" stop-opacity="0.10"/>
-      <stop offset="100%" stop-color="#3D2BFF" stop-opacity="0.03"/>
+      <stop offset="0%" stop-color="#FFD400" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#FFD400" stop-opacity="0.03"/>
     </linearGradient>
     <linearGradient id="plane3-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#3D2BFF" stop-opacity="0.08"/>
-      <stop offset="100%" stop-color="#3D2BFF" stop-opacity="0.02"/>
+      <stop offset="0%" stop-color="#FFD400" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#FFD400" stop-opacity="0.02"/>
     </linearGradient>
     <linearGradient id="data-flow" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#3D2BFF" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#3D2BFF" stop-opacity="0.1"/>
+      <stop offset="0%" stop-color="#FFD400" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FFD400" stop-opacity="0.1"/>
     </linearGradient>
     <filter id="glow">
       <feGaussianBlur stdDeviation="4"/>
@@ -43,9 +43,9 @@
 
   <!-- PLANE 1 - Top (Presentation/Consumption Layer) -->
   <!-- Plane fill -->
-  <polygon points="140,160 1460,160 1420,220 180,220" fill="url(#plane1-grad)" stroke="#3D2BFF" stroke-width="1.5" stroke-opacity="0.5"/>
+  <polygon points="140,160 1460,160 1420,220 180,220" fill="url(#plane1-grad)" stroke="#FFD400" stroke-width="1.5" stroke-opacity="0.5"/>
   <!-- Plane grid lines -->
-  <g stroke="#3D2BFF" stroke-width="0.5" opacity="0.3">
+  <g stroke="#FFD400" stroke-width="0.5" opacity="0.3">
     <line x1="380" y1="160" x2="360" y2="220"/>
     <line x1="620" y1="160" x2="600" y2="220"/>
     <line x1="860" y1="160" x2="840" y2="220"/>
@@ -54,15 +54,15 @@
     <line x1="140" y1="180" x2="1460" y2="180"/>
     <line x1="145" y1="200" x2="1455" y2="200"/>
   </g>
-  <text x="162" y="195" font-family="monospace" font-size="10" fill="#3D2BFF" opacity="0.8">CONSUMPTION LAYER</text>
+  <text x="162" y="195" font-family="monospace" font-size="10" fill="#FFD400" opacity="0.8">CONSUMPTION LAYER</text>
   <!-- Schema nodes on plane 1 -->
-  <rect x="340" y="164" width="60" height="16" rx="2" fill="#3D2BFF" opacity="0.3"/>
+  <rect x="340" y="164" width="60" height="16" rx="2" fill="#FFD400" opacity="0.3"/>
   <text x="345" y="175" font-family="monospace" font-size="7" fill="#E8E9EB">dashboards</text>
-  <rect x="580" y="164" width="50" height="16" rx="2" fill="#3D2BFF" opacity="0.3"/>
+  <rect x="580" y="164" width="50" height="16" rx="2" fill="#FFD400" opacity="0.3"/>
   <text x="585" y="175" font-family="monospace" font-size="7" fill="#E8E9EB">reports</text>
-  <rect x="820" y="164" width="44" height="16" rx="2" fill="#3D2BFF" opacity="0.3"/>
+  <rect x="820" y="164" width="44" height="16" rx="2" fill="#FFD400" opacity="0.3"/>
   <text x="825" y="175" font-family="monospace" font-size="7" fill="#E8E9EB">ML models</text>
-  <rect x="1060" y="164" width="48" height="16" rx="2" fill="#3D2BFF" opacity="0.3"/>
+  <rect x="1060" y="164" width="48" height="16" rx="2" fill="#FFD400" opacity="0.3"/>
   <text x="1065" y="175" font-family="monospace" font-size="7" fill="#E8E9EB">APIs</text>
 
   <!-- PLANE 2 - Semantic / Catalog Layer -->
@@ -160,12 +160,12 @@
   </g>
 
   <!-- Active data flow particle (glowing dot on data-flow line) -->
-  <circle cx="360" cy="270" r="3" fill="#3D2BFF" opacity="0.9" filter="url(#glow)"/>
-  <circle cx="600" cy="350" r="3" fill="#3D2BFF" opacity="0.7" filter="url(#glow)"/>
-  <circle cx="840" cy="430" r="3" fill="#3D2BFF" opacity="0.5" filter="url(#glow)"/>
+  <circle cx="360" cy="270" r="3" fill="#FFD400" opacity="0.9" filter="url(#glow)"/>
+  <circle cx="600" cy="350" r="3" fill="#FFD400" opacity="0.7" filter="url(#glow)"/>
+  <circle cx="840" cy="430" r="3" fill="#FFD400" opacity="0.5" filter="url(#glow)"/>
 
   <!-- Layer labels (left side) -->
-  <text x="100" y="194" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="middle">L4</text>
+  <text x="100" y="194" font-family="monospace" font-size="8" fill="#FFD400" text-anchor="middle">L4</text>
   <text x="100" y="354" font-family="monospace" font-size="8" fill="#8A8C92" text-anchor="middle">L3</text>
   <text x="100" y="514" font-family="monospace" font-size="8" fill="#555860" text-anchor="middle">L2</text>
   <text x="100" y="674" font-family="monospace" font-size="8" fill="#2A2B30" text-anchor="middle">L1</text>
@@ -181,7 +181,7 @@
   <text x="1394" y="810" font-family="monospace" font-size="8" fill="#555860">SOURCES</text>
   <text x="1550" y="810" font-family="monospace" font-size="8" fill="#E8E9EB" text-anchor="end">23</text>
   <text x="1394" y="826" font-family="monospace" font-size="8" fill="#555860">LATENCY</text>
-  <text x="1550" y="826" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="end">&lt;200ms</text>
+  <text x="1550" y="826" font-family="monospace" font-size="8" fill="#FFD400" text-anchor="end">&lt;200ms</text>
   <text x="1394" y="842" font-family="monospace" font-size="8" fill="#555860">FRESHNESS</text>
   <text x="1550" y="842" font-family="monospace" font-size="8" fill="#4ADE80" text-anchor="end">REAL-TIME</text>
   <text x="1394" y="858" font-family="monospace" font-size="8" fill="#555860">COVERAGE</text>
@@ -190,7 +190,7 @@
   <text x="1550" y="874" font-family="monospace" font-size="8" fill="#4ADE80" text-anchor="end">99.1%</text>
   <text x="1394" y="890" font-family="monospace" font-size="8" fill="#555860">LINEAGE</text>
   <text x="1550" y="890" font-family="monospace" font-size="8" fill="#E8E9EB" text-anchor="end">TRACKED</text>
-  <text x="1394" y="906" font-family="monospace" font-size="8" fill="#3D2BFF">STATUS: HEALTHY</text>
+  <text x="1394" y="906" font-family="monospace" font-size="8" fill="#FFD400">STATUS: HEALTHY</text>
 
   <!-- Label -->
   <text x="60" y="870" font-family="monospace" font-size="22" fill="#1F2024" letter-spacing="4">UNIFIED SEMANTIC FABRIC</text>

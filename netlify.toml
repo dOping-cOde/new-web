@@ -1,0 +1,14 @@
+# Netlify configuration for the Softiques Next.js site.
+# Netlify's official Next.js plugin runs the App Router, dynamic OG images,
+# ISR, and route handlers as serverless functions — no static export needed.
+
+[build]
+  command = "next build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Auto-installed by Netlify when it detects Next.js, but declared here explicitly.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

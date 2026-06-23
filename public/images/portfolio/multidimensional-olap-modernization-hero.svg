@@ -87,12 +87,12 @@
   <!-- === TRANSFORMATION ARROW === -->
   <g>
     <!-- Arrow shaft -->
-    <line x1="500" y1="400" x2="700" y2="400" stroke="#3D2BFF" stroke-width="2" opacity="0.7"/>
+    <line x1="500" y1="400" x2="700" y2="400" stroke="#FFD400" stroke-width="2" opacity="0.7"/>
     <!-- Arrow head -->
-    <polygon points="700,390 720,400 700,410" fill="#3D2BFF" opacity="0.7"/>
+    <polygon points="700,390 720,400 700,410" fill="#FFD400" opacity="0.7"/>
     <!-- Label -->
     <rect x="550" y="378" width="120" height="18" rx="2" fill="#0F1018"/>
-    <text x="610" y="391" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="middle">MODERNIZE →</text>
+    <text x="610" y="391" font-family="monospace" font-size="8" fill="#FFD400" text-anchor="middle">MODERNIZE →</text>
     <!-- Steps below arrow -->
     <text x="530" y="420" font-family="monospace" font-size="7" fill="#555860">1. Extract MDX logic</text>
     <text x="530" y="433" font-family="monospace" font-size="7" fill="#555860">2. Translate to SQL</text>
@@ -104,18 +104,18 @@
   <!-- === MODERN CUBE (right side, indigo-lit) === -->
   <!-- Modern cube - center 1020, 380 -->
   <!-- Top face -->
-  <polygon points="900,260 1020,180 1140,260 1020,340" fill="#3D2BFF" opacity="0.08" stroke="#3D2BFF" stroke-width="2" stroke-opacity="0.6"/>
+  <polygon points="900,260 1020,180 1140,260 1020,340" fill="#FFD400" opacity="0.08" stroke="#FFD400" stroke-width="2" stroke-opacity="0.6"/>
   <!-- Left face -->
-  <polygon points="900,260 1020,340 1020,500 900,420" fill="#3D2BFF" opacity="0.05" stroke="#3D2BFF" stroke-width="2" stroke-opacity="0.4"/>
+  <polygon points="900,260 1020,340 1020,500 900,420" fill="#FFD400" opacity="0.05" stroke="#FFD400" stroke-width="2" stroke-opacity="0.4"/>
   <!-- Right face -->
-  <polygon points="1020,340 1140,260 1140,420 1020,500" fill="#3D2BFF" opacity="0.04" stroke="#3D2BFF" stroke-width="1.5" stroke-opacity="0.4"/>
+  <polygon points="1020,340 1140,260 1140,420 1020,500" fill="#FFD400" opacity="0.04" stroke="#FFD400" stroke-width="1.5" stroke-opacity="0.4"/>
 
   <!-- Glow effect on modern cube -->
-  <polygon points="900,260 1020,180 1140,260 1020,340" fill="#3D2BFF" opacity="0.05" filter="url(#glow)"/>
+  <polygon points="900,260 1020,180 1140,260 1020,340" fill="#FFD400" opacity="0.05" filter="url(#glow)"/>
 
   <!-- Internal slices (visible layers) on modern cube -->
   <!-- Horizontal slices through cube - show internal structure -->
-  <g stroke="#3D2BFF" stroke-width="1" opacity="0.4">
+  <g stroke="#FFD400" stroke-width="1" opacity="0.4">
     <!-- Top face grid -->
     <line x1="940" y1="287" x2="1060" y2="367"/>
     <line x1="980" y1="260" x2="1100" y2="340"/>
@@ -134,25 +134,25 @@
   </g>
 
   <!-- Highlighted slice (active query slice) -->
-  <polygon points="900,393 1020,473 1140,353 1020,273" fill="#3D2BFF" opacity="0.08" stroke="#3D2BFF" stroke-width="1.5" stroke-opacity="0.7" stroke-dasharray="4 3"/>
+  <polygon points="900,393 1020,473 1140,353 1020,273" fill="#FFD400" opacity="0.08" stroke="#FFD400" stroke-width="1.5" stroke-opacity="0.7" stroke-dasharray="4 3"/>
 
   <!-- Data nodes at cube vertices -->
-  <circle cx="900" cy="260" r="5" fill="#3D2BFF" opacity="0.8"/>
-  <circle cx="1020" cy="180" r="5" fill="#3D2BFF" opacity="0.9"/>
-  <circle cx="1140" cy="260" r="5" fill="#3D2BFF" opacity="0.8"/>
-  <circle cx="1020" cy="340" r="5" fill="#3D2BFF" opacity="0.7"/>
-  <circle cx="900" cy="420" r="4" fill="#3D2BFF" opacity="0.5"/>
-  <circle cx="1140" cy="420" r="4" fill="#3D2BFF" opacity="0.5"/>
-  <circle cx="1020" cy="500" r="4" fill="#3D2BFF" opacity="0.4"/>
+  <circle cx="900" cy="260" r="5" fill="#FFD400" opacity="0.8"/>
+  <circle cx="1020" cy="180" r="5" fill="#FFD400" opacity="0.9"/>
+  <circle cx="1140" cy="260" r="5" fill="#FFD400" opacity="0.8"/>
+  <circle cx="1020" cy="340" r="5" fill="#FFD400" opacity="0.7"/>
+  <circle cx="900" cy="420" r="4" fill="#FFD400" opacity="0.5"/>
+  <circle cx="1140" cy="420" r="4" fill="#FFD400" opacity="0.5"/>
+  <circle cx="1020" cy="500" r="4" fill="#FFD400" opacity="0.4"/>
 
   <!-- Dimension labels on modern cube -->
-  <text x="1020" y="172" font-family="monospace" font-size="9" fill="#3D2BFF" text-anchor="middle">TIME</text>
-  <text x="868" y="348" font-family="monospace" font-size="9" fill="#3D2BFF" text-anchor="end">GEO</text>
-  <text x="1155" y="348" font-family="monospace" font-size="9" fill="#3D2BFF">PRODUCT</text>
+  <text x="1020" y="172" font-family="monospace" font-size="9" fill="#FFD400" text-anchor="middle">TIME</text>
+  <text x="868" y="348" font-family="monospace" font-size="9" fill="#FFD400" text-anchor="end">GEO</text>
+  <text x="1155" y="348" font-family="monospace" font-size="9" fill="#FFD400">PRODUCT</text>
 
   <!-- Modern label -->
-  <rect x="900" y="535" width="240" height="36" rx="2" fill="#1A1B1E" stroke="#3D2BFF" stroke-width="1" opacity="0.6"/>
-  <text x="1020" y="548" font-family="monospace" font-size="8" fill="#3D2BFF" text-anchor="middle">MODERN SEMANTIC LAYER</text>
+  <rect x="900" y="535" width="240" height="36" rx="2" fill="#1A1B1E" stroke="#FFD400" stroke-width="1" opacity="0.6"/>
+  <text x="1020" y="548" font-family="monospace" font-size="8" fill="#FFD400" text-anchor="middle">MODERN SEMANTIC LAYER</text>
   <text x="1020" y="562" font-family="monospace" font-size="8" fill="#555860" text-anchor="middle">dbt · BigQuery · Looker</text>
 
   <!-- Good indicators -->
@@ -173,7 +173,7 @@
   <text x="1550" y="674" font-family="monospace" font-size="9" fill="#4ADE80" text-anchor="end">100%</text>
   <rect x="1274" y="680" width="266" height="1" fill="#1F2024"/>
   <text x="1274" y="698" font-family="monospace" font-size="9" fill="#555860">QUERY SPEEDUP</text>
-  <text x="1550" y="698" font-family="monospace" font-size="9" fill="#3D2BFF" text-anchor="end">18× avg</text>
+  <text x="1550" y="698" font-family="monospace" font-size="9" fill="#FFD400" text-anchor="end">18× avg</text>
   <rect x="1274" y="704" width="266" height="1" fill="#1F2024"/>
   <text x="1274" y="722" font-family="monospace" font-size="9" fill="#555860">INFRA COST DELTA</text>
   <text x="1550" y="722" font-family="monospace" font-size="9" fill="#4ADE80" text-anchor="end">-67%</text>
@@ -186,7 +186,7 @@
   <rect x="1274" y="776" width="266" height="1" fill="#1F2024"/>
   <text x="1274" y="794" font-family="monospace" font-size="9" fill="#555860">PROJECT DURATION</text>
   <text x="1550" y="794" font-family="monospace" font-size="9" fill="#E8E9EB" text-anchor="end">6 months</text>
-  <text x="1274" y="840" font-family="monospace" font-size="8" fill="#3D2BFF">STATUS: COMPLETE</text>
+  <text x="1274" y="840" font-family="monospace" font-size="8" fill="#FFD400">STATUS: COMPLETE</text>
   <text x="1274" y="856" font-family="monospace" font-size="8" fill="#555860">All legacy systems decommissioned</text>
 
   <!-- Label -->

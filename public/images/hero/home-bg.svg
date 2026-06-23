@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800" fill="none">
   <!-- Homepage hero background: neural network / particle field topology -->
-  <!-- Light structural grid lines in #E8E6DF, accent nodes/edges in #3D2BFF at ~8-12% opacity -->
+  <!-- Light structural grid lines in #E8E6DF, accent nodes/edges in #FFD400 at ~8-12% opacity -->
 
   <!-- ── Faint structural grid ── -->
   <g stroke="#E8E6DF" stroke-width="1" opacity="0.7">
@@ -17,7 +17,7 @@
 
   <!-- ── Neural network edges: indigo at 9% opacity ── -->
   <!-- Primary network cluster — centred in the right half so it doesn't crowd left-aligned text -->
-  <g stroke="#3D2BFF" stroke-width="1" opacity="0.09">
+  <g stroke="#FFD400" stroke-width="1" opacity="0.09">
     <!-- Spoke hub from central node (1050, 380) -->
     <line x1="1050" y1="380" x2="820"  y2="210"/>
     <line x1="1050" y1="380" x2="960"  y2="150"/>
@@ -92,7 +92,7 @@
   </g>
 
   <!-- Outer ring nodes: indigo at 18% opacity -->
-  <g fill="#3D2BFF" opacity="0.18">
+  <g fill="#FFD400" opacity="0.18">
     <circle cx="820"  cy="210" r="4"/>
     <circle cx="960"  cy="150" r="3.5"/>
     <circle cx="1180" cy="120" r="4"/>
@@ -108,16 +108,16 @@
   </g>
 
   <!-- Central hub node: indigo, slightly more visible -->
-  <g fill="#3D2BFF" opacity="0.22">
+  <g fill="#FFD400" opacity="0.22">
     <circle cx="1050" cy="380" r="7"/>
   </g>
   <!-- Central hub ring -->
-  <circle cx="1050" cy="380" r="14" stroke="#3D2BFF" stroke-width="1" opacity="0.10" fill="none"/>
-  <circle cx="1050" cy="380" r="24" stroke="#3D2BFF" stroke-width="0.75" stroke-dasharray="3 6" opacity="0.07" fill="none"/>
+  <circle cx="1050" cy="380" r="14" stroke="#FFD400" stroke-width="1" opacity="0.10" fill="none"/>
+  <circle cx="1050" cy="380" r="24" stroke="#FFD400" stroke-width="0.75" stroke-dasharray="3 6" opacity="0.07" fill="none"/>
 
   <!-- ── Subtle dot field (scattered particles) ── -->
   <!-- These represent the broader particle field, very faint -->
-  <g fill="#3D2BFF" opacity="0.08">
+  <g fill="#FFD400" opacity="0.08">
     <circle cx="120"  cy="300" r="2"/>
     <circle cx="260"  cy="360" r="1.5"/>
     <circle cx="440"  cy="280" r="2"/>

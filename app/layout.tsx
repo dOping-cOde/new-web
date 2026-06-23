@@ -5,20 +5,20 @@ import { Footer } from "@/components/layout/Footer";
 import { organizationJsonLd } from "@/lib/jsonld";
 import "./globals.css";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://softwires.in'
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://softiques.com'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Softwires Technologies",
-    template: "%s — Softwires",
+    default: "Softiques — Software Development Studio",
+    template: "%s — Softiques",
   },
   description:
-    "AI engineering for energy, healthcare, and infrastructure. We build systems that monitor transformers, inspect bridges, screen for cancer, and detect fraud.",
+    "Softiques is a software development studio building websites, web & mobile apps, games, ERP platforms, and AI/ML solutions that ship.",
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'Softwires Technologies',
+    siteName: 'Softiques',
   },
   twitter: {
     card: 'summary_large_image',

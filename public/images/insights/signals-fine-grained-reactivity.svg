@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" fill="none" role="img" aria-label="Signals &amp; Fine-Grained Reactivity article cover">
+  <rect width="1200" height="750" fill="#0B0B0D"/>
+  <rect width="1200" height="750" fill="url(#g)"/>
+  <defs><radialGradient id="g" cx="80%" cy="20%" r="80%"><stop offset="0%" stop-color="#FFD400" stop-opacity="0.10"/><stop offset="60%" stop-color="#0B0B0D" stop-opacity="0"/></radialGradient></defs>
+  <rect x="80" y="120" width="64" height="8" fill="#FFD400"/>
+  <text x="80" y="180" font-family="monospace" font-size="22" letter-spacing="3" fill="#FFD400">REACT</text>
+  <text x="80" y="300" font-family="Georgia, serif" font-size="62" fill="#F4F4F2" font-weight="300">Signals &amp; Fine-Grained</text>
+  <text x="80" y="378" font-family="Georgia, serif" font-size="62" fill="#F4F4F2" font-weight="300">Reactivity</text>
+  <g stroke="#2A2A2E" stroke-width="2" fill="none"><path d="M120 478 v30 M120 508 h360 M180 508 v28 M300 508 v28 M420 508 v28"/></g>
+    <circle cx="120" cy="476" r="9" fill="#FFD400"/>
+    <circle cx="180" cy="540" r="7" fill="#9C9CA2"/><circle cx="300" cy="540" r="7" fill="#9C9CA2"/><circle cx="420" cy="540" r="7" fill="#FFD400"/>
+  <text x="80" y="690" font-family="sans-serif" font-size="24" fill="#9C9CA2">Softiques · Insights</text>
+</svg>

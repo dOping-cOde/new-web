@@ -13,51 +13,51 @@ export interface CapabilityTile {
 
 export const CAPABILITIES: CapabilityTile[] = [
   {
-    id: "ai-agents",
-    title: "AI Agent Development",
+    id: "websites",
+    title: "Website Development",
     description:
-      "Multi-agent systems that reason, plan, and act — integrated directly into your operational infrastructure.",
-    tag: "Incident triage · Procurement automation · Field operations",
-    anchorId: "ai-agents",
+      "Fast, accessible, SEO-ready websites and web apps built on a modern stack and tuned for Core Web Vitals.",
+    tag: "Marketing sites · E-commerce · Web portals",
+    anchorId: "websites",
   },
   {
-    id: "chatbots",
-    title: "AI Chatbots",
+    id: "apps",
+    title: "App Development",
     description:
-      "Production-grade AI chatbots grounded in your data — built for accuracy, auditability, and technical environments.",
-    tag: "Technical support · Knowledge assistants · Voice interfaces",
-    anchorId: "chatbots",
+      "Cross-platform and native mobile apps with clean architecture, tested APIs, and reliable CI/CD.",
+    tag: "iOS & Android · Cross-platform · PWAs",
+    anchorId: "apps",
   },
   {
-    id: "healthcare",
-    title: "AI in Healthcare",
+    id: "gaming",
+    title: "Game Development",
     description:
-      "Clinical risk scoring and diagnostic support systems built to DPDP, NABH, and IRDAI standards from day one.",
-    tag: "Cancer risk stratification · Diagnostic support · Population health",
-    anchorId: "healthcare",
+      "Mobile, web, and multiplayer games — plus gamified experiences — built in Unity, Unreal, and WebGL.",
+    tag: "Mobile games · Multiplayer · AR & 3D",
+    anchorId: "gaming",
   },
   {
-    id: "energy",
-    title: "AI in Energy",
+    id: "erp",
+    title: "ERP Solutions",
     description:
-      "Real-time monitoring and predictive maintenance systems that protect grid infrastructure from distribution to generation.",
-    tag: "Transformer monitoring · Predictive failure · Theft analytics",
-    anchorId: "energy",
+      "Custom and platform-based ERP that unifies finance, inventory, HR, and sales into one operating system.",
+    tag: "Inventory · Finance & HR · CRM",
+    anchorId: "erp",
   },
   {
-    id: "infrastructure",
-    title: "AI in Infrastructure",
+    id: "ai",
+    title: "AI Solutions",
     description:
-      "Computer vision and LiDAR-based inspection systems that detect sub-millimeter structural changes continuously.",
-    tag: "Bridge inspection · Structural change detection · Anomaly monitoring",
-    anchorId: "infrastructure",
+      "Production-grade chatbots, copilots, and autonomous agents grounded in your data — accurate and auditable.",
+    tag: "Chatbots · Automation · AI agents",
+    anchorId: "ai",
   },
   {
-    id: "data-analytics",
-    title: "Data & Analytics Intelligence",
+    id: "ml",
+    title: "ML Solutions",
     description:
-      "Semantic data layers, OLAP modernization, and natural-language analytics interfaces at sub-second response times.",
-    tag: "Semantic fabric · OLAP modernization · NL-to-SQL",
-    anchorId: "data-analytics",
+      "Custom models for prediction, recommendation, and computer vision, shipped with full MLOps.",
+    tag: "Forecasting · Recommendations · Computer vision",
+    anchorId: "ml",
   },
 ];

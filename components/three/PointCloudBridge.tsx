@@ -137,7 +137,7 @@ function BridgeScene() {
     <group ref={groupRef}>
       <Points ref={pointsRef} positions={positions} stride={3}>
         <PointMaterial
-          color="#3D2BFF"
+          color="#FFD400"
           size={0.025}
           transparent={true}
           opacity={0.7}
@@ -161,13 +161,13 @@ function BridgeFallbackSVG({ className = "" }: { className?: string }) {
       aria-hidden="true"
     >
       {/* Bridge deck */}
-      <line x1="40" y1="110" x2="360" y2="110" stroke="#3D2BFF" strokeWidth="2" opacity="0.6" />
+      <line x1="40" y1="110" x2="360" y2="110" stroke="#FFD400" strokeWidth="2" opacity="0.6" />
 
       {/* Left arch */}
       <path
         d="M 80 110 Q 200 30 320 110"
         fill="none"
-        stroke="#3D2BFF"
+        stroke="#FFD400"
         strokeWidth="1.5"
         opacity="0.5"
       />
@@ -183,7 +183,7 @@ function BridgeFallbackSVG({ className = "" }: { className?: string }) {
             y1={archY}
             x2={x}
             y2={110}
-            stroke="#3D2BFF"
+            stroke="#FFD400"
             strokeWidth="0.8"
             opacity="0.35"
           />
@@ -191,13 +191,13 @@ function BridgeFallbackSVG({ className = "" }: { className?: string }) {
       })}
 
       {/* Piers */}
-      <line x1="80"  y1="110" x2="80"  y2="150" stroke="#3D2BFF" strokeWidth="2" opacity="0.5" />
-      <line x1="200" y1="110" x2="200" y2="155" stroke="#3D2BFF" strokeWidth="2" opacity="0.5" />
-      <line x1="320" y1="110" x2="320" y2="150" stroke="#3D2BFF" strokeWidth="2" opacity="0.5" />
+      <line x1="80"  y1="110" x2="80"  y2="150" stroke="#FFD400" strokeWidth="2" opacity="0.5" />
+      <line x1="200" y1="110" x2="200" y2="155" stroke="#FFD400" strokeWidth="2" opacity="0.5" />
+      <line x1="320" y1="110" x2="320" y2="150" stroke="#FFD400" strokeWidth="2" opacity="0.5" />
 
       {/* Abutments */}
-      <line x1="40"  y1="148" x2="80"  y2="148" stroke="#3D2BFF" strokeWidth="2" opacity="0.5" />
-      <line x1="320" y1="148" x2="360" y2="148" stroke="#3D2BFF" strokeWidth="2" opacity="0.5" />
+      <line x1="40"  y1="148" x2="80"  y2="148" stroke="#FFD400" strokeWidth="2" opacity="0.5" />
+      <line x1="320" y1="148" x2="360" y2="148" stroke="#FFD400" strokeWidth="2" opacity="0.5" />
     </svg>
   );
 }

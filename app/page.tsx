@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
 import { VideoHero } from "@/components/sections/VideoHero";
+import { HeroMascot } from "@/components/sections/HeroMascot";
 import { ServiceTile } from "@/components/cards/ServiceTile";
-import { PortfolioCard } from "@/components/cards/PortfolioCard";
 import { ManifestoBand } from "@/components/sections/ManifestoBand";
 import { CTABand } from "@/components/sections/CTABand";
 import { Container } from "@/components/layout/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { StatBlock } from "@/components/ui/StatBlock";
 import { Button } from "@/components/ui/Button";
 import { Caption } from "@/components/ui/Caption";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
@@ -17,64 +14,19 @@ import { websiteJsonLd } from "@/lib/jsonld";
 
 // Override template title for home page — full brand name as title
 export const metadata: Metadata = {
-  title: "Softwires Technologies — AI for the Physical World",
+  title: "Softiques — Software Development Studio",
   description:
-    "Softwires builds AI systems that monitor transformers, inspect bridges, screen for cancer, and detect fraud. Deployed in production across India and beyond.",
+    "Softiques is a software development studio building websites, web & mobile apps, games, ERP platforms, and AI/ML solutions that ship.",
   openGraph: {
-    title: "Softwires Technologies — AI for the Physical World",
+    title: "Softiques — Software Development Studio",
     description:
-      "Softwires builds AI systems that monitor transformers, inspect bridges, screen for cancer, and detect fraud. Deployed in production across India and beyond.",
+      "Websites, apps, games, ERP, and AI/ML — designed, built, and shipped by one accountable engineering team.",
   },
 };
 
-// Featured portfolio cards — hardcoded per spec (4 of the Tier A case studies)
-// TODO: replace SVG placeholders with real project photography
-const FEATURED_CARDS = [
-  {
-    slug: "bridgesense",
-    title: "BridgeSense",
-    category: "Infrastructure",
-    subcategory: "LiDAR · Computer Vision",
-    excerpt:
-      "Drone-mounted LiDAR system detecting 1.5–3mm structural changes across bridges and viaducts with 0.92 F1-score accuracy.",
-    heroImage: "/images/portfolio/bridgesense-hero.svg",
-    heroImageAlt: "BridgeSense — LiDAR point-cloud bridge inspection dashboard",
-  },
-  {
-    slug: "salt-lick",
-    title: "Salt-Lick",
-    category: "Healthcare",
-    subcategory: "Clinical AI · Risk Scoring",
-    excerpt:
-      "Cancer risk stratification platform triaging patients across spoke-hub networks before symptoms progress to late stage.",
-    heroImage: "/images/portfolio/salt-lick-hero.svg",
-    heroImageAlt: "Salt-Lick — cancer risk stratification dashboard",
-  },
-  {
-    slug: "ai-copter",
-    title: "AI-Copter",
-    category: "Infrastructure",
-    subcategory: "Drones · Computer Vision",
-    excerpt:
-      "Autonomous aerial inspection system combining drone telemetry with real-time AI analysis for large-scale infrastructure surveys.",
-    heroImage: "/images/portfolio/ai-copter-hero.svg",
-    heroImageAlt: "AI-Copter — drone inspection operations dashboard",
-  },
-  {
-    slug: "fwa-platform",
-    title: "FWA Platform",
-    category: "Insurance",
-    subcategory: "Fraud Detection · AI Agents",
-    excerpt:
-      "Fraud, waste, and abuse detection system processing insurance claims at scale with automated investigation and flagging.",
-    heroImage: "/images/portfolio/fwa-platform-hero.svg",
-    heroImageAlt: "FWA Platform — fraud detection and case management dashboard",
-  },
-];
-
 /**
- * Home page — primary entry point for technical buyers.
- * Sections: Hero → Capability Strip → Featured Case Study (dark) → Portfolio Teaser → Manifesto → CTA
+ * Home page — primary entry point.
+ * Sections: Hero → Capability Strip → Why Softiques (dark) → Manifesto → CTA
  * Server Component.
  */
 export default function Home() {
@@ -89,13 +41,12 @@ export default function Home() {
       />
       {/* ===== Section 1: Video Hero (full viewport, dark bg) ===== */}
       <VideoHero
-        headline="AI engineered for the physical world."
-        highlightWord="engineered"
-        subheadline="Softwires builds AI systems that monitor transformers, inspect bridges, screen for cancer, and detect fraud — deployed in production across India and beyond."
-        primaryCTA={{ label: "See our work", href: "/portfolio" }}
-        secondaryCTA={{ label: "Talk to engineering", href: "/contact" }}
-        videoSrc="/videos/hero.webm"
-        posterSrc="/images/hero/hero-poster.jpg"
+        headline="We build software that ships."
+        highlightWord="ships"
+        subheadline="Softiques is a software development studio. We design and build websites, apps, games, ERP platforms, and AI/ML products — from first wireframe to production."
+        primaryCTA={{ label: "Explore services", href: "/services" }}
+        secondaryCTA={{ label: "Book Free Consultation", href: "/contact" }}
+        aside={<HeroMascot />}
       />
 
       {/* ===== Section 2: Capability strip (light bg) ===== */}
@@ -104,7 +55,7 @@ export default function Home() {
           <ScrollReveal>
             <SectionHeader
               kicker="WHAT WE BUILD"
-              heading="Six capabilities. One engineering team."
+              heading="Six things we build well."
               headingSize="text-display-md"
             />
 
@@ -116,7 +67,7 @@ export default function Home() {
                   title={capability.title}
                   description={capability.description}
                   tag={capability.tag}
-                  href="/services"
+                  href={`/services/${capability.id}`}
                 />
               ))}
             </div>
@@ -124,119 +75,75 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ===== Section 3: Featured case study (DARK section, full-bleed) ===== */}
-      {/*
-        D-06 note: Headline says "8,000 distribution transformers" — this refers to the total
-        transformer population being monitored across the distribution network. The deployed
-        hardware uses 8 DTRs (the real figure from source deck). The headline is accurate.
-      */}
+      {/* ===== Section 3: Why Softiques (DARK section, full-bleed) ===== */}
       <section
         data-theme="dark"
         className="bg-bg-dark text-text-inverted py-5xl max-md:py-3xl"
       >
         <Container>
           <Caption as="p" className="text-text-muted-dark">
-            FEATURED · ENERGY
+            WHY SOFTIQUES
           </Caption>
 
           <h2 className="text-display-lg text-text-inverted mt-lg max-w-[820px]">
-            Real-time monitoring across 8,000 distribution transformers.
+            One team, from idea to production.
           </h2>
 
-          {/* 2-column layout: body copy left, dashboard placeholder right */}
+          {/* 2-column layout: lead copy left, supporting points right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-2xl mt-2xl">
-            {/* Left: iDTRM body copy */}
             <div>
               <p className="text-body-lg text-text-muted-dark">
-                iDTRM is a GPRS-connected distribution transformer monitoring
-                system deployed across central India&apos;s power network. Each
-                installed DTR pushes load, voltage, and fault data to a central
-                platform every five minutes — surfacing transformer health before
-                consumers notice a failure. The system pre-warns grid operations
-                teams of overloading, phase imbalances, and incipient faults,
-                compressing the detection cycle from days of manual inspection to
-                sub-hourly automated alerts.
+                Most projects stall in the handoffs — between design and
+                engineering, front-end and back-end, launch and maintenance.
+                We collapse those seams. The people who design your product
+                are the people who build, ship, and keep it running. One
+                roadmap, one point of accountability, one bill.
               </p>
             </div>
 
-            {/* Right: iDTRM dashboard mock */}
-            <div className="bg-surface-elevated rounded-xl overflow-hidden">
-              <Image
-                src="/images/idtrm-dashboard.svg"
-                alt="iDTRM dashboard — geo-tagged Madhya Pradesh transformer map with live KPI tiles and voltage time-series chart"
-                width={600}
-                height={400}
-                className="w-full h-auto"
-                priority={false}
-              />
+            <div className="space-y-lg">
+              <div className="border-l-2 border-accent pl-lg">
+                <h3 className="text-h3 text-text-inverted">Full-stack, genuinely</h3>
+                <p className="text-body-sm text-text-muted-dark mt-sm">
+                  Design, web, mobile, back-end, and ML under one roof — so the
+                  edges between systems are handled by us, not left to you.
+                </p>
+              </div>
+              <div className="border-l-2 border-accent pl-lg">
+                <h3 className="text-h3 text-text-inverted">Built to hand over</h3>
+                <p className="text-body-sm text-text-muted-dark mt-sm">
+                  Typed, tested, documented code on a modern stack. No lock-in —
+                  your team can read and extend everything we deliver.
+                </p>
+              </div>
+              <div className="border-l-2 border-accent pl-lg">
+                <h3 className="text-h3 text-text-inverted">Measured in production</h3>
+                <p className="text-body-sm text-text-muted-dark mt-sm">
+                  Speed, uptime, crash-free sessions, conversion. We optimise for
+                  what users feel, not what looks good in a slide.
+                </p>
+              </div>
             </div>
           </div>
-
-          {/* Stat row — 4 StatBlock components with scroll-reveal */}
-          <ScrollReveal delay={0.1}>
-            <div className="flex flex-row flex-wrap gap-2xl mt-2xl">
-              <StatBlock value="5 min" label="Refresh interval" dark={true} />
-              <StatBlock value="40 days" label="Load survey retention" dark={true} />
-              <StatBlock value="0.5" label="Accuracy class" dark={true} />
-              <StatBlock value="24/7" label="Monitoring" dark={true} />
-            </div>
-          </ScrollReveal>
 
           {/* CTA */}
           <div className="mt-2xl">
             <Button
               variant="secondary"
-              href="/portfolio/idtrm"
+              href="/services"
               arrow
-              className="border-border-dark text-text-inverted hover:bg-text-inverted/5"
+              className="border-border-dark text-text-inverted hover:border-accent hover:text-accent"
             >
-              Read the case study
+              See how we work
             </Button>
           </div>
         </Container>
       </section>
 
-      {/* ===== Section 4: Portfolio teaser grid (light bg) ===== */}
-      <section className="py-5xl max-md:py-3xl">
-        <Container>
-          <ScrollReveal>
-            <SectionHeader
-              kicker="RECENT WORK"
-              heading="Systems in production."
-              headingSize="text-display-md"
-            />
-
-            {/* 4-card grid: 4 col desktop, 2 col tablet, 1 col mobile */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-xl mt-2xl">
-              {FEATURED_CARDS.map((card) => (
-                <PortfolioCard
-                  key={card.slug}
-                  slug={card.slug}
-                  title={card.title}
-                  category={card.category}
-                  subcategory={card.subcategory}
-                  excerpt={card.excerpt}
-                  heroImage={card.heroImage}
-                  heroImageAlt={card.heroImageAlt}
-                />
-              ))}
-            </div>
-          </ScrollReveal>
-
-          {/* "See all" link */}
-          <Link
-            href="/portfolio"
-            className="text-body font-medium text-accent hover:text-accent-hover transition-colors duration-fast mt-xl inline-block"
-          >
-            See all 11 projects <span aria-hidden="true">&rarr;</span>
-          </Link>
-        </Container>
-      </section>
-
-      {/* ===== Section 5: Manifesto ===== */}
+      {/* ===== Section 4: Manifesto ===== */}
       <ManifestoBand />
 
-      {/* ===== Section 6: CTA Band ===== */}
+      {/* ===== Section 5: CTA Band ===== */}
       <CTABand />
     </>
   );

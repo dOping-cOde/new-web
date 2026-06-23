@@ -2,276 +2,274 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/layout/Container";
 import { MobileNav } from "@/components/layout/MobileNav";
 
 const SERVICES = [
-  { label: "Enterprise AI", href: "/services/enterprise-ai" },
-  { label: "AI Agents", href: "/services/ai-agents" },
-  { label: "Chatbots", href: "/services/chatbots" },
-  { label: "Data & Analytics", href: "/services/data-analytics" },
-] as const;
-
-const INDUSTRIES = [
-  { label: "Healthcare", href: "/industries/healthcare" },
-  { label: "Retail", href: "/industries/retail" },
-  { label: "Construction", href: "/industries/construction" },
-  { label: "FMCG", href: "/industries/fmcg" },
-  { label: "Energy", href: "/industries/energy" },
-  { label: "Financial Services", href: "/industries/financial-services" },
-  { label: "Infrastructure", href: "/industries/infrastructure" },
-  { label: "Mining", href: "/industries/mining" },
+  { short: "Websites", label: "Website Development", href: "/services/websites", desc: "Marketing sites & web apps" },
+  { short: "Apps", label: "App Development", href: "/services/apps", desc: "iOS, Android & cross-platform" },
+  { short: "Games", label: "Game Development", href: "/services/gaming", desc: "Real-time engines & gameplay" },
+  { short: "ERP", label: "ERP Solutions", href: "/services/erp", desc: "Operations, finance & supply" },
+  { short: "AI", label: "AI Solutions", href: "/services/ai", desc: "LLMs, agents & automation" },
+  { short: "ML", label: "ML Solutions", href: "/services/ml", desc: "Models, data & pipelines" },
 ] as const;
 
 const NAV_LINKS = [
   { label: "Services", href: "/services", children: SERVICES },
-  { label: "Industries", href: "/industries", children: INDUSTRIES },
-  { label: "Portfolio", href: "/portfolio" },
   { label: "Insights", href: "/insights" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
 export function Navbar() {
-  const [isDark, setIsDark] = useState(false);
+  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const dropdownTimeout = useRef<ReturnType<typeof setTimeout>>(null);
-  const navLinksRef = useRef<HTMLDivElement>(null);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout>>(null);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
 
-  // Per D-06: IntersectionObserver watches elements with data-theme="dark"
-  // When navbar (top 64px) overlaps a dark section, swap to dark theme
+  const isActive = useCallback(
+    (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href)),
+    [pathname]
+  );
+
+  // Solid bar once scrolled past the top.
   useEffect(() => {
-    const darkSections = document.querySelectorAll('[data-theme="dark"]');
-    if (darkSections.length === 0) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // Determine if any dark section is behind the navbar
-        let darkBehindNav = false;
-        entries.forEach((entry) => {
-          const rect = entry.boundingClientRect;
-          // Dark section overlaps navbar if its top is above 64px and bottom is above 0
-          if (rect.top < 64 && rect.bottom > 0) {
-            darkBehindNav = true;
-          }
-        });
-        setIsDark(darkBehindNav);
-      },
-      {
-        threshold: [0, 0.1, 0.5, 1],
-      }
-    );
-
-    darkSections.forEach((section) => observer.observe(section));
-
-    return () => observer.disconnect();
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close any open dropdown when clicking outside the nav links
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (navLinksRef.current && !navLinksRef.current.contains(e.target as Node)) {
-        setOpenDropdown(null);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+  const openServices = useCallback(() => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setServicesOpen(true);
   }, []);
 
-  const openDropdownFor = useCallback((label: string) => {
-    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
-    setOpenDropdown(label);
+  const closeServices = useCallback(() => {
+    closeTimer.current = setTimeout(() => setServicesOpen(false), 120);
   }, []);
 
-  const closeDropdown = useCallback(() => {
-    dropdownTimeout.current = setTimeout(() => setOpenDropdown(null), 150);
-  }, []);
-
-  const toggleMobile = useCallback(() => {
-    setIsMobileOpen((prev) => !prev);
-  }, []);
-
-  const closeMobile = useCallback(() => {
-    setIsMobileOpen(false);
-  }, []);
+  const toggleMobile = useCallback(() => setIsMobileOpen((prev) => !prev), []);
+  const closeMobile = useCallback(() => setIsMobileOpen(false), []);
 
   return (
     <>
-      <nav
+      <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50",
-          "h-[64px] flex items-center",
-          // Per D-07: 320ms transition, per D-08: backdrop blur
-          "transition-colors duration-normal",
-          "backdrop-blur-[20px]",
-          isDark
-            ? "bg-[rgba(10,11,13,0.72)] text-text-inverted"
-            : "bg-[rgba(250,250,247,0.72)] text-text"
+          "fixed inset-x-0 top-0 z-50",
+          "transition-colors duration-normal ease-out",
+          "supports-[backdrop-filter]:backdrop-blur-[18px]",
+          scrolled || servicesOpen
+            ? "border-b border-white/10 bg-[rgba(11,11,13,0.85)]"
+            : "border-b border-transparent bg-[rgba(11,11,13,0.30)]"
         )}
+        onMouseLeave={closeServices}
         aria-label="Main navigation"
       >
-        <Container className="flex items-center justify-between">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="text-h3 font-medium tracking-tight"
-            onClick={closeMobile}
-          >
-            Softwires
-          </Link>
+        <Container>
+          <div className="flex h-[76px] items-center justify-between">
+            {/* Logo */}
+            <Link
+              href="/"
+              onClick={closeMobile}
+              className="group flex items-center gap-[11px]"
+            >
+              <span
+                aria-hidden="true"
+                className={cn(
+                  "h-[10px] w-[10px] rounded-full bg-accent",
+                  "transition-shadow duration-slow",
+                  "group-hover:shadow-[0_0_18px_3px_rgba(255,212,0,0.65)]"
+                )}
+              />
+              <span className="text-[22px] font-medium tracking-tight">Softiques</span>
+            </Link>
 
-          {/* Desktop nav links — centered */}
-          <div ref={navLinksRef} className="hidden md:flex items-center gap-xl">
-            {NAV_LINKS.map((link) => {
-              const hasChildren = "children" in link && link.children;
-              const isOpen = openDropdown === link.label;
+            {/* Desktop nav links */}
+            <nav className="hidden items-center gap-[6px] md:flex">
+              {NAV_LINKS.map((link) => {
+                const hasChildren = "children" in link && link.children;
+                const active = isActive(link.href);
 
-              if (hasChildren) {
-                return (
-                  <div
-                    key={link.href}
-                    className="relative"
-                    onMouseEnter={() => openDropdownFor(link.label)}
-                    onMouseLeave={closeDropdown}
-                  >
+                if (hasChildren) {
+                  return (
                     <button
-                      className={cn(
-                        "text-body-sm relative flex items-center gap-[4px]",
-                        "transition-colors duration-normal",
-                        "hover:text-accent",
-                        "after:absolute after:bottom-[-4px] after:left-0",
-                        "after:h-[1px] after:w-0 after:bg-accent",
-                        "after:transition-all after:duration-normal",
-                        "hover:after:w-full"
-                      )}
-                      onClick={() =>
-                        setOpenDropdown((prev) =>
-                          prev === link.label ? null : link.label
-                        )
-                      }
-                      aria-expanded={isOpen}
+                      key={link.href}
+                      onMouseEnter={openServices}
+                      onClick={() => setServicesOpen((p) => !p)}
+                      aria-expanded={servicesOpen}
                       aria-haspopup="true"
+                      className={cn(
+                        "group flex items-center gap-[6px] px-[14px] py-[10px]",
+                        "text-[13px] font-semibold uppercase tracking-[0.08em]",
+                        "transition-colors duration-fast",
+                        active || servicesOpen ? "text-accent" : "text-text hover:text-accent"
+                      )}
                     >
                       {link.label}
                       <svg
                         className={cn(
-                          "w-[12px] h-[12px] transition-transform duration-normal",
-                          isOpen && "rotate-180"
+                          "h-[11px] w-[11px] transition-transform duration-normal",
+                          servicesOpen && "rotate-180"
                         )}
                         viewBox="0 0 12 12"
                         fill="none"
                         aria-hidden="true"
                       >
-                        <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <path
+                          d="M3 4.5L6 7.5L9 4.5"
+                          stroke="currentColor"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
                       </svg>
                     </button>
+                  );
+                }
 
-                    {/* Dropdown panel */}
-                    <div
-                      className={cn(
-                        "absolute top-full left-1/2 -translate-x-1/2 pt-[12px]",
-                        "transition-all duration-normal",
-                        isOpen
-                          ? "opacity-100 translate-y-0 pointer-events-auto"
-                          : "opacity-0 -translate-y-[4px] pointer-events-none"
-                      )}
-                    >
-                      <div
-                        className={cn(
-                          "rounded-lg py-sm min-w-[200px]",
-                          "border shadow-sm",
-                          isDark
-                            ? "bg-[rgba(10,11,13,0.95)] border-white/10"
-                            : "bg-[rgba(250,250,247,0.95)] border-border-light"
-                        )}
-                      >
-                        {link.children.map((child) => (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            className={cn(
-                              "block px-lg py-[8px] text-body-sm",
-                              "transition-colors duration-fast",
-                              isDark
-                                ? "hover:bg-white/5"
-                                : "hover:bg-black/[0.03]",
-                              "hover:text-accent"
-                            )}
-                            onClick={() => setOpenDropdown(null)}
-                          >
-                            {child.label}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onMouseEnter={closeServices}
+                    className={cn(
+                      "relative px-[14px] py-[10px]",
+                      "text-[13px] font-semibold uppercase tracking-[0.08em]",
+                      "transition-colors duration-fast",
+                      "after:absolute after:bottom-[6px] after:left-[14px] after:right-[14px]",
+                      "after:h-[2px] after:origin-left after:scale-x-0 after:bg-accent",
+                      "after:transition-transform after:duration-normal hover:after:scale-x-100",
+                      active ? "text-accent after:scale-x-100" : "text-text hover:text-accent"
+                    )}
+                  >
+                    {link.label}
+                  </Link>
                 );
-              }
+              })}
+            </nav>
 
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={cn(
-                    "text-body-sm relative",
-                    "transition-colors duration-normal",
-                    "hover:text-accent",
-                    "after:absolute after:bottom-[-4px] after:left-0",
-                    "after:h-[1px] after:w-0 after:bg-accent",
-                    "after:transition-all after:duration-normal",
-                    "hover:after:w-full"
-                  )}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-          </div>
-
-          {/* Desktop CTA */}
-          <div className="hidden md:block">
-            <Button
-              variant="primary"
+            {/* Desktop CTA */}
+            <Link
               href="/contact"
               className={cn(
-                "text-[14px] px-md py-sm",
-                isDark && "bg-text-inverted text-text hover:bg-accent hover:text-text-inverted"
+                "group hidden items-center gap-[9px] rounded-full md:inline-flex",
+                "bg-accent px-[22px] py-[12px]",
+                "text-[13px] font-bold uppercase tracking-[0.08em] text-bg-dark",
+                "transition-all duration-fast hover:bg-accent-hover",
+                "hover:shadow-[0_0_28px_-4px_rgba(255,212,0,0.6)]"
               )}
             >
-              Talk to engineering
-            </Button>
-          </div>
+              Book Free Consultation
+              <span
+                aria-hidden="true"
+                className="text-[15px] transition-transform duration-fast group-hover:translate-x-[3px]"
+              >
+                &rarr;
+              </span>
+            </Link>
 
-          {/* Mobile hamburger — per D-10: morphs to X via CSS transforms */}
-          <button
-            ref={hamburgerRef}
-            className="md:hidden relative w-[24px] h-[24px] flex flex-col items-center justify-center gap-[6px]"
-            onClick={toggleMobile}
-            aria-label={isMobileOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isMobileOpen}
-            aria-controls="mobile-nav-overlay"
-          >
-            <span
-              className={cn(
-                "block w-[20px] h-[1.5px] rounded-full transition-all duration-normal origin-center",
-                isDark ? "bg-text-inverted" : "bg-text",
-                isMobileOpen && "translate-y-[3.75px] rotate-45"
-              )}
-            />
-            <span
-              className={cn(
-                "block w-[20px] h-[1.5px] rounded-full transition-all duration-normal origin-center",
-                isDark ? "bg-text-inverted" : "bg-text",
-                isMobileOpen && "-translate-y-[3.75px] -rotate-45"
-              )}
-            />
-          </button>
+            {/* Mobile hamburger — morphs to X */}
+            <button
+              ref={hamburgerRef}
+              className="relative flex h-[44px] w-[44px] flex-col items-center justify-center gap-[6px] rounded-full hover:bg-white/[0.06] md:hidden"
+              onClick={toggleMobile}
+              aria-label={isMobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileOpen}
+              aria-controls="mobile-nav-overlay"
+            >
+              <span
+                className={cn(
+                  "block h-[2px] w-[22px] origin-center rounded-full bg-text transition-all duration-normal",
+                  isMobileOpen && "translate-y-[4px] rotate-45"
+                )}
+              />
+              <span
+                className={cn(
+                  "block h-[2px] w-[22px] origin-center rounded-full bg-text transition-all duration-normal",
+                  isMobileOpen && "-translate-y-[4px] -rotate-45"
+                )}
+              />
+            </button>
+          </div>
         </Container>
-      </nav>
+
+        {/* Full-width Services mega-panel */}
+        <div
+          onMouseEnter={openServices}
+          onMouseLeave={closeServices}
+          className={cn(
+            "absolute inset-x-0 top-full overflow-hidden",
+            "border-b border-white/10 bg-[rgba(11,11,13,0.97)]",
+            "supports-[backdrop-filter]:backdrop-blur-[18px]",
+            "transition-all duration-normal ease-out",
+            servicesOpen
+              ? "pointer-events-auto visible opacity-100"
+              : "pointer-events-none invisible opacity-0"
+          )}
+        >
+          <Container>
+            <div className="grid grid-cols-1 gap-xl py-2xl lg:grid-cols-12">
+              {/* Intro column */}
+              <div className="lg:col-span-4">
+                <p className="text-caption text-accent">What we build</p>
+                <h2 className="mt-md text-display-md">
+                  Software, <br className="hidden lg:block" />
+                  end to end.
+                </h2>
+                <p className="mt-md max-w-[280px] text-body-sm text-text-muted">
+                  From first commit to production scale — pick a discipline, or
+                  bring us the whole problem.
+                </p>
+                <Link
+                  href="/services"
+                  onClick={() => setServicesOpen(false)}
+                  className="group mt-lg inline-flex items-center gap-[8px] text-[13px] font-semibold uppercase tracking-[0.08em] text-accent"
+                >
+                  View all services
+                  <span aria-hidden="true" className="transition-transform duration-fast group-hover:translate-x-[3px]">
+                    &rarr;
+                  </span>
+                </Link>
+              </div>
+
+              {/* Service rows */}
+              <div className="grid grid-cols-1 gap-[2px] sm:grid-cols-2 lg:col-span-8">
+                {SERVICES.map((service, i) => (
+                  <Link
+                    key={service.href}
+                    href={service.href}
+                    onClick={() => setServicesOpen(false)}
+                    className="group flex items-center gap-md rounded-[14px] px-[18px] py-[16px] transition-colors duration-fast hover:bg-white/[0.05]"
+                  >
+                    <span className="text-mono-sm text-text-muted transition-colors duration-fast group-hover:text-accent">
+                      0{i + 1}
+                    </span>
+                    <span className="flex-1">
+                      <span className="block text-h2 leading-tight text-text transition-colors duration-fast group-hover:text-accent">
+                        {service.short}
+                      </span>
+                      <span className="mt-[2px] block text-body-sm text-text-muted">
+                        {service.desc}
+                      </span>
+                    </span>
+                    <span
+                      aria-hidden="true"
+                      className="text-[18px] text-text-muted opacity-0 transition-all duration-fast group-hover:translate-x-[2px] group-hover:text-accent group-hover:opacity-100"
+                    >
+                      &rarr;
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </Container>
+        </div>
+      </header>
 
       {/* Mobile nav overlay */}
       <MobileNav
@@ -281,8 +279,8 @@ export function Navbar() {
         triggerRef={hamburgerRef}
       />
 
-      {/* Spacer to prevent content from going under fixed navbar */}
-      <div className="h-[64px]" aria-hidden="true" />
+      {/* Spacer to prevent content from going under the fixed navbar */}
+      <div className="h-[76px]" aria-hidden="true" />
     </>
   );
 }
